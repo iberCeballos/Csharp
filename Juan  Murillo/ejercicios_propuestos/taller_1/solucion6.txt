@@ -1,0 +1,24 @@
+using System;
+					
+public class velocidad
+{
+	public static void Main()
+	{
+		// calcule la velocidad de un vehículo que recorre 4 m en 5 seg
+		
+		
+		Console.WriteLine("este programa calcula la velocidad de un vehículo que recorre 4 m en 5 seg");
+		
+		//operamos los datos correspondientes
+		
+		double d = 4;
+		double t = 5;
+		
+		double v = d/t;
+		
+		//imprimimos en pantalla el resultado de la operacion
+		Console.WriteLine("el vehiculo tiene una velocidad de "+v+" m/s");
+		
+		
+	}
+}

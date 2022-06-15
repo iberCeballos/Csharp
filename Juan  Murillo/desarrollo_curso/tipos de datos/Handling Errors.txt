@@ -1,0 +1,17 @@
+using System;
+					
+public class BugSquasher
+{
+	public static void Main()
+	{
+	  double number = 38498.3222;
+
+      string dinosaur = "Barney";
+
+      double dato = 293.000;
+
+      bool estado = true;
+
+      string band = "The Low Anthem";
+	}
+}

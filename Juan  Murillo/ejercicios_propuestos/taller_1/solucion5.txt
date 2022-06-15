@@ -1,0 +1,25 @@
+using System;
+					
+public class areaCuadrado
+{
+	public static void Main()
+	{
+		// ingrese la base y altura de un cuadrado y saque su área imprima todos los valores
+		
+		//pedimos al usuario que ingrese la base y la altura y los almacenamos en la variable correspondiente
+		Console.WriteLine("este programa calcula  el area de un cuadrado");
+		
+		Console.WriteLine("ingrese la base");
+		double basec = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("ingrese la altura");
+		double altura = Convert.ToDouble(Console.ReadLine());
+		
+		double area = basec*altura;
+		
+		//imprimimos en pantalla los datos requeridos
+		Console.WriteLine("el area de un cuadrado, de base "+basec+" y altura "+altura+" es: "+area);
+		
+		
+	}
+}
