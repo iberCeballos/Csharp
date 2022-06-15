@@ -1,0 +1,24 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("ingrese por favavor 5 numeros");
+            
+            
+
+            int numero1 = Convert.ToInt32(Console.ReadLine());
+            int numero2 = Convert.ToInt32(Console.ReadLine());
+            int numero3 = Convert.ToInt32(Console.ReadLine());
+            int numero4 = Convert.ToInt32(Console.ReadLine());
+            int numero5 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(numero1 +" "+ numero2+" "+ numero3+" "+numero4 +" "+ numero5);
+
+
+        }
+    }
+}

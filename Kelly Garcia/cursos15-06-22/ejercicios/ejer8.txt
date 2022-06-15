@@ -1,0 +1,18 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double distanciad = 30;
+            double tiempo = 10;
+            double velocidad = (distanciad / tiempo);
+            Console.WriteLine(velocidad);
+           
+
+		}
+    }
+}

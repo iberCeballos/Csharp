@@ -1,0 +1,21 @@
+using System;
+
+namespace StoryTime
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare the variables
+  string beginning = "principio, ";
+  string middle = "medio, ";
+  string end = "final.";
+      // Concatenate the string and the variables
+string story = beginning + middle + end ;
+
+      // Print the story to the console 
+      Console.WriteLine(story);
+
+    }
+  }
+}

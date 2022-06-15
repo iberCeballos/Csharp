@@ -1,0 +1,24 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string palabra1 = "escucha";
+            string palabra2 = "a";
+            string palabra3 = "tu";
+            string palabra4 = "alma,";
+            string palabra5 = "cree";
+            string frase;
+            Console.WriteLine(palabra1 + " "+ palabra2 + " " + palabra3 + " " + palabra4 + " " + palabra5);
+                
+
+             
+            
+
+
+        }
+    }
+}
