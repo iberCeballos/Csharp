@@ -1,0 +1,44 @@
+using System;
+
+namespace Review
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      /* use this space to write your own short program! 
+      Here's what you learned:
+
+      DATA TYPES: int, double, char, string, bool
+      VARIABLES: datatype variableName = value;
+      COMMON ERRORS: wrong type, wrong value, no semicolon
+      DATA TYPE CONVERSION: implicit, explicit, methods
+
+      Good luck! */
+
+
+      /* Vamos a crear un programa que nos de el valor total de las ganancias que 
+      quedan de una tienda luego de restar gastos extras e internos*/
+
+      int dinero_mensual = 4000000;
+      int servicios = 100000;
+      int mercancia = 1000000;
+      int IVA = 200000;
+    
+       
+         Console.WriteLine("Dinero mensual "+dinero_mensual);
+
+         Console.WriteLine("servicios por pagar "+servicios);
+
+         Console.WriteLine("mercancia "+mercancia);
+
+         Console.WriteLine("IVA "+IVA);
+
+        int total_ganancias = (dinero_mensual-servicios-mercancia-IVA);
+
+        Console.WriteLine("Total Ganancias "+total_ganancias);
+
+
+    }
+  }
+}

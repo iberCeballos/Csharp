@@ -1,0 +1,17 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	 	String palabra1 = " pinpon ";
+		String palabra2 = "es ";
+		String palabra3 = " muy ";
+		String palabra4 = " y ";
+		String palabra5 = "de ";
+		
+		String frase = palabra1 + palabra2 + "un muñeco" + palabra3 + "guapo" + palabra4 + palabra5 + "carton";
+		Console.WriteLine(frase);
+		
+	}
+}

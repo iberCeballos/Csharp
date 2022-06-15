@@ -1,0 +1,26 @@
+using System;
+
+namespace BugSquasher
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      double number = 38498.3222;
+
+      string dinosaurius = "Barney";
+
+      double numbers = 293.000;
+
+      bool yes = true;
+
+      string band = "The Low Anthem";
+       
+       Console.WriteLine(number);
+         Console.WriteLine(dinosaurius);
+           Console.WriteLine(numbers);
+             Console.WriteLine(yes);
+               Console.WriteLine(band);
+    }
+  }
+}
