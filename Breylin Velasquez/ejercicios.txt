@@ -1,0 +1,244 @@
+1) Crear 4 variables numéricas con el valor que tú quieras y guardarla en otra variable numérica imprimir por consola la suma, resta, la multiplicación y división de las posibles soluciones de las operaciones.
+using System;
+
+namespace ejercicio1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number1 = 1;
+            int number2 = 12;   
+            int number3 = 15;
+            int number4 = 20;
+
+            int suma = number1+number2+number3+number4;
+            int resta = number1-number2-number3-number4;
+            int multip = number1*number2*number3*number4;
+            int div = number1/number2/number3/number4;
+            Console.WriteLine(suma);
+            Console.WriteLine(resta);
+            Console.WriteLine(multip);
+            Console.WriteLine(div);
+        }
+    }
+}
+
+2) Pedir por consola un nombre de persona y el nombre de una ciudad y mostrar por consola el siguiente mensaje «Hola» <nombre>» bienvenido a» <ciudad>
+using System;
+
+namespace ejercicio2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombrePersona;
+            Console.WriteLine("Escriba su nombre: ");
+            nombrePersona = Console.ReadLine();
+            string cuidad;
+            Console.WriteLine("Escriba una Cuidad");
+            cuidad = Console.ReadLine();
+            Console.WriteLine("hola "+nombrePersona+ " bienvenido a " +cuidad);
+        }
+    }
+}
+
+3) Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas» <nombre>» y tienes» <años>» años»
+using System;
+
+namespace ejercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombrePersona;
+            Console.WriteLine("Escriba su nombre: ");
+            nombrePersona = Console.ReadLine();
+            string edadPersona;
+            Console.WriteLine("Escriba su edad");
+            edadPersona = Console.ReadLine();
+            Console.WriteLine("Te llamas " + nombrePersona + " y tienes " + edadPersona+ " años " );
+        }
+    }
+}
+
+
+4) ingrese 5 números y cambia su tipo a entero e imprímelos
+using System;
+
+namespace ejercicio4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string numero1 = "39";
+            int temporal1 = Int16.Parse(numero1); 
+            Console.WriteLine(numero1);
+
+            string numero2 = "46";
+            int temporal2 = Int16.Parse(numero2);
+            Console.WriteLine(numero2);
+
+            string numero3 = "72";
+            int temporal3 = Int16.Parse(numero3);
+            Console.WriteLine(numero3);
+
+            string numero4= "78";
+            int temporal4 = Int16.Parse(numero4);
+            Console.WriteLine(numero4);
+
+            string numero5 = "27";
+            int temporal5 = Int16.Parse(numero5);
+            Console.WriteLine(numero5);
+
+        }
+    }
+}
+	
+
+5) ingrese la base y altura de un cuadrado y saque su área imprima todos los valores
+using System;
+
+namespace ejercicio5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese la base del cuadrado: ");
+            double basem = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la altura del cuadrado: ");
+            double alturam = double.Parse(Console.ReadLine());
+            double resul = basem * alturam;
+            Console.WriteLine("la arae del cuadrados es de: " + resul);
+        }
+    }
+}
+
+
+Represente estos problemas físicos en código
+
+6) calcule la velocidad de un vehículo que recorre 4 m en 5 seg
+using System;
+
+namespace ejercicio6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int distacia = 4;
+            double tiempo = 5;
+
+            double velocidadbalon = distacia / tiempo;
+            Console.WriteLine(velocidadbalon + " m/seg");
+        }
+    }
+}
+
+
+7) Una mariposa vuela en línea recta hacia el sur con una velocidad de 7 m/s durante 28 s, ¿cuál es la distancia total que recorre la mariposa?
+using System;
+
+namespace ejercico7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double tiempo = 28;
+            double velocidad = 7;
+
+            double distaciaMariposa = velocidad * tiempo;
+            Console.WriteLine("la mariposa recorrio: " + distaciaMariposa + " metros" );
+        }
+    }
+}
+
+
+8) una pelota recorre 20 m hacia la derecha y luego 10 m hacia la izquierda, todo en un lapso de tiempo de 10 s, ¿cuál es su velocidad y rapidez?
+using System;
+
+namespace ejercicio8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int distanciad = 20;
+            int distanciai = 10;
+            double tiempo = 10;
+
+            double velocidad = distanciai / tiempo;
+            double rapidez = (distanciad+distanciai) / tiempo;
+
+            Console.WriteLine("la velociadad de la pelota es de " + velocidad + " m/seg y la rapidez es de " + rapidez + " m/seg " );
+        }
+    }
+}
+ 
+
+9) cambie a decimal los siguientes datos que está en entero:
+
+·         3.5
+
+·         4.7
+
+·         13.6
+
+·         15.7
+
+·         20.6
+using System;
+
+namespace ejercicio9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double decimaluno = 3.5;
+            double decimaldos = 4.7;
+            double decimaltres = 13.6;
+            double decimalcuatro = 15.7;
+            double decimalquinto = 20.6;
+
+            decimaluno = Convert.ToInt16(decimaluno);
+            decimaldos = Convert.ToInt16(decimaldos);
+            decimaltres = Convert.ToInt16(decimaltres);
+            decimalcuatro = Convert.ToInt16(decimalcuatro);
+            decimalquinto = Convert.ToInt16(decimalquinto);
+
+            Console.WriteLine(decimaluno);
+            Console.WriteLine(decimaldos);
+            Console.WriteLine(decimaltres);
+            Console.WriteLine(decimalcuatro);
+            Console.WriteLine(decimalquinto);      
+
+        }
+    }
+}
+
+
+10) cree 5 variables y concaténelas creando una frase que tenga sentido.
+using System;
+
+namespace ejercicio10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string var1 = (" Me decía un viejo ");
+            string var2 = (" Mientras sus ojos lloraban ");
+            string var3 = (" Decía querer volar lejos ");
+            string var4 = (" Mientras al cielo miraba ");
+            string var5 = (" Todavía recordaba ");
+
+            Console.WriteLine(var1+var2+var3+var4+var5);
+        }
+    }
+}
