@@ -1,0 +1,32 @@
+using System;
+					
+public class ingresar_numeros
+{
+	public static void Main()
+	{
+		//ingrese 5 números y cambia su tipo a entero e imprímelos
+		
+		//pedimos al usuario que ingrese los 5 numeros y los almacenamos en la variable correspondiente
+		Console.WriteLine("este programa lee 5 numeros enteros y los convierte a tipo int");
+		
+		Console.WriteLine("ingrese el primer numero entero");
+		int num1 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("ingrese el segundo numero entero");
+		int num2 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("ingrese el tercer numero entero");
+		int num3 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("ingrese el cuarto numero entero");
+		int num4 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("ingrese el quinto numero entero");
+		int num5 = Convert.ToInt32(Console.ReadLine());
+		
+		//imprimimos en pantalla los numeros ingresados
+		Console.WriteLine("los numeros que ingresastes fueron: "+num1+", "+num2+", "+num3+", "+num4+" y "+num5);
+		
+		
+	}
+}

@@ -1,0 +1,30 @@
+using System;
+
+namespace MethodOverloading
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      NamePets("Laika","Albert");
+      NamePets("Mango","Puddy","Bucket");
+      NamePets();
+    }
+
+   static void NamePets(string n1, string n2)
+    {
+        Console.WriteLine($"Your pets {n1} and {n2} will be joining your voyage across space!");
+    }
+
+     static void NamePets(string n1, string n2, string n3)
+    {
+        Console.WriteLine($"Your pets {n1}, {n2} and {n3} will be joining your voyage across space!");
+    }
+
+    static void NamePets()
+    {
+      Console.WriteLine("Aw, you have no spacefaring pets :(");
+    }
+    
+  }
+}

@@ -1,0 +1,32 @@
+using System;
+					
+public class convertir
+{
+	public static void Main()
+	{
+		//cambie a decimal los siguientes datos que está en entero:
+		/*3.5 4.7 13.6 15.7 20.6*/
+		
+		//declaracion e inicialisacion de las variables
+		
+		int n1 = 3.5;
+		int n2 = 4.7;
+		int n3 = 13.6;
+		int n4 = 15.7;
+		int n5 = 20.6;
+		
+		//convertir las variables de entero a decimal
+		
+		decimal nn1 = Convert.ToDecimal(n1);
+		decimal nn2 = Convert.ToDecimal(n2);
+		decimal nn3 = Convert.ToDecimal(n3);
+		decimal nn4 = Convert.ToDecimal(n4);
+		decimal nn5 = Convert.ToDecimal(n5);
+		
+		
+		
+		Console.WriteLine(" los numeros convestidos quedaron asi "+nn1+", "+nn2+", "+nn3+", "+nn4+" y "+nn5);
+		
+		
+	}
+}

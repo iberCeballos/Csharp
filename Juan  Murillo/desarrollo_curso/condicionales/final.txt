@@ -1,0 +1,56 @@
+using System;
+					
+public class comparacion
+{
+	public static void Main()
+	{
+		Console.WriteLine("este programa determina que tipo de gato eres basado en tus gustos en comida rapida");
+		Console.WriteLine("ingrese su comida rapida favorita");
+		string comida = Console.ReadLine();
+		
+		switch(comida)
+		{
+			case "pizza":
+				Console.WriteLine("eres un gato: Azul Ruso");
+				break;
+				
+			case "hamburgesa":
+				Console.WriteLine("eres un gato: Siberiano");
+				break;
+				
+			case "perro caliente":
+				Console.WriteLine("eres un gato: Bosque de Noruega");
+				break;
+				
+			case "picada":
+				Console.WriteLine("eres un gato: Exótico");
+					break;
+				
+			case "sandwich":
+				Console.WriteLine("eres un gato: Bengalí");
+				break;
+				
+			case "salchipapas":
+				Console.WriteLine("eres un gato: Saimés");
+				break;
+				
+			case "empanadas":
+				Console.WriteLine("eres un gato: Sphynx");
+				break;
+				
+			case "shawarma":
+				Console.WriteLine("eres un gato: Persa");
+				break;
+				
+			default:
+				Console.WriteLine("eres un gato: Maine Coon");
+				break;
+					
+				
+		}
+		
+		
+		
+		
+	}
+}

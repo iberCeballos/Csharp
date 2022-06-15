@@ -1,0 +1,21 @@
+using System;
+					
+public class edad
+{
+	public static void Main()
+	{
+		//Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas» <nombre>» y tienes» <años>» años»
+		
+		//pedimos los datos al usuario y los almacenamos en la variable correspondiente
+		Console.WriteLine("Ingrese su nombre");
+		string pers = Console.ReadLine();
+		
+		Console.WriteLine("Ingrese su edad, en años");
+		string edad = Console.ReadLine();
+		
+		//imprimimos en pantalla el mensaje con los años
+		Console.WriteLine("Tu te llamas "+pers+" y tienes "+edad+" años");
+		
+		
+	}
+}

@@ -1,0 +1,21 @@
+using System;
+
+namespace BugSquasher
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int number = 38;
+
+      string dinosaur = "Barney";
+
+      double weghit = 23.00;
+
+      bool @if = true;
+
+      string band = "The Low Anthem";
+
+    }
+  }
+}

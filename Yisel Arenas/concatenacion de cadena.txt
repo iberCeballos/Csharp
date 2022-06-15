@@ -1,0 +1,23 @@
+using System;
+
+namespace StoryTime
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare the variables
+string beginning = "compadre compreme un coco, ";
+string middle = "porque cuando mucho coco compro, ";
+string end = " mucho coco como.";
+
+
+      // Concatenate the string and the variables
+
+string story = (beginning + "\n" + "compadre no compro cocos " + "\n" + middle + end);
+      // Print the story to the console 
+
+Console.WriteLine (story);
+    }
+  }
+}

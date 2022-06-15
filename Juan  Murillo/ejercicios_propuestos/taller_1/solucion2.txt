@@ -1,0 +1,21 @@
+using System;
+					
+public class bienvenida
+{
+	public static void Main()
+	{
+		//2) Pedir por consola un nombre de persona y el nombre de una ciudad y mostrar por consola el siguiente mensaje «Hola» <nombre>» bienvenido a» <ciudad>
+		
+		//pedimos los datos al usuario y los almacenamos en la variable correspondiente
+		Console.WriteLine("Ingrese su nombre");
+		string pers = Console.ReadLine();
+		
+		Console.WriteLine("Ingrese el nombre de la ciudad a la que se dirige");
+		string ciudad = Console.ReadLine();
+		
+		//imprimimos en pantalla el mensaje de bienvenida
+		Console.WriteLine("Hola "+pers+" bienvenido a "+ciudad);
+		
+		
+	}
+}

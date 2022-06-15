@@ -1,0 +1,28 @@
+using System;
+					
+public class velocidad_Rapidez
+{
+	public static void Main()
+	{
+		// una pelota recorre 20 m hacia la derecha y luego 10 m hacia la izquierda, todo en un lapso de tiempo de 10 s, ¿cuál es su velocidad y rapidez?
+		
+		
+		Console.WriteLine("este programa calcula la velocidad y la rapidez que recorre una pelota 20 m hacia la derecha y luego 10 m hacia la izquierda, todo en un lapso de tiempo de 10 s");
+		
+		//operamos los datos correspondientes
+		
+		double d1 = 20;
+		double d2 = 10;
+		double t = 10;
+		
+		//la rapidez calcula la distancia total reccorida dividido el tiempo 
+		double r = (d1+d2)/t;
+		//la velocidad calcula la distancia entre el inicio y el final, mas no el recorrido, divido el tiempo
+		double v = (d1-d2)/t;
+		
+		//imprimimos en pantalla el resultado de la operacion
+		Console.WriteLine("la velodidad de la pelota es "+v+" m/s y la rapidez de la pelota es "+r+" m/s");
+		
+		
+	}
+}

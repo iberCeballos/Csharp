@@ -1,0 +1,20 @@
+using System;
+					
+public class UsingOut
+{
+	public static void Main()
+	{
+		string frase = "lo PRIMERO que hice";
+		bool marker;
+
+      Whisper(frase, out marker);
+
+      Console.WriteLine(frase+" "+marker);  
+	}
+	
+	 static string Whisper(string x, out bool y)
+    {
+        y=true;
+        return x.ToLower();
+    }  
+}

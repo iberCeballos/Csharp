@@ -1,0 +1,52 @@
+using System;
+
+namespace PlanetCalculations
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {  
+      // Your Age
+ int userAge = 17;
+
+      // Length of years on Jupiter (in Earth years)
+
+double jupiterYears = 11.86;
+      // Age on Jupiter
+
+double jupiterAge = userAge/jupiterYears;
+
+      // Time to Jupiter
+double journeyToJupiter =6.142466;
+
+      // New Age on Earth
+double newEarthAge = userAge + journeyToJupiter;
+
+      // New Age on Jupiter
+double newJupiterAge = newEarthAge/jupiterYears;
+
+Console.WriteLine("edad del usuario "+userAge);
+Console.WriteLine("tiempo que tarda jupiter en dar la vuelta al sol "+jupiterYears);
+Console.WriteLine("Tiempo que tardamos en llegar a jupiter "+jupiterAge);
+Console.WriteLine("nueva edad en la tierra "+newEarthAge);
+Console.WriteLine("nueva edad en jupiter "+newJupiterAge);
+
+      // Log calculations to console
+
+double marsYears = 1.88;
+double marsAge = userAge/marsYears;
+int journeyToMars = 1;
+double EarthAge = userAge +  journeyToMars;
+double newmarsAge = newEarthAge/marsYears;
+
+Console.WriteLine("edad del usuario "+userAge);
+Console.WriteLine("tiempo que tarda marte en dar la vuelta al sol "+marsYears);
+Console.WriteLine("tiempo que nos tardamos en llegar a marte "+marsAge);
+Console.WriteLine("nueva edad en la tierra "+EarthAge);
+Console.WriteLine("nueva edad en marte "+newmarsAge);
+
+
+
+    }
+  }
+}

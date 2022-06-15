@@ -1,0 +1,28 @@
+using System;
+					
+public class intercalar
+{
+	public static void Main()
+	{
+		char letra;
+		string resultado="";
+		
+		Console.WriteLine("Ingrese una frase");
+		string frase=Console.ReadLine();
+		
+		
+		for(int i=0;i<frase.Length;i++){
+			 if(i%2==0){
+				 
+				 letra = Char.ToUpper(frase[i]);
+			 }
+			else{
+				 letra = Char.ToLower(frase[i]);
+			}
+			resultado=resultado+letra;
+		}
+		
+		Console.WriteLine("Su frase quedo:\n "+resultado);
+			
+	}
+}

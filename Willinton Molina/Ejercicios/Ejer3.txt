@@ -1,0 +1,23 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		string name;
+		string age;
+		
+		
+		
+		Console.WriteLine("Te llamas ");
+		name = Console.ReadLine ();
+		Console.WriteLine("Y tienes");
+		age = Console.ReadLine ();
+		
+	    
+		
+		
+		
+	}
+}

@@ -1,0 +1,29 @@
+using System;
+					
+public class concatenar
+{
+	public static void Main()
+	{
+		//cree 5 variables y concaténelas creando una frase que tenga sentido.
+		
+		
+		Console.WriteLine("este programa el contenido de cinco variables en una frase que tiene sentido\n\n");
+		
+		//asignamos el valor a cada varable
+		
+		string p1="Por tus ojos verdes yo me perdería,\nsirena de aquellas que Ulises, sagaz,";
+		string p2="amaba y temía.\nPor tus ojos verdes yo me perdería.";
+		string p3="Por tus ojos verdes en lo que, fugaz,\nbrillar suele, a veces, la melancolía;";
+		string p4="por tus ojos verdes tan llenos de paz,\nmisteriosos como la esperanza mía;";
+		string p5="por tus ojos verdes, conjuro eficaz,\nyo me salvaría.";
+		
+		//concatenamos todas la variables en una sola
+		
+		string poema = p1+"\n"+p2+"\n"+p3+"\n"+p4+"\n"+p5;
+		
+		//imprimimos en pantalla el resultado de la concatenacion
+		Console.WriteLine(poema);
+		
+		
+	}
+}

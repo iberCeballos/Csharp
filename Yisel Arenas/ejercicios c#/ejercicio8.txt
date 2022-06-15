@@ -1,0 +1,16 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double distancia_derecha = 20;
+		double distancia_izquierda = 10; 
+		double tiempo =10;
+		
+		double rapidez = distancia_derecha+distancia_izquierda/tiempo;
+		
+		Console.WriteLine("La rapidez de la mariposa es de ");
+		Console.WriteLine(rapidez);
+	}
+}

@@ -1,0 +1,24 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese el primer numero ");
+		int numero1 = int.Parse(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese el segundo numero ");
+		int numero2 = int.Parse(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese el tercer numero ");
+		int numero3 = int.Parse(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese el cuarto numero ");
+		int numero4 = int.Parse(Console.ReadLine());
+	
+		Console.WriteLine("Ingrese el quinto numero ");;
+		int numero5 = int.Parse(Console.ReadLine());
+		
+	
+	}
+}

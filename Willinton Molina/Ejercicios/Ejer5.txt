@@ -1,0 +1,18 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+	int bas = 6;
+	int alt = 8;
+	int area = bas * alt;
+		
+    Console.WriteLine(area);
+		
+		
+		
+		
+	}
+}

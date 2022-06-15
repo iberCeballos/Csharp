@@ -1,0 +1,56 @@
+using System;
+
+namespace Review
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      /* use this space to write your own short program! 
+      Here's what you learned:
+
+      DATA TYPES: int, double
+      ARITHMETIC OPERATORS: +, -, *, /
+      INCREMENT/DECREMENT: ++, --
+      MODULO: % 
+      BUILT-IN METHODS: Abs, Pow, Sqrt, Floor, Ceiling, Min, Max
+
+      Good luck! */
+
+double myAge = 17;
+double dogAge = 7;
+
+double myDogAge = myAge/dogAge;
+Console.WriteLine(myDogAge);
+
+/*¿quien es mayor?*/
+Console.WriteLine("Es mayor quien tiene -> ");
+Console.WriteLine(Math.Max(+ myAge, dogAge));
+
+/*¿quien es menor?*/
+Console.WriteLine("Es menor quien tiene -> ");
+Console.WriteLine(Math.Min(+ myAge, dogAge));
+
+/*Redondear hacia abajo*/
+Console.WriteLine("Redondeado hacia abajo -> ");
+Console.WriteLine(Math.Floor(myDogAge));
+
+/*Potencia*/
+Console.WriteLine("potencia -> ");
+Console.WriteLine(Math.Pow(myAge, dogAge));
+
+
+/*Redondear hacia arriba*/
+Console.WriteLine("Redondeado hacia arriba -> ");
+Console.WriteLine(Math.Ceiling(myDogAge));
+
+/*Numero Absoluto*/
+Console.WriteLine("numero absoluto -> ");
+Console.WriteLine(Math.Abs(myDogAge));
+
+/*Raiz cuadrada*/
+Console.WriteLine("Raiz cuadrada -> ");
+Console.WriteLine(Math.Sqrt(myDogAge));
+    }
+  }
+}
