@@ -1,0 +1,55 @@
+Salida de captura
+Como una función matemática o una máquina de fábrica, un método toma entradas y devuelve salidas. Acabamos de ver cómo funciona la entrada (argumentos). Veamos cómo funciona la salida.
+
+Cuando un método devuelve un valor, esencialmente pasa un dato a donde sea que se haya llamado. Una forma de capturar el valor devuelto de un método es con una variable:
+
+int smallerNumber = Math.Min(3, 4);
+Math.Min()devuelve el valor 3, por lo que puede imaginar que ese valor ocupa su lugar.
+
+int smallerNumber = 3;
+Luego podemos usar esa variable como entrada para otros métodos, como Console.WriteLine():
+
+Console.WriteLine(smallerNumber);
+En este caso, podemos tomar un atajo anidando las llamadas al método:
+
+Console.WriteLine(Math.Min(3, 4));
+Ahora el valor devuelto por Math.Min()se usa como entrada para Console.WriteLine().
+
+No todos los métodos devuelven un valor. Console.WriteLine(), por ejemplo, imprime 3en la consola pero no pasa el valor 3a quien llama. Si no está seguro de lo que devuelve un método, siempre puede consultar la documentación de Microsoft .
+
+Instrucciones
+1 .
+El diseñador de C# es "Anders Hejlsberg". Su primer nombre es agradable, pero queremos imprimir solo el segundo nombre.
+
+Primero, encuentre el índice del espacio ( " ") en la cadena designery guárdelo en una variable indexOfSpace.
+
+Necesitarás usar el IndexOf()método .
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Utilice Substring()y la variable indexOfSpacepara obtener el segundo nombre. Almacene el valor devuelto en una variable secondName.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprimir secondNameen la consola.
+
+using System;
+
+namespace CaptureOutput
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string designer = "Anders Hejlsberg";
+      int indexOfSpace = designer.IndexOf(" ");
+      string secondName = designer.Substring(indexOfSpace, 1);
+      Console.WriteLine(secondName);
+
+    }
+  }
+}

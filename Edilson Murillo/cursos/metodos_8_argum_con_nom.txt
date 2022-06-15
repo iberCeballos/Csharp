@@ -1,0 +1,64 @@
+Argumentos con nombre
+Digamos que su método tiene muchos parámetros opcionales, pero solo desea especificar uno cuando lo llama.
+
+En este ejemplo, su método tiene cinco parámetros opcionales:
+
+static void YourMethodName(int a = 0, int b = 0, int c = 0, int d = 0, int e = 0) {...}
+Cuando llama al método, solo desea especificar d. Pero llamar al método de esta manera se establecería aen 4, ¡no d!
+
+YourMethodName(4);
+Consulte el parámetro por su nombre en su lugar:
+
+YourMethodName(d: 4);
+Con argumentos con nombre, puede enumerarlos en cualquier orden:
+
+YourMethodName(d: 4, b: 1, a: 2);
+También puede mezclar argumentos con nombre con argumentos posicionales, pero los argumentos posicionales DEBEN venir antes que los argumentos con nombre:
+
+YourMethodName(2, 1, d: 4) // a is 2, b is 1, d is 4
+YourMethodName(d: 4, 2, 1) // Error!
+Los argumentos con nombre no siempre son necesarios, pero pueden ser útiles cuando:
+
+un método tiene muchos parámetros opcionales
+desea diferenciar entre argumentos similares
+Instrucciones
+1 .
+El VisitPlanets()método tiene algunos parámetros opcionales nuevos.
+
+Primero, llama al método Main()sin argumentos.
+
+Checkpoint 2 Passed
+2 .
+Vuelva a llamar al método, pero defina solo el numberOfPlanetsparámetro como 2.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Llame al método una vez más, ahora definiendo el numberOfPlanetscomo 2y name con su nombre.
+
+using System;
+
+namespace NamedArguments
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //El VisitPlanets();
+      //El VisitPlanets(numberOfPlanets: 2);
+      El VisitPlanets(numberOfPlanets: 2, name: "Edilson");
+    }
+    
+    static void VisitPlanets(
+      string adjective = "brave",
+      string name = "Cosmonaut", 
+      int numberOfPlanets = 0,
+      double gForce = 4.2)
+    {
+      Console.WriteLine($"Welcome back, {adjective} {name}.");
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+      Console.WriteLine($"...while experiencing a g-force of {gForce} g!");
+    }
+  }
+}

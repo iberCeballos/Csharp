@@ -1,0 +1,49 @@
+Llamar a un método
+¡Has estado usando métodos desde que comenzaste a aprender C#! Los comandos como Console.WriteLine()y Math.Min()son métodos.
+
+Cada método tiene un comportamiento diferente: el primer método imprime algo en la consola y el segundo encuentra el menor de dos números dados. Activamos el comportamiento de un método llamándolo . En C# hacemos esto agregando paréntesis al final del nombre de un método.
+
+Console.WriteLine();
+Algunos métodos aceptan entradas llamadas argumentos . Console.WriteLine()acepta un argumento de cadena. Ese argumento se imprimirá en la consola.
+
+// This prints "I'm hungry!"
+Console.WriteLine("I'm hungry!"); 
+Otros métodos aceptan múltiples argumentos, como Math.Min(). Espera dos entradas de números.
+
+Math.Min(3, 5);
+Probablemente también haya visto métodos integrados para cada tipo de datos. Cada cadena tiene acceso a métodos como IndexOf()y Substring().
+
+string name = "beatrice";
+name.Substring(0, 3); // returns "bea"
+Instrucciones
+1 .
+Llame Math.Min()con dos argumentos (dos enteros cualesquiera servirán). Puede ver la documentación si no está seguro de cómo utilizar este método.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Llame Console.WriteLine()usando la variable msgcomo argumento.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Obtenga la primera letra de la msgcadena usando Substring(). Puede ver la documentación si no está seguro de cómo utilizar este método.
+
+using System;
+
+namespace CallAMethod
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string msg = "Yabba dabba doo!";
+      Math.Min(0, 3);      
+      Console.WriteLine(msg);
+      msg.Substring(0, 1);
+      Console.WriteLine(msg.Substring(0, 1));
+    }
+  }
+}

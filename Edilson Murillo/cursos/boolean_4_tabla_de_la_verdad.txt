@@ -1,0 +1,30 @@
+Mesa de la verdad
+También podemos usar operadores que usan valores booleanos como entradas y salidas. Los operadores lógicos, también conocidos como operadores booleanos, se pueden utilizar para crear expresiones booleanas.
+
+Los operadores lógicos incluyen:
+
+AND &&: Ambas expresiones se evalúan y devolverán True solo si ambas expresiones se evalúan como True. De lo contrario, devolverá False.
+O ||: ambas expresiones se evalúan y devolverán True si al menos una de las expresiones se evalúa como True. De lo contrario, devolverá False.
+NOT !: Una expresión, sin importar su valor lógico, se evalúa como su opuesto. Lo que es Verdadero se vuelve Falso y lo que es Falso se vuelve Verdadero.
+Veamos algunos ejemplos:
+
+bool andExample = ((4 > 1) && (2 < 7)); 
+// (True AND True) evaluates to True
+En este ejemplo, ambas comparaciones se evalúan como True, por lo que la expresión general se evalúa como True.
+
+bool orExample = ((8 > 6) || (3 > 6));
+// (True OR False) evaluates to True
+Aquí, solo una comparación se evalúa como True y la otra se evalúa como False, por lo que la expresión se evalúa como True.
+
+bool notExample = !(1 < 3);
+// NOT (True) evaluates to False
+En este último ejemplo, la comparación se evalúa como True, por lo que la expresión se evalúa como False.
+
+Una forma común de visualizar estas relaciones es usar un diagrama conocido como tabla de verdad . Las tablas de verdad nos permiten ver rápidamente cuál es el resultado de diferentes relaciones entre valores booleanos. Manejar dos valores booleanos es simple, pero las expresiones más largas pueden ser muy complejas. Es crucial que esté familiarizado con estos fundamentos antes de seguir adelante.
+
+Instrucciones
+Podemos visualizar la relación de los valores booleanos y los operadores lógicos usando un diagrama conocido como tabla de verdad . Las tablas de verdad nos permiten ver rápidamente cuál es el resultado de diferentes relaciones entre valores booleanos.
+
+Por ejemplo, ¿cuál es el resultado de Falso O Verdadero?
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-understanding-logic/exercises/truth-table

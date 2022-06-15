@@ -1,0 +1,69 @@
+manipular cadenas
+También hay métodos .NET incorporados que podemos usar para manipular 
+datos de texto. El uso de estos métodos en una cadena no cambia la 
+cadena en sí, sino que crea una completamente nueva.
+
+HaciaSuperior, HaciaInferior
+Podemos cambiar rápidamente el caso de nuestras cadenas usando los 
+métodos .ToUpper()y .ToLower(). Estos métodos son útiles si queremos 
+que nuestro texto parezca un poema de ee cumming o que parezca que 
+olvidamos desactivar la tecla de bloqueo de mayúsculas.
+
+string shouting = "I'm not shouting, you're shouting".ToUpper();
+Console.WriteLine(shouting);
+// prints I'M NOT SHOUTING, YOU'RE SHOUTING.
+Instrucciones
+1 .
+Estás escribiendo el guión de una película, pero tienes problemas 
+para seguir la guía de estilo. Debe transformar esta oración para 
+que las dos primeras palabras ( Close on) estén en mayúsculas y el 
+resto en minúsculas.
+
+Close on a portrait of the HANDSOME PRINCE -- as the BEAST'S giant 
+paw slashes it.
+Su asistente ya comenzó con este programa y separó las cadenas 
+necesarias y las guardó en las variables cameraDirectionsy 
+sceneDescription. Tienes que terminar el programa.
+
+Primero, ponga todas las letras en cameraDirectionsmayúsculas y 
+vuelva a guardarlas en la variable cameraDirections.
+
+
+¿Atascado? Obtén un consejo
+2 .
+Ahora ponga todas las letras en sceneDescriptionminúsculas y 
+vuelva a guardarlas en la variable sceneDescription. Imprime tus 
+resultados en la consola.
+
+using System;
+
+namespace MovieScript
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Script line
+      string script = "Close on a portrait of the HANDSOME PRINCE -- as the BEAST'S giant paw slashes it.";
+
+      // Get camera directions
+      int charPosition = script.IndexOf("Close");
+      int length = "Close on".Length;
+      string cameraDirections = script.Substring(charPosition, length);
+
+      // Get scene description
+      charPosition = script.IndexOf("a portrait");
+      string sceneDescription = script.Substring(charPosition);
+
+      // Make camera directions uppercase
+      cameraDirections = cameraDirections.ToUpper();
+
+      // Make scene description lowercase
+      sceneDescription = sceneDescription.ToLower();
+
+      // Print results
+      Console.WriteLine($"{cameraDirections} {sceneDescription}");
+
+    }
+  }
+}

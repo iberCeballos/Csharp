@@ -1,0 +1,76 @@
+Operadores logicos
+Como vimos en la tabla de verdad, una expresión booleana que usa operadores lógicos puede ser tan simple como evaluar dos valores booleanos:
+
+bool answer = true && false; // evaluates to False
+En este caso, estamos diciendo que answeres igual a la evaluación de trueAND false. Según la tabla de verdad, answerdevolverá Falso.
+
+Pero más a menudo, las expresiones booleanas son extremadamente complejas. En lugar de determinar si una relación es verdadera o falsa, podemos evaluar varias expresiones conectándolas con operadores lógicos y luego determinando la validez de la expresión general.
+
+bool answer = (9 < 3) || (100 < 45); // evaluates to False
+bool another = ((3439 > 40) && (1 < 3)) || answer; // evaluates to True
+Podemos usar valores lógicos para comenzar a encadenar declaraciones lógicas. Comencemos por encontrar el valor de answer.
+
+Primero, la computadora evaluará cada declaración de comparación:
+
+bool answer = (9 < 3) || (100 < 45)
+Ambas declaraciones se evalúan como falsas:
+
+bool answer = false || false
+Dado que ambas declaraciones se evalúan como falsas y estamos usando un operador OR, la expresión general devolverá falso:
+
+bool answer = false
+Ahora podemos comenzar a evaluar el valor de another. Nuevamente, comenzaremos evaluando las declaraciones de comparación:
+
+bool another = ((3439 > 40) && (1 < 3)) || answer
+Ambas declaraciones se evalúan como verdaderas:
+
+bool another = (true && true) || answer
+Dado que ambas declaraciones se evalúan como verdaderas y estamos usando un operador AND, la expresión general devuelve verdadera:
+
+bool another = true || answer
+Como ya sabemos que answeres falso y lo estamos evaluando con un valor verdadero usando un operador OR another, devolverá verdadero:
+
+bool another = true.
+Instrucciones
+1 .
+Tú y tu amigo están planeando un viaje juntos y están tratando de decidir a dónde ir. Cada uno tiene criterios específicos que debe cumplir. Quieres que tenga una playa y una ciudad.
+
+Cree una boolvariable llamada yourNeeds. Escriba una comparación lógica que capture sus criterios.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Tu amigo quiere ir a la playa o hacer senderismo.
+
+Cree una boolvariable llamada friendNeeds. Escriba una comparación lógica que capture sus criterios.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Tu elección actual es Barcelona, ​​que es una ciudad que tiene playa. ¿Tanto tú como tu amigo serán felices?
+
+Escriba una comparación lógica que compare yourNeedsy friendNeedsy guárdela en tripDecision.
+
+Imprimir tripDecisionen la consola. ¿Estarás de acuerdo con Barcelona? Solo debes ir si satisface tanto tus necesidades como las de tu amigo.
+
+using System;
+
+namespace LogicalOperators
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool beach = true;
+      bool hiking = false;
+      bool city = true;
+      bool yourNeeds = beach && city;
+      bool friendNeeds = beach || hiking;
+      bool tripDecision = yourNeeds && friendNeeds;
+      Console.WriteLine(tripDecision);
+
+    }
+  }
+}

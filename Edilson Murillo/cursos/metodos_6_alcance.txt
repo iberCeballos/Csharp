@@ -1,0 +1,39 @@
+Una nota sobre los parámetros
+Una cosa a tener en cuenta con los parámetros: ¡solo se pueden usar dentro de su método!
+
+static void YourMethodName(string message)
+{
+  Console.WriteLine(message);
+}
+Console.WriteLine(message); // causes an error!
+Verás un error como...
+
+error CS0103: The name 'message' does not exist in the current context 
+Cuando hable con otros desarrolladores sobre este tipo de problema, es posible que escuche el término alcance . Si bien el concepto completo de alcance no se tratará en esta lección, debe saber cómo se aplica aquí: el alcance de un parámetro está dentro de su método, lo que significa que el nombre ( messageen este caso) solo es válido dentro de su método. Si el nombre del parámetro se usa fuera del método, no tiene significado, por lo que arroja un error.
+
+Instrucciones
+1 .
+Intente causar un error usando el parámetro VisitPlanets()fuera del cuerpo del método.
+
+Por ejemplo, si su parámetro se llama numberOfPlanets, podría intentar imprimir numberOfPlanetsen Main().
+
+using System;
+
+namespace ANoteOnParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets(3);
+      VisitPlanets(4);
+      VisitPlanets(5);
+      Console.WriteLine(numberOfPlanets);
+    }
+    
+    static void VisitPlanets(int numberOfPlanets)
+    {
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+    }
+  }
+}

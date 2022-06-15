@@ -1,0 +1,20 @@
+//Comentarios
+
+using System;
+
+namespace GettingInput
+{
+  class Program
+  {
+    static void Main()
+    {
+      //Preguntamos la edad del usuario
+      Console.WriteLine("Cuantos años tienes?");
+      /*Leemos en una variable el dato que acaba de ingresar el usuari*/
+      string input = Console.ReadLine();
+      //Imprimimos un comentario + la edad del usuario
+      Console.WriteLine($"Usted tiene {input} años!"
+      );
+    }
+  }
+}

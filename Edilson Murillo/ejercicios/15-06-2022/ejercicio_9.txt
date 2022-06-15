@@ -1,0 +1,19 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+            //cambie a decimal los siguientes datos que está en entero:
+
+           //int num1 = 3.5, num2 = 4.7, num3 = 13.6, num4 = 15.7, num5 = 20.6;
+            double num1 = 3.5, num2 = 4.7, num3 = 13.6, num4 = 15.7, num5 = 20.6;
+            num1 = Convert.ToDouble(num1);
+            num2 = Convert.ToDouble(num2);
+            num3 = Convert.ToDouble(num3);
+            num4 = Convert.ToDouble(num4);
+            num5 = Convert.ToDouble(num5);
+            
+            Console.WriteLine($"Los datos que se convirtieron a decimal son: \n{num1}\n{num2}\n{num3}\n{num4}\n{num5}");		
+	}
+}

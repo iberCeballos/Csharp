@@ -1,0 +1,75 @@
+Operadores de comparación
+Al escribir un programa, a menudo necesitamos verificar si un valor es correcto o comparar dos valores. Los operadores de comparación nos permiten comparar valores y evaluar su relación. En lugar de evaluar a un número entero, evalúan a valores booleanos. Las expresiones que se evalúan como valores booleanos se conocen como expresiones booleanas.
+
+Los operadores de comparación incluyen:
+
+Igual == : devuelve verdadero si el valor de la izquierda es igual al valor de la derecha.
+Operador de desigualdad != : devuelve verdadero si los dos valores no son iguales.
+Menor que < : devuelve verdadero si el valor de la izquierda es menor que el valor de la derecha.
+Mayor que > : devuelve verdadero si el valor de la izquierda es mayor que el valor de la derecha.
+Menor o igual que <= : devuelve verdadero si el valor de la izquierda es menor o igual que el valor de la derecha.
+Mayor o igual que >= : devuelve verdadero si el valor de la izquierda es mayor o igual que el valor de la derecha.
+Así es como puede verse una expresión booleana que usa operadores de comparación:
+
+bool answer = 3 < 75; 
+Console.WriteLine(answer); // prints True
+En este ejemplo, usamos el <operador de comparación menor que para comparar los valores 3y 75, luego guardamos la expresión en una variable nombrada answercon un booltipo de datos. Si tuviéramos que imprimir el valor de answeren la consola, imprimiría True, ya que el número 3 es menor que el número 75.
+
+Además de comparar números enteros, también podemos comparar variables, cadenas e incluso valores booleanos:
+
+bool answer = (true == false);
+Console.WriteLine(answer); //prints False
+Aquí, usamos el operador de comparación de igualdad para ver si el valor booleano truees igual a false. Esta vez, la expresión se evalúa como falsa. Veremos más en la comparación de valores booleanos en el siguiente ejercicio.
+
+Instrucciones
+1 .
+Estás manejando a la casa de tu familia para pasar unas vacaciones y quieres ver si llegarás antes de la cena. La cena comenzará a las 6:00 p. m. y la casa está a 95 millas de distancia. Si sale a las 2:00 p. m. y maneja un promedio de 30 millas por hora, ¿llegará temprano (antes de las 6:00 p. m.)?
+
+Cree una doublevariable con nombre timeToDinnery guarde la diferencia de horas entre las 2:00 p. m. y las 6:00 p. m.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Guarde el valor 95en una doublevariable llamada distance.
+
+Guarde el valor 30en una doublevariable llamada rate.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Podemos calcular cuánto tiempo nos llevará dividiendo la distancevariable por la ratevariable.
+
+Escriba la expresión y guárdela en la variable tripDuration.
+
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+Cree una boolvariable llamada answer. Guarde la comparación apropiada que verifique si tripDurationes menor o igual que timeToDinner .
+
+Checkpoint 5 Passed
+
+¿Atascado? Obtén un consejo
+5 .
+Imprimir answeren la consola. ¿Llegarás antes de que comience la cena?
+
+using System;
+
+namespace ComparisonOperators
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      double timeToDinner = 4;
+      double distance = 95;
+      double rate = 30;
+      double tripDuration = distance / rate;
+      bool answer = tripDuration <= timeToDinner;
+      Console.WriteLine(answer);     
+
+    }
+  }
+}

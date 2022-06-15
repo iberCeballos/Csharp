@@ -1,0 +1,58 @@
+Definir parámetros
+¿Recuerda llamar a métodos con argumentos, como Math.Min(3, 4)? Los métodos que defina también pueden usar argumentos, haciéndolos más versátiles y útiles.
+
+Mientras estamos definiendo nuestro método, no conocemos los valores reales de los argumentos que se utilizarán al llamar al método. Pero sabemos el tipo de datos esperado y cómo se utilizará. Podemos usar esta información para definir un parámetro , que funciona como una variable dentro de un método. Imagínelo como un marcador de posición para el valor del argumento real.
+
+static void YourMethodName(string identity)
+{
+  Console.WriteLine(identity);
+}
+El YourMethodName()método ahora tiene un parámetro llamado identitytype string.
+
+Separe varios parámetros con comas:
+
+static void YourMethodName(string identity, int age)
+{
+  Console.WriteLine($"{identity} is {age} years old.");
+}
+Cuando llama a su método, los valores que se utilizarán para cada parámetro se denominan argumentos . En este caso , "Yoda"y 900son argumentos para los parámetros identityy .age
+
+YourMethodName("Yoda", 900);
+Instrucciones
+1 .
+El VisitPlanets()método ha sido reescrito para usted aquí.
+
+Agregue un intparámetro nombrado numberOfPlanetsal método.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cambie el cuerpo del método para que use el parámetro. Si alguien llamara a su método, debería imprimir cuántos planetas visitaron. Por ejemplo, llamar VisitPlanets(3)haría que esto se imprima:
+
+You visited 3 new planets...
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Llama VisitPlanets()tres veces Main()con diferentes argumentos.
+
+using System;
+
+namespace DefineParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets(2);
+      VisitPlanets(4);
+      VisitPlanets(7);
+    }
+    
+    static void VisitPlanets(int numberOfPlanets)
+    {
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+    }
+  }
+}

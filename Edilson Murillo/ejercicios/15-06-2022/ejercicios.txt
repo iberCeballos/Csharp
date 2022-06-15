@@ -1,0 +1,31 @@
+1) Crear 4 variables numéricas con el valor que tú quieras y guardarla en otra variable numérica imprimir por consola la suma, resta, la multiplicación y división de las posibles soluciones de las operaciones.
+
+2) Pedir por consola un nombre de persona y el nombre de una ciudad y mostrar por consola el siguiente mensaje «Hola» <nombre>» bienvenido a» <ciudad>
+
+3) Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas» <nombre>» y tienes» <años>» años»
+
+4) ingrese 5 números y cambia su tipo a entero e imprímelos
+
+5) ingrese la base y altura de un cuadrado y saque su área imprima todos los valores
+
+Represente estos problemas físicos en código
+
+6) calcule la velocidad de un vehículo que recorre 4 m en 5 seg
+
+7) Una mariposa vuela en línea recta hacia el sur con una velocidad de 7 m/s durante 28 s, ¿cuál es la distancia total que recorre la mariposa?
+
+8) una pelota recorre 20 m hacia la derecha y luego 10 m hacia la izquierda, todo en un lapso de tiempo de 10 s, ¿cuál es su velocidad y rapidez?
+
+9) cambie a decimal los siguientes datos que está en entero:
+
+·         3.5
+
+·         4.7
+
+·         13.6
+
+·         15.7
+
+·         20.6
+
+10) cree 5 variables y concaténelas creando una frase que tenga sentido.

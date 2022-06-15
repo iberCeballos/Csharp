@@ -1,0 +1,32 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	    //ingrese 5 números y cambia su tipo a entero e imprímelos
+            double num1, num2, num3, num4, num5;
+
+            Console.WriteLine("Ingrese el valor # 1: ");
+            num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor # 2: ");
+            num2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor # 3: ");
+            num3 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor # 4: ");
+            num4 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor # 5: ");
+            num5 = Convert.ToDouble(Console.ReadLine());
+
+
+            Console.WriteLine("\nEl valor entero del dato # 1 es : " + Convert.ToInt32(num1) + "\n");
+            Console.WriteLine("El valor entero del dato # 2 es : " + Convert.ToInt32(num2) + "\n");
+            Console.WriteLine("El valor entero del dato # 3 es : " + Convert.ToInt32(num3) + "\n");
+            Console.WriteLine("El valor entero del dato # 4 es : " + Convert.ToInt32(num4) + "\n");
+            Console.WriteLine("El valor entero del dato # 5 es : " + Convert.ToInt32(num5) + "\n");
+
+		
+		
+		
+	}
+}
