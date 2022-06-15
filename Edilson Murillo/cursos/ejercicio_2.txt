@@ -1,0 +1,19 @@
+//Interactuar con el usuario
+
+using System;
+
+namespace GettingInput
+{
+  class Program
+  {
+    static void Main()
+    {
+      Console.WriteLine("Cuantos años tienes?");
+      string input = Console.ReadLine();
+      Console.WriteLine($"Usted tiene {input} años!"
+      );
+    }
+  }
+}
+
+//dotnet run

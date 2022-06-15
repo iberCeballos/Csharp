@@ -1,0 +1,120 @@
+Cambiar declaraciones
+El uso de varias else ifdeclaraciones puede volverse difícil de manejar con bastante rapidez. Imagine escribir una else ifdeclaración para cada número posible de invitados. E invitaste a 20 personas. Tienes que escribir mucho código repetitivo, que es difícil de leer y propenso a errores.
+
+Si es necesario evaluar varias condiciones con su propia salida única, una declaración de cambio es el camino a seguir. Las declaraciones de cambio permiten estructuras de flujo de control compactas mediante la evaluación de una sola expresión y la ejecución de bloques de código basados ​​en un caso coincidente.
+
+En C#, escribimos una declaración de cambio usando la siguiente sintaxis:
+
+string color;
+ 
+switch (color)
+{
+   case "blue":
+      // execute if the value of color is "blue"
+      Console.WriteLine("color is blue");
+      break;
+   case "red":
+      // execute if the value of color is "red"
+      Console.WriteLine("color is red");
+      break;
+   case "green":
+      // execute if the value of color is "green"
+      Console.WriteLine("color is green");
+      break;
+   default:
+      // execute if none of the above conditions are met
+      break;
+}
+En este ejemplo, el programa verifica para ver cuál es el valor de color. Si coincide con alguno de los casos especificados, ejecutará el código asociado a ese caso. En C#, la palabra clave break permite que los programas salgan de un bloque cuando se cumple una condición específica. Si no se cumple ninguna de las condiciones, defaultse ejecutará el código dentro del caso.
+
+Cuando utilice una declaración de cambio, asegúrese de prestar atención a:
+
+Casos: en lugar de escribir cada condición, si estamos evaluando un valor, usamos casos para especificar diferentes valores potenciales.
+Llaves: en lugar de que cada caso tenga su propio bloque de código, la declaración completa vive dentro de un conjunto de llaves {}.
+Dos puntos: para distinguir entre diferentes casos, indicamos el valor del caso, seguido de dos puntos :. A continuación se muestra el código que debería ejecutarse si se cumple ese caso.
+Descanso: cada código de caso debe terminar con una breakpalabra clave.
+Predeterminado: cada declaración de cambio necesita un defaultcaso.
+Instrucciones
+1 .
+Desea crear un recomendador de películas simple que brinde la mejor película en un género en particular.
+
+Primero, cree una stringvariable nombrada genrey guarde el valor "Horror"en ella.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cree una declaración de cambio usando genre. No agregue ningún caso al bloque de código todavía.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+A continuación, agregue los siguientes géneros de películas como casos a la declaración de cambio. Asegúrese de agregar también un defaultcaso. Agregue una breakdeclaración a cada caso.
+
+Géneros:
+
+Drama
+Comedia
+Aventura
+Horror
+Ciencia ficción
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+A continuación, agregue Console.WriteLine()declaraciones a cada caso en la declaración de cambio para que el programa imprima diferentes títulos de películas según el género seleccionado. Para el defaultcaso, imprima "No se encontró ninguna película".
+
+Eche un vistazo a la siguiente tabla para ver la mejor película de cinco géneros diferentes :
+
+Género	Película
+Drama	Ciudadano Kane
+Comedia	Sopa de pato
+Aventura	rey kong
+Horror	Psicópata
+Ciencia ficción	2001: una odisea del espacio
+Checkpoint 5 Passed
+
+¿Atascado? Obtén un consejo
+5 .
+Convirtamos esto en algo que un usuario pueda usar. Cambie "Horror"por Console.ReadLine()para obtener la respuesta del usuario y guárdela en genre. Antes de eso, agregue una Console.WriteLine()que solicite al usuario que elija un género.
+
+Escriba dotnet runen la terminal para ver el programa en acción.
+
+using System;
+
+namespace SwitchStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Elija un genero de peliculas: ");
+      //string genre = "Horror";
+      string genre = Console.ReadLine();
+      switch(genre)
+      {
+        case "Drama":
+        Console.WriteLine("Ciudadano Kane");
+        break;
+        case "Comedia":
+        Console.WriteLine("Sopa de pato");
+        break;
+        case "Aventura":
+        Console.WriteLine("rey kong");
+        break;
+        case "Horror":
+        Console.WriteLine("Psicópata");
+        break;
+        case "Ciencia ficción":
+        Console.WriteLine("2001: una odisea del espacio");
+        break;
+        default:
+        Console.WriteLine("No se encontró ninguna película");
+        break;
+      }
+
+
+    }
+  }
+}

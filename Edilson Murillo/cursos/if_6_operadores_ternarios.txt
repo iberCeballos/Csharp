@@ -1,0 +1,54 @@
+Operadores Ternarios
+El operador ternario permite una sintaxis compacta en el caso de decisiones binarias. Como una if...elsedeclaración, evalúa una sola condición y ejecuta una expresión si la condición es verdadera y la segunda expresión en caso contrario.
+
+Aquí hay un ejemplo de un operador ternario en acción:
+
+string color = "blue";
+string result = (color == "blue") ? "blue" : "NOT blue";
+ 
+Console.WriteLine(result);
+En este ejemplo, creamos una variable resulty guardamos el resultado de la expresión del operador ternario. La expresión comienza con las expresiones booleanas (color == "blue"), seguidas del operador ternario ?, luego los dos resultados posibles, separados por dos puntos :. El primer resultado "blue"se guardará en resultsi la expresión booleana se evalúa como ; de truelo contrario, almacenará el segundo resultado.
+
+Los operadores ternarios también se pueden encadenar, al igual que las sentencias else if. ¡Pero cuidado! Dado que toda la expresión existe en una línea, puede volverse ilegible rápidamente.
+
+Cuando utilice operadores ternarios, asegúrese de prestar atención a:
+
+Paréntesis: colocamos entre paréntesis la expresión booleana que el enunciado está evaluando ().
+El ?operador: asegúrese de que esto viene después de la declaración y antes de los resultados.
+Colon: Esto separa los dos posibles resultados.
+Instrucciones
+1 .
+Estás cultivando pimientos y escribiste un programa que te permite saber si es hora de recolectarlos. Si un pimiento mide al menos 3,5 pulgadas, es hora de recogerlo. Si no está listo, el programa debería decirle que "espere un poco más".
+
+Comience creando una variable de cadena llamada message. Guarde la declaración de comparación que verifica si pepperLengthmide 3,5 pulgadas o más.
+
+Nota: Esto arrojará un error, ya que no hemos completado nuestra declaración.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Luego, escribe tu operación ternaria. Si un pimiento está listo para ser cosechado (3,5 pulgadas o más), su programa debe establecerse messageen "¡listo!" Si no está listo, debe establecerse messageen "esperar un poco más".
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprime el valor de messageen la consola.
+
+using System;
+
+namespace TernaryOperator
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int pepperLength = 4;
+      string message = (pepperLength >= 3.5) ? "ready!" : "wait a little longer";
+      Console.WriteLine(message);
+
+
+    }
+  }
+}

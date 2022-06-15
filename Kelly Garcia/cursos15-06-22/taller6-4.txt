@@ -1,0 +1,34 @@
+using System;
+
+namespace SwitchStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    { string genre = "Horror";
+
+switch (genre)
+{ 
+  case "Drama":
+  Console.WriteLine("");
+  break;
+
+   case "Comedy":
+  Console.WriteLine("");
+  break;
+
+   case "Adventure":
+  Console.WriteLine("");
+  break;
+   case "Horror":
+  Console.WriteLine("");
+  break;
+   case "":
+  Console.WriteLine("Science Fiction");
+  break;
+  default:
+  break;
+ }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+Declaraciones Else If
+¿Qué pasa si queremos manejar múltiples condiciones y que suceda algo diferente cada vez? Las sentencias condicionales se pueden encadenar combinando ify elsesentencias en else if. Después de una instrucción if inicial, uno o más else ifbloques pueden verificar condiciones adicionales. elseSe puede agregar un bloque opcional al final para detectar casos que no cumplen ninguna de las condiciones.
+
+En C#, escribimos una if..else if...declaración usando la siguiente sintaxis:
+
+string color = "red";
+ 
+if (color == "blue")
+{
+  // this code block will execute only if the value of color is 
+  // equivalent to "blue"
+  Console.WriteLine("color is blue");
+} 
+else if (color == "red")
+{
+  // this code block will execute if the value of color is 
+  // equivalent to "red"
+  Console.WriteLine("color is NOT blue");
+} 
+else // this is optional
+{
+  // this code block will execute if the value of color is 
+  // NOT equivalent to "blue" OR "red"
+  Console.WriteLine("color is NOT blue OR red");
+}
+En este ejemplo, el programa verifica si colores igual a "blue"OR "red". Dependiendo de a qué colorequivale, ejecutará el bloque de código correspondiente. Si no es igual a ninguno de esos colores, ejecutará el elsebloque antes de continuar con el resto del programa.
+
+Cuando utilice la instrucción else if, asegúrese de prestar atención a:
+
+Cada else ifdeclaración obtiene su propia condición: asegúrese de especificar la condición y si está evaluando. Al igual que una ifdeclaración, esta condición va entre paréntesis y, si es verdadera, ejecutará lo que está en el bloque de código.
+elsesigue else if: si elige incluir una declaración else (es opcional), asegúrese de que viene después de cualquier otra declaración if que pueda tener.
+Instrucciones
+1 .
+Tienes una noche de juegos de mesa con tus amigos, pero no estás seguro de cuántas personas asistirán. Desea escribir un programa que imprima qué juego jugar según la cantidad de invitados:
+
+Si aparecen 4 o más personas, jugarás a Catán. Si se presentan de 1 a 3 personas, jugarás Innovación. Si no aparece nadie, jugarás al Solitario.
+
+Primero, escriba la declaración condicional si tiene al menos 4 amigos. Si la condición es verdadera, haga que se imprima Catan.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Luego, modifique la declaración con otra condición que genere el juego Innovationsi aparece al menos 1 persona.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Por último, si no aparece nadie, haga que el programa se imprima Solitaireen la consola.
+
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+Ahora intente cambiar el valor de guestsa 0y vea qué se imprime en la consola.
+
+using System;
+
+namespace ElseIfStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int guests = 0;
+      if(guests >= 4){
+        Console.WriteLine("Catan");
+      }
+      else if(guests >= 1 && guests < 4){
+        Console.WriteLine("Innovation");
+      }else
+      {
+        Console.WriteLine("Solitaire");
+      }
+
+
+
+    }
+  }
+}

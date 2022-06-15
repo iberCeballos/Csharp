@@ -1,0 +1,67 @@
+If...Else... Declaraciones
+¿Qué pasa si queremos que se ejecute otro conjunto de instrucciones si la condición es falsa? Se elsepuede agregar una cláusula a una ifdeclaración para proporcionar código que solo se ejecutará si la ifcondición es falsa.
+
+En C#, escribimos una declaración if..else… usando la siguiente sintaxis:
+
+string color = "red";
+ 
+if (color == "blue")
+{
+  // this code block will execute only if the value of color is 
+  // equivalent to "blue"
+  Console.WriteLine("color is blue");
+} 
+else 
+{
+  // this code block will execute if the value of color is 
+  // NOT equivalent to "blue"
+  Console.WriteLine("color is NOT blue");
+}
+En este ejemplo, todavía estamos comprobando si colores igual a "blue". Sin embargo, esta vez también agregamos un segundo bloque de código que se ejecutará si el resultado (color == "blue")es falso. Dado que colores igual a "red"esta vez, omitirá el primer bloque de código y ejecutará el segundo bloque de código, antes de continuar con el resto del programa.
+
+Al escribir una sentencia if…else…, asegúrese de prestar atención a:
+
+elsesigue if: En una declaración if…else…, la elsedeclaración y su bloque de código correspondiente aún necesitan seguir a la ifdeclaración y al bloque de código.
+Número de bloques de código: asegúrese de que si incluye una elsedeclaración, incluya un bloque de código con ella.
+Instrucciones
+1 .
+Estás decidiendo dónde ir a almorzar. Si la fila no es larga en SaladMart (10 personas o menos) Y el clima es agradable, irás allí.
+
+Escriba una ifdeclaración en la que, si la condición es verdadera, se imprima SaladMart.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Sin embargo, si la fila es larga y el clima es malo, irás a Soup N Sandwich. A continuación, agregue una elsedeclaración que imprima Soup N Sandwich.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Ahora intente cambiar el valor de peopleto 12y weatherto bady vea qué se imprime en la consola.
+
+using System;
+
+namespace IfElseStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //int people = 10;
+      //string weather = "nice";
+      int people = 12;
+      string weather = "bad";
+      if(people <= 10 && weather == "nice"){
+        Console.WriteLine("SaladMart");
+      }
+      else
+      {
+        Console.WriteLine("Soup N Sandwich");
+      }
+
+
+    }
+  }
+}

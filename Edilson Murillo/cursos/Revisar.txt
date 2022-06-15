@@ -1,0 +1,15 @@
+¡Gran trabajo! Acaba de aprender sobre los tipos de datos 
+numéricos y cómo trabajar con datos numéricos de diferentes maneras:
+
+Usa operadores aritméticos para escribir expresiones.
+Combine operadores para escribir programas más concisos.
+Use el operador de módulo ( %) para encontrar residuos.
+Use métodos integrados para hacer operaciones matemáticas más complejas.
+Utilice la documentación para buscar cosas nuevas.
+Ahora que conoce algunas formas de trabajar con números, 
+intente escribir algunos programas pequeños que usen lo 
+que aprendió en esta lección. Algunas ideas:
+
+Escriba un programa que calcule el interés compuesto
+Escribe un programa que encuentre tu edad en años caninos.
+¿Qué otras ideas de programas se te ocurren?

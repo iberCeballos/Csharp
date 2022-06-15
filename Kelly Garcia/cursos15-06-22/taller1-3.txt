@@ -1,0 +1,14 @@
+using System;
+
+namespace GettingInput
+{
+  class Program
+  {
+    static void Main()
+    { // este programa ejecuta una serie de comandos para preguntar cual es su edad //
+      Console.WriteLine("cuántos años tienes?");
+      string input = Console.ReadLine();
+      Console.WriteLine($"usted esta{input} años!");
+    }
+  }
+}

@@ -1,0 +1,126 @@
+Obtener partes de cadenas
+También podemos usar métodos integrados de .NET para capturar 
+partes de cadenas o caracteres específicos en una cadena.
+
+subcadena
+.Substring()toma parte de una cadena utilizando la posición de 
+carácter especificada, continúa hasta el final de la cadena y 
+devuelve una nueva cadena. .IndexOf()generalmente se usa primero 
+para obtener la posición específica del carácter.
+
+string plantName = "Cactaceae, Cactus"; 
+int charPosition = plantName.IndexOf("Cactus"); // returns 11
+string commonName = plantName.Substring(charPosition); // returns 
+Cactus
+.Substring()es útil si solo queremos usar parte de una cadena pero 
+mantener intactos los datos originales. Entonces, en este caso, 
+queremos mantener la cadena plantName, pero solo tomar la "Cactus"
+parte de la cadena. Usamos .IndexOf()para encontrar dónde "Cactus"
+comienza, luego usamos .Substring()con la información de posición 
+para guardar "Cactus"en la nueva variable commonName.
+
+También podemos pasar .Substring()un segundo argumento, que determinará 
+el número de caracteres en la subcadena resultante. Por ejemplo, el 
+siguiente código muestra cómo podemos usar .Substring()con dos 
+rgumentos para especificar la longitud de nuestra subcadena:
+
+string name = "Codecademy"; 
+int start = 2;
+int length = 6;
+string substringName = name.Substring(start, length); // returns 
+'decade'
+Notación de corchetes
+La notación de corchetes es un estilo de sintaxis que usa corchetes 
+[]y un valor entero para identificar un valor particular en una 
+colección. En este caso, podemos usarlo para encontrar un carácter 
+específico en una cadena.
+
+string plantName = "Cactaceae, Cactus";
+int charPosition = plantName.IndexOf("u"); // returns 15
+char u = plantName[charPosition]; // returns u
+Similar al ejemplo anterior, primero usamos .IndexOf()para tomar la 
+posición del carácter, que en este caso es 15. Luego tomamos el valor 
+de la cadena y lo agregamos con un conjunto de corchetes []y colocamos 
+el charPositionvalor dentro de los corchetes.
+
+Instrucciones
+1 .
+En program.cs , se le proporciona una cadena definida como startStrand. 
+Su objetivo es encontrar la condición final para una hebra de ADN "TGA", 
+y luego imprimir la subcadena startStrandque comienza desde el primer 
+carácter y pasa por "TGA". Esto generará una hebra de ADN válida.
+
+No necesitas tener muchos conocimientos de biología para seguir estas 
+nstrucciones, pero si deseas una explicación/antecedentes más profundos, 
+haz clic en el menú desplegable a continuación:
+
+Más información sobre el ADN
+Primero, use IndexOf()para encontrar la ubicación de "TGA"en startStrand. 
+Guarde esto como una variable llamada tga.
+
+
+¿Atascado? Obtén un consejo
+2 .
+Cree dos variables llamadas startPointy length. startPointdebe 
+establecerse en 0 y lengthdebe establecerse en tres más que el 
+valor de tga.
+
+lengthdebe establecerse en tres más que el valor de tgapor dos razones:
+
+IndexOf()devuelve el punto de partida de tgain startStrand(donde "T"
+está el personaje). Para capturar "GA"también, agregue dos.
+Cuando se usa .Substring()con dos argumentos (que hará a continuación), 
+captura la cantidad de caracteres indicados por el segundo argumento. 
+Debido a que las cadenas en C# tienen un índice cero, deberá agregar 
+na más para capturar el último carácter. En este ejemplo, el "A"in "TGA"
+cae en el índice 8 pero es el noveno carácter; si solo establecemos la 
+longitud en 8, la "A" final no se incluiría. Por lo tanto, en lugar de 
+definir lengthcomo tga + 2, debe definirlo como tga + 3.
+
+¿Atascado? Obtén un consejo
+3 .
+Ahora use Substring()para recuperar la subcadena startStrandque comienza 
+startPointy tiene una longitud de length. Guarde esto en una variable 
+llamada dna.
+
+Imprime esta cadena usando Console.WriteLine(dna).
+
+
+¿Atascado? Obtén un consejo
+4 .
+¡Le preocupa que pueda haber una mutación en esta hebra de ADN! Use la 
+notación de corchetes para tomar el séptimo carácter en dna.
+
+Si es igual a G, no ha habido mutación.
+Si es igual a To A, ha habido una mutación.
+Muestre su resultado en la consola. ¿Ha habido una mutación?
+
+
+using System;
+
+namespace DNA
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // dna strand
+      string startStrand = "ATGCGATGAGCTTAC";
+
+      // find location of "tga"
+      int tga = startStrand.IndexOf("TGA");
+
+      // start point and stop point variables
+      int startPoint = 0;
+      int length = tga + 3;
+
+      // define final strand
+      string dna = startStrand.Substring(startPoint, length);
+      Console.WriteLine(dna);
+
+      // DNA mutation search
+      Console.WriteLine(dna[6]);
+
+    }
+  }
+}

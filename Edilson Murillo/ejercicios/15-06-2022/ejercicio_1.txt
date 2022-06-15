@@ -1,0 +1,20 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int num1 = 2, num2 = 4, num3 = 5, num4 = 9, solucion;
+		solucion = num1 + num2 + num3 + num4;
+		Console.WriteLine("Valores = " + num1 + " " + num2 + " " + num3 + " " + num4 + "\n");
+		Console.WriteLine("La suma de los valores es igual a: " + solucion + "\n");
+		solucion = num1 - num2 - num3 - num4;
+		Console.WriteLine("La resta de los valores es igual a: " + solucion + "\n");
+		solucion = num1 * num2 * num3 * num4;
+		Console.WriteLine("La multiplicacion de los valores es igual a: " + solucion + "\n");
+		solucion = num1 / num2 / num3 + num4;
+		Console.WriteLine("La divicion de los valores es igual a: " + solucion);
+		
+		
+	}
+}

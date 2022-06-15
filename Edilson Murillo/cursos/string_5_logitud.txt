@@ -1,0 +1,69 @@
+Obtener información sobre cadenas
+Además de contener el valor de un fragmento de texto, las cadenas también contienen información sobre sí mismas. Puede ser útil conocer estas propiedades cuando se trabaja con cadenas. Hay varios métodos .NET incorporados que podemos usar para obtener más información sobre las cadenas.
+
+Longitud
+Dado que las cadenas se componen de un conjunto de caracteres, podemos averiguar cuántos caracteres existen en una cadena con el .Lengthmétodo. Un ejemplo común es si estamos creando un formulario y necesitamos asegurarnos de que el envío de un usuario no exceda una cierta longitud de caracteres.
+
+string userTweet = Console.ReadLine();
+ 
+userTweet.Length; // returns the length of the tweet
+Agregamos la .Lengthpropiedad a una cadena que tenemos, 
+como el tweet de un usuario.
+
+Índice de
+También podemos encontrar la posición de un carácter específico 
+o subcadena usando .IndexOf(). Este método es útil para buscar 
+si existe algo en una cadena.
+
+Si existe dentro de una cadena, el método devolverá la posición 
+del término de búsqueda en la cadena más grande. Cada carácter 
+de una cadena tiene una posición única, como una dirección. 
+Las posiciones comienzan en 0 y se incrementan en 1.
+
+string word = "radio";
+ 
+word.IndexOf("a"); // returns 1
+Dado que el posicionamiento comienza en 0, la segunda cosa en la 
+cadena devolverá un 1. Si no existe en la cadena, el método devolverá 
+un -1. Si le pasamos una cadena vacía, devolverá 0. Si ocurre más de 
+una vez, devolverá la primera instancia.
+
+Instrucciones
+1 .
+Se le ha pedido que construya un programa que verifique cierta 
+información sobre un dato.
+
+Primero, verifique la longitud de passwordy guarde el resultado 
+en la variable passwordLength.
+
+
+¿Atascado? Obtén un consejo
+2 .
+A continuación, veamos si esta contraseña contiene algún carácter 
+especial, como un signo de exclamación (!). Guarde el resultado en 
+la variable passwordCheck. Ejecute el programa para ver los resultados 
+impresos en la consola.
+
+using System;
+
+namespace PasswordCheck
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Create password
+      string password = "a92301j2add";
+
+      // Get password length
+      int passwordLength = password.Length;
+
+      // Check if password uses symbol
+      int passwordCheck = password.IndexOf("!");
+
+      // Print results
+      Console.WriteLine($"The user password is {password}. Its length is {passwordLength} and it receives a {passwordCheck} check.");
+
+    }
+  }
+}

@@ -1,0 +1,47 @@
+Tipos de datos booleanos
+En C#, podemos representar valores booleanos utilizando el booltipo de datos. 
+Los booleanos, a diferencia de los números o las cadenas, solo tienen dos valores: 
+verdadero y falso.
+
+Para definir una variable como booleana, defina el tipo de datos como bool. 
+Luego escriba el nombre de la variable y configúrelo igual al valor, ya sea 
+trueo false:
+
+bool variableName = true;
+La variable se nombra variableName, es de tipo booly su valor es true.
+
+Si bien usamos las palabras truey falsepara representar valores booleanos, es 
+importante recordar que son diferentes de las cadenas "true"y "false".
+
+Instrucciones
+1 .
+¡ Es hora de practicar la escritura de variables que usan un booltipo de datos!
+
+Responda estas preguntas de Verdadero/Falso guardando su respuesta en las 
+variables especificadas.
+
+Verdadero o Falso: El número 500 es mayor que 24.
+
+Guarde su respuesta en una variable llamada answerOne.
+
+
+¿Atascado? Obtén un consejo
+2 .
+Verdadero o Falso: “café” contiene la letra “a”.
+
+Guarde su respuesta en una variable llamada
+
+using System;
+
+namespace BooleanDataTypes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          bool answerOne = true;   
+          bool answerTwo = false;      
+ 
+        }
+    }
+}

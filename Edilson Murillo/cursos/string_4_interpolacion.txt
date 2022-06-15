@@ -1,0 +1,65 @@
+Interpolación de cadenas
+Si bien la concatenación de cadenas es fácil de leer, puede resultar 
+molesto escribir. Otra opción es la interpolación de cadenas . 
+La interpolación de cadenas se introdujo en C# 6 y nos permite 
+insertar nuestros valores y expresiones variables en medio de una 
+cadena, sin tener que preocuparnos por los espacios y la puntuación.
+
+string yourFaveMusician = "David Bowie";
+string myFaveMusician = "Solange";
+ 
+Console.WriteLine($"Your favorite musician is {yourFaveMusician} and 
+mine is {myFaveMusician}.")
+Observe cómo solo tenemos una cadena, a la que agregamos el símbolo 
+del signo de dólar $. Asegúrese de que no haya un espacio entre $y 
+las comillas iniciales ". Cada vez que necesitamos insertar una variable, 
+la rodeamos con llaves {}. Para obtener más información sobre la 
+interpolación de cadenas, consulte la documentación de Microsoft .
+
+En la documentación anterior, puede encontrar una sintaxis ligeramente 
+similar. Este estilo se conoce como formato de cadena o formato 
+compuesto. Desde la introducción de la interpolación de cadenas, 
+rara vez se usa. Pero en caso de que te lo encuentres, consulta la 
+documentación de Microsoft .
+
+Instrucciones
+1 .
+Repasemos nuestra historia, pero usemos la interpolación de cadenas. 
+Esta vez te hemos proporcionado las variables.
+
+Utilizando las variables , y proporcionadas beginning, interpole la 
+ariable.middleendstory
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Imprime la historia en la consola. Reflexione sobre el uso de la 
+concatenación de cadenas y la interpolación de cadenas para lograr 
+el mismo resultado. ¿Cuál preferiste?
+
+
+using System;
+
+namespace StoryTime
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare the variables
+      string beginning = "Once upon a time,";
+      string middle = "The kid climbed a tree";
+      string end = "Everyone lived happily ever after.";
+
+      // Interpolate the string and the variables
+      //string story = $"{beginning} {middle} {end}";
+      string story = beginning + middle + end;
+
+
+      // Print the story to the console 
+      Console.WriteLine(story);
+
+    }
+  }
+}

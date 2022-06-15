@@ -1,0 +1,48 @@
+Parámetros opcionales
+Para que nuestras funciones sean aún más flexibles, podemos hacer que ciertos parámetros sean opcionales . Si alguien llama a su método sin todos los parámetros, el método asignará un valor predeterminado a esos parámetros faltantes.
+
+Todo lo que tiene que hacer es usar el signo igual ( =) al definir el método. En este ejemplo, punctuationes un parámetro opcional y su valor predeterminado es ".".
+
+static void Main(string[] args)
+{
+  YourMethodName("I'm hungry", "!"); // prints "I'm hungry!"
+  YourMethodName("I'm hungry");  // prints "I'm hungry."
+}
+ 
+static void YourMethodName(string message, string punctuation = ".")
+{
+  Console.WriteLine(message + punctuation);
+}
+ 
+Instrucciones
+1 .
+Convierta el parámetro existente en VisitPlanets()opcional.
+
+El valor predeterminado debe ser 0.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Llame al método sin el parámetro opcional en Main().
+
+using System;
+
+namespace OptionalParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets(3);
+      VisitPlanets(4);
+      VisitPlanets(5);
+      VisitPlanets();
+    }
+    
+    static void VisitPlanets(int numberOfPlanets = 0)
+    {
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+    }
+  }
+}

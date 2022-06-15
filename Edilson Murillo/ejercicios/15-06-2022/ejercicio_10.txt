@@ -1,0 +1,17 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+            //cree 5 variables y concaténelas creando una frase que tenga sentido.
+            string palabra1, palabra2, palabra3, palabra4, palabra5;
+            palabra1 = "de una montaña";
+            palabra2 = "muy bonita";
+            palabra3 = "una cabaña";
+            palabra4 = "En lo alto";
+            palabra5 = "se encuentra";
+
+            Console.WriteLine($"{palabra4} {palabra1} {palabra5} {palabra3} {palabra2}");		
+	}
+}

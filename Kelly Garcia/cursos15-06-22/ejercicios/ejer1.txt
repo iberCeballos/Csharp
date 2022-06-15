@@ -1,0 +1,47 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+			int a = 3;
+			int b = 5;
+			int c = 4;
+			int d = 6;
+			int suma;
+			int resta;
+			int multiplicacion;
+			double division;
+			double division1;
+			double division2;
+			double division3;
+			double division4;
+
+			suma = (a + b + c + d);
+			resta = (d - a);
+			multiplicacion = (b * a * c * d);
+			division = (d / a);
+			division1 = (a / d);
+			division2 = (c / d);
+			division3 = (d / c);
+			division4 = (a / c);
+
+
+
+		        Console.WriteLine(suma);
+			Console.WriteLine(resta);
+			Console.WriteLine(multiplicacion);
+			Console.WriteLine(division);
+			Console.WriteLine(division1);
+			Console.WriteLine(division2);
+			Console.WriteLine(division3);
+			Console.WriteLine(division4);
+
+
+
+
+
+		}
