@@ -1,0 +1,159 @@
+1) Crear 4 variables numéricas con el valor que tú quieras y guardarla en otra variable numérica imprimir por consola la suma, resta, la multiplicación y división de las posibles soluciones de las operaciones.
+
+R)using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numeroUno= 2;
+            int numeroDos = 4;
+            int numeroTres = 6;
+            int numeroCuatro = 8;
+
+            int suma = numeroUno + numeroDos + numeroTres + numeroCuatro;
+            int resta = numeroUno - numeroDos - numeroTres - numeroCuatro;
+            int multiplicacion = numeroUno*numeroDos*numeroTres*numeroCuatro;
+            int divicion = numeroUno%numeroDos%numeroTres%numeroCuatro;
+
+           Console.WriteLine( suma, resta, multiplicacion, divicion);
+
+        }
+    }
+}
+
+2) Pedir por consola un nombre de persona y el nombre de una ciudad y mostrar por consola el siguiente mensaje «Hola» <nombre>» bienvenido a» <ciudad>
+
+R) string nombreUsuario= ("");            
+            Console.WriteLine("Escribe tu nombre:");
+            nombreUsuario = Console.ReadLine();
+            string ciudad = ("");
+            Console.WriteLine("Escribe tu cuidad:");
+            ciudad = Console.ReadLine();
+
+            Console.WriteLine("hola " + nombreUsuario+ " bienvenido a " + ciudad);
+
+3) Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas» <nombre>» y tienes» <años>» años»
+
+R) string nombreUsuario= ("");            
+            Console.WriteLine("Escribe tu nombre:");
+            nombreUsuario = Console.ReadLine();
+            string edad = ("");
+            Console.WriteLine("Escribe tu edad:");
+            edad = Console.ReadLine();
+
+            Console.WriteLine(" Te llamas " + nombreUsuario+ " Tu edad es " + edad); 
+
+4) ingrese 5 números y cambia su tipo a entero e imprímelos
+
+R) string numeroUno = ("32");
+            int convertirUno= int.Parse(numeroUno);
+            Console.WriteLine(convertirUno);
+
+            string numeroDos = ("12");
+            int convertirDos = int.Parse(numeroDos);
+            Console.WriteLine(convertirDos);
+
+            string numeroTres = ("11");
+            int convertirTres = int.Parse(numeroTres);
+            Console.WriteLine(convertirTres);
+
+            string numeroCuatro = ("17");
+            int convertirCuatro = int.Parse(numeroCuatro);
+            Console.WriteLine(convertirCuatro);
+
+            string numeroCinco = ("24");
+            int convertirCinco = int.Parse(numeroCinco);
+            Console.WriteLine(convertirCinco);
+
+
+5) ingrese la base y altura de un cuadrado y saque su área imprima todos los valores
+
+Represente estos problemas físicos en código
+
+
+R) Console.WriteLine("Ingresa la base: ");
+            double baseTriangulo= double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingresa la altura: ");
+            double alturaTriangulo = double.Parse(Console.ReadLine());
+
+            double areaTriangulo = baseTriangulo * alturaTriangulo;
+            Console.WriteLine("El area del triangulo es: " + areaTriangulo);
+
+
+6) calcule la velocidad de un vehículo que recorre 4 m en 5 seg
+
+R) int distancia = 4;
+            double tiempo = 5;
+
+            double velocidad = distancia / tiempo;
+            Console.WriteLine(velocidad + " m/sg");
+
+
+7) Una mariposa vuela en línea recta hacia el sur con una velocidad de 7 m/s durante 28 s, ¿cuál es la distancia total que recorre la mariposa?
+
+
+R) double tiempo = 28;
+            double velocidad = 7;
+
+            double distancia = velocidad * tiempo;
+            Console.WriteLine(distancia + " metros ");
+
+
+8) una pelota recorre 20 m hacia la derecha y luego 10 m hacia la izquierda, todo en un lapso de tiempo de 10 s, ¿cuál es su velocidad y rapidez?
+
+
+R) int distanciaUno = 20;
+            int distanciaDos = 10;
+            double tiempo = 10;
+
+            double velocidad = distanciaDos / tiempo;
+            double rapides = (distanciaUno+distanciaDos)/tiempo;
+
+            Console.WriteLine("la velocidad de la pelota es: " + velocidad + "m/s" +" y la rapides fue de: " + rapides + "m/s");
+
+
+9) cambie a decimal los siguientes datos que está en entero:
+
+·         3.5
+
+·         4.7
+
+·         13.6
+
+·         15.7
+
+·         20.6
+
+
+R) double decimalUno = 3.5;
+            decimalUno = Convert.ToInt16(decimalUno);
+            Console.WriteLine(decimalUno);
+
+            double decimalDos = 4.7;
+            decimalDos = Convert.ToInt16(decimalDos);
+            Console.WriteLine(decimalDos);
+
+            double decimalTres = 13.6;
+            decimalTres = Convert.ToInt16(decimalTres);
+            Console.WriteLine(decimalTres);
+
+            double decimalCuatro = 15.7;
+            decimalCuatro = Convert.ToInt16(decimalCuatro);
+            Console.WriteLine(decimalCuatro);
+
+            double decimalCinco = 20.6;
+            decimalCinco = Convert.ToInt32(decimalCinco);
+            Console.WriteLine(decimalCinco);
+
+10) cree 5 variables y concaténelas creando una frase que tenga sentido.
+
+
+R) string var1 = (" quien yo quiero ");
+            string var2 = (" no me quiere ");
+            string var3 = (" y quien ");
+            string var4 = (" me quiere ");
+            string var5 = (" no me gusta ");
+            Console.WriteLine("##--" + var1+var2+var3+var4+var5 + "--##");
