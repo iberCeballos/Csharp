@@ -1,0 +1,28 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {   int num1 = 3.5;
+            int num2 = 4.7;
+            int num3 = 13.6;
+            int num4 = 15.7;
+            int num5 = 20.6;
+             
+            Console.WriteLine("");
+            num1 = Convert.ToDouble();
+            num2 = Convert.ToDouble();
+            num3 = Convert.ToDouble();
+            num4 = Convert.ToDouble();
+            num5 = Convert.ToDouble();
+
+
+
+            Console.WriteLine(num1 +" "+ num2+" "+ num3+" "+num4 +" "+ num5);
+
+
+        }
+    }
+}

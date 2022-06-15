@@ -1,0 +1,20 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int basec = 4;
+            int altura = 4;
+            int area = (basec * altura);
+
+            Console.WriteLine(area);
+
+
+
+		}
+    }
+}

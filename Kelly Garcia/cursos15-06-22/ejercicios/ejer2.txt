@@ -1,0 +1,21 @@
+using System;
+
+namespace ejercicios
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.WriteLine("ingrese por favor su nombre");
+            string nombre = Console.ReadLine();
+
+            Console.WriteLine("ingrese por favor una ciudad");
+            string ciudad = Console.ReadLine();
+            Console.WriteLine($"hola {nombre} bienvenido a {ciudad}");
+
+
+        }
+    }
+}
