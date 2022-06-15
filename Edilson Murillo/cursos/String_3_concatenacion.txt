@@ -1,0 +1,49 @@
+Concatenación de cadenas
+A menudo, queremos combinar cadenas, o combinar cadenas con un 
+valor que hemos guardado en una variable.
+
+Una forma común de hacerlo es mediante la concatenación de cadenas . 
+La concatenación de cadenas es cuando combinamos cadenas usando el 
+símbolo de suma ( +), literalmente agregando una cadena a otra.
+
+string yourFaveMusician = "David Bowie";
+string myFaveMusician = "Solange";
+ 
+Console.WriteLine("Your favorite musician is " + yourFaveMusician + " 
+and mine is " + myFaveMusician + ".");
+Escribimos la primera parte de nuestra cadena, la terminamos con una 
+comilla doble ( "), incluimos un símbolo de suma y luego ponemos 
+nuestra variable. Sin embargo, hay un par de cosas a las que prestar 
+atención:
+
+Si queremos concatenar una cadena con algo que es otro tipo de datos, 
+C# implícitamente convertirá ese valor en una cadena.
+Asegúrese de incluir espacios y la puntuación adecuada para que cuando 
+se imprima, sus cadenas de variables no se aplasten entre el resto de 
+la declaración. Observe cómo tenemos que crear una cadena de un carácter 
+al final para incluir un punto.
+
+
+using System;
+
+namespace StoryTime
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare the variables
+      string beginning = "Me llamo ";
+      string middle = "Edilson Murillo rodriguez";
+      string end = " y soy de caicedo(ant)";
+
+
+      // Concatenate the string and the variables
+      string story = beginning + middle + end;
+
+      // Print the story to the console 
+      Console.WriteLine(story);
+
+    }
+  }
+}

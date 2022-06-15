@@ -1,0 +1,14 @@
+Introducción a los métodos
+Imagina hacer una hamburguesa:
+
+Coloque el pan hacia abajo
+Añadir la hamburguesa
+agregar los pepinillos
+Pon el pan encima
+¿Y si tuvieras que decir cada paso cada vez que pides una hamburguesa? es tedioso Toma mucho tiempo. (¿Cómo encaja eso en un menú?) Y corre el riesgo de cometer errores.
+
+En esta lección aprenderás una solución a ese problema: métodos . Un método es un conjunto reutilizable de instrucciones que realizan una tarea específica. Los desarrolladores usan métodos para hacer que su código sea organizado, mantenible y repetible.
+
+Es posible que escuche que los métodos también se denominan funciones; por ahora, la diferencia no es importante para nosotros.
+
+Al final de esta lección, podrá reconocer métodos, llamarlos con múltiples argumentos, capturar sus valores devueltos y definir un método básico.

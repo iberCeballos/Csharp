@@ -1,0 +1,20 @@
+Introducción a las declaraciones condicionales
+Tomamos decisiones todo el tiempo en nuestra vida en función de diferentes condiciones. ¿Vas a tomar té o café? ¿Estudiar historia o biología? ¿Comprar una camiseta nueva o ahorrar dinero?
+
+Podemos programar computadoras para tomar decisiones basadas en diferentes condiciones. Podemos especificarle al ordenador el orden en el que debe ejecutar ciertas instrucciones, o que solo debe ejecutar ciertas instrucciones en casos específicos. Eso quiere decir que dependiendo de las condiciones, las instrucciones que ejecuta nuestro programa pueden cambiar.
+
+El orden en que los programas de computadora ejecutan un conjunto de instrucciones se conoce como flujo de control . Podemos usar diferentes estructuras de control para alterar el flujo de nuestro programa. Las estructuras de control nos permiten manejar diferentes situaciones que puedan presentarse y flexibilizar nuestros programas. En C#, este tipo de sentencias se conocen como sentencias condicionales o de selección .
+
+La lógica booleana y las sentencias condicionales van de la mano. Una computadora determinará si una condición es verdadera o falsa y ejecutará un conjunto de instrucciones en consecuencia. ¡Asegúrese de que se siente cómodo con los valores booleanos, los operadores de comparación y los operadores lógicos!
+
+Veremos un par de estructuras diferentes que usan lógica booleana para controlar el flujo de nuestros programas, que incluyen:
+
+Si declaraciones
+If…Else… declaraciones
+Else if declaraciones
+Cambiar declaraciones
+Operadores Ternarios
+Instrucciones
+Las estructuras de control condicional, o simplemente condicionales, permiten que los programas hagan cosas diferentes en diferentes escenarios. Como puede ver, siguen una lógica similar a la forma en que piensan los humanos, lo que facilita la escritura de código claro sin dejar de manejar procesos complejos.
+
+Seleccione "Hacer público el perfil", luego haga clic en cada paso de la estructura condicional. Seleccione "Hacer perfil privado", luego haga clic en cada paso de la estructura condicional. ¿Cuál es el flujo de control para cada uno?

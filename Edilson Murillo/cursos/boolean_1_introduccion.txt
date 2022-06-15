@@ -1,0 +1,31 @@
+Introducción a la lógica en C#
+Las computadoras están constantemente comprobando el estado de algo. 
+¿Este programa se está ejecutando o no? ¿Esta variable existe o no? 
+¿Este valor es igual a ese valor?
+
+Estas preguntas de sí o no demuestran que existen varios binarios , 
+una relación entre dos entidades. Los programas de computadora funcionan 
+esencialmente a partir de binarios: verdadero y falso, sí y no, unos y 
+ceros, encendido y apagado.
+
+Distinguir entre binarios es la base de la lógica booleana . La lógica 
+booleana se basa en la idea de que todos los valores son verdaderos o 
+falsos . La lógica es importante para las ciencias de la computación 
+porque es un intento temprano de traducir la capacidad humana de razonar 
+a las computadoras. Si una computadora puede usar la lógica para razonar 
+sobre ciertas situaciones, puede usar esa lógica para tomar decisiones.
+
+En esta lección, exploraremos cómo funciona la lógica booleana en C# y 
+le mostraremos cómo puede comenzar a implementar expresiones y tipos de 
+datos booleanos en sus propios programas.
+
+Instrucciones
+Los programadores primero fueron capaces de ilustrar la idea de la lógica 
+binaria a través de la activación y desactivación de circuitos eléctricos,
+ donde encendido igualado truey apagado igualado false. De hecho, la 
+relación entre la electricidad y la lógica es la base de la digitalización: 
+¡cómo almacenamos información con circuitos eléctricos!
+
+Activa el interruptor para ver cómo cambia la escena del día a la noche y observa cómo se encienden y apagan las luces. Observe cómo la variable LightsOnpermanece igual, pero su valor cambia de truea false.
+
+https://content.codecademy.com/programs/code-foundations-path/bop-i/data-types/boolean/index.html

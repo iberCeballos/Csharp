@@ -1,0 +1,16 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+            Console.WriteLine("Ingrese nombre de una persona: ");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("\nIngrese el nombre de una ciudad: ");
+            string ciudad = Console.ReadLine();
+            Console.WriteLine($"\nHola {nombre} bienvenido a {ciudad}");
+		
+		
+		
+	}
+}

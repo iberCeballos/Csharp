@@ -1,0 +1,41 @@
+Trabajar con texto es una parte fundamental de la escritura de programas. Ya sea para proporcionar instrucciones a un usuario, recopilar datos como un nombre o una dirección, o escribir una nueva forma de poesía, el texto nos permite convertir el lenguaje humano en forma computacional.
+
+En esta lección, veremos los dos tipos de datos de texto de uso común
+ en C#: char y string. Al final de esta lección, podrá manipular datos 
+textuales y escribir programas que acepten las entradas del usuario y 
+emitan mensajes personalizables utilizando variables, operadores y 
+métodos integrados.
+
+Instrucciones
+Echa un vistazo al programa de la derecha. ¿Cuál crees que será el 
+resultado? ¡Este programa utiliza muchas de las técnicas que aprenderá 
+en esta lección!
+
+Revisión del concepto
+¿Quiere repasar rápidamente algunos de los conceptos que ha estado 
+aprendiendo? ¡ Echa un vistazo a la hoja de trucos de este material !
+
+using System;
+
+namespace MadTeaParty
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string drink = "wine";
+      string madTeaParty = $"\"Have some {drink},\" the March Hare said in an encouraging tone. \nAlice looked all round the table, but there was nothing on it but tea.\n\"I don't see any {drink},\" she remarked.\n\"There isn't any,\" said the March Hare.";
+
+      int storyLength = madTeaParty.Length;
+      string toFind = "March Hare";
+
+      string findLowerCase = toFind.ToLower(); 
+      int findMarchHare = madTeaParty.IndexOf(toFind);
+
+      Console.WriteLine(madTeaParty.Substring(findMarchHare));
+      Console.WriteLine($"This scene is {storyLength} long.\n");
+      Console.WriteLine($"The term we're looking for is {toFind} and is located at index {findMarchHare}.");
+
+    }
+  }
+}

@@ -1,0 +1,17 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+            //ingrese la base y altura de un cuadrado y saque su área imprima todos los valores
+            Console.WriteLine("Ingrese un numero que sera la base y la altura de un cuadrado: ");
+            double numbase = Convert.ToDouble(Console.ReadLine());
+
+            double area = numbase * numbase;
+
+            Console.WriteLine("\nLas dimensiones de nuestro cuadrado son" + "\nBase = " + numbase + "\nAltura = " + numbase + "\nArea = " + area);	
+		
+		
+	}
+}

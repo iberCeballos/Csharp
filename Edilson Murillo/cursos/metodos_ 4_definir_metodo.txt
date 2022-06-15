@@ -1,0 +1,52 @@
+Definir un método
+Hasta ahora, ha llamado a métodos integrados: métodos que están disponibles cada vez que usa C#. A veces necesita un método personalizado para su programa específico. En ese caso, ¡tendrás que definir el tuyo propio!
+
+La estructura básica de una definición de método se ve así:
+
+static void YourMethodName()
+{
+}
+Saltaremos staticy voidpor el momento.
+
+En C#, es una convención usar PascalCase para nombrar su método. El nombre comienza con una letra mayúscula y cada palabra siguiente también comienza con una mayúscula. No es obligatorio en C#, pero hace que su código sea más fácil de leer para otros desarrolladores.
+
+El cuerpo de su método va entre llaves: { }. Cada vez que se llama al método, se ejecuta el código en el cuerpo.
+
+static void YourMethodName()
+{
+  Console.WriteLine("Hi there!");
+}
+Como cualquier otro método, lo llamamos entre paréntesis:
+
+YourMethodName();
+Mire de cerca el código en el editor y verá que ha estado definiendo métodos todo el tiempo. Main()es un método. Cada vez que ejecuta el código, Main()se ejecuta el método.
+
+Dado Main()que ya es un método, definiremos nuestros propios métodos fuera de Main().
+
+Instrucciones
+1 .
+Defina un método con un nombre VisitPlanets()fuera del Main()método y ejecute el código.
+
+VisitPlanets()puede imprimir cualquier cosa que desee en la consola, pero algo como "Visitaste muchos planetas nuevos..." sería apropiado.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+¿Por qué no se ejecuta su método? No se llama dentro Main(). Llámalo Main()y ejecuta el código de nuevo.
+
+using System;
+
+namespace DefineAMethod
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets();
+    }
+    static void VisitPlanets(){
+      Console.WriteLine("Visitaste muchos planetas nuevos...");
+    }
+  }
+}

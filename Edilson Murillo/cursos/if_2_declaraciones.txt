@@ -1,0 +1,56 @@
+Si declaraciones
+Las declaraciones condicionales son las estructuras de control más utilizadas en la programación. Dependen de que la computadora sea capaz de razonar si las condiciones son verdaderas o falsas.
+
+La sentencia condicional más básica es una sentencia if . Una declaración if ejecuta un bloque de código si la condición especificada es verdadera.
+
+En C#, escribimos una declaración if usando la siguiente sintaxis:
+
+string color = "blue";
+ 
+if (color == "blue")
+{
+  // this code block will execute only if the value of color is 
+  // equivalent to "blue"
+  Console.WriteLine("color is blue");
+}
+En este ejemplo, nuestra instrucción condicional if verifica si el valor de la variable colores equivalente a la cadena "blue". Como lo es, ejecutará el código en el bloque de código e imprimirá la cadena "color is blue"en la consola. Si el color es igual a otro valor o era nulo, el programa salta el bloque y pasa a la siguiente instrucción.
+
+Al escribir una declaración if, asegúrese de prestar atención a:
+
+Paréntesis: colocamos entre paréntesis la expresión booleana que la sentencia if está evaluando ().
+Llaves: después de la expresión booleana, escribimos un conjunto de llaves {}. Escriba el código que se ejecutará si la expresión booleana se evalúa como verdadera dentro de estas llaves.
+Sangría: mientras que los espacios en blanco no afectarán nuestro programa, es una convención sangrar el código dentro de las llaves con dos espacios.
+Instrucciones
+1 .
+Llevas tu ropa a la lavandería una vez que te quedan exactamente tres pares de calcetines o menos. Escriba una ifdeclaración para verificar si es hora de llevar su ropa o no. Deje el bloque de código vacío por ahora.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Si la condición es verdadera, haga que se imprima Time to do laundry!en la consola.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Ahora intente cambiar el valor de socksa 6. ¿Qué pasa esta vez?
+
+using System;
+
+namespace IfStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //int socks = 3;
+      int socks = 6;
+      if(socks <= 3){
+        Console.WriteLine("Time to do laundry!");
+      }
+
+
+    }
+  }
+}

@@ -1,0 +1,18 @@
+//Tipos de datos
+
+Las funciones hacen lo siguiente:
+
+capitalizar : convertirá los caracteres en minúsculas en caracteres en mayúsculas
+cuadrado : elevará al cuadrado un número
+evaluar : determinará si una entrada es verdadera o falsa
+Los tipos de datos incluyen:
+
+int (4637): número entero entero
+cadena (canguro): un fragmento de texto
+bool (verdadero): representa la idea lógica de verdadero o falso
+
+int- números enteros, como: 1, -56, 948
+double- números decimales, como: 239.43909, -660.01
+char- caracteres individuales, como: "a", "&", "£"
+string- cadena de caracteres, como: "perro", "hola mundo"
+bool- valores booleanos, como: verdadero o falso

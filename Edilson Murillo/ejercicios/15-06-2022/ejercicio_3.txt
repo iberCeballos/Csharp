@@ -1,0 +1,21 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	    //Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas» <nombre>» y tienes» <años>» años»
+            string nombre;
+            int edad;
+
+            Console.WriteLine("Ingrese su nombre: ");
+            nombre = Console.ReadLine();
+            Console.WriteLine("\nIngrese su edad: ");
+            edad = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"\nTe llamas {nombre} y tienes {edad} años");
+		
+		
+		
+	}
+}

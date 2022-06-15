@@ -1,0 +1,15 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+            //Una mariposa vuela en línea recta hacia el sur con una velocidad de 7 m/s durante 28 s, ¿cuál es la distancia total que recorre la mariposa?
+            double velocidad = 7, tiempo = 28, distancia;
+            distancia = velocidad * tiempo;
+            Console.WriteLine("\nUna mariposa que viaja a 7 m/s recorre " + distancia + " m en 28 s");
+		
+		
+		
+	}
+}
