@@ -1,0 +1,25 @@
+using System;
+
+namespace StoryTime
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare the variables
+      string beginning = "hace mucho tiempo";
+      string middle = "habia una hormiga";
+      string end = "y se murio";
+      string story = beginning + middle + end;
+      Console.WriteLine(story);
+    
+
+
+      // Concatenate the string and the variables
+
+
+      // Print the story to the console 
+
+    }
+  }
+}
