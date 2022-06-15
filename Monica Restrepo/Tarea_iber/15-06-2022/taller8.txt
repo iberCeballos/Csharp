@@ -1,0 +1,16 @@
+8) una pelota recorre 20 m hacia la derecha y luego 10 m hacia la izquierda, todo en un lapso de tiempo de 10 s, 
+¿cuál es su velocidad ?
+
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double distacia = 30;
+		double tiempo = 10;
+		double velocidad = distacia / tiempo;
+		
+		Console.WriteLine("La velocidad recorrida es de:" + velocidad);
+	}
+}

@@ -1,0 +1,18 @@
+
+5) ingrese la base y altura de un cuadrado y saque su área imprima todos los valores
+
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese la base de un cuadrado");
+		int basec = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la altura de un cuadrado");
+		int altura = Convert.ToInt32(Console.ReadLine());
+		
+		int solucion = basec * altura ;
+		
+		Console.WriteLine("El valor de la base que usted ingreso fue: " + basec + " El valor de la altura que usted ingreso fue: " + altura + " El área de cuadrado es: " + solucion);

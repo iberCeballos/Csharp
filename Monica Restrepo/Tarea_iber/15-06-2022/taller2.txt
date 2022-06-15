@@ -1,0 +1,21 @@
+2) Pedir por consola un nombre de persona y el nombre de una ciudad y mostrar por consola el siguiente mensaje 
+«Hola» <nombre>» bienvenido a» <ciudad>.
+
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese su nombre");
+		string nombre = Console.ReadLine();
+		
+		Console.WriteLine("Ingrese el nombre de una ciudad");
+		string ciudad = Console.ReadLine();
+		
+		Console.WriteLine("Hola " + nombre + " bienvenido a " + ciudad );
+		
+		
+		
+	}
+}

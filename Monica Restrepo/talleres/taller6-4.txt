@@ -1,0 +1,42 @@
+using System;
+
+namespace SwitchStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string genre = Console.ReadLine() ;
+       Console.WriteLine("Ingrese un numero");
+      switch (genre)
+      { 
+        case  "Horror":
+         Console.WriteLine("Psicópata");	
+        break;
+
+         case  "Drama":
+         Console.WriteLine("Ciudadano Kane");
+        break;
+
+         case  "comedia":
+         Console.WriteLine("Sopa de pato");
+        break;
+
+         case  "Aventura":
+          Console.WriteLine("	rey kong");
+        break;
+
+         case  "Ciencia ficcion":
+         Console.WriteLine("2001: una odisea del espacio");
+        break;
+        default:
+        Console.WriteLine("No se encontró ninguna película");
+        break;
+      }
+
+      
+
+
+    }
+  }
+}

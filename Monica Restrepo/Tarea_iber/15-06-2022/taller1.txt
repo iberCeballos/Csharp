@@ -1,0 +1,89 @@
+1) Crear 4 variables numéricas con el valor que tú quieras y guardarla en otra variable numérica imprimir 
+por consola la suma, resta, la multiplicación y división de las posibles soluciones de las operaciones.
+
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int num1;
+		int num2;
+		int num3;
+		int num4;
+		int suma;
+		double divicion;
+		int resta;
+		double multiplicacion;
+		
+		num1 = 52;
+		num2 = 93;
+		num3 = 70;
+		num4 = 25;
+		
+		
+		Console.WriteLine("Los valores asignados a las variables son " + num1 + " , " + num2  + " , " + num3  + " , " + num4);
+		
+		suma = num1 + num2 + num3 + num4;
+		
+		Console.WriteLine("El resultado de la suma e: " +suma);
+		
+		multiplicacion =  num1 * num2 * num3 * num4;
+		
+		Console.WriteLine("El resultado de la multiplicacion es: " + multiplicacion);
+		
+		resta = num1 - num4;
+		Console.WriteLine("El resultado de la resta 1  es: " + resta);
+		
+		resta = num4 - num1;
+		Console.WriteLine("El resultado de la resta 2  es: " + resta);
+		
+		resta = num3 - num2;
+		Console.WriteLine("El resultado de la resta 3  es: " + resta);
+		
+		resta = num2 - num3;
+		Console.WriteLine("El resultado de la resta 4  es: " + resta);
+		
+		
+		
+		resta = num1 - num3;
+		Console.WriteLine("El resultado de la resta 1  es: " + resta);
+		
+		resta = num3 - num1;
+		Console.WriteLine("El resultado de la resta 2  es: " + resta);
+		
+		resta = num4 - num2;
+		Console.WriteLine("El resultado de la resta 3  es: " + resta);
+		
+		resta = num2 - num4;
+		Console.WriteLine("El resultado de la resta 4  es: " + resta);
+		
+		divicion = num1 / num3;
+		Console.WriteLine("El resultado de la divición 1 es: " + divicion);
+		
+		divicion = num3 / num1;
+		Console.WriteLine("El resultado de la divición 2 es: " + divicion);
+		
+		divicion = num2 / num4;
+		Console.WriteLine("El resultado de la divición 3 es: " + divicion);
+		
+		divicion = num4 / num2;
+		Console.WriteLine("El resultado de la divición 4 es: " + divicion);
+		
+		
+		
+		divicion = num1 / num4;
+		Console.WriteLine("El resultado de la divición 5 es: " + divicion);
+		
+		divicion = num4 / num1;
+		Console.WriteLine("El resultado de la divición 6 es: " + divicion);
+		
+		divicion = num2 / num3;
+		Console.WriteLine("El resultado de la divición 7 es: " + divicion);
+		
+		divicion = num3 / num2;
+		Console.WriteLine("El resultado de la divición 8 es: " + divicion);
+		
+		
+	}
+}

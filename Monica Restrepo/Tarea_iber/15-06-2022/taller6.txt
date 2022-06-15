@@ -1,0 +1,18 @@
+6) calcule la velocidad de un vehículo que recorre 4 m en 5 seg
+
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double distancia = 4;
+		double tiempo = 5 ;
+	    double velocidad = distancia / tiempo ;
+		
+		
+		
+		
+		Console.WriteLine("La velocidad del vehiculo es de: " + velocidad);
+	}
+}

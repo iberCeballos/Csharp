@@ -1,0 +1,25 @@
+using System;
+
+namespace StoryTime
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare the variables
+      string beginning ="Érase una vez";
+      string middle ="el niño se subio a un árbol";
+      string end ="Todos vivieron felices para siempre.";
+      
+
+
+      // Concatenate the string and the variables
+
+      string story =  beginning +  middle + end;
+      // Print the story to the console 
+      Console.WriteLine(story);
+
+
+    }
+  }
+}

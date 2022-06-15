@@ -1,0 +1,16 @@
+10) cree 5 variables y concaténelas creando una frase que tenga sentido.
+
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string nom1 = "Hoy es";
+		string nom2 = "totamente";
+		string nom3 = "un dia";
+		string nom4 = "soleado y";
+		string nom5 = "maravilloso";
+		Console.WriteLine(nom1 + " " + nom3 + " " + nom2 + " " + nom4 + " " + nom5 );
+	}
+}
