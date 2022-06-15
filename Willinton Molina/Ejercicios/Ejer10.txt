@@ -1,0 +1,22 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+	string var1 = (" Me decía un viejo ");
+            string var2 = (" Mientras sus ojos lloraban ");
+            string var3 = (" Decía querer volar lejos ");
+            string var4 = (" Mientras al cielo miraba ");
+            string var5 = (" Todavía recordaba ");
+
+            Console.WriteLine(var1+var2+var3+var4+var5);     
+
+		
+		
+		
+		
+		
+	}
+}

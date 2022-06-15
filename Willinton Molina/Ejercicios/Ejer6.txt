@@ -1,0 +1,19 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+	double distancia = 4;
+    double tiempo = 5;
+	double velocidad;
+		velocidad = distancia / tiempo;
+		Console.WriteLine(velocidad);
+		
+		
+		
+		
+		
+	}
+}
