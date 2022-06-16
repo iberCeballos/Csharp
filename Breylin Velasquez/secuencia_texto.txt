@@ -1,0 +1,39 @@
+Cadenas de construcción
+Una cadena es un grupo de caracteres entre comillas, como "https://codecademy.com"o "To be or not to be."Una cadena es solo una colección de un tipo de datos más pequeño, char , que es un solo carácter como "a" o "?".
+
+Para definir una variable como una cadena, escriba el tipo de datos, luego el nombre de la variable. Luego configúrelo igual al valor, que está entre comillas:
+
+string variableName = "puppy";
+La variable se llama variableName, es de tipo stringy su valor es "puppy".
+
+Secuencias de caracteres de escape
+¿Qué sucede cuando necesita incluir comillas en una cadena? Puedes usar una secuencia de escape. Una secuencia de escape coloca una barra invertida ( \) antes de las comillas internas para que el programa no las lea accidentalmente como el final de la secuencia.
+
+string withoutSlash = "Ifemelu said, "Hello!"";
+ 
+string withSlash = "Ifemelu said, \"Hello!\"";
+Podemos usar secuencias de caracteres de escape para crear una nueva línea. Eso significa que cuando imprimamos la cadena en la consola, imprimirá esa línea debajo del resto. Si se imprime solo, creará una línea vacía. Para crear una nueva línea, utilice la combinación de caracteres \n.
+
+string newLine = "Ifemelu walked \n to the park.";
+
+ejercicio
+using System;
+
+namespace PrideAndPrejudice
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // First string variable
+      string firstSentence = "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.";
+      // Second string variable
+      string firstSpeech = "\"My dear Mr. Bennet,\" said his lady to him one day, \"have you heard that Netherfield Park is let at last?\"";
+
+      // Print variable and newline
+      Console.WriteLine(firstSentence);
+      Console.WriteLine("\n");
+      Console.WriteLine(firstSpeech);
+    }
+  }
+}
