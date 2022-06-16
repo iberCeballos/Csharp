@@ -1,0 +1,13 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double velocidad = 7;
+		double tiempo = 28;
+		double distancia = velocidad+tiempo;
+		Console.WriteLine("La distancia recorrida por la mariposa es: ");
+		Console.WriteLine(distancia + " Km/hr");
+	}
+}

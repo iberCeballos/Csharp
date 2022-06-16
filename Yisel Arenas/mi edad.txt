@@ -1,0 +1,16 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Hola soy Mariana");
+		
+		      /*El programa esta solicitando la edad del 
+      usuario*/
+      Console.WriteLine("How old are you?");
+      string input = Console.ReadLine();
+      Console.WriteLine("You are "+input+" years old!");
+	}
+	
+}

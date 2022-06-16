@@ -1,0 +1,18 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		
+		Console.WriteLine("Ingrese la altura de el cuadrado");
+		Double altura = Double.Parse(Console.ReadLine());
+		Console.WriteLine("Ingrese la base de el cuadrado");
+		Double basecuad = Double.Parse(Console.ReadLine());
+		
+		double area = basecuad*altura;
+		Console.WriteLine("El area del cuadrado es: ");	
+		Console.WriteLine(area);
+	}
+}

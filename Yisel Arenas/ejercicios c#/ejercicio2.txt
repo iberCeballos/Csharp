@@ -1,0 +1,15 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Escribe tu nombre" );
+		string input1= Console.ReadLine();
+		Console.WriteLine("Escribe tu ciudad" );
+		string input2= Console.ReadLine();
+		Console.WriteLine("Hola "+input1+" bienvenido(a) a "+input2);
+						  
+		
+	}
+}

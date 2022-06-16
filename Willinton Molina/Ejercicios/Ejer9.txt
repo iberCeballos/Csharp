@@ -1,0 +1,32 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+	double decimaluno = 3.5;
+            double decimaldos = 4.7;
+            double decimaltres = 13.6;
+            double decimalcuatro = 15.7;
+            double decimalquinto = 20.6;
+
+            decimaluno = Convert.ToInt16(decimaluno);
+            decimaldos = Convert.ToInt16(decimaldos);
+            decimaltres = Convert.ToInt16(decimaltres);
+            decimalcuatro = Convert.ToInt16(decimalcuatro);
+            decimalquinto = Convert.ToInt16(decimalquinto);
+
+            Console.WriteLine(decimaluno);
+            Console.WriteLine(decimaldos);
+            Console.WriteLine(decimaltres);
+            Console.WriteLine(decimalcuatro);
+            Console.WriteLine(decimalquinto);      
+
+		
+		
+		
+		
+		
+	}
+}

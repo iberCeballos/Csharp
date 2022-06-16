@@ -1,0 +1,25 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	int dato1 = 3.5;
+	int dato2 = 4.7;
+	int dato3= 13.6;
+	int dato4 = 15.7;
+	int dato5 = 20.6;
+		Convert.ToDouble(dato1);
+		Convert.ToDouble(dato2);
+		Convert.ToDouble(dato3);
+		Convert.ToDouble(dato4);
+		Convert.ToDouble(dato5);
+	  
+		Console.WriteLine(dato1);
+		Console.WriteLine(dato2);
+		Console.WriteLine(dato3);
+		Console.WriteLine(dato4);
+		Console.WriteLine(dato5);
+		
+	}
+}

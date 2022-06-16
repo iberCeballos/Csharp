@@ -1,0 +1,47 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double numberOne=4;
+		double numberTwo=7;
+		double numberThree=8;
+		double numberFour=9;
+		/*suma*/
+		double suma=numberOne+numberTwo+numberThree+numberFour;
+		/*resta*/
+		double resta1=numberOne-numberTwo;
+		double resta2=numberTwo-numberThree;
+		double resta3=numberThree-numberFour;
+		double resta4=numberFour-numberOne;
+		/*multiplicacion*/
+		double multiplicacion=numberOne*numberTwo*numberThree*numberFour;
+		/*division*/
+		double division1=numberOne/numberTwo;
+		double division2=numberTwo/numberThree; 
+		double division3=numberThree/numberFour; 
+		double division4=numberFour/numberOne;
+		
+		Console.WriteLine("Suma");
+		Console.WriteLine(suma);
+		Console.WriteLine("\n");
+		
+		Console.WriteLine("Resta");
+		Console.WriteLine(resta1);
+		Console.WriteLine(resta2);
+		Console.WriteLine(resta3);
+		Console.WriteLine(resta4);
+		Console.WriteLine("\n");
+		
+		Console.WriteLine("Multiplicacion");
+		Console.WriteLine(multiplicacion);
+		Console.WriteLine("\n");
+		
+		Console.WriteLine("Division");
+		Console.WriteLine(division1);
+		Console.WriteLine(division2);
+		Console.WriteLine(division3);
+		Console.WriteLine(division4);
+	}
+}

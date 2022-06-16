@@ -1,0 +1,23 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int num1 = 8;
+		int num2 = 3;
+		int num3 = 4;
+		int num4 = 5;
+		
+		int sum  = num1 + num3 + num2 + num4;
+		int res = num1 - (num2 +(num4 * num3));
+		int mult = num4 * num2 * (num3 * num1);
+		int div = num3 / num2 / (num4 - num1);
+		
+		Console.WriteLine(sum);
+		Console.WriteLine(res);
+		Console.WriteLine(mult);
+		Console.WriteLine(div);
+
+	}
+}
