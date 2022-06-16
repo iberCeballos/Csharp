@@ -1,0 +1,72 @@
+using System;
+					
+public class historia_interactiva
+{
+	public static void Main()
+	{
+		Console.WriteLine("este programa intera de diferentes maneras con un numero ingresado\n");
+		
+		Console.WriteLine("ingrese un numero entero, hasta el que quiere interar\n");
+		int n = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Mostrar los nùmeros impares entre el 0 y el "+n);
+		for(int i=0 ; i<=n ; i++ )
+		{
+			if(i%2!=0)
+			{
+				Console.WriteLine(i);
+			}
+		}
+		
+		Console.WriteLine("Mostrar los números pares entre el 0 y el "+n);
+		for(int i=0 ; i<=n ; i++ )
+		{
+			if(i%2==0)
+			{
+				Console.WriteLine(i);
+			}
+		}
+		
+		Console.WriteLine("Mostrar los números del 0 al "+n);
+		for(int i=0 ; i<=n ; i++ )
+		{
+				Console.WriteLine(i);
+		}
+		
+		Console.WriteLine("Mostrar los números del "+n+" al 0");
+		for(int i=n ; i>=0 ; i-- )
+		{
+				Console.WriteLine(i);
+		}
+		
+		Console.WriteLine("Mostrar los multiplos de 3 del 0 al "+n);
+		for(int i=0 ; i<=n ; i++ )
+		{
+			if(i%3==0)
+			{
+				Console.WriteLine(i);
+			}
+		}
+		
+		Console.WriteLine("Mostrar los multiplos de 3  y 2 del 0 al "+n);
+		for(int i=0 ; i<=n ; i++ )
+		{
+			if(i%3==0 && i%2==0)
+			{
+				Console.WriteLine(i);
+			}
+		}
+		
+		int contadora=0;
+		Console.WriteLine(" mostrar la suma de los números que anteceden "+n+" a partir de 0");
+		for(int i=n ; i>=0 ; i-- )
+		{
+			contadora = contadora+i;
+		}
+		Console.WriteLine(contadora);
+		
+		
+		
+         
+	}
+}
