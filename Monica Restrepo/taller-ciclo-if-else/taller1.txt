@@ -1,0 +1,28 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		      Console.WriteLine("Ingrese su nombre");
+            string nombre =Console.ReadLine();
+            Console.WriteLine("Ingrese la cantidad de articulos que desea comprar");
+            int cantidad =Convert.ToInt32(Console.ReadLine());
+			
+            if (cantidad<15)
+            {
+                Console.WriteLine("Su nombre es: "+ nombre + ", la cantidad de productos que va llevar es: " + cantidad + " y la forma de pago es en efectivo");
+            }
+
+            else if(cantidad>15 && cantidad<60)
+            {
+                Console.WriteLine("Su nombre es: " + nombre + ", la cantidad de productos que va llevar es: " + cantidad + " y la forma de pago es con tarjeta");
+            }
+
+            else if(cantidad>60)
+            {
+                Console.WriteLine("Su nombre es: " + nombre + ", la cantidad de productos que va llevar es: " + cantidad + " y la forma de pago es con cheque");
+
+            }
+	}
+}

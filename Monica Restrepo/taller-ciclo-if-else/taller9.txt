@@ -1,0 +1,58 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese su nombre");
+		string nom=Console.ReadLine();
+		
+		Console.WriteLine("Ingrese la nota 1");
+		double nota1 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 2");
+		double nota2=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 3");
+		double nota3=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 4");
+		double nota4=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 5");
+		double nota5 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 6");
+		double nota6=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 7");
+		double nota7=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 8");
+		double nota8=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 9");
+		double nota9=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese la nota 10");
+		double nota10=Convert.ToInt32(Console.ReadLine());
+		
+		double promedio=(nota1+nota2+nota3+nota4+nota5+nota6+nota7+nota8+nota9+nota10)/10;
+		
+		if (promedio>3)
+		{
+			Console.WriteLine("El nombre desl estuduante es: " + nom + "\nEl promedio es: " +promedio+ " APROBADO");
+		}
+		
+		else
+			{
+			Console.WriteLine("El nombre desl estuduante es: " + nom + "\nEl promedio es: " +promedio+ " DESAPROBADO");
+		}
+		
+		
+		
+	
+		
+					
+	}
+}
