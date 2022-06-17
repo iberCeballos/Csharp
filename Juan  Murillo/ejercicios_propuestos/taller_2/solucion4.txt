@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion4
+    {
+        static void Main(string[] args)
+        {
+            //Cree un programa que valide la edad actual del usuario. Considerar días y meses,
+            //y si, en el momento de la evaluación cumple años,
+            //imprimir un mensaje con la felicitación.
+            Console.WriteLine("este programa determina, apartir de la fecha de nacimiento, si usuario hoy cumple años");
+
+            Console.WriteLine("ingrese su dia de nacimiento");
+            int dia = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese, en numero, su mes de nacimiento");
+            int mes = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese su año de nacimiento");
+            int anno = Convert.ToInt32(Console.ReadLine());
+
+            int diac=Convert.ToInt32(DateTime.Now.Day.ToString());
+            int mesc = Convert.ToInt32(DateTime.Now.Month.ToString());
+            int annoc = Convert.ToInt32(DateTime.Now.Year.ToString());
+
+            int edad = annoc - anno;
+
+            if(mes > mesc)
+            {
+                edad--;
+            }
+
+            if(mes == mesc)
+            {
+                if(dia > diac)
+                {
+                    edad--;
+                }
+            }
+
+            if(dia==diac && mes == mesc)
+            {
+                Console.WriteLine("felicidades, hoy es tu cumpleaños; tu edad es de "+edad+" años");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("lastima, hoy no es tu cumpleaños; tu edad es de "+edad+" años");
+                Console.ReadLine();
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+Revisar
+¡Bien hecho! Aprendimos dos atajos para definir métodos:
+
+Las definiciones con cuerpo de expresión se pueden usar para cuerpos de método de una línea.
+
+bool isEven(int num) => num % 2 == 0;
+Las expresiones lambda se pueden usar para crear un método anónimo:
+
+bool hasEvenNumbers = Array.Exists(numbers, (int num) => num % 2 == 0 );
+Aprendió dos "atajos secundarios" dentro de las expresiones lambda:
+
+Puede eliminar el tipo de parámetro si se puede inferir:
+
+bool hasEvenNumbers = Array.Exists(numbers, (num) => num % 2 == 0 );
+Puede eliminar los paréntesis si hay un parámetro:
+
+bool hasEvenNumbers = Array.Exists(numbers, num => num % 2 == 0 );
+
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int[] nums = {0, 555, 252, 3, 9, 101};
+      
+      bool hasBigNum = Array.Exists(nums, IsBig);
+      
+      bool hasSmallNum = Array.Exists(nums, IsSmall);
+      
+      bool hasMediumNum = Array.Exists(nums, (n) => n >= 10 && n <= 100);
+      
+      Console.WriteLine($"Any big #s? {hasBigNum}");
+      Console.WriteLine($"Any small #s? {hasSmallNum}");
+      Console.WriteLine($"Any medium #s? {hasMediumNum}");
+      
+    }
+    
+    static bool IsBig(int n) => n > 100;
+    
+    static bool IsSmall(int n) => n < 10;
+    
+  }
+}

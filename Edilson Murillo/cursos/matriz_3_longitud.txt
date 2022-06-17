@@ -1,0 +1,63 @@
+Longitud de la matriz
+A menudo queremos saber cuántos elementos contiene una matriz. Podemos hacer esto con la .Lengthpropiedad.
+
+int[] plantHeights = { 3, 4, 6 };
+ 
+// arrayLength will be 3
+int arrayLength = plantHeights.Length 
+El uso de la .Lengthpropiedad devolverá la cantidad de elementos en una matriz y cero si la matriz está vacía.
+
+Instrucciones
+1 .
+Cada lista de reproducción solo puede tener ocho canciones, por lo que queremos escribir un programa que verifique que haya la cantidad correcta de canciones.
+
+Si hay ocho canciones en la lista de reproducción, haga que la consola imprima un mensaje que le informe al usuario que la lista de reproducción está completa, como "¡La lista de reproducción summerStrut está lista para comenzar!"
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Si un usuario intenta agregar más de ocho canciones a una lista de reproducción, escríbale un mensaje de que su lista de reproducción será rechazada por ser demasiado larga. Puedes escribir algo como “¡Demasiadas canciones!”.
+
+Para verificar que funciona, agregue otra canción a la matriz.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Si hay menos de ocho canciones en la lista de reproducción, informe al usuario que debe agregar más canciones. Puedes escribir algo como "¡Agrega algunas canciones!"
+
+Para comprobar que funciona, elimina canciones de la lista de reproducción.
+
+using System;
+
+namespace ArrayLength
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] summerStrut;
+
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles", "Its my life" };
+
+      
+
+      if (summerStrut.Length == 8){
+        Console.WriteLine("¡La lista de reproducción summerStrut está lista para comenzar!");
+      }
+      else if (summerStrut.Length > 8)
+      {
+        Console.WriteLine("¡Demasiadas canciones!");
+      }
+      else
+      {
+        Console.WriteLine("¡Agrega algunas canciones!");
+      }
+      
+
+      
+
+    }
+  }
+}

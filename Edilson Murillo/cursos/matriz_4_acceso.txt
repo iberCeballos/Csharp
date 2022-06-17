@@ -1,0 +1,39 @@
+Acceso a los elementos de la matriz
+Los arreglos son útiles para almacenar valores, pero no son muy útiles si simplemente se quedan allí; también necesitamos una forma de acceder a ellos.
+
+Las matrices ordenan los elementos para que estén en una secuencia específica, lo que lo hace útil para acceder a cada elemento. Cada valor tiene una posición específica en la matriz, que se conoce como su índice . Puede pensar en un índice como una dirección: es lo que usamos para ubicar un elemento en una matriz. En C#, las matrices comienzan su índice en 0 y luego agregan uno para cada valor.
+
+accediendo por índice
+
+Para acceder a un valor de una lista, escribimos el nombre de la matriz, seguido de corchetes []y dentro de los corchetes, el número de índice de ese valor que queremos:
+
+int[] plantHeights = {3, 4, 6};
+ 
+// plantTwoHeight will be 4
+int plantTwoHeight = plantHeight[1];
+Ahora podemos usar ese valor y hacer algo con él, como guardarlo en una variable.
+
+Instrucciones
+1 .
+Imprima una declaración que incluya el nombre de la segunda canción en la lista de reproducción y la calificación que le dio. El mensaje debe decir algo como "Calificaste la canción Missing U con 4 estrellas".
+
+using System;
+
+namespace AccessingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+
+      string mensaje = $"Calificaste la canción {summerStrut[1]} con {ratings[1]} estrellas";
+      Console.WriteLine(mensaje);
+      
+    }
+  }
+}

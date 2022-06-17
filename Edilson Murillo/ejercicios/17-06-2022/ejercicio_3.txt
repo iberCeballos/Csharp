@@ -1,0 +1,17 @@
+
+            //Cree un programa que permita saber, en base a la nota final del curso de un alumno, si ha aprobado o ha desaprobado.
+            //Si la nota es mayor que 3, el alumno ha aprobado, en caso contrario, ha desaprobado.
+            string alumno;
+            double nota;
+            Console.WriteLine("Ingrese el nombre del alumno: ");
+            alumno = Console.ReadLine();
+            Console.WriteLine("\nIngrese la nota final del estudiante(0-5): ");
+            nota = Convert.ToDouble(Console.ReadLine());
+            if (nota > 3)
+            { 
+                Console.WriteLine($"\r\nEl alumno {alumno} ha aprobado el curso");
+            }
+            else
+	        {
+                Console.WriteLine($"\r\nEl alumno {alumno} ha desaprobado el curso");
+            }

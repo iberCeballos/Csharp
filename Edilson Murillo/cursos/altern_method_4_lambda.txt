@@ -1,0 +1,66 @@
+Expresiones Lambda
+El siguiente atajo, las expresiones lambda , son excelentes para situaciones en las que necesita pasar un método como argumento.
+
+En el ejercicio anterior, solíamos IsEven()comprobar que existe un valor par en la matriz numbers:
+
+int[] numbers = {1, 3, 5, 6, 7, 8};
+ 
+public static bool IsEven(int num)
+{
+  return num % 2 == 0;
+}
+ 
+bool hasEvenNumber = Array.Exists(numbers, IsEven);
+Cuando se usa la definición original (con llaves y return), se necesitan varias líneas para definir el IsEven()método y otros desarrolladores deberán saltar alrededor de nuestro código para encontrar la definición. Con una expresión lambda, podemos definir IsEven()directamente en la llamada al método. Ni siquiera necesitamos darle un nombre:
+
+bool hasEvenNumber = Array.Exists(numbers, (int num) => num % 2 == 0 );
+Esto podría parecerse a una definición con cuerpo de expresión. ¡Algo así es! Lo que hace que una expresión lambda sea única es que es un método anónimo: no tiene nombre.
+
+Generalmente, las expresiones lambda con una expresión (como el ejemplo anterior) toman esta forma. Usan la flecha ancha, sin llaves y sin punto y coma ( ;):
+
+(input-parameters) => expression
+Las expresiones lambda con más de una expresión utilizan llaves y punto y coma:
+
+(input-parameters) => { statement; }
+Aquí hay un ejemplo de la segunda estructura, que verifica si algún elemento numberses un múltiplo de 12 y mayor que 20:
+
+bool hasBigDozen = Array.Exists(numbers, (int num) => {
+  bool isDozenMultiple = num % 12 == 0;
+  bool greaterThan20 = num > 20;
+  return isDozenMultiple && greaterThan20;
+});
+Dado que esta expresión lambda incluye varias expresiones (3 en este caso), debemos usar llaves y punto y coma.
+
+Instrucciones
+1 .
+Encuentre la línea donde Array.Exists()se usa.
+
+Reemplace HitGroundcon una expresión lambda que logre el mismo resultado. Debería regresar truesi su entrada es igual a "meteorite".
+
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
+      
+      //bool makesContact = Array.Exists(spaceRocks, HitGround);
+      
+      bool makesContact = Array.Exists(spaceRocks, (string s) => s == "meteorite");
+      
+      if (makesContact)
+      {
+        Console.WriteLine("At least one space rock has reached the Earth's surface!");
+      } 
+    } 
+    
+    static bool HitGround(string s)
+    {
+      return s == "meteorite";
+    }
+  }
+}
+

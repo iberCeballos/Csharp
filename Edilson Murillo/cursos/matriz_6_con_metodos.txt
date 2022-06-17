@@ -1,0 +1,80 @@
+Métodos incorporados
+En C#, hay varios métodos integrados que podemos usar con arreglos. La lista completa se puede encontrar en la documentación de Microsoft de la clase Array, en métodos .
+
+CLASIFICAR
+El método integrado Array.Sort()( documentación ), como sugiere su nombre, ordena una matriz. Este método es una forma rápida de organizar aún más los datos de la matriz en una secuencia lógica:
+
+int[] plantHeights = { 3, 6, 4, 1 };
+ 
+// plantHeights will be { 1, 3, 4, 6 }
+Array.Sort(plantHeights); 
+Sort()toma una matriz como parámetro y la edita para ordenar sus valores. Si es una matriz de valores enteros, los ordenará en valores ascendentes (de menor a mayor). Si se trata de una matriz de valores de cadena, se ordenarán alfabéticamente.
+
+ÍNDICE DE
+El Arraymétodo Array.IndexOf()( documentación ) toma un valor y devuelve su índice. IndexOf()funciona mejor cuando tiene un valor específico y necesita saber dónde está ubicado en la matriz (¡o incluso si existe!).
+
+int[] plantHeights = { 3, 6, 4, 1, 6, 8 };
+ 
+ // returns 1
+Array.IndexOf(plantHeights, 6);
+IndexOf()normalmente toma dos parámetros: el primero es la matriz y el segundo es el valor cuyo índice estamos localizando. IndexOf()también tiene varias sobrecargas que le permiten buscar un rango específico de la matriz. Si el valor aparece más de una vez en una matriz, solo devuelve la primera aparición dentro del rango especificado. Si no puede encontrar el valor, devuelve el límite inferior de la matriz, menos 1 (dado que la mayoría de las matrices comienzan en 0, generalmente es -1).
+
+ENCONTRAR
+El Arraymétodo Array.Find()( documentación ) busca en una matriz unidimensional un valor específico o un conjunto de valores que coincidan con una determinada condición y devuelve la primera aparición en la matriz.
+
+int[] plantHeights = { 3, 6, 4, 1, 6, 8 };
+ 
+// Find the first occurence of a plant height that is greater than 5 inches
+int firstHeight = Array.Find(plantHeights, height => height > 5);
+Find()toma dos parámetros: el primero es el arreglo y el segundo es un predicado que define lo que estamos buscando. Un predicado es un método que toma una entrada y genera un valor booleano. A diferencia IndexOf()de , Find()devuelve los valores reales que coinciden con la condición, en lugar de su índice.
+
+Es habitual utilizar una función lambda para el predicado a fin de determinar si el valor cumple los criterios necesarios. Si necesita un repaso de las funciones lambda, consulte nuestra lección de métodos de C#.
+
+Para obtener más información sobre el uso de métodos integrados, consulte nuestras lecciones sobre C#: Métodos .
+
+Instrucciones
+1 .
+Usando un método de matriz, encuentre la posición de la primera canción calificada con 3 estrellas y guárdela en una variable. Imprima un mensaje en la consola, como "La canción número X tiene una calificación de tres estrellas".
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Encuentra la primera canción que tiene más de 10 caracteres en su título. Guárdelo en una variable e imprima un mensaje en la consola, como "La primera canción que tiene más de 10 caracteres en el título es X".
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Organice la lista de reproducción alfabéticamente. Para verificar que funcionó, imprima los títulos de la primera y la última canción en la consola.
+
+using System;
+
+namespace BuiltInMethods
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+
+      int cancion = Array.IndexOf(ratings, 3);
+
+      Console.WriteLine($"Song number {cancion + 1} is rated three stars");
+
+      string cancion1 = Array.Find(summerStrut, num => num.Length > 10);
+
+      Console.WriteLine($"La primera canción que tiene más de 10 caracteres en el título es {cancion1}");
+       
+      Array.Sort(summerStrut);
+      Console.WriteLine($"La primera cancion es {summerStrut[0]} y la ultima es {summerStrut[7]}");
+      
+
+
+    }
+  }
+}

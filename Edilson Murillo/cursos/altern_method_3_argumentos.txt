@@ -1,0 +1,63 @@
+Métodos como argumentos
+Antes de pasar al siguiente atajo, debemos comprender cómo se pasan los métodos a otros métodos como argumentos. Esto es posible y, a veces, necesario en C#.
+
+Por ejemplo, supongamos que necesitamos verificar si hay valores pares en una matriz (no es necesario saber mucho sobre matrices aquí, excepto que son listas de valores).
+
+Primero necesita una matriz de valores y el IsEven()método que devuelve truesi su argumento es par:
+
+int[] numbers = {1, 3, 5, 6, 7, 8};
+ 
+public static bool IsEven(int num)
+{
+  return num % 2 == 0;
+}
+Pase ambos como argumentos al método Array.Exists(), que devuelve un valor booleano:
+
+bool hasEvenNumber = Array.Exists(numbers, IsEven);
+Puede ver que IsEven, un método, se pasa como segundo argumento a Array.Exists().
+
+En segundo plano, esto es lo que Array.Exists()hace:
+
+El IsEven()método se llama con cada valor en la matriz. Podemos imaginar que cada uno de estos se llama:
+IsEven(1);
+IsEven(3);
+IsEven(5);
+IsEven(6);
+Si alguno de estos vuelve true, Array.Exists()vuelve true.
+Al final, Array.Exists()vuelve trueporque isEven(6)vuelve true.
+
+Hay otros métodos que aceptan métodos como argumentos, que encontrará más adelante. Por ahora, debe comprender que podemos usar el nombre de un método como una variable, por ejemplo, IsEvenes una variable que representa el método IsEven(). Pasamos esta variable a otro método, como Array.Exists(), que probablemente invocará ese método-argumento al menos una vez dentro de su propio cuerpo.
+
+Instrucciones
+1 .
+Array.Find()es otro método que toma una matriz y un método como argumentos. Array.Find()llama al método en cada elemento de la matriz y devuelve el primer elemento para el que devuelve el método true.
+
+Una matriz adjectivesy un método IsLong()se definen para usted. Llame Array.Find()con estos dos argumentos para encontrar el primer elemento en adjectivesel que es "largo".
+
+Almacene la cadena devuelta en una variable llamada firstLongAdjective.
+
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+  	// Method to be used as second argument
+   	public static bool IsLong(string word)
+    {
+      return word.Length > 8;
+    }
+      
+    static void Main(string[] args)
+    {
+      // Array to be used as first argument
+      string[] adjectives = {"rocky", "mountainous", "cosmic", "extraterrestrial"};
+     
+      // Call Array.Find() and 
+      // Pass in the array and method as arguments
+      string firstLongAdjective = Array.Find(adjectives, IsLong);
+      
+      Console.WriteLine($"The first long word is: {firstLongAdjective}.");
+    }
+  }
+}

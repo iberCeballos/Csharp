@@ -1,0 +1,41 @@
+
+            //Cree un programa que valide la edad actual del usuario. Considerar días y meses, y si,
+            //en el momento de la evaluación cumple años, imprimir un mensaje con la felicitación.
+            string usuario;
+            int año_n, mes_n, dia_n, año_a, mes_a, dia_a,edad;
+            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            Console.WriteLine("\nIngrese su nombre: ");
+            usuario = Console.ReadLine();
+            Console.WriteLine("\nIngrese su año de nacimiento: ");
+            año_n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese su mes de nacimiento: ");
+            mes_n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese su dia de nacimiento: ");
+            dia_n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el año actual: ");
+            año_a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el mes actual: ");
+            mes_a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el dia actual: ");
+            dia_a = Convert.ToInt32(Console.ReadLine());
+
+            edad = año_a - año_n;
+
+            if (mes_n > mes_a)
+            {
+                
+                if (dia_n > dia_a)
+                {
+                    edad -= 1;
+                }  
+
+            }           
+            
+            if (mes_n == mes_a && dia_n == dia_a)
+            {
+                Console.WriteLine($"\n¡Felicitaciones {usuario}! hoy es tu cumpleaños numero {edad}");
+            }
+            else
+            {
+                Console.WriteLine($"\n{usuario} tu tienes {edad} años");
+            }

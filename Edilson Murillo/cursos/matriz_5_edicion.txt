@@ -1,0 +1,51 @@
+Edición de matrices
+Una vez que creamos una matriz, el tamaño de esa matriz es fijo. Sin embargo, es posible cambiar los valores que contiene.
+
+Por ejemplo, podemos inicializar una matriz que tiene una longitud de tres sin especificar cuáles son esos valores, luego volver atrás y editar la matriz para incluir un nuevo valor. Esto es útil si sabemos cuántas cosas estamos esperando, pero aún no conocemos sus valores específicos:
+
+// plantHeights will be equal to [0, 0, 0]
+int[] plantHeights = new int[3]; 
+ 
+// plantHeights will now be [0, 0, 8]
+plantHeights[2] = 8; 
+Cuando creamos la matriz con una longitud conocida pero sin valores conocidos, la matriz almacena un valor de tipo predeterminado ( 0 para int, nulo para cadena ). Luego editamos la matriz e intercambiamos uno de los valores predeterminados con un valor nuevo y específico. En este caso, estamos diciendo que en el índice 2 queremos cambiar el valor predeterminado 0por 8.
+
+También podemos editar los valores de matrices preexistentes. Nuevamente, no podemos agregar a la longitud de una matriz existente, pero podemos intercambiar valores:
+
+int[] plantHeights = { 3, 4, 6 };
+ 
+// plantHeights will be [3, 5, 6]
+plantHeights[1] = 5; 
+En este caso, ya tenemos una matriz con un conjunto definido de valores, { 3, 4, 6 }. Pero, ¿y si una planta crece? Tendremos que volver a entrar y cambiar su valor. Entonces, si es la segunda planta, accedemos a su valor usando la notación de paréntesis, luego cambiamos su valor a 5.
+
+Instrucciones
+1 .
+Decidiste que quieres agregar I Like It de Cardi B a tu lista de reproducción. Pero ¡ups! ¡Solo se permiten 8 pistas! Cambia la última canción de la lista de reproducción por I Like It (u otra canción de tu elección).
+
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+Ya que cambiaste la canción, ¡también tienes que actualizar la calificación! Cambie la calificación para reflejar la actualización de la lista de reproducción.
+
+using System;
+
+namespace EditingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+
+      summerStrut[7] = "Its my life";
+
+      ratings[7] = 5;      
+      
+    }
+  }
+}
