@@ -1,0 +1,87 @@
+Afuera
+Un método solo puede devolver un valor, pero a veces necesita generar dos datos. Llamar a un método que usa un outparámetro es una forma de devolver múltiples valores.
+
+Por ejemplo, el Int32.TryParse()método intenta analizar su entrada como un número entero. Si puede analizar correctamente la entrada, el método regresa truey establece su outvariable en el nuevo valor. Si no puede analizar correctamente la entrada, el método regresa falsey establece la outvariable en 0.
+
+Así es como se ve la firma del método:
+
+public static bool TryParse (string s, out int result);
+El método devuelve a booleany acepta a stringy una variable que ha sido declarada de tipo intcomo entrada.
+
+Así es como se usan Int32.TryParse()y el outparámetro:
+
+int number;
+bool success = Int32.TryParse("10602", out number); 
+// number is 10602 and success is true
+int number2;
+bool success2 = Int32.TryParse(" !!! ", out number2);
+// number2 is 0 and success2 is false
+El segundo parámetro está etiquetado out, lo que significa que se le debe asignar un valor dentro del método.
+
+Para un atajo, puede declarar la intvariable dentro de la llamada al método:
+
+bool success = Int32.TryParse("10602", out int number);
+Instrucciones
+1 .
+Analicemos otra cadena ageAsStringa un número entero.
+
+Primero, defina:
+
+un intnombreageAsInt
+un boolnombreoutcome
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Primero, use Int32.TryParse()para convertir ageAsString:
+
+ageAsIntdebe usarse como outargumento
+outcomedebe capturar el valor devuelto
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprimir outcomey ageAsInta la consola.
+
+Checkpoint 4 Passed
+4 .
+Repite el proceso con nameAsString:
+
+Definir:
+
+un intnombrenameAsInt
+un boolnombreoutcome2
+Usar Int32.TryParse()para convertir nameAsString:
+
+nameAsIntdebe usarse como outargumento
+outcome2debe capturar el valor devuelto
+Imprime el valor devuelto y la outvariable en la consola.
+
+using System;
+
+namespace OutParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string ageAsString = "102";
+      string nameAsString = "Granny";
+
+      int ageAsInt;
+      bool outcome;
+
+      outcome = Int32.TryParse(ageAsString, out ageAsInt);
+
+      Console.WriteLine($"La afirmacion es {outcome} y el numero es {ageAsInt}");
+
+      int nameAsInt;
+      bool outcome2;
+
+      outcome2 = Int32.TryParse(nameAsString, out nameAsInt);
+
+      Console.WriteLine($"La afirmacion es {outcome2} y el numero es {nameAsInt}");
+      
+    }    
+	}
+}

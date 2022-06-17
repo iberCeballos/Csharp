@@ -1,0 +1,33 @@
+Introducción a las matrices
+Desea escribir un programa que realice un seguimiento de las alturas de las diferentes plantas de su jardín. Podría hacer esto como una serie de variables, pero se volvería difícil trabajar con ellas muy rápido.
+
+// height in inches
+int plantOne = 4;
+int plantTwo = 3;
+int plantThree = 6;
+Afortunadamente, C# nos proporciona una solución integrada para realizar fácilmente un seguimiento de muchas piezas de información diferentes. Las estructuras de datos son formatos diseñados para almacenar grandes cantidades de información de manera organizada.
+
+Una matriz es una estructura de datos muy básica. Los programadores usan arreglos como un contenedor para almacenar múltiples piezas de información que se relacionan entre sí de alguna manera. Como una lista de los presidentes de los Estados Unidos, tipos de quesos en orden alfabético y las posiciones finales de los corredores en una carrera.
+
+Lo que hace que las matrices sean especiales es que ordenan nuestros datos en una secuencia lineal específica. Dado que nuestros valores se mantienen en orden, nos permite encontrar fácilmente la información que buscamos; de lo contrario, ¡tendríamos una gran confusión de datos! Lo que significa que, en lugar de tener que crear múltiples variables y recuperar información usando un nombre de variable, podemos usar un solo nombre de matriz y recuperarlo usando su ubicación en esa matriz.
+
+Ya está familiarizado con las cadenas: las cadenas son matrices de caracteres. Al igual que podemos usar la sintaxis para acceder a partes de una cadena, podemos hacerlo con matrices.
+
+En esta lección, cubriremos:
+
+Cómo construir arreglos en C#
+Cómo encontrar la longitud de una matriz
+Cómo acceder a los valores de la matriz
+Cómo editar matrices
+Cómo leer la documentación y usar métodos integrados
+Instrucciones
+Las tiras cómicas funcionan de manera similar a las listas. Podemos pensar en la tira como la lista y cada cuadro como un elemento separado en la lista. La narrativa que compone un cómic demuestra que los elementos siguen un orden específico.
+
+Creamos listas agregando elementos a una lista vacía. En este momento tenemos un montón de marcos de historietas, pero no están en ningún orden y nuestra tira cómica está vacía. Completa la tira cómica colocando los fotogramas en el orden correcto. Así es como debería ir la historia:
+
+Codey planta una semilla
+Codey riega la semilla
+Codey espera
+crece un brote
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-arrays/exercises/introduction-to-arrays

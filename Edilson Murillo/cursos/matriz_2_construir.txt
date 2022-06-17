@@ -1,0 +1,73 @@
+Construyendo Matrices
+En C#, las matrices son una colección de valores que comparten el mismo tipo de datos. Puede tener una matriz de tipo stringque contenga una lista de sus canciones favoritas o una matriz de tipo intque almacene una colección de ID de usuario.
+
+Similar a definir una variable para una pieza de datos, cuando definimos una variable para contener una matriz también tenemos que especificar el tipo:
+
+// These arrays store ints, strings, and doubles, respectively
+int[] x; 
+string[] s; 
+double[] d; 
+Para declarar una variable que contiene una matriz, primero escribimos el tipo de datos que se almacenarán en una matriz, luego agregamos los corchetes []para indicar que contiene una matriz (en lugar de un solo valor), seguido del nombre de la matriz
+
+Como una variable, podemos definir e inicializar una matriz al mismo tiempo, especificando los valores que queremos almacenar en ella:
+
+int[] plantHeights = { 3, 4, 6 };
+Para declarar e inicializar una matriz al mismo tiempo, después de la declaración de la matriz usamos el signo igual para indicar que estamos almacenando un valor en la matriz, luego escribimos los números que estamos poniendo en la matriz, separados por comas ,y encerrados en llaves {}.
+
+También puede ver arreglos definidos e inicializados usando una newpalabra clave:
+
+int[] plantHeights = new int[] { 3, 4, 6 };
+La newpalabra clave significa que estamos instanciando una nueva matriz de la clase de matriz. Cubriremos las clases y la creación de instancias en otra lección, pero por ahora puede pensar en ello como otra forma de crear una matriz.
+
+De hecho, si decide definir una matriz y luego inicializarla más tarde (más bien en una línea como arriba), debe usar la newpalabra clave:
+
+// Initial declaration
+int[] plantHeights;
+ 
+// This works
+plantHeights = new int[] { 3, 4, 6 };   
+ 
+// This will cause an error
+// plantHeights = { 3, 4, 6 }; 
+Instrucciones
+1 .
+Desea crear una aplicación web en la que los usuarios puedan crear sus propias listas de reproducción. El truco es que solo pueden crear listas de reproducción que tengan ocho canciones. Te das cuenta de que puedes usar matrices para almacenar información sobre cada lista de reproducción como una matriz.
+
+Primero, declare una matriz de cadenas llamada summerStrut. Esta será la lista de reproducción a la que agregaremos nuestras canciones.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En una nueva línea, inicialice su matriz con ocho títulos de canciones como valores. Si no se te ocurre ninguna, aquí tienes algunas sugerencias:
+
+Jugo
+Extrañandote
+boina de frambuesa
+Surco de Nueva York
+Hazme sentir
+Rebelde rebelde
+Despacito
+los Angeles
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+A continuación, declare e inicialice una matriz con el nombre ratingsque contiene su calificación para cada canción (entre 1 y 5).
+
+using System;
+
+namespace BuildingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string [] summerStrut = new string[]{"Jugo", "Extrañandote", "boina de frambuesa", "Surco de Nueva York", "Hazme sentir", "Rebelde rebelde", "Despacito", "los Angeles"};
+
+      int [] ratings = {5, 5, 5, 5, 5, 5, 5, 5};
+        
+      
+    }
+  }
+}
