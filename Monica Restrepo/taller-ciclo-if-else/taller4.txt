@@ -33,7 +33,7 @@ public class Program
 			 edad --;
 				 
 		 }
-				 if (diaa < dia){ 
+				 if (dia < diaa){ 
 			 edad --;
 				 
 		 }
