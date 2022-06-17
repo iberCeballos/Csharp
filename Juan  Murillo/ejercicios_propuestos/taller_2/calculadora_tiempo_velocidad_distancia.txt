@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class calculadora
+    {
+        static void Main(string[] args)
+        {
+            string[] m1 = {"m", "s", "m/s"};
+            string[] m2 = { "Km", "h", "Km/h" };
+            double t = 0;
+            double d = 0;
+            double v = 0;
+            
+
+            Console.WriteLine("calculadora de distancia, tiempo y velocidad constante");
+            Console.WriteLine("teniendo dos de los datos, eliga la opcion dependiendo que quiera calcular:\ningrese 1 si quiere calcular tiempo\ningrese 2 si quiere calcular distancia\ningrese 3 si quiere calcular velocidad");
+            int op = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese que notacion quiere usar\ningrese 1, si quiere usar m,s y m/s\ningrese 2, si quiere usar Km,h y Km/h");
+            int no = Convert.ToInt32(Console.ReadLine());
+
+
+            if (op == 1)
+            {
+                Console.WriteLine("vamos a calcular tiempo");
+                Console.WriteLine("ingrese el valor de la distancia");
+                d = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("ingrese el valor de la velocidad");
+                v = Convert.ToDouble(Console.ReadLine());
+                t = d / v;
+                if (no == 1)
+                {
+                    Console.WriteLine("el tiempo que se demora en recorre una distancia de " + d + m1[0] + " a una velocidad constante de " + v + m1[2] + " es de " + t + m1[1]);
+                }
+                else if (no == 2)
+                {
+                    Console.WriteLine("el tiempo que se demora en recorre una distancia de " + d + m2[0] + " a una velocidad constante de " + v + m2[2] + " es de " + t + m2[1]);
+                }
+                else
+                {
+                    Console.WriteLine("por favor, ingrese una notacion valida");
+                }
+                
+            }
+            else if (op == 2)
+            {
+                Console.WriteLine("vamos a calcular distancia");
+                Console.WriteLine("ingrese el valor del tiempo");
+                t = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("ingrese el valor de la velocidad");
+                v = Convert.ToDouble(Console.ReadLine());
+                d = v * t;
+                 if (no == 1)
+                {
+                    Console.WriteLine("la distancia que se recorre a una velocidad constante de " + v + m1[2] + " en " + t + m1[1] + " es de " + d + m1[0]);
+
+                }
+                else if (no == 2)
+                {
+                    Console.WriteLine("la distancia que se recorre a una velocidad constante de " + v + m2[2] + " en " + t + m2[1] + " es de " + d + m2[0]);
+
+                }
+                else
+                {
+                    Console.WriteLine("por favor, ingrese una notacion valida");
+                }
+            }
+            else if (op == 3)
+            {
+                Console.WriteLine("vamos a calcular velocidad");
+                Console.WriteLine("ingrese el valor del tiempo");
+                t = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("ingrese el valor de la distancia");
+                d = Convert.ToDouble(Console.ReadLine());
+                v = d / t;
+                 if (no == 1)
+                {
+                    Console.WriteLine("la velocidad constante para recorrer una distancia de " + d + m1[0] + " en " + t + m1[1] + " es de " + v + m1[2]);
+
+                }
+                else if (no == 2)
+                {
+                    Console.WriteLine("la velocidad constante para recorrer una distancia de " + d + m2[0] + " en " + t + m2[1] + " es de " + v + m2[2]);
+
+                }
+                else
+                {
+                    Console.WriteLine("por favor, ingrese una notacion valida");
+                }
+            }
+            else
+            {
+                Console.WriteLine("por favor, ingrese una opcion de calculo valida");
+            }
+
+            Console.WriteLine("-----");
+            Console.ReadLine();
+        }
+    }
+}

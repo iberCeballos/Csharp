@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion2
+    {
+        static void Main(string[] args)
+        {
+            //Cree un programa que valide si el número ingresado es par o impar.
+            Console.WriteLine("este programa determina si un numero es par o impar");
+
+            Console.WriteLine("ingrese el numero entero que quiere comparar");
+            int n = Convert.ToInt32(Console.ReadLine());
+            string es;
+
+            if(n%2==0)
+            {
+                es = "par";
+            }
+            else
+            {
+                es = "impar";
+            }
+            Console.WriteLine("el numero es "+es);
+            Console.ReadLine();
+        }
+    }
+}

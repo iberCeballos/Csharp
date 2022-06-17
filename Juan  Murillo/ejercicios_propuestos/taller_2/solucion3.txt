@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion3
+    {
+        static void Main(string[] args)
+        {
+            //Cree un programa que permita saber, en base a la nota final del curso de un alumno,
+            //si ha aprobado o ha desaprobado. Si la nota es mayor que 3, el alumno ha aprobado,
+            //en caso contrario, ha desaprobado.
+            Console.WriteLine("este programa determina, apartir de la nota final, si un alumno aprueba o desaprube el curso");
+
+            Console.WriteLine("ingrese la nota final del alumno");
+            int final = Convert.ToInt32(Console.ReadLine());
+            string estado;
+
+            if(final>3)
+            {
+                estado = "Aprobo";
+            }
+            else
+            {
+                estado = "Desaprobo";
+            }
+            Console.WriteLine("con base a la nota final, el estudiante "+estado+" el curso");
+            Console.ReadLine();
+        }
+    }
+}

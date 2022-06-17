@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+        {
+            // un turistas decide recorrer el norte de un país que se encuentra a
+            // una determinada distancia de 3200 km, y se va  en auto,
+            // calcular el tiempo, teniendo en cuenta que la capacidad de
+            // recorrido es de 80  km/h
+            Console.WriteLine("este programa calcula el tiempo que se demora en recorrer un trayecto teniendo la velocidad y la distancia");
+            int v = 80;
+            int d = 3200;
+            double t = d / v;
+               
+            Console.WriteLine("el turista, si mantiene un velocidad constante de "+v+"km/h, recorrera los "+d+"km en "+t+" horas");
+            Console.ReadLine();
+        }
+    }
+}

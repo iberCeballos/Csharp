@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+        {
+            //Cree un programa que solicite al usuario el lado de un cuadrado.
+            //Luego le debe pedir una opción al usuario, si elige 1, le debe mostrar el
+            //perímetro del cuadrado, si elige 2, le debe mostrar el área del cuadrado.
+            Console.WriteLine("este programa determina, segun la elecion de usuario, el area o  el perimetro de un cuadrado");
+
+            Console.WriteLine("ingrese la medida de un lado del cuadrado ");
+            double lado = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese 1 si desea ver el perimetro del cuadrado, o 2 si desea ver el area del cuadrado");
+            int opcion = Convert.ToInt32(Console.ReadLine());
+
+            double resultado = 0;
+            string op = "";
+
+            if(opcion == 1)
+            {
+                resultado = lado + lado;
+                op = "perimetro";
+            }
+            else if(opcion == 2)
+            {
+                resultado = lado * lado;
+                op = "area";
+            }
+            else
+            {
+                Console.WriteLine("por favor, ingrese una opcion correcta");
+                Console.ReadLine();
+            }
+                
+
+            Console.WriteLine("el "+op+" de un cuadrado de lado "+lado+" es "+resultado);
+            Console.ReadLine();
+        }
+    }
+}

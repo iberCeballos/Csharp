@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion8
+    {
+        static void Main(string[] args)
+        {
+            //Ingresar dos valores numéricos y mostrar su suma, resta, multiplicación y división.
+            //Si la multiplicación es mayor e igual que 20 restarle el resultado
+            //de la resta de los 2 valores, caso contrario a la multiplicación añadirle su suma,
+            //mostrar el resultado.
+            Console.WriteLine("este programa calcula la suma, resta, multiplicación y división de dos numeros");
+
+            Console.WriteLine("ingrese el primer numero");
+            double n1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese el segundo numero");
+            double n2 = Convert.ToDouble(Console.ReadLine());
+
+            double suma = n1 + n2;
+            double resta = n1 - n2;
+            double multi = n1 * n2;
+            double div = n1 / n2;
+
+            string op;
+
+            if(multi>=30)
+            {
+                multi = multi - resta;
+                op = "mayor o igual";
+            }
+            else
+            {
+                multi = multi + suma;
+                op = "menor";
+            }
+
+            Console.WriteLine("el resultado de la suma fue " + suma);
+            Console.WriteLine("el resultado de la resta fue " + resta);
+            Console.WriteLine("el resultado de la division fue " + div);
+            Console.WriteLine("como el resultado de la multiplicacion fue "+op+" que 20, el total es "+multi);
+            
+            Console.ReadLine();
+        }
+    }
+}

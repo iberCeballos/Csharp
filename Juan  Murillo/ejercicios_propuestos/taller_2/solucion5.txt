@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion5
+    {
+        static void Main(string[] args)
+        {
+            //Determinar cuánto se debe pagar por una cantidad de laptops considerando
+            //que si son de  5 o más, existe un descuento de 10%, teniendo en cuenta que
+            //el costo por laptops es de 1´200.000 ; de lo contrario no hay descuento
+            Console.WriteLine("este programa determina, apartir de la cantidad de laptops que va ha comprar, el descuento");
+
+            Console.WriteLine("ingrese la cantidad de laptops que va ha comprar");
+            int cant = Convert.ToInt32(Console.ReadLine());
+
+            int valoru = 1200000;
+            double descuento = 0;
+            double valort;
+            string des;
+
+            if(cant >= 5)
+            {
+                descuento = (valoru * cant) * 0.1;
+                valort = (valoru * cant) - descuento;
+                des = "con";
+            }
+            else
+            {
+                valort = valoru * cant;
+                des = "sin";
+            }
+
+            
+            Console.WriteLine("su total a pagar, "+des+" descuento es "+valort);
+            Console.ReadLine();
+        }
+    }
+}
