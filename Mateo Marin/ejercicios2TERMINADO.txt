@@ -1,0 +1,229 @@
+1. Realizar un programa que muestre el nombre del cliente y la cantidad de artículos comprados, 
+si la cantidad es menor de 15 pagara en efectivo, si es mayor de 15 y menor de 60 pagara con tarjeta,  si es mayor de 60 pagara con cheque
+
+R) string nombreDeUsuario = ("");
+            Console.WriteLine("Ingresa tu nombre: ");
+            nombreDeUsuario = Console.ReadLine();
+
+            int cantidadArticulos;
+            Console.WriteLine("Ingresa la cantidad de articulos comprados");
+            cantidadArticulos = int.Parse(Console.ReadLine());
+
+            if (cantidadArticulos < 15)
+            {
+                Console.WriteLine("Debes pagar en efectivo");
+            }
+            if ((cantidadArticulos >= 15) && (cantidadArticulos <= 60))
+            {
+                Console.WriteLine("Debes pagar con targeta de credito");
+            }
+            if (cantidadArticulos > 60)
+            {
+                Console.WriteLine("Debes pagar con un  cheque");
+            }
+            Console.WriteLine("Tu nombre es: " + nombreDeUsuario + " tu cantidad de articulos comprados fueron: " + cantidadArticulos);
+
+2. Cree un programa que valide si el número ingresado es par o impar.
+
+R) int numeroInsierto;
+            Console.WriteLine(">>>Ingresa un numero cualqueira: <<<");
+            numeroInsierto= int.Parse(Console.ReadLine());            
+            
+            if (numeroInsierto % 2 == 0)
+            {
+                Console.WriteLine("El numero es par");
+            }
+            else
+            {
+                Console.WriteLine("El numero es impar");
+            }
+
+3. Cree un programa que permita saber, en base a la nota final del curso de un alumno, 
+si ha aprobado o ha desaprobado. Si la nota es mayor que 3, el alumno ha aprobado, en caso contrario, ha desaprobado.
+
+R) double notaFinal;
+            Console.WriteLine("Ingresa la nota final");
+            notaFinal = double.Parse(Console.ReadLine());
+
+            if (notaFinal >= 3)
+            {
+                Console.WriteLine("El estudiante a aprovado >>> Felicidades <<<");
+            }
+            else
+            {
+                Console.WriteLine("El estudiante no a aprovado");
+            }
+
+4. Cree un programa que valide la edad actual del usuario. Considerar días y meses, y si, 
+en el momento de la evaluación cumple años, imprimir un mensaje con la felicitación.
+
+R) DateTime birthday;
+            DateTime currenDate = DateTime.Now;
+            int years;
+            
+            Console.Write("Ingrese su fecha de nacimiento en formato dia/mes/año: ");            
+            if (DateTime.TryParse(Console.ReadLine(), out birthday))
+            {                
+                Console.WriteLine("La fecha es correcta");
+            }
+            else
+            {
+               Console.WriteLine("La fecha es incorrecta");
+            }
+            
+            years = currenDate.Year - birthday.Year;
+            
+            if (birthday.Month >= currenDate.Month)
+            {                
+                years--;                
+                if (birthday.Month == currenDate.Month)
+                {                    
+                    if (birthday.Day <= currenDate.Day)
+                    {                        
+                        years++;                        
+                        if (birthday.Day == currenDate.Day)
+                        {
+                            Console.Write("¡Feliz cumpleaños! ");
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Tu edad deberia ser de: " + years.ToString());
+
+5. Determinar cuánto se debe pagar por una cantidad de laptops considerando que si son de  5 o más, 
+existe un descuento de 10%, teniendo en cuenta que el costo por laptops es de 1´200.000 ; de lo contrario no hay descuento.
+
+R) int cantidadPc;
+            Console.WriteLine("Ingresa la cantidad de pc que deseas llevar: ");
+            cantidadPc = int.Parse(Console.ReadLine());
+
+            int precioPc = 1200000;
+
+            if (cantidadPc >= 5)
+            {
+                int totalPaga1 = cantidadPc * precioPc;
+                double totalDescuento = totalPaga1 * 0.10;
+                double totalTotal = totalPaga1 - totalDescuento;
+                Console.WriteLine("El total a pagar es de: " + totalTotal);                                
+            }
+            if (cantidadPc < 5)
+            {
+                double totalPaga2 = cantidadPc * precioPc;
+                Console.WriteLine("La cantidad de Laptos no fue suficiente para que se aplicara un descuento" + totalPaga2);                                
+            }
+
+6. Ingresar por teclado 3 números y mostrar que numero es mayor.
+
+R) int numeroA, numeroB, numeroC;
+            Console.WriteLine("ingrese 3 numeros");
+            numeroA = int.Parse(Console.ReadLine());
+            numeroB = int.Parse(Console.ReadLine());
+            numeroC = int.Parse(Console.ReadLine());
+            if (numeroA >= numeroB && numeroA >= numeroC)
+            {
+                Console.WriteLine("el numero mayor es el numero:" + numeroA);
+            }
+            else if (numeroB >= numeroC && numeroB >= numeroA)
+            {
+                Console.WriteLine("el numero mayor es el numero:" + numeroB);
+            }
+            else if (numeroC >= numeroA && numeroC >= numeroB)
+            {
+                Console.WriteLine("el numero mayor es el numero:" + numeroC);
+            }
+            Console.ReadKey();
+
+7. Cree un programa que solicite al usuario el lado de un cuadrado. Luego le debe pedir una opción al usuario, si elige 1, 
+le debe mostrar el perímetro del cuadrado, si elige 2, le debe mostrar el área del cuadrado.
+
+R) double lado1;
+            Console.WriteLine("Ingresa el lado del cuadrado");
+            lado1= double.Parse(Console.ReadLine());
+
+            int calcular;
+            Console.WriteLine("___ Que desea calcular: 1. Perimetro 2. Area ___ ");
+            calcular = int.Parse(Console.ReadLine());
+
+            if (calcular == 1)
+            {
+                double perimetro = lado1 + lado1 + lado1 + lado1;
+                Console.WriteLine("El perimetro del cuadrado es: " + perimetro);
+            } if (calcular == 2)
+            {
+                double area= lado1 * lado1;
+                Console.WriteLine("El area del cuadrado es: " + area);
+            }
+
+8. Ingresar dos valores numéricos y mostrar su suma, resta, multiplicación y división. 
+Si la multiplicación es mayor e igual que 20 restarle el resultado de la resta de los 2 valores,
+caso contrario a la multiplicación añadirle su suma, mostrar el resultado.
+
+R) int numeroUno;
+            int numero2;
+            int suma, resta, multiplicacion, divicion;
+
+            Console.WriteLine(">>> Ingresa 2 numeros <<<");
+            numeroUno=int.Parse(Console.ReadLine());
+            numero2 = int.Parse(Console.ReadLine());
+
+            suma = numeroUno + numero2;
+            resta = numeroUno - numero2;
+            multiplicacion = numeroUno * numero2;
+            divicion = numeroUno / numero2;
+
+            Console.WriteLine("La suma es: " + suma);
+            Console.WriteLine("La resta es: " + resta);
+            Console.WriteLine("La multiplicacion es: " + multiplicacion);
+            Console.WriteLine("La divicion es: " + divicion);
+
+            if (multiplicacion >= 20 )
+            {
+                int multipli2 = multiplicacion - resta;
+                Console.WriteLine("*** " + multipli2 + " *** ");
+            }
+            else
+            {
+                int multipli3 = multiplicacion + suma;
+                Console.WriteLine("*** " + multipli3 + " ***");
+            }
+
+9. Realizar el siguiente ejercicio en el que se ingresa por teclado 10 notas de un alumno, mostrar nombre del alumno, 
+el promedio de las 3 notas e indicar si está APROBADO caso contrario DESAPROBADO.
+
+R) int nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, nota9, nota10;
+            int sumaNotas, promedioNotas;
+
+            Console.WriteLine("<*>*<*> Ingresa las 10 notas para promediar <*>*<*>");
+            nota1 = int.Parse(Console.ReadLine());
+            nota2 = int.Parse(Console.ReadLine());
+            nota3 = int.Parse(Console.ReadLine());
+            nota4 = int.Parse(Console.ReadLine());
+            nota5 = int.Parse(Console.ReadLine());
+            nota6 = int.Parse(Console.ReadLine());
+            nota7 = int.Parse(Console.ReadLine());
+            nota8 = int.Parse(Console.ReadLine());
+            nota9 = int.Parse(Console.ReadLine());
+            nota10 = int.Parse(Console.ReadLine());
+
+            sumaNotas = nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8 + nota9 + nota10;
+            promedioNotas = sumaNotas / 10;
+
+            if (promedioNotas >3 )
+            {
+                Console.WriteLine("( $ _ $ ) Felicidades ($ _ $ )" + promedioNotas + "Aprovaste");
+            }
+            else
+            {
+                Console.WriteLine("No has aprovado, sigue intentando");
+            }
+
+10. un turistas decide recorrer el norte de un país que se encuentra a una determinada distancia de 3200 km, 
+y se va  en auto,calcular el tiempo, teniendo en cuenta que la capacidad de recorrido es de 80  km/h
+
+R) double tiempo;
+            double recorridoTotal = 3200;
+            double recorridoAhora = 80;
+
+            tiempo = recorridoAhora/recorridoTotal;
+
+            Console.WriteLine(tiempo);
