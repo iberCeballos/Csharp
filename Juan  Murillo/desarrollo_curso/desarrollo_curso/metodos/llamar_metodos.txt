@@ -1,0 +1,18 @@
+using System;
+
+namespace CallAMethod
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string msg = "Yabba dabba doo!";
+
+      int mini = Math.Min(12,34);
+
+      Console.WriteLine(msg);
+
+      Console.WriteLine(msg.Substring(0,1));
+    }
+  }
+}

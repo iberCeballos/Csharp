@@ -1,0 +1,30 @@
+using System;
+					
+public class convert
+{
+	public static void Main()
+	{
+	    /* use this space to write your own short program! 
+      Here's what you learned:
+
+      DATA TYPES: int, double, char, string, bool
+      VARIABLES: datatype variableName = value;
+      COMMON ERRORS: wrong type, wrong value, no semicolon
+      DATA TYPE CONVERSION: implicit, explicit, methods
+
+      Good luck! */
+		
+		bool estado = true;
+		int cantidad = 1234;
+		string converString;
+		double converDouble;
+		//conversion implicita
+		converDouble=cantidad;
+		//conversion explicita
+		converString=Convert.ToString(estado);
+		Console.WriteLine("la cantidad es "+converDouble+" y es estado es "+converString);
+		
+		
+			
+	}
+}

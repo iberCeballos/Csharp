@@ -1,0 +1,29 @@
+using System;
+					
+public class PlanetCalculations
+{
+	public static void Main()
+	{
+	    // Your Age
+		Console.WriteLine("ingrese su edad acual");
+		int userAge = Convert.ToInt32(Console.ReadLine());
+		// Length of years on Jupiter (in Earth years)
+      	double jupiterYears = 11.86;
+		// Age on Jupiter
+     	 double jupiterAge = userAge/jupiterYears;
+		// Time to Jupiter
+        double journeyToJupiter = 6.142466;
+		// New Age on Earth
+		double newEarthAge = userAge+journeyToJupiter;
+      	// New Age on Jupiter
+        double newJupiterAge = newEarthAge/jupiterYears;
+		// Log calculations to console
+  	 	Console.WriteLine("su edad actual es de: "+userAge+" años");
+   		Console.WriteLine("su edad en jupiter seria de: "+jupiterAge+" años");
+   		Console.WriteLine("su edad terrestre, despues del viaje a jupiter, seria de: "+newEarthAge+" años");
+   		Console.WriteLine("su edad jupiter, despues del viaje a jupiter, seria de: "+newJupiterAge+" años");
+   
+		
+			
+	}
+}
