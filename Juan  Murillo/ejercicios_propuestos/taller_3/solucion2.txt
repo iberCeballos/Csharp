@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+        {
+            //Crea un metodo que sume dos números pasados por parámetros,
+            //si un numero es impar que multiple, devuelve el resultado,
+            //los parametros deberan ser ingresados como string y se tienen que convertir a int.
+            Console.WriteLine("este programa lee dos numero, los suma o los multiplica , y luego imprime el reultado");
+            Console.WriteLine("ingrese el primer numero");
+            string n1 = Console.ReadLine();
+
+            Console.WriteLine("ingrese el segundo numero");
+            string n2 = Console.ReadLine();
+
+            Console.WriteLine("el resultado es "+calculo(n1,n2));
+            Console.ReadLine();
+        }
+
+        public static int calculo(string num1 , string num2)
+        {
+            int n1 = Convert.ToInt32(num1);
+            int n2 = Convert.ToInt32(num2);
+
+            if( n1%2 != 0 || n2%2 != 0)
+            {
+                return n1 * n2;
+            }
+            else
+            {
+                return n1 + n2;
+            }
+        }
+
+    }
+}
