@@ -1,0 +1,34 @@
+using System;
+
+namespace casimiro
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string numeroUno;
+            Console.WriteLine("ingrese un numero");
+            numeroUno = Console.ReadLine();
+            string numeroDos;
+            Console.WriteLine("ingrese otro numero");
+            numeroDos = Console.ReadLine();
+
+            Console.WriteLine(resultado(numeroUno, numeroDos));
+
+        }
+        public static int resultado(string numero1, string numero2)
+        {
+            int n1 = Convert.ToInt32(numero1);
+            int n2 = Convert.ToInt32(numero2);
+            if(n1 % 2 != 0 || n2 % 2 != 0)
+            {
+                return n1 *n2;
+            }
+            else
+            {
+                return n1 +n2;
+            }
+            Console.WriteLine("Si es par o impar");
+        }
+    }
+}
