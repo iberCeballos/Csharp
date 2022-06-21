@@ -4,18 +4,19 @@ public class Program
 {
 	public static void Main()
 	{
+		Console.WriteLine("Ingrese su nombre");
+		string nombre=Console.ReadLine();
+		Console.WriteLine("Ingrese su apellido");
+		string apellido=Console.ReadLine();
 		
-	 Mon("Monica", "Restrepo");
+	 Mon(nombre, apellido);
 		
 	}
 	
-	public static void Mon(string nombre, string apellido)
+	public static void Mon(string l, string p)
 	{
-		//Console.WriteLine("Ingrese su nombre");
-		//string nombre=Console.ReadLine();
-		//Console.WriteLine("Ingrese su apellido");
-		//string apellido=Console.ReadLine();
 		
-		Console.WriteLine("Coordial saludo "+nombre+ " " + apellido + " un gusto saludarla el dia de hoy");
+		
+		Console.WriteLine("Coordial saludo "+ l + " " + p + " un gusto saludarla el dia de hoy");
 	}
 }
