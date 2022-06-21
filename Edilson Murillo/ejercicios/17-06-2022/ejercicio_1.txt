@@ -1,0 +1,26 @@
+	
+            //Realizar un programa que muestre el nombre del cliente y la cantidad de artículos comprados,
+            //si la cantidad es menor de 15 pagara en efectivo, si es mayor de 15 y menor de 60 pagara con tarjeta,
+            //si es mayor de 60 pagara con cheque
+            string nombre;
+            int articulos;
+            Console.WriteLine("Ingrese su nombre: ");
+            nombre = Console.ReadLine();
+            Console.WriteLine("\nIngrese la cantidad de articulos comprados: ");
+            articulos = Convert.ToInt32(Console.ReadLine());
+            if (articulos < 15)
+            {
+                Console.WriteLine($"\nNombre :{nombre}\nCantidad de articulos : {articulos}\nSu pago se resivira en efectivo");
+            }
+            else if (articulos > 15 && articulos < 60)
+            {
+                Console.WriteLine($"\nNombre :{nombre}\nCantidad de articulos : {articulos}\nSu pago se resivira con targeta");
+            }
+            else if (articulos > 60)
+            {
+                Console.WriteLine($"\nNombre :{nombre}\nCantidad de articulos : {articulos}\nSu pago se resivira con cheque");
+            }
+            else
+            {
+                Console.WriteLine($"\nLa cantidad debe de ser diferente de 15");
+            }

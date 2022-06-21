@@ -1,0 +1,26 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese el lado del cuadrado");
+		int lado=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Si desea ver el perimetro del cuadrado marque 1, si desea ver el área del cuadrado marqte 2");
+		int mon=Convert.ToInt32(Console.ReadLine());
+		int perimetro, area;
+		
+		if(mon==1)
+		{
+			perimetro = lado + lado + lado + lado;
+			Console.WriteLine("El perimetro del cuadrado es: " +perimetro);
+			
+		}
+		
+		else if(mon==2)
+		{
+			area= lado * lado;
+			Console.WriteLine("El área del cuadrado es: " +area);
+		}
+	}
+}

@@ -1,0 +1,50 @@
+Expresiones lambda más cortas
+Es hora de ponernos nuestras gorras de detective: usando el razonamiento deductivo, podemos hacer que nuestra expresión lambda sea aún más corta. Esto es lo que tenemos para empezar:
+
+bool hasEvenNumbers = Array.Exists(numbers, (int num) => num % 2 == 0 );
+El tipo de numes int. Es genial ser tan explícito para evitar errores, pero algunos desarrolladores no incluirían int. ¡Para ellos, es obvio! Aquí está su razonamiento:
+
+El operador de módulo ( %) solo se usa con números, por lo numque debe ser un número
+El resultado de la operación num % 2se compara con el entero 0. ¡Solo podemos comparar tipos similares, por lo que num también debe ser un número entero!
+Por lo tanto, podemos eliminar intsin causar ningún error:
+
+bool hasEvenNumbers = Array.Exists(numbers, (num) => num % 2 == 0 );
+Cuando solo hay un parámetro en una expresión lambda, tampoco necesitamos los paréntesis alrededor del parámetro:
+
+bool hasEvenNumbers = Array.Exists(numbers, num => num % 2 == 0 );
+Acabamos de aprender dos atajos nuevos "dentro" del atajo de expresión lambda. Aunque no necesitamos usarlos todo el tiempo, necesitamos reconocerlos en el código de otros desarrolladores:
+
+Podemos eliminar el tipo de parámetro si se puede inferir
+Podemos quitar los paréntesis si hay un parámetro
+Instrucciones
+1 .
+Aplique el primer atajo a la expresión lambda (elimine el tipo de parámetro).
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Aplique el segundo atajo a la expresión lambda (elimine los paréntesis).
+
+
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
+      
+      //bool makesContact = Array.Exists(spaceRocks, (string s) => s == "meteorite");
+      
+      bool makesContact = Array.Exists(spaceRocks, s => s == "meteorite");
+      
+      if (makesContact)
+      {
+        Console.WriteLine("At least one space rock has reached the Earth's surface!");
+      } 
+    } 
+  }
+}

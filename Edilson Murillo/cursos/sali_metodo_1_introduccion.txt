@@ -1,0 +1,60 @@
+Introducción a la salida del método
+¿Cuál es el resultado de llamar a un método?
+
+A veces se imprime un mensaje en la consola:
+
+Console.WriteLine("Hello World!");
+A veces se devuelve un valor:
+
+Math.Floor(15.6); // Returns 15
+A veces se altera una variable:
+
+int number;
+bool success = Int32.TryParse("10602", out number); 
+// number is 10602 and success is True
+Si no entiende todos los ejemplos de código, ¡no hay problema! Al final de esta lección usted será capaz de:
+
+Defina métodos con salida utilizando las palabras clave returnyout
+Reconocer y resolver errores relacionados con la salida del método.
+¡Empecemos!
+
+Instrucciones
+Para recordar algunos conceptos anteriores sobre la entrada de métodos, revise el código de la derecha. Suponemos que se siente cómodo con estos conceptos antes de tomar esta lección.
+
+Revisión del concepto
+¿Quiere repasar rápidamente algunos de los conceptos que ha estado aprendiendo? ¡ Echa un vistazo a la hoja de trucos de este material !
+
+using System;
+
+namespace IntroMethodOutput
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Call a method with multiple arguments
+      NamePets("Laika", "Albert");
+      // Call a method with named arguments
+      VisitPlanets(numberOfPlanets: 8);
+    }
+    
+    // Define a method with multiple parameters
+    static void NamePets(string pet1, string pet2)
+    {
+      Console.WriteLine($"Your pets {pet1} and {pet2} will be joining your voyage across space!");
+    }  
+ 
+    // Define a method with optional parameters
+    static void VisitPlanets(
+      string adjective = "brave",
+      string name = "Cosmonaut", 
+      int numberOfPlanets = 0,
+      double gForce = 4.2)
+    {
+      Console.WriteLine($"Welcome back, {adjective} {name}.");
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+      Console.WriteLine($"...while experiencing a g-force of {gForce} g!");
+    }
+    
+  }
+}

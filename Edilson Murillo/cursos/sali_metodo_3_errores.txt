@@ -1,0 +1,70 @@
+Errores de devolución
+Como mencionamos antes, no nos gustan las sorpresas, conducen a errores. Entonces, cuando llamamos a un método, nos gustaría saber qué tipo de valor se devolverá. Esto se hace en la definición del método.
+
+La definición del método debe contener el tipo del valor de retorno: si un método devuelve un número entero, su tipo de retorno debe ser int; si devuelve texto, debe ser string, y así sucesivamente. Si el método no devuelve nada, utilice void.
+
+Si un método devuelve un tipo diferente de su tipo de retorno establecido, arrojará un error. Aquí hay algunos errores comunes que puede ver:
+
+Este error significa que debe indicar un tipo de retorno antes del nombre del método:
+
+error CS1520: Method must have a return type
+Este error significa que su método no devuelve un valor, cuando debería:
+
+error CS0161: [MethodName]: not all code paths return a value
+En algunos casos, este error significa que su método devuelve un stringcuando debería ser un int(este error puede deberse a muchas cosas fuera de los métodos):
+
+error CS0029: Cannot implicitly convert type 'string' to 'int'
+Es importante recordar que encontrarse con errores es una parte natural de la codificación. Como dijo una vez un maestro : "Los grandes programadores entienden que los errores son parte del proceso y saben cómo encontrar la solución para cada uno mientras aprenden algo nuevo de ellos".
+
+Instrucciones
+1 .
+¡Este código tiene un montón de errores! Ejecute el código para encontrarlos.
+
+Checkpoint 2 Passed
+2 .
+Solucione el primer error agregando un tipo de devolución a uno de los métodos.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Solucione el segundo error agregando returna uno de los métodos.
+
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+Solucione el último error cambiando el tipo de devolución de uno de los métodos.
+
+using System;
+
+namespace ReturnErrors
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(DecoratePlanet("Mars")); 
+      Console.WriteLine("Is Pluto really a dwarf...?");
+      Console.WriteLine(IsPlutoADwarf());
+      Console.WriteLine("Then how many planets are there in the galaxy...?");
+      Console.WriteLine(CountThePlanets());
+    }
+    
+    static string DecoratePlanet(string planet)
+    {
+       return $"*..*..* Welcome to {planet} *..*..*";
+    }
+    
+    static bool IsPlutoADwarf()
+    {
+      bool answer = true;
+      return answer;
+    }
+    
+    static string CountThePlanets()
+    {
+      return "8 planets, usually";
+    }
+	}
+}

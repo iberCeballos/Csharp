@@ -1,0 +1,66 @@
+Revisar
+¡Felicidades por terminar! Ahora puede usar y definir métodos con salida.
+
+Esto es lo que has aprendido en esta lección:
+
+Los métodos devuelven valores con la returnpalabra clave.
+Cada método tiene un tipo de devolución, designado en su firma de método. Ese tipo debe coincidir con el tipo del valor realmente devuelto.
+Si un método no devuelve ningún tipo, su tipo de retorno es void.
+outLos parámetros se pueden usar para devolver múltiples valores de un método.
+Siempre puede revisar este material en la documentación de Microsoft .
+
+Instrucciones
+1 .
+¡Asegúrate de saber cómo aplicar todos estos conceptos antes de continuar!
+
+Llamada DecoratePlanet()con el argumento destination.
+
+Almacene el valor devuelto en la variable welcomeMessage.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Llamar Int32.TryParse(), usando galaxyStringy galaxyIntcomo argumentos.
+
+Almacene el valor devuelto en la variable outcome.
+
+using System;
+
+namespace ReviewMethodOutput
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Define variables
+      string destination = "Neptune";
+      string galaxyString = "8";
+      int galaxyInt;
+      string welcomeMessage;
+      bool outcome;
+      
+      // Call DecoratePlanet() and TryParse() here
+      welcomeMessage = DecoratePlanet(destination);
+      outcome = Int32.TryParse(galaxyString, out galaxyInt);
+      
+      // Print results
+      Console.WriteLine(welcomeMessage);
+      Console.WriteLine($"Parsed to int? {outcome}: {galaxyInt}");
+      
+    }
+    
+    // Define a method that returns a string
+  	static string DecoratePlanet(string planet)
+    {
+       return $"*..*..* Welcome to {planet} *..*..*";
+    }
+    
+    // Define a method with out
+    static string Whisper(string phrase, out bool wasWhisperCalled)
+    {
+      wasWhisperCalled = true;
+      return phrase.ToLower();
+    }
+	}
+}

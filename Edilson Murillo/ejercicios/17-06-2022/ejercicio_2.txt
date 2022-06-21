@@ -1,0 +1,12 @@
+ 	    //Cree un programa que valide si el número ingresado es par o impar.
+            int numero;
+            Console.WriteLine("Ingrese un numero: ");
+            numero = Convert.ToInt32(Console.ReadLine());
+            if (numero % 2 == 0)
+            { 
+                Console.WriteLine($"\n\r{numero} es un numero par");
+            }
+            else
+	        {
+                Console.WriteLine($"\n\r{numero} es un numero impar");
+            }

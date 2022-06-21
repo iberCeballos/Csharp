@@ -1,0 +1,85 @@
+Sobrecarga de métodos
+Digamos que desea utilizar Math.Round(), un método integrado. ¡Ve a la documentación de Microsoft para aprender a usarlo y encuentra al menos 8 versiones diferentes! Todos tienen el mismo nombre: Math.Round().
+
+Lo que sucede aquí se denomina sobrecarga de métodos , y cada "versión" se denomina sobrecarga . Aunque tienen el mismo nombre, las sobrecargas son diferentes porque tienen (i) diferentes tipos de parámetros o (ii) diferente número de parámetros. Esto es útil si desea que el mismo método tenga un comportamiento diferente en función de sus entradas.
+
+Examinemos este concepto con estas dos sobrecargas: Math.Round(Double, Int32)y Math.Round(Double).
+
+La primera sobrecarga, Math.Round(Double, Int32), redondea doubleal intnúmero de puntos decimales de
+
+Math.Round(3.14159, 2); // returns 3.14
+El segundo, Math.Round(Double), redondea doubleal entero más cercano.
+
+Math.Round(3.14159); // returns 3
+En C#, cuando decimos que los métodos son "diferentes", en realidad nos referimos a las firmas de sus métodos , que son el nombre del método y los tipos de parámetros en orden.
+
+Por ejemplo, los dos métodos anteriores tienen nombre Round(), pero uno tiene parámetros y el otro tiene un Doubleparámetro .Int32Double
+
+Instrucciones
+1 .
+Practiquemos la implementación de nuestras propias sobrecargas. Construyamos un método NamePetscon dos sobrecargas.
+
+Primero escriba un método NamePets()que tome dos stringargumentos.
+
+Si lo llamas, como:
+
+NamePets("Laika", "Albert");
+debería anunciar las mascotas recién nombradas en la consola, como:
+
+Your pets Laika and Albert will be joining your voyage across space!
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+Luego escribe otro método NamePetsque tome tres stringargumentos. Cuando lo llamas:
+
+NamePets("Mango", "Puddy", "Bucket");
+debería anunciar las mascotas recién nombradas en la consola, como:
+
+Your pets Mango, Puddy, and Bucket will be joining your voyage across space!
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Agregue un tercer NamePetsmétodo con cero argumentos. Cuando lo llamas:
+
+NamePets();
+debería empatizar contigo, como:
+
+Aw, you have no spacefaring pets :(
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+Llame a cada sobrecarga de método una vez en Main().
+
+using System;
+
+namespace MethodOverloading
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      NamePets("Laika", "Albert"); 
+      NamePets("Mango", "Puddy", "Bucket");
+      NamePets();    
+    }
+
+    static void NamePets(string pet1, string pet2)
+{
+      Console.WriteLine($"Your pets {pet1} and {pet2} will be joining your voyage across space!");    
+    } 
+    static void NamePets(string pet1, string pet2, string pet3)
+{
+      Console.WriteLine($"Your pets {pet1}, {pet2}, and {pet3} will be joining your voyage across space!");    
+    } 
+
+    static void NamePets(){
+      Console.WriteLine("Aw, you have no spacefaring pets :(");
+    }
+
+
+    
+  }
+}

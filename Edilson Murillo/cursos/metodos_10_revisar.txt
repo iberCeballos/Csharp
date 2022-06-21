@@ -1,0 +1,69 @@
+Revisar
+Aprendiste mucho esta lección: ¡felicidades por terminar! Esto es lo que has cubierto:
+
+Llame a un método con su nombre y paréntesis:
+VisitPlanets();
+Almacene el valor devuelto de un método en una variable:
+double result = Math.Round(3.14159, 2);
+Defina un método básico con la siguiente sintaxis:
+static void VisitPlanets()
+{
+}
+Cada vez que se inicia una aplicación, Main()se llama al método.
+Los valores pasados ​​a un método se llaman argumentos . Cuando se definen en el método, son parámetros .
+Los parámetros del método solo se pueden usar dentro del cuerpo del método.
+Los parámetros del método pueden ser opcionales si se les da un valor predeterminado usando la =sintaxis de igualdad:
+static void VisitPlanets(int numberOfPlanets = 0)
+Al llamar a un método, pase los argumentos por posición o por nombre. Si usa nombres, use la :sintaxis de dos puntos ( ):
+VisitPlanets(numberOfPlanets: 9);
+En la sobrecarga de métodos, varios métodos pueden tener el mismo nombre, siempre que tengan firmas de métodos diferentes .
+La firma de un método es el nombre de un método y los tipos de parámetros en orden.
+Instrucciones
+1 .
+¡Asegúrate de saber cómo aplicar todos estos conceptos antes de continuar!
+
+Para pasar este último ejercicio:
+
+Llamada NamePets()con dos argumentos
+Llame VisitPlanets()y especifique solo elnumberOfPlanets
+
+using System;
+
+namespace ReviewMethodCallsAndInput
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      NamePets("Hola", "Mundo");
+      VisitPlanets(numberOfPlanets: 2);
+    }
+    
+    static void NamePets()
+    {
+      Console.WriteLine("Aw, you have no spacefaring pets :(");
+    }
+    
+    static void NamePets(string pet1, string pet2)
+    {
+      Console.WriteLine($"Your pets {pet1} and {pet2} will be joining your voyage across space!");
+    }  
+    
+    static void NamePets(string pet1, string pet2, string pet3)
+    {
+      Console.WriteLine($"Your pets {pet1}, {pet2}, and {pet3} will be joining your voyage across space!");
+    }  
+    
+    static void VisitPlanets(
+      string adjective = "brave",
+      string name = "Cosmonaut", 
+      int numberOfPlanets = 0,
+      double gForce = 4.2)
+    {
+      Console.WriteLine($"Welcome back, {adjective} {name}.");
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+      Console.WriteLine($"...while experiencing a g-force of {gForce} g!");
+    }
+    
+  }
+}

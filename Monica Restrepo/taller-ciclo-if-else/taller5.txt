@@ -1,0 +1,30 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese el numero de laptos que desea llevar");
+		int lapto = Convert.ToInt32(Console.ReadLine());
+		double valorlap=1200000; 
+		double valortotal= valorlap*lapto;
+		double valordescuento, valorneto;
+		
+		if(lapto>=5)			
+		{
+			valordescuento = (valortotal * 10)/100;
+			valorneto = valortotal-valordescuento;
+			
+			Console.WriteLine("El valor total de las laptos es de: " + valortotal + " con el descuento del 10% paga: "+ valorneto);
+			
+		}
+		
+		else if(lapto<5)
+		{
+			Console.WriteLine("El valor total a pagar por las alptos es de: " + valortotal + " no aplica descuento");
+			
+		}
+		
+			
+	}
+}

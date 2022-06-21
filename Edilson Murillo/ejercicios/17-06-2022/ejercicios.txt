@@ -1,0 +1,21 @@
+Realizar un programa que muestre el nombre del cliente y la cantidad de artículos comprados, si la cantidad es menor de 15 pagara en efectivo, si es mayor de 15 y menor de 60 pagara con tarjeta,  si es mayor de 60 pagara con cheque
+
+Cree un programa que valide si el número ingresado es par o impar.
+
+Cree un programa que permita saber, en base a la nota final del curso de un alumno, si ha aprobado o ha desaprobado. Si la nota es mayor que 3, el alumno ha aprobado, en caso contrario, ha desaprobado.
+
+Cree un programa que valide la edad actual del usuario. Considerar días y meses, y si, en el momento de la evaluación cumple años, imprimir un mensaje con la felicitación.
+
+
+Determinar cuánto se debe pagar por una cantidad de laptops considerando que si son de  5 o más, existe un descuento de 10%, teniendo en cuenta que el costo por laptops es de 1´200.000 ; de lo contrario no hay descuento.
+
+Ingresar por teclado 3 números y mostrar que numero es mayor.
+
+Cree un programa que solicite al usuario el lado de un cuadrado. Luego le debe pedir una opción al usuario, si elige 1, le debe mostrar el perímetro del cuadrado, si elige 2, le debe mostrar el área del cuadrado.
+
+
+Ingresar dos valores numéricos y mostrar su suma, resta, multiplicación y división. Si la multiplicación es mayor e igual que 20 restarle el resultado de la resta de los 2 valores, caso contrario a la multiplicación añadirle su suma, mostrar el resultado.
+
+ Realizar el siguiente ejercicio en el que se ingresa por teclado 10 notas de un alumno, mostrar nombre del alumno, el promedio de las 4 notas e indicar si está APROBADO caso contrario DESAPROBADO.
+
+un turistas decide recorrer el norte de un país que se encuentra a una determinada distancia de 3200 km, y se va  en auto,  calcular el tiempo, teniendo en cuenta que la capacidad de recorrido es de 80  km/h

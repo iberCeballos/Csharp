@@ -1,0 +1,47 @@
+Introducción a las expresiones alternativas
+Los buenos desarrolladores no trabajan demasiado. Todos nos esforzamos por mejorar en la codificación, pero cuando algo parece difícil o repetitivo, ¡generalmente hay una mejor manera de hacerlo!
+
+Los métodos son un buen ejemplo:
+
+bool IsEven(int num)
+{
+  return num % 2 == 0;
+}
+¿Por qué molestarse con estas llaves ( { }) y returnpalabras clave para un método tan corto?
+
+En C# hay otras formas de definir un método, lo que puede ahorrarnos el esfuerzo de escribir y hacer que nuestro código sea más fácil de leer. Se llaman definiciones con cuerpo de expresión y expresiones lambda .
+
+De ahora en adelante, cuando veas estas frases solo piensa: “¡Estos son atajos para definir métodos!” Esta lección le mostrará cómo usarlos.
+
+Instrucciones
+Consulte estas definiciones de métodos básicos en el editor de texto. La firma del método nos dice los tipos de entrada y salida del método. El cuerpo del método vive dentro de las llaves { }y, a veces, contiene la returnpalabra clave.
+
+Tomemos Welcome()por ejemplo:
+
+La firma nos dice que el método toma una cadena y no genera nada.
+El cuerpo imprime algo de texto en la consola.
+
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Welcome("Earth");
+      double days = 500;
+      double rotations = DaysToRotations(days);
+    }
+    
+    static double DaysToRotations(double days)
+    {
+      return days / 365;
+    }
+    
+    static void Welcome(string planet)
+    {
+      Console.WriteLine($"Welcome to {planet}!");
+    }
+  }
+}
