@@ -1,0 +1,320 @@
+1. Realizar un programa que muestre el nombre del cliente y la cantidad de artículos comprados, si la cantidad es menor de 15 pagara en efectivo,
+ si es mayor de 15 y menor de 60 pagara con tarjeta,  si es mayor de 60 pagara con cheque
+using System;
+
+namespace ejercicio1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombreCliente = ("");
+            Console.WriteLine("ingrese su nomre");
+            nombreCliente = Console.ReadLine();
+
+            int cantArticulos;
+            Console.WriteLine("ingrese la cantidad de articlos comprados");
+            cantArticulos = int.Parse(Console.ReadLine()); 
+
+            if (cantArticulos < 15)
+            {
+                Console.WriteLine("debe pagar con efectivo" );
+            }
+            if (cantArticulos >= 15 && (cantArticulos <=60))
+            {
+                Console.WriteLine("debe pagar con tarjeta");
+            }
+            if (cantArticulos > 60)
+            {
+                Console.WriteLine("debe pagar con cheque");
+            }
+        }
+    }
+}
+
+
+2. Cree un programa que valide si el número ingresado es par o impar.
+using System;
+
+namespace ejercicio1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            Console.WriteLine("Ingrese un numero al azar");
+            number = int.Parse(Console.ReadLine());
+            if (number % 2 == 0 )
+            {
+                Console.WriteLine("el numero es par");
+            }
+            else
+            {
+                Console.WriteLine("el numero es impapar");
+            }
+        }
+    }
+}
+
+
+3. Cree un programa que permita saber, en base a la nota final del curso de un alumno, si ha aprobado o ha desaprobado. Si la nota es mayor que 3, 
+el alumno ha aprobado, en caso contrario, ha desaprobado.
+using System;
+
+namespace ejercicio3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int notaFinal;
+            Console.WriteLine("Ingrese la nota final");
+            notaFinal = int.Parse(Console.ReadLine());
+            if (notaFinal  > 3)
+            {
+                Console.WriteLine("felicitaciones has aprobado ");
+            }
+            else
+            {
+                Console.WriteLine("no ha probado");
+            }
+        }
+    }
+}
+
+
+4. Cree un programa que valide la edad actual del usuario. Considerar días y meses, y si, en el momento de la evaluación cumple años, imprimir un mensaje con
+ la felicitación.
+using System;
+
+namespace ejercicio4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DateTime cumple;
+            DateTime fechaActual = DateTime.Now;
+            int años;
+            Console.Write("Ingrese su fecha de nacimiento en formato dd/mm/yyyy: ");
+            if (DateTime.TryParse(Console.ReadLine(), out cumple))
+            {
+                
+                Console.WriteLine("Fecha correcta.");
+            }
+            años = fechaActual.Year - cumple.Year;
+            if (cumple.Month >= fechaActual.Month)
+            {
+                años--;
+                if (cumple.Month == fechaActual.Month)
+                {
+                    if (cumple.Day <= fechaActual.Day)
+                    {
+                        años++;
+                        if (cumple.Day == fechaActual.Day)
+                        {
+                            Console.Write("¡Feliz cumpleaños! ");
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Tu edad actual es: " + años.ToString());
+        }
+    }
+}
+
+
+5. Determinar cuánto se debe pagar por una cantidad de laptops considerando que si son de  5 o más, existe un descuento de 10%, teniendo en cuenta que
+ el costo por laptops es de 1´200.000 ; de lo contrario no hay descuento.
+using System;
+
+namespace ejercicio5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numeropc;
+            Console.WriteLine("cuantas lapptos va a llevar");
+            numeropc = int.Parse(Console.ReadLine());
+
+            int preciopc = 1200000;
+            float descuento = (0.10f);
+            if (numeropc < 5)
+            {
+                int totalbPagar1 = numeropc * preciopc;
+                Console.WriteLine( "el total a pagar es de: "+totalbPagar1);
+
+            }
+
+            if (numeropc >= 5)
+            {
+                int totalbPagar2 = numeropc * preciopc;
+                double totalDescuentto = totalbPagar2 * 0.10;
+                totalDescuentto = totalbPagar2 - totalDescuentto;
+                Console.WriteLine(totalDescuentto);
+            }
+           
+        }
+    }
+}
+
+6.Ingresar por teclado 3 números y mostrar que numero es mayor.
+namespace ejercicio6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numeroA, numeroB, numeroC ;
+            Console.WriteLine("ingrese 3 numeros");
+            numeroA = int.Parse(Console.ReadLine());
+            numeroB = int.Parse(Console.ReadLine());
+            numeroC = int.Parse(Console.ReadLine());
+            if (numeroA >= numeroB && numeroA >= numeroC)
+            {
+                Console.WriteLine("el numero mayor es el numero:" + numeroA);
+            }
+            else if (numeroB >= numeroC && numeroB >= numeroA)
+            {
+                Console.WriteLine("el numero mayor es el numero:" + numeroB);
+            }
+            else if (numeroC >= numeroA && numeroC >= numeroB)
+            {
+                Console.WriteLine("el numero mayor es el numero:" + numeroC);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
+7. Cree un programa que solicite al usuario el lado de un cuadrado. Luego le debe pedir una opción al usuario, si elige 1, le debe mostrar el perímetro del cuadrado,
+ si elige 2, le debe mostrar el área del cuadrado.
+
+namespace ejercicio7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double lado;
+            Console.WriteLine("ingrese el lado del cuadrado");
+            lado = double.Parse(Console.ReadLine());
+
+            int calcular;
+            Console.WriteLine("_ Que va a calcular: 1. Perimetro 2. Area _ ");
+            calcular = int.Parse(Console.ReadLine());
+
+            if (calcular == 1)
+            {
+                double perimetro = lado + lado + lado + lado;
+                Console.WriteLine("El perimetro del cuadrado es: " + perimetro);
+            }
+            if (calcular == 2)
+            {
+                double area = lado * lado;
+                Console.WriteLine("El area del cuadrado es: " + area);
+            }
+        }
+    }
+}
+
+
+
+
+8. Ingresar dos valores numéricos y mostrar su suma, resta, multiplicación y división. Si la multiplicación es mayor e igual que 20 restarle el resultado de la resta 
+de los 2 valores, caso contrario a la multiplicación añadirle su suma, mostrar el resultado.
+namespace ejercicio7
+{
+    class Program   
+    {
+        static void Main(string[] args)
+        {
+            int number1, number2;
+            Console.WriteLine(" ingrese un numero al azar ");
+            number1 = int.Parse(Console.ReadLine());
+            number2 = int.Parse(Console.ReadLine());
+
+            int suma = number1 + number2;
+            int resta = number1 - number2 ;
+            int multip = number1 * number2 ;
+            Console.WriteLine("el resultado de la suma:  "  + suma);
+            Console.WriteLine("el resultado de la resta:  " + resta);
+            Console.WriteLine("el resultado de la multiplicaciion: " + multip);
+
+            if (multip >= 20 )
+            {
+                int mult2 = multip - resta ;
+                Console.WriteLine("el resultado de la multiplicacion es de: " , mult2 , "" );
+            }
+            else
+            {
+                int mult3 = multip + suma;
+                Console.WriteLine(" el resultado es: " + mult3);
+            }
+
+        }
+    }
+}
+
+9. Realizar el siguiente ejercicio en el que se ingresa por teclado 10 notas de un alumno, mostrar nombre del alumno, el promedio de las 4 notas e indicar si está
+ APROBADO caso contrario DESAPROBADO.
+
+namespace ejercicio9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombreAlumno;
+            Console.WriteLine(" ingrense el nombre del alumno: ");
+            nombreAlumno = (Console.ReadLine());
+            int nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8, nota9, nota10;
+            Console.WriteLine("ingrese las notas");
+            nota1 = int.Parse(Console.ReadLine());
+            nota2 = int.Parse(Console.ReadLine());
+            nota3 = int.Parse(Console.ReadLine());
+            nota4 = int.Parse(Console.ReadLine());
+            nota5 = int.Parse(Console.ReadLine());
+            nota6 = int.Parse(Console.ReadLine());
+            nota7 = int.Parse(Console.ReadLine());
+            nota8 = int.Parse(Console.ReadLine());
+            nota9 = int.Parse(Console.ReadLine());
+            nota10 = int.Parse(Console.ReadLine());
+
+            int sumaNotas = nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8 + nota9 + nota10;
+            int promedioNotas = sumaNotas/10;
+
+            if (promedioNotas >= 3)
+            {
+                Console.WriteLine("has aprobado");
+            }
+            else
+            {
+                Console.WriteLine("has reprobado --bruto--");
+            }
+        }
+    }
+}
+
+10. un turistas decide recorrer el norte de un país que se encuentra a una determinada distancia de 3200 km,
+ y se va  en auto,  calcular el tiempo, teniendo en cuenta que la capacidad de recorrido es de 80  km/h
+using System;
+
+namespace ejercicio10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double distancia = 3200;
+            double capacidad = 80;
+
+            double tiempo = distancia / capacidad
+
+            Console.WriteLine(" el tiempo es de: " + tiempo );
+        }
+    }
+}
