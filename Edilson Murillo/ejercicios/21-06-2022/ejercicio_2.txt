@@ -1,0 +1,23 @@
+ static void Main(string[] args)
+        {
+            //Crea un metodo que sume dos números pasados por parámetros, si un numero es impar que multiple, devuelve
+            Console.WriteLine("Ingrese un valor");
+            int num_1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese otro valor");
+            int num_2 = Convert.ToInt32(Console.ReadLine());
+            saludo(num_1, num_2);
+        }
+        static void saludo(int n1, int n2)
+        {
+            int resultado;
+            if (n1 % 2 == 1 || n2 % 2 == 1 )
+            {
+                resultado = n1 * n2;
+                Console.WriteLine($"\nEl resultado de la multiplicacion de \n{n1} * {n2} = {resultado}");
+            }
+            else
+            {
+                resultado = n1 + n2;
+                Console.WriteLine($"\nEl resultado de la suma de \n{n1} + {n2} = {resultado}");
+            }
+        }
