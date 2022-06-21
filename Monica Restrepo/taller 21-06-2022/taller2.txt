@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese el primer numero");
+		int num1=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Ingrese el segundo numero");
+		int num2=Convert.ToInt32(Console.ReadLine());
+		
+	 Moni(num1, num2);
+		
+	}
+	
+	public static void Moni(int num1, int num2)
+	{
+		int resultado;
+		
+		if(num1 % 2 ==1 || num2 % 2 ==1)
+		{
+			resultado= num1*num2;
+			Console.WriteLine("Resultado de la multiplicacion "+ resultado);
+		}
+		else
+		{
+			resultado= num1 + num2;
+			Console.WriteLine("Resultado de la suma "+ resultado);
+		}
+		
+		
+	}
+}

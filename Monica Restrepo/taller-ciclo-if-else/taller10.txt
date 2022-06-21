@@ -1,0 +1,12 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double velocidad=80;
+		double distancia=3200;
+		double tiempo= distancia / velocidad;
+		Console.WriteLine("El recorrido se demora: " + tiempo +" horas");
+	}
+}
