@@ -1,0 +1,21 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+	 Mon("Monica", "Restrepo");
+		
+	}
+	
+	public static void Mon(string nombre, string apellido)
+	{
+		//Console.WriteLine("Ingrese su nombre");
+		//string nombre=Console.ReadLine();
+		//Console.WriteLine("Ingrese su apellido");
+		//string apellido=Console.ReadLine();
+		
+		Console.WriteLine("Coordial saludo "+nombre+ " " + apellido + " un gusto saludarla el dia de hoy");
+	}
+}
