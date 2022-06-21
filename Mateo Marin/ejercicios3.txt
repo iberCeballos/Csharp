@@ -1,0 +1,33 @@
+string nombre = ("");
+            Console.WriteLine("Ingresa tu nombre:");
+            nombre = Console.ReadLine();
+            string apellido = ("");
+            Console.WriteLine("Ingresa tu apellido:");
+            apellido = Console.ReadLine();
+
+            Console.WriteLine("Hola " + nombre + " " + apellido + " Espero que tengas un lindo dia (°UwU°)");
+
+2. string numeroUno = ("");
+            Console.WriteLine("Ingresa un numero: ");
+            numeroUno = Console.ReadLine();
+            string numeroDos = ("");
+            Console.WriteLine("Ingresa un numero: ");
+            numeroDos = Console.ReadLine();
+
+            Console.WriteLine(Resultado ( numeroUno,numeroDos));
+
+        }
+        public static int Resultado  (string numeroUno, string numeroDos)
+        {
+            int n1 = Convert.ToInt32(numeroUno);
+            int n2 = Convert.ToInt32(numeroDos);
+            if (n1 %2 == 0 || n2 %2 == 0 )
+            {
+                return n1 + n2;
+                
+            }
+            else
+            {
+                return n1 / n2;
+            }
+        }
