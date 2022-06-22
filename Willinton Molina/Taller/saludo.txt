@@ -1,0 +1,30 @@
+using System;
+
+namespace casimiro
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingresa su nombre");
+            string nombre=Console.ReadLine();
+            Console.WriteLine("Ingresa su apellido");
+            string apellido=Console.ReadLine();
+            Console.WriteLine("Ingrese su saludo");
+            string saludo = Console.ReadLine();
+            Console.WriteLine($"{saludo} {nombre}  { apellido } ");
+            Console.ReadKey();
+
+            
+
+        }
+        public static void Presentacion (string nombre, string apellido)
+        {
+            
+            Console.WriteLine("Ingrese su saludo");
+            string saludo = Console.ReadLine();
+            Console.WriteLine($"Sea" + saludo , nombre + apellido  );
+            Console.ReadKey();
+        }
+    }
+}

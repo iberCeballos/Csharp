@@ -1,0 +1,73 @@
+ejercicio_1
+
+using System;
+
+namespace ejercicio_hoy
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombre;
+            string apellido;
+            Console.WriteLine("ingrese su nombre ");
+            nombre = Console.ReadLine();
+            Console.WriteLine("ingrese apellido");
+            apellido = Console.ReadLine();
+            saludo(nombre, apellido);
+            
+            
+
+        }
+        public static void saludo(string nombre, string apellido)
+        {
+
+
+            Console.WriteLine($"muy buenas tardes {nombre}, {apellido} esperamos que tenga una muy buena tarde");
+        }
+       
+        
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+ejercicio_2
+
+using System;
+
+namespace ejercicio_hoy
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero_1;
+            int numero_2;
+            Console.WriteLine("ingrese su primer valor");
+            numero_1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese su segundo valor");
+            numero_2 = Convert.ToInt32(Console.ReadLine());
+
+            resultado(numero_1, numero_2);
+            Console.WriteLine(resultado(numero_1, numero_2));
+
+        }
+        public static int resultado(int numero_1, int numero_2)
+        {
+            int total = 0;
+            if (numero_1 %2 == 0 && numero_2 % 2 == 0)
+            {
+                total = numero_1 + numero_2;
+            }
+            else if(numero_1 % 2 != 0 && numero_2 % 2 != 0)
+            {
+                total = numero_1 * numero_2;
+            }
+            return total;
+
+
+            
+        }
+       
+        
+    }
+}
