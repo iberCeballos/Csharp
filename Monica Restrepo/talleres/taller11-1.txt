@@ -12,10 +12,10 @@ namespace WhileLoop
       {
         emails--;
 
-        Console.WriteLine("Quedan " + emails );
+        Console.WriteLine("Quedan " + emails+ " Email" );
 
       }
-      Console.WriteLine("¡INBOX CERO LOGRADO!");
+      Console.WriteLine("Has logrado dejar la vandeja de entrada en cero");
     }
   }
 }
