@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var mod = heroes.Select(h => $"Introducing...{h}!");
+
+      var query = from h in heroes
+                  where h.Contains(" ")
+                  select h.IndexOf(" ");
+
+      foreach(var m in mod)
+      {
+        Console.WriteLine(m);
+      }
+
+        foreach(var q in query)
+      {
+        Console.WriteLine(q);
+      }
+
+      
+    }
+  }
+}

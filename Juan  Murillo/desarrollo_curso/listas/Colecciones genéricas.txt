@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<bool> l1 = new List<bool>();
+      List<Random> l2 = new List<Random>();
+      List<IServiceProvider> l3 = new List<IServiceProvider>();
+    }
+  }
+}
