@@ -1,0 +1,22 @@
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+     Console.Write("ingrese algun valor");
+     string a = Console.ReadLine();
+
+     if(a==String.IsNullOrEmpty())
+     {
+       Console.Write("You didn't enter anything!");
+     }
+     else
+     {
+       Console.Write("Thank you for your submission!);
+     }
+    }
+  }
+}

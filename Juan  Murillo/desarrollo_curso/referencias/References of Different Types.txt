@@ -1,0 +1,50 @@
+namespace LearnReferences
+{
+  interface IFlippable
+  {
+    int CurrentPage { get; set; }
+    void Flip();
+  }
+}
+
+namespace LearnReferences
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+  }
+}
+
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Dissertation diss = new Dissertation();
+			IFlippable fdiss = diss;
+      Book bdiss = diss;
+			fdiss.CurrentPage = 42;
+      bdiss.Stringify();
+      Console.WriteLine(fdiss == bdiss);
+    }
+  }
+}

@@ -1,0 +1,97 @@
+namespace TheObjectClass
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+  	
+    public override string ToString()
+    {
+      return $"This Book is {Title}, by {Author}.";
+    }
+  }
+}
+
+
+namespace TheObjectClass
+{
+  class Diary : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+
+    public Diary(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+    
+    public Diary(int page, string author, string title) : base(author, title)
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string SpillSecret()
+    {
+      return "OMG kerry loves kris <3";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Diary object!";
+    }
+    
+    public override string ToString()
+    {
+    	return "Surprise!";
+    }
+  }
+}
+
+
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book("Ta-Nehisi Coates", "Between the World and Me");
+      Diary dy = new Diary(38);
+      Random rand = new Random();
+      int i = 9;
+
+      Object[] objects = {bk, dy, rand, i};
+
+      foreach (Object obj in objects)
+      {
+        Console.WriteLine(obj.GetType());
+        Console.WriteLine(obj);
+      }
+
+      bool b = true;
+      Console.WriteLine(b);
+      Console.WriteLine(b.ToString());
+    }
+  }
+}

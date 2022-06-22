@@ -1,0 +1,22 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese un numero");
+		int num = Convert.ToInt32(Console.ReadLine());
+		
+		if(num % 2 ==0)
+		{
+			Console.WriteLine("El numero que usted ingreso es: " + num + " es par ");
+			
+		}
+		
+		else if(num % 2 ==1)
+		{
+			Console.WriteLine("El numero que usted ingreso es: " + num + " no es par ");
+			
+		}
+	}
+}

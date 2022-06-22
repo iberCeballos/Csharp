@@ -1,0 +1,65 @@
+1.Crea un método que nos salude de una forma cordial, pasándole un nombre y apellido por parámetro.
+using System;
+
+namespace ejercicio1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nombre;
+            Console.WriteLine("ingrese su nombres");
+            nombre = (Console.ReadLine);
+            string apellido:
+            Console.WriteLine("ingrese su apellidos");
+            apellido = (Console.ReadLine);
+            Console.WriteLine("");
+        }
+        public static void saludo (string nombre1, string apellido1)
+            Console.WriteLine("hola buenas tardes" +nombre+apellidos"que tengas un resto de dia agradable"); 
+    }
+}
+//Crea un método que nos salude de una forma cordial, pasándole un nombre y apellido por parámetro.
+
+
+
+2.Crea un metodo que sume dos números pasados por parámetros, si un numero es impar que multiple, devuelve el resultado,
+los parametros deberan ser ingresados como string y se tienen que convertir a int.
+using System;
+
+namespace ejercicio2
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            string numberOne;
+            Console.WriteLine("ingrese un numero");
+            numberOne = Console.ReadLine();
+            string numberTwo;
+            Console.WriteLine("ingrese otro numero");
+            numberTwo = Console.ReadLine();
+
+            Console.WriteLine(resultado(numberOne, numberTwo));
+
+        }
+        public static int resultado(string number1, string number2)
+         {
+            int n1 = Convert.ToInt32(number1);
+            int n2 = Convert.ToInt32(number2);
+            if (n1 % 2 != 0 || n2 % 2 != 0)
+            {
+                return n1 * n2;
+            }
+            else
+            {
+                return n1 + n2;
+            }
+         }
+    }
+}
+
+
+//Crea un metodo que sume dos números pasados por parámetros, si un numero es impar que multiple, devuelve el resultado,
+//los parametros deberan ser ingresados como string y se tienen que convertir a int.
+

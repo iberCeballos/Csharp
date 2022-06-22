@@ -1,0 +1,22 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese su nombre");
+		string nombre=Console.ReadLine();
+		Console.WriteLine("Ingrese su nota final");
+		int nota = Convert.ToInt32(Console.ReadLine());
+		
+		if(nota>3)
+		{
+			Console.WriteLine("El estudiante: " + nombre + " aprobo el curso");
+		}
+		
+		else if(nota<3)
+		{
+			Console.WriteLine("El estudiante: " + nombre + " desaprobo el curso");
+		}
+	}
+}

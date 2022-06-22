@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+        {
+           //Crea un método que nos salude de una forma cordial,
+            //pasándole un nombre y apellido por parámetro.
+            Console.WriteLine("este programa lee su nombre y apellido, y luego imprime un saludo cordial");
+            Console.WriteLine("ingrese su nombre");
+            string nombre = Console.ReadLine();
+
+            Console.WriteLine("ingrese su apellido");
+            string ap = Console.ReadLine();
+
+            saludo(nombre,ap);
+            Console.ReadLine();
+        }
+
+        public static void saludo(string nom , string ape)
+        {
+            Console.WriteLine("larga vida tenga usted, " + nom + " " + ape + ",\ny como agradecimiento a la vida por tenerte con nosotros,\nrecordemos las palabras del maestro Yamagushi Sodo:\n\nEsta primavera en mi cabaña\nAbsolutamente nada\nAbsolutamente todo");
+        }
+
+    }
+}

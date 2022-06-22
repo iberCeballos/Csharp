@@ -1,0 +1,22 @@
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book();
+      
+      Diary dy = new Diary(38);
+      
+      int i = 9;
+
+      Object bk2 = bk;
+      Object dy2 = dy;
+      Object i2 = i;
+      
+
+    }
+  }
+}
