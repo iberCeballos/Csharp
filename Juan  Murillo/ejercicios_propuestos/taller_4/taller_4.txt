@@ -1,0 +1,16 @@
+crear un algoritmo que contenga
+-4 valores usuario, contraseña, nombre y apellido en un array
+-que imprima un mensaje "inicio de sesión"
+-que pida por consola en usuario y contraseña
+- si el usuario ingresa mal, las credenciales debe aparecer por pantalla un error de login y volver a preguntar
+el ingreso.
+-si el usuario y contraseña son iguales que imprima el siguiente mensaje
+Bienvenido señor "Usuario"(nombre y apellido)
+- agregar además un mensaje de 3 párrafos después del bienvenido
+- después deben imprimir por pantalla 4 opciones que debe hacer el usuario
+imagínense cualquiera, ejemplo sume 2 numero(si usan números acuérdense que las
+variables son un string y se convierten en int o en decimal)
+-estas opciones deben estar guardadas en un array
+-si el usuario escoge alguna de estas variables
+-crear un método para cada opción
+- imprimir los resultados.
