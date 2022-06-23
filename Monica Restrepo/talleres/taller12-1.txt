@@ -1,0 +1,26 @@
+PROGRAM
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+    }
+  }
+}
+
+
+FOREST
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest{
+    
+  }
+}

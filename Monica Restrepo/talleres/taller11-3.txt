@@ -1,0 +1,27 @@
+using System;
+
+namespace ForLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    { 
+      for (int i = 0; i < 10; i++)
+    {
+      CreateTemplate(16);
+    }
+
+    }
+    
+    static void CreateTemplate(int week)
+    {
+      Console.WriteLine($"Week {week}");
+      Console.WriteLine("Announcements: \n \n \n ");
+      Console.WriteLine("Report Backs: \n \n \n");
+      Console.WriteLine("Discussion Items: \n \n \n");
+    }
+    
+    
+    
+  }
+}
