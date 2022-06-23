@@ -1,0 +1,42 @@
+using System;
+					
+public class punto_de_eqilibrio
+{
+	public static void Main()
+	{
+		
+		Console.WriteLine("este programa calcula el punto de equilibrio de una empresa, en pesos");
+		
+		Console.WriteLine("ingrese los costos fijos de la empresa");
+		double cFijos = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("ingrese los costos variables de la empresa");
+		double cVariables = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("ingrese las ventas netas de la empresa");
+		double vNetas = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("ingrese el porcentaje de inflacion");
+		double inflacion = Convert.ToDouble(Console.ReadLine());
+		
+		inflacion=inflacion/100;
+		
+		double equilibrio = (cFijos/(1-(cVariables/vNetas)))*(1+inflacion);
+		
+		if(equilibrio>0){
+			
+			Console.WriteLine("necesita vender en el siguiente año "+equilibrio+" pesos para salir en equilibrio económico financiero");
+		}
+		if(equilibrio==0){
+			
+			Console.WriteLine("su empresa se encuentra en equilibrio económico financiero");
+		}
+		if(equilibrio<0){
+			
+			Console.WriteLine("su empresa se encuentra por encima del punto de equilibrio económico financiero");
+		}
+		
+		
+			
+	}
+}

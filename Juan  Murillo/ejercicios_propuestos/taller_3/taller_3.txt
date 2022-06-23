@@ -1,0 +1,2 @@
+Crea un método que nos salude de una forma cordial, pasándole un nombre y apellido por parámetro.
+Crea un metodo que sume dos números pasados por parámetros, si un numero es impar que multiple, devuelve el resultado,los parametros deberan ser ingresados como string y se tienen que convertir a int.

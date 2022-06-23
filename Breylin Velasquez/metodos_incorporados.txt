@@ -1,0 +1,38 @@
+Métodos incorporados
+Entonces, ¿cómo hacemos operaciones matemáticas más avanzadas? Por ejemplo, ¿cómo realizaríamos una raíz cuadrada en un número si el programa no reconoce un símbolo de raíz cuadrada?
+
+Hay varios métodos incorporados que podemos usar para manipular datos numéricos y realizar cálculos matemáticos más complejos. Aquí hay algunos:
+
+Math.Abs()—encontrará el valor absoluto de un número. Ejemplo: Math.Abs(-5)devuelve 5.
+
+Math.Sqrt()—encontrará la raíz cuadrada de un número. Ejemplo: Math.Sqrt(16)devuelve 4.
+
+Math.Floor()—redondeará el doble o decimal dado hacia abajo al número entero más cercano. Ejemplo: Math.Floor(8.65)devuelve 8.
+
+Math.Min(): devuelve el menor de dos números. Ejemplo: Math.Min(39, 12)devuelve 12.
+
+ejerccio
+using System;
+
+namespace LowestNumber
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Create variables 
+      int numberOne = 12932;
+      int numberTwo = -2828472;
+
+      // Use built-in methods and save to variable 
+      double numberOneSqrt = Math.Floor(Math.Sqrt(numberOne));
+      
+      // Use built-in methods and save to variable 
+      double numberTwoSqrt = Math.Floor(Math.Sqrt(Math.Abs(numberTwo)));
+
+      // Print the lowest number
+      Console.WriteLine(Math.Min(numberTwoSqrt, numberOneSqrt));
+      Math.Sqrt(Math.Abs(numberTwo));
+    }
+  }
+}

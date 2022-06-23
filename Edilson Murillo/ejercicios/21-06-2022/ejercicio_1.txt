@@ -1,0 +1,13 @@
+ static void Main(string[] args)
+        {
+            //Crea un método que nos salude de una forma cordial, pasándole un nombre y apellido por parámetro.
+            Console.WriteLine("Ingrese su nombre");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese su apellido");
+            string apellido = Console.ReadLine();
+            saludo(nombre, apellido);
+        }
+        static void saludo(string nom, string apell)
+        {
+            Console.WriteLine($"\nCordial saludo {nom} {apell}, \nespero que te encuentres muy bien.");
+        }

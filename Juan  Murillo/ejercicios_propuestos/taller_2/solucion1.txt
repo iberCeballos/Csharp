@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+        {
+            //Realizar un programa que muestre el nombre del cliente y la cantidad de artículos
+            //comprados, si la cantidad es menor de 15 pagara en efectivo, si es mayor de 15
+            //y menor de 60 pagara con tarjeta,  si es mayor de 60 pagara con cheque
+
+            Console.WriteLine("este progama determin a el medio de pago segun la cantidad de articulos comprados");
+            Console.WriteLine("ingrese el nombre del usuario");
+            string user = Console.ReadLine();
+
+            Console.WriteLine("ingrese la cantidad de productos comprados");
+            int cant = Convert.ToInt32(Console.ReadLine());
+            string pago;
+
+            if(cant < 15)
+            {
+                pago = "efectivo";
+            }
+            else if(cant >= 15 && cant <60)
+            {
+                pago = "tarjeta";
+            }
+            else  if (cant >= 60)
+            {
+                pago = "cheque";
+            }
+            else
+            {
+                pago = "";
+            }
+
+            Console.WriteLine("el usuario "+user+" compro "+cant+" productos, por tanto su forma de pago recomendada en mediante "+pago);
+            Console.ReadLine();
+        }
+    }
+}

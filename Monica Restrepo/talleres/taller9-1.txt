@@ -1,0 +1,26 @@
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Welcome("Earth");
+      double days = 500;
+      double rotations = DaysToRotations(days);
+      Console.WriteLine($"In {days} days, the Earth has rotated {rotations} time(s).");
+    } 
+    
+    static double DaysToRotations(int num) => num % 2 == 0;
+    {
+      return days / 365;
+    }
+    
+    static void Welcome (int num) => num % 2 == 0;
+    {
+      Console.WriteLine($"Welcome to {planet}!");
+    }
+  }
+}
+

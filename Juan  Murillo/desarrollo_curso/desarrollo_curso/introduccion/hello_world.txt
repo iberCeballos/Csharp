@@ -1,0 +1,16 @@
+using System;
+					
+public class hello_world
+{
+	public static void Main()
+	{
+		//declaramos uns variable tipo string
+		string nombre;
+		//pedimos al usuario que realice una accion
+		Console.WriteLine("ingrese su nombre");
+		//almacenamos en la variable nombre el nombre ingresado por el usuario
+		nombre = Console.ReadLine();
+		//mostramos un mensaje concatenando el contenido de la varable nombre
+		Console.WriteLine("hola " + nombre);
+	}
+}

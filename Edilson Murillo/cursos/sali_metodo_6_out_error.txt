@@ -1,0 +1,44 @@
+Errores de salida
+Al igual que con return, outes una palabra clave muy útil, pero puede generar errores si se usa incorrectamente. Aquí hay dos comunes:
+
+Este error significa que outse debe asignar un valor al parámetro dentro del método:
+
+error CS0177: The out parameter 'success' must be assigned to before control leaves the current method
+Este error significa que llamaste a un método que espera un parámetro de "salida", pero no usaste la outpalabra clave cuando lo llamaste:
+
+error CS1620: Argument 2 must be passed with the 'out' keyword
+Instrucciones
+1 .
+¡Este código tiene un montón de errores! Ejecute el código para encontrarlos.
+
+Checkpoint 2 Passed
+2 .
+Solucione el primer error usando outwhen calling Whisper().
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Solucione el segundo error asignando un valor al outparámetro wasWhisperCalleden el cuerpo del método de Whisper().
+
+using System;
+
+namespace OutErrors
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string statement = "GARRRR";
+      bool marker;
+			string murmur = Whisper(statement, out marker);
+      Console.WriteLine(murmur);
+    }  
+    
+    static string Whisper(string phrase, out bool wasWhisperCalled)
+    {
+      wasWhisperCalled = true;
+      return phrase.ToLower();
+    }
+	} 
+}

@@ -1,0 +1,170 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+
+        {
+            int p = 0;
+
+            while (p == 0)
+            {
+                //4 valores usuario, contraseña, nombre y apellido en un array
+                string[] login = { "anayo", "123", "carlos", "murillo" };
+
+                //-que imprima un mensaje "inicio de sesión"
+                Console.WriteLine("inicio de sesión");
+
+                //que pida por consola en usuario y contraseña
+                Console.WriteLine("ingrese su usuario");
+                string user = Console.ReadLine();
+
+                Console.WriteLine("ingrese su contraseña");
+                string pass = Console.ReadLine();
+
+                //- si el usuario ingresa mal, las credenciales debe aparecer
+                //por pantalla un error de login y volver a preguntar el ingreso.
+                //si el usuario y contraseña son iguales que imprima el siguiente
+                //mensaje Bienvenido señor "Usuario"(nombre y apellido)
+                if (user == login[0] && pass == login[1])
+                {
+                    Console.WriteLine("le damos la bienvenida " + login[2] + " " + login[3]);
+                    //agregar además un mensaje de 3 párrafos después del bienvenido
+                    Console.WriteLine("y por tanto te compartimos un poema del maestro Rafael Alberti");
+                    Console.WriteLine("\nSe equivocó la paloma.\nSe equivocaba.\n\nPor ir al Norte, fue al Sur.\nCreyó que el trigo era agua.\nSe equivocaba.\n\nCreyó que el mar era el cielo;\nque la noche la mañana.\nSe equivocaba.\n\nQue las estrellas eran rocío;\nque la calor, la nevada.\nSe equivocaba.\n\nQue tu falda era tu blusa;\nque tu corazón su casa.\nSe equivocaba.\n\nElla se durmió en la orilla.\nTú, en la cumbre de una rama.\n\n");
+
+                    //después deben imprimir por pantalla 4 opciones que debe
+                    //hacer el usuario imagínense cualquiera
+                    Console.WriteLine("este programa tiene diferentes opciones y funcionaliades, eliga la que quiera usar");
+
+                    int p2 = 0;
+                    while (p2 == 0)
+                    {
+                        Console.WriteLine("ingrese 1, si quiere sumar dos numeros\ningrese 2, si quiere identificar el mayor de dos numeros\ningrese 3, si quiere saber que dia y hora son actualmete\ningrese 4 , si quieres saber cuantas personas conforman el equipo de trabajo de Whatsapp");
+
+                        //estas opciones deben estar guardadas en un array
+                        string[] opciones = { "sumar dos numeros", "el mayor de dos numeros", "el dia de hoy", "dato curioso" };
+
+                        //el usuario escoge alguna de estas variables
+                        int op = Convert.ToInt32(Console.ReadLine());
+
+                        if (op == 1)
+                        {
+                            Console.WriteLine(opciones[0]);
+
+                            Console.WriteLine("ingrese el primer numero");
+                            double n1 = Convert.ToDouble(Console.ReadLine());
+
+                            Console.WriteLine("ingrese el segundo numero");
+                            double n2 = Convert.ToDouble(Console.ReadLine());
+
+                            //imprimir los resultados.
+                            suma(n1,n2);
+
+                            p2 = 1;
+
+                        }
+                        else if (op == 2)
+                        {
+                            Console.WriteLine(opciones[1]);
+
+                            Console.WriteLine("ingrese el primer numero");
+                            double n1 = Convert.ToDouble(Console.ReadLine());
+
+                            Console.WriteLine("ingrese el segundo numero");
+                            double n2 = Convert.ToDouble(Console.ReadLine());
+
+                            //imprimir los resultados.
+                            mayor(n1,n2);
+
+                            p2 = 1;
+                        }
+                        else if (op == 3)
+                        {
+                            Console.WriteLine(opciones[2]);
+
+                            //imprimir los resultados.
+                            fecha();
+
+                            p2 = 1;
+                        }
+                        else if (op == 4)
+                        {
+
+                            Console.WriteLine(opciones[3]);
+
+                            //imprimir los resultados.
+                            dato();
+
+                            p2 = 1;
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERROR, ingrese una opcion correcta");
+                            p2 = 0;
+                        }
+
+                    }
+
+
+                    Console.ReadLine();
+                    p = 1;
+
+                }
+                else
+                {
+                    Console.WriteLine("error en el inicio de sesion");
+                    p = 0;
+                }
+
+            }
+
+
+
+        }
+
+        //crear un método para cada opción
+        public static void suma(double num1, double num2)
+        {
+            Console.WriteLine("la suma de los do numeros es "+ (num1 + num2));
+        }
+
+        public static void mayor(double num1, double num2)
+        {
+            if(num1 > num2)
+            {
+                Console.WriteLine(num1 + " es el numero mayor");
+            }
+            else if(num2 > num1)
+            {
+                Console.WriteLine(num2 + " es el numero mayor");
+            }
+            else
+            {
+                Console.WriteLine("los numeros son iguales");
+            }
+        }
+
+        public static void fecha()
+        {
+            Console.WriteLine("hoy es "+DateTime.Now.ToString());
+        }
+
+        public static void dato()
+        {
+            Console.WriteLine("son sólo 55 personas las que están detrás de esta gran red social");
+        }
+
+
+    }
+        
+
+    
+
+}
+    

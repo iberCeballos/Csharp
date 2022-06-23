@@ -1,0 +1,28 @@
+using System;
+
+namespace ComparingLoops
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] websites = { "twitter", "facebook", "gmail" };
+      int counter = 0;
+      
+      while (counter < websites.Length)
+      { 
+        Console.WriteLine(websites[counter]); 
+        counter++; 
+      }
+      for(i=0;i<websites.Length;i++)
+        {
+             Console.WriteLine(websites[i]); 
+        }
+        foreach(string web in websites)
+        {
+            Console.WriteLine(web);
+        }
+      
+    }
+  }
+}

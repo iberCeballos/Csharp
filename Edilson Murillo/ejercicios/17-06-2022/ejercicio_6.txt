@@ -1,0 +1,22 @@
+
+            //Ingresar por teclado 3 números y mostrar que numero es mayor.
+            double num1, num2, num3;
+            Console.WriteLine("Ingrese el valor # 1: ");
+            num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor # 2: ");
+            num2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor # 3: ");
+            num3 = Convert.ToDouble(Console.ReadLine());
+
+            if (num1 > num2 && num1 > num3)
+            {
+                Console.WriteLine($"\nEntre {num1}  {num2}  {num3} el numero mayor es {num1}");
+            }
+            else if (num2 > num1 && num2 > num3)
+            {
+                Console.WriteLine($"\nEntre {num1}  {num2}  {num3} el numero mayor es {num2}");
+            }
+            else if (num3 > num1 && num3 > num2)
+            {
+                Console.WriteLine($"\nEntre {num1}  {num2}  {num3} el numero mayor es {num3}");
+            }

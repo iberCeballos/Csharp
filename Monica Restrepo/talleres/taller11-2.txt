@@ -1,0 +1,18 @@
+using System;
+
+namespace DoWhileLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool buttonClick = true;
+      do
+      {
+        Console.WriteLine("BLARRRRRRR");
+      } while (!buttonClick);
+      Console.WriteLine("Tiempo para un descanso de cinco minutos");
+      
+    }
+  }
+}

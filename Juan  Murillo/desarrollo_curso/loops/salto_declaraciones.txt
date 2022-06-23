@@ -1,0 +1,30 @@
+using System;
+
+namespace JumpStatements
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool buttonClick = true;
+      int contador = 0;
+      
+      do
+      {
+        
+
+
+        Console.WriteLine("BLARRRRR");
+        contador++;
+        Console.WriteLine(contador);
+
+        if(contador>=3)
+        {
+          break;
+        }
+
+        
+      } while(!buttonClick);
+    }
+  }
+}

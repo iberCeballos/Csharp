@@ -1,0 +1,23 @@
+	    //Cree un programa que solicite al usuario el lado de un cuadrado. Luego le debe pedir una opción al usuario, si elige 1,
+            //le debe mostrar el perímetro del cuadrado, si elige 2, le debe mostrar el área del cuadrado.
+            int opcion;
+            double lado, area, perimetro;
+            Console.WriteLine("Ingrese un valor el cual sera el lado de un cuadrado: ");
+            lado = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nElija 1 si desea saber cual seria el area de su cuadrado\nElija 2 si desea saber cual seria el perimetro de su cuadrado: ");
+            opcion = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    area = lado * lado;
+                    Console.WriteLine($"\nEl area de su cuadrado es {area}");
+                    break;
+                case 2:
+                    perimetro = lado + lado + lado + lado;
+                    Console.WriteLine($"\nEl perimetro de su cuadrado es {perimetro}");
+                    break;
+                default:
+                    Console.WriteLine("\nHa seleccionado un numero invalido");
+                    break;
+            }

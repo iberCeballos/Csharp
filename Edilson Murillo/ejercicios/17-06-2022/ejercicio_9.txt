@@ -1,0 +1,38 @@
+
+            //ingresar por teclado 10 notas de un alumno, mostrar nombre del alumno, si el promedio es mayor 3 indicar
+            //si está APROBADO caso contrario DESAPROBADO.
+            double num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, prom;
+            string nombre;
+            Console.WriteLine("Ingrese el nombre del alumno");
+            nombre = Console.ReadLine(); 
+            Console.WriteLine("\nIngrese el valor de la nota # 1: ");
+            num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 2: ");
+            num2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 3: ");
+            num3 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 4: ");
+            num4 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 5: ");
+            num5 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 6: ");
+            num6 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 7: ");
+            num7 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 8: ");
+            num8 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 9: ");
+            num9 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la nota # 10: ");
+            num10 = Convert.ToDouble(Console.ReadLine());
+
+            prom = (num1 + num2 + num3 + num4 + num5 + num6 + num6 + num7 + num8 + num9 + num10)/ 10;
+
+            if (prom > 3)
+            {
+                Console.WriteLine($"\nEl alumno {nombre} ha APROBADO con un promedio de {prom}");
+            }
+            else
+            {
+                Console.WriteLine($"\nEl alumno {nombre} ha DESAPROBADO con un promedio de {prom}");
+            }

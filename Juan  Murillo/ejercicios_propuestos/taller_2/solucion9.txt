@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+        {
+            // Realizar el siguiente ejercicio en el que se ingresa por teclado 10 notas
+            // de un alumno, mostrar nombre del alumno, el promedio de las 4 notas e
+            // indicar si está APROBADO caso contrario DESAPROBADO.
+            Console.WriteLine("este programa determina si un estudiante aprobo o desabrobo el curso dependiendo de sus notas");
+
+            Console.WriteLine("ingrese la primer  nota");
+            double n1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la segunda nota");
+            double n2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la tercer nota");
+            double n3 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la cuarta nota");
+            double n4 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la quinta nota");
+            double n5 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la sexta nota");
+            double n6 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la septima nota");
+            double n7 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la octava nota");
+            double n8 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la novena nota");
+            double n9 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("ingrese la decima nota");
+            double n10 = Convert.ToDouble(Console.ReadLine());
+
+            double promedio = (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10) / 10;
+            string res;
+
+            if (promedio > 3)
+            {
+                res = "APROBADO";
+            }
+            else
+            {
+                res = "DESAPROBADO";
+            }
+
+            Console.WriteLine("el promedio de estudiante es " + promedio + ", por tanto, el ha " + res + " el curso"); ;
+            
+            Console.ReadLine();
+        }
+    }
+}

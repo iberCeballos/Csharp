@@ -1,0 +1,6 @@
+
+            //un turistas decide recorrer el norte de un país que se encuentra a una determinada distancia de 3200 km, y se va  en auto,
+            //calcular el tiempo, teniendo en cuenta que la capacidad de recorrido es de 80  km/h
+            double distancia = 3200, velocidad = 80, tiempo;
+            tiempo = distancia / velocidad;
+            Console.WriteLine($"El turista tardara {tiempo} horas en llegar a su destino");

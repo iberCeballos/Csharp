@@ -1,0 +1,61 @@
+Definiciones con cuerpo de expresión
+Las definiciones con cuerpo de expresión son el primer "atajo" para los métodos de escritura. Son geniales para escribir métodos de una línea, como este:
+
+bool IsEven(int num)
+{
+  return num % 2 == 0;
+}
+Podemos reescribir esta definición como una definición con cuerpo de expresión mediante:
+
+eliminando las llaves y la returnpalabra clave, y
+agregando la “flecha gorda”, o =>, que se compone del signo igual =, y mayor que, >, símbolos
+bool isEven(int num) => num % 2 == 0;
+Esto también funciona para métodos que no devuelven nada, también conocido como void:
+
+void Shout(string x) => Console.WriteLine(x.ToUpper());
+Este tipo de definición solo se puede usar cuando un método contiene una expresión. Esto nos ayuda a recordar el nombre: las definiciones con cuerpo de expresión son definiciones de métodos con una expresión .
+
+Dato curioso: ¡algunos desarrolladores también llaman a la notación de flecha gorda =>, un calamar! 🦑
+
+Instrucciones
+1 .
+Convierta el método DaysToRotations()en una definición con cuerpo de expresión.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Convierta el método Welcome()en una definición con cuerpo de expresión.
+
+using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Welcome("Earth");
+      double days = 500;
+      double rotations = DaysToRotations(days);
+      Console.WriteLine($"In {days} days, the Earth has rotated {rotations} time(s).");
+    } 
+    
+    static double DaysToRotations(double days) => days / 365;
+   
+    /*static double DaysToRotations(double days)
+    {
+      return days / 365;
+    }*/
+
+    //double DaysToRotations(double days) => days / 365;
+    static void Welcome(string planet) => 
+      Console.WriteLine($"Welcome to {planet}!");
+      /*static void Welcome(string planet)
+    {
+      Console.WriteLine($"Welcome to {planet}!");
+    }*/
+    
+    
+  }
+}

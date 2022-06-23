@@ -1,0 +1,22 @@
+using System;
+					
+public class dog
+{
+	public static void Main()
+	{
+		 // Create Variables
+      string name = "Shadow";
+      string breed = "Golden Retriever";
+      int age = 5;
+      double weight = 65.22;
+      bool spayed = true;
+
+
+      // Print variables to the console
+      Console.WriteLine("el perro se llama "+name);
+      Console.WriteLine("su raza es "+breed);
+      Console.WriteLine("su edad es "+age+" años");
+      Console.WriteLine("su peso es de "+weight+ "kg");
+      Console.WriteLine("y "+spayed+" esta esterilizado");
+	}
+}
