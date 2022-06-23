@@ -1,0 +1,27 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string nombre = "mariana";
+	int cantArt = 69;
+		
+		if (cantArt <= 15)
+		{
+		Console.WriteLine("Pagara en efectivo");	
+		}
+		
+		else if (cantArt > 15 && cantArt <= 60)
+		{
+		Console.WriteLine("Pagara con tarjeta");
+		}
+		
+		else
+		{
+		Console.WriteLine("Pagara con cheque");
+		}
+		
+		
+	}
+}

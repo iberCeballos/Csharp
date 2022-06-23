@@ -1,0 +1,25 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese la longitud de un lado del cuadrado");
+		int longitud=Convert.ToInt32(Console.ReadLine());
+		
+		int uno=1;
+		int dos=2;
+		Console.WriteLine("Digite 1 o 2, siendo 1 la longitud de su cuadrado y 2 el area de su cuadrado");
+		int opc=Convert.ToInt32(Console.ReadLine());
+		if (opc == 1){
+			Console.WriteLine("La longitud del cuadrado es ");
+		Console.WriteLine(longitud*4);
+		}
+		
+		else{
+			Console.WriteLine("El area del cuadrado es ");
+			Console.WriteLine(longitud*longitud);
+		}
+		
+	}
+}

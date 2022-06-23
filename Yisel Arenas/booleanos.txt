@@ -1,0 +1,22 @@
+using System;
+
+namespace BooleanDataTypes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+string question1 = "The number 500 is greater than 24?";
+bool answerOne = true;
+Console.WriteLine(question1);
+Console.WriteLine(answerOne);
+
+
+string question2 = "True or False: “coffee” contains the letter “a”?";
+bool answerTwo = false;
+Console.WriteLine(question2);
+Console.WriteLine(answertwo)
+ 
+        }
+    }
+}
