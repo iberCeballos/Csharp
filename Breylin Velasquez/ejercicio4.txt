@@ -1,0 +1,113 @@
+crear un algoritmo que contenga
+-4 valores usuario, contraseña, nombre y apellido en un array
+-que imprima un mensaje "inicio de sesión"
+-que pida por consola en usuario y contraseña
+- si el usuario ingresa mal, las credenciales debe aparecer por pantalla un error de login y volver a preguntar
+el ingreso.
+-si el usuario y contraseña son iguales que imprima el siguiente mensaje
+Bienvenido señor "Usuario"(nombre y apellido)
+- agregar además un mensaje de 3 párrafos después del bienvenido
+- después deben imprimir por pantalla 4 opciones que debe hacer el usuario
+imagínense cualquiera, ejemplo sume 2 numero(si usan números acuérdense que las
+variables son un string y se convierten en int o en decimal)
+-estas opciones deben estar guardadas en un array
+-si el usuario escoge alguna de estas variables
+-crear un método para cada opción
+- imprimir los resultados.
+solucion
+using System;
+
+namespace EJERCICIO4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] Sesion = { "pedro", "Gonzales", "pedro23", "12345pedro" };
+
+            Console.WriteLine("------inicio de sesion------");
+
+            Console.WriteLine("");
+
+                string user;
+
+                Console.WriteLine("ingrese su usuario");
+
+                user = Console.ReadLine();
+
+                string contraseña;
+
+                Console.WriteLine("ingrese su contraseña");
+
+                contraseña = Console.ReadLine();
+
+                while (user != Sesion[2] || contraseña != Sesion[3])
+                {
+                    Console.WriteLine("el usuario o la contraseña es incorrecta ingrese los de manera correcta");
+                    Console.WriteLine("usuario");
+                    user = Console.ReadLine();
+                    Console.WriteLine("contraseña");
+                    contraseña= Console.ReadLine(); 
+                }
+                Console.WriteLine("Su usuario y contraseña es correcta");
+
+                Console.WriteLine("");
+
+                Console.WriteLine($"bienvenidos señor {Sesion[0]}  {Sesion[1]}");
+
+                Console.WriteLine(" hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola" +
+                    " hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola ");
+
+                int[] numeros = { 2, 4 };
+                
+                Console.WriteLine("----elija una operacion arismetica----");
+
+                int opercaciones;
+
+                Console.WriteLine("1. para la operacion de suma");
+                Console.WriteLine("2. para la operacion de resta");
+                Console.WriteLine("3. para la operacion de multiplicacion");
+                Console.WriteLine("4. para la operacion de divicion");
+                
+                opercaciones = Convert.ToInt32(Console.ReadLine());
+
+                switch (opercaciones)
+                {
+                    case 1:
+                        Console.WriteLine("se va a hacer una suma ");
+                        suma(numeros[0], numeros[1]);
+                        break;
+                    case 2:
+                        Console.WriteLine("se va a hacer una resta");
+                        resta(numeros[0], numeros[1]);
+                        break;
+                    case 3:
+                        Console.WriteLine("se va a hacer una multiplicacion");
+                        multipli(numeros[0], numeros[1]);
+                        break;
+                    case 4:
+                        Console.WriteLine("se va a hacer una divicion");
+                        div(numeros[0], numeros[1]);
+                        break;
+                }
+          
+        }
+
+        public static void suma(int numero1, int numero2) 
+        {
+            Console.WriteLine("el resultado de la suma es de: " + (numero1 + numero2) );
+        }
+        public static void resta(int numero1, int numero2)
+        {
+            Console.WriteLine("el resultado de la resta es de: " + (numero1 - numero2));
+        }
+        public static void multipli(int numero1, int numero2)
+        {
+            Console.WriteLine("el resultado de la multiplicacion es de: " + (numero1 * numero2));
+        }
+        public static void div(int numero1, int numero2)
+        {
+            Console.WriteLine("el resultado de la divicion es de: " + (numero1 / numero2));
+        }
+    }
+}
