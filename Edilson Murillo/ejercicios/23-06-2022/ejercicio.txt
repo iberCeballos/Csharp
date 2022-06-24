@@ -1,0 +1,113 @@
+
+            string[] lista = { "Edil", "123", "Edilson", "Murillo" };
+            int[] num = { 1, 2, 3, 4 };
+
+            int x = 0;
+            double opc, num1, num2, result;
+
+            while (x == 0)
+            {
+                Console.WriteLine("Inicio de sesion");
+                Console.WriteLine("\nIngrese su usuario");
+                string usu = Console.ReadLine();
+                Console.WriteLine("\nIngrese su contraseña");
+                string clave = Console.ReadLine();
+
+                if (usu == lista[0] && clave == lista[1])
+                {
+                    x = 1;
+                    Console.WriteLine($"\nBienvenido señor {lista[2]} {lista[3]}");
+                    Console.WriteLine("Es un placer tenerlo en nuestra compañia"+
+                        $"\nSeñor {lista[2]} {lista[3]} con su apoyo estamos promoviendo"+
+                        "\nel acceso a nuevas tecnologias por parte de nuestros clientes");
+
+                    Console.WriteLine("\nElije una de las siguentes opciones:"+
+                        "\n1 - Sumar 2 valores"+
+                        "\n2 - Restar 2 valores" +
+                        "\n3 - Multiplicar 2 valores" +
+                        "\n4 - Dividir 2 valores");
+                    opc = Convert.ToDouble(Console.ReadLine());
+                    switch (opc)
+                    {
+                        case 1:
+                            if (opc == num[0])
+                            {
+                                suma();
+                            }
+                            
+                            break;
+                        case 2:
+                            if (opc == num[1])
+                            {
+                                resta();
+                            }
+                            break;
+                        case 3:
+                            if (opc == num[2])
+                            {
+                                multiplicacion();
+                            }
+                            break;
+                        case 4:
+                            if (opc == num[3])
+                            {
+                                divicion();
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Ha seleccionado una opcion invalida");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nSu usuario o contrasña es incorrecto, \nintente nuevamente");
+                    Console.WriteLine("_________________________________________________________________\n");
+                }
+            }
+
+            void suma()
+            {
+                Console.WriteLine("\nIngrese el valor numero 1:");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("\nIngrese el valor numero 2:");
+                num2 = Convert.ToDouble(Console.ReadLine());
+                result = num1 + num2;
+                Console.WriteLine($"\nLa suma de {num1} + {num2} = {result}");
+
+            }
+
+            void resta()
+            {
+                Console.WriteLine("\nIngrese el valor numero 1:");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("\nIngrese el valor numero 2:");
+                num2 = Convert.ToDouble(Console.ReadLine());
+                result = num1 + num2;
+                Console.WriteLine($"\nLa suma de {num1} - {num2} = {result}");
+
+            }
+
+            void multiplicacion()
+            {
+                Console.WriteLine("\nIngrese el valor numero 1:");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("\nIngrese el valor numero 2:");
+                num2 = Convert.ToDouble(Console.ReadLine());
+                result = num1 * num2;
+                Console.WriteLine($"\nLa multiplicacion de {num1} * {num2} = {result}");
+
+            }
+
+            void divicion()
+            {
+                Console.WriteLine("\nIngrese el valor numero 1:");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("\nIngrese el valor numero 2:");
+                num2 = Convert.ToDouble(Console.ReadLine());
+                result = num1 / num2;
+                Console.WriteLine($"\nLa divicion de {num1} / {num2} = {result}");
+
+            }
+
+        }

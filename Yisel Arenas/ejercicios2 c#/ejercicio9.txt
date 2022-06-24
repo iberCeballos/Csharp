@@ -1,0 +1,45 @@
+Console.WriteLine("Ingrese el nombre del estudiante");
+		string nombre=Console.ReadLine();
+		
+		
+		Console.WriteLine("Ingrese nota 1");
+		int nota1=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 2");
+		int nota2=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 3");
+		int nota3=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 4");
+		int nota4=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 5");
+		int nota5=Convert.ToInt32(Console.ReadLine());
+		
+		
+		Console.WriteLine("Ingrese nota 6");
+		int nota6=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 7");
+		int nota7=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 8");
+		int nota8=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 9");
+		int nota9=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese nota 10");
+		int nota10=Convert.ToInt32(Console.ReadLine());
+		
+		
+		
+		int resultado =(nota1+nota2+nota3+nota4+nota5+nota6+nota7+nota8+nota9+nota10)/10;
+		
+		if (resultado >3){
+			Console.WriteLine("\nEl alumno " + nombre + " fue aprobado");
+		}
+		else {
+			Console.WriteLine("\nEl alumno " + nombre + " fue desaprobado");
+		}

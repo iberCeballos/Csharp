@@ -1,0 +1,11 @@
+
+string nombre = "mariana";
+string saludo = "Te doy una calida bienvenida";
+string apellido = "arenas";
+bienvenida  ( saludo, nombre, apellido);
+
+static void  bienvenida( string saludo,string nombre, string apellido)
+{
+    Console.WriteLine($"{ saludo} { nombre} { apellido}");
+}
+
