@@ -1,0 +1,132 @@
+using System;
+
+namespace login
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello World!");
+            //registro
+            string nombre = "juan";
+            string contraseña = "12345";
+            string usuario = "juan0";
+            string apellido = "orosco";
+            string usuario_1;
+            string contraseña_1;
+            int n1 = 10;
+            int n2 = 2;
+            int total;
+            int obcion;
+
+            /* Console.WriteLine("ingrese un nombre");
+             nombre = Console.ReadLine();
+             Console.WriteLine("ingrese su apellido");
+             apellido = Console.ReadLine();
+             Console.WriteLine("registre su usuario");
+             usuario = Console.ReadLine();
+             Console.WriteLine("ingrese su contraseña");
+             contraseña= Console.ReadLine();
+             logeo(usuario, contraseña, nombre, apellido);*/
+            Console.WriteLine("    ");
+            Console.WriteLine("login");  
+            
+            int i = 0;
+
+            while (i == 0)
+            {
+                Console.WriteLine("ingrese un usuario");
+                usuario_1 = Console.ReadLine();
+                Console.WriteLine("ingrese su pasword");
+                contraseña_1 = Console.ReadLine();
+
+                if (usuario != usuario_1 && contraseña != contraseña_1)
+                {
+                    Console.WriteLine("usuario o contraseña incorrecta");
+                    i = 0;
+
+                }
+                else
+                {
+                    Console.WriteLine($"bienvenido señor {nombre}, {apellido}" +
+                        $" esperamos que tenga una buena experiencia");
+                    Console.WriteLine("ññññññññññññññññññññññññññññññññññññññññññññññññññññññ" +
+                        "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn" +
+                        "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
+                    Console.WriteLine("  ");
+
+
+                    Console.WriteLine("escoja una de las sigientes acciones");
+                    Console.WriteLine("con 1 se hara una suma");
+                    Console.WriteLine("con 2 se hara una resta");
+                    Console.WriteLine("con 3 se hara una multiplicacion");
+                    Console.WriteLine("con 4 se hara una divicion");
+                    obcion = Convert.ToInt32(Console.ReadLine());
+
+                    switch (obcion)
+                    {
+                        case 1:                            
+                            Console.WriteLine("se hara una suma");
+                            total= sumar_1(n1, n2);
+                            Console.WriteLine($"su resultado es {total}");
+                            break;
+                        case 2:
+                            Console.WriteLine("se hara una restas");
+                            total = rest_1(n1, n2);
+                            Console.WriteLine($"su resultado es {total}");
+                            break;
+                        case 3:
+                            Console.WriteLine("se hara una multiplicacion");
+                            total = mult_1(n1, n2);
+                            Console.WriteLine($"su resultado es {total}");
+                            break;
+                        case 4:
+                            Console.WriteLine("se dividira");
+                            total = div_1(n1, n2);
+                            Console.WriteLine($"su resultado es {total}");
+                            break;
+
+                        default:
+                            Console.WriteLine("error");
+                            break;
+                    }
+
+                    i = 1;
+                }
+
+            }
+            sumar_1(n1,n2);
+            rest_1(n1, n2);
+            mult_1(n1, n2);
+            div_1(n1, n2);
+        }
+        public static int sumar_1(int n1, int n2)
+        {
+            int total_sum;
+            total_sum = n1 + n2;
+            return total_sum;
+
+        }
+        public static int rest_1(int n1, int n2)
+        {
+            int total_sum;
+            total_sum = n1 - n2;
+            return total_sum;
+
+        }
+        public static int mult_1(int n1, int n2)
+        {
+            int total_sum;
+            total_sum = n1 * n2;
+            return total_sum;
+
+        }
+        public static int div_1(int n1, int n2)
+        {
+            int total_sum;
+            total_sum = n1 / n2;
+            return total_sum;
+
+        }
+
+    }
