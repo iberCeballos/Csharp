@@ -1,0 +1,12 @@
+-crear un array con los siguientes datos:
+-movimiento rectilíneo uniforme
+-movimiento rectilíneo uniforme acelerado
+-movimiento circular uniforme
+"para que el ejercicio no se tan complicado solo elegí estas 3 opciones"
+
+-el programa debe pedir al usuario que tipo de ejercicio va a realizar
+-al elegir un procedimiento, se debe pedir al usuario que magnitud se va encontrar, ej velocidad, distancia, aceleración
+-pedir que el usuario ingrese los valores a remplazar en las formulas de la magnitud elegida.
+
+-cada magnitud debe tener un método, para cada procedimiento
+-imprimir el resultado
