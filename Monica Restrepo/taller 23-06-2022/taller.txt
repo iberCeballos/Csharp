@@ -1,0 +1,102 @@
+using System;
+
+namespace taller1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] valores = { "monica12", "moni1", "Monica", "Restrepo" };
+            string[] opcion = {"A", "B", "C", "D" };
+            
+            string nom = "hola";
+            int num2;
+            int num1;
+         
+
+            while (nom == "hola")
+            {
+                Console.WriteLine("Inicio de sesion \n\nIngrese su usuario\n");
+
+                string usuario = Console.ReadLine();
+
+                Console.WriteLine("Ingrese su contraseña\n");
+
+                string clave = Console.ReadLine();
+
+                if (usuario == valores[0] && clave == valores[1])
+                {
+                    Console.WriteLine("Bienvenida a su cuenta señora " + valores[2] + " " + valores[3] + 
+                    "\n\nEsta cuenta te permitira hacer operaciones como\n" +
+                    "la suma, resta, multiplicacion y divicion con un resultado\nrapido y exacto, recuerde ingresar correctamente los numeros\na los cuales sele realizara la operacion despues de que elija\nel metodo que desee usar.\n");
+                    nom = "abc";
+
+                    
+                    Console.WriteLine("Ingrese la opcion:\nA si es Suma\nB si es Resta\nC si es Multiplicacion\nD si es Divicion");
+                    string opci= Console.ReadLine();
+                    Console.WriteLine("Ingrese el primer numero");
+                    num1=Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Ingrese el segundo numero");
+                    num2= Convert.ToInt32(Console.ReadLine());
+
+                    if (opci == opcion[0])
+                    {
+
+                        Console.WriteLine("El resultado de la operacion es: "+Suma(num1, num2));
+                    }
+                    else if(opci == opcion[1])
+                    {
+                        
+                        Console.WriteLine("El resultado de la operacion es: " + Resta(num1, num2));
+                    }
+                    else if (opci == opcion[2])
+                    {
+                        
+                        Console.WriteLine("El resultado de la operacion es: " + Multiplicacion(num1, num2));
+                    }
+                    else if(opci == opcion[3])
+                    {
+                        
+                        Console.WriteLine("El resultado de la operacion es: " + Division(num1, num2));
+                    }
+
+                    else
+                    {
+                    Console.WriteLine("La opcion no es valida");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("ERROR usuario o contraseña incorrecta");
+                }
+
+            }
+        }
+        static int Suma(int n1, int n2)
+        {
+            int sum = n1+ n2;
+            return sum;
+        }
+
+        static int Resta (int nu1, int nu2)
+        {
+            int res = nu1 - nu2;
+            return res; 
+
+        }
+
+        static int Multiplicacion(int num1, int num2)
+        {
+           int  mult = num1 * num2;
+            return mult;    
+        }
+
+        static double Division(int num1, int num2)
+        {
+            double divi = num1 / num2;
+            return divi;
+        }
+    }
+}

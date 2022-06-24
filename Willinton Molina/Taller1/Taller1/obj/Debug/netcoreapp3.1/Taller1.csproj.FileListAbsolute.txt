@@ -1,0 +1,14 @@
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\bin\Debug\netcoreapp3.1\Taller1.exe
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\bin\Debug\netcoreapp3.1\Taller1.deps.json
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\bin\Debug\netcoreapp3.1\Taller1.runtimeconfig.json
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\bin\Debug\netcoreapp3.1\Taller1.runtimeconfig.dev.json
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\bin\Debug\netcoreapp3.1\Taller1.dll
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\bin\Debug\netcoreapp3.1\Taller1.pdb
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.csproj.AssemblyReference.cache
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.GeneratedMSBuildEditorConfig.editorconfig
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.AssemblyInfoInputs.cache
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.AssemblyInfo.cs
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.csproj.CoreCompileInputs.cache
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.dll
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.pdb
+D:\wilinton.molinam\Desktop\C#WMM\Taller1\Taller1\obj\Debug\netcoreapp3.1\Taller1.genruntimeconfig.cache

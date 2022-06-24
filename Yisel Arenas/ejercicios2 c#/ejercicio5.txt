@@ -1,0 +1,21 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+
+	int laptop = 1200000;
+		int cant = 1;
+		int porc = laptop * 10 / 100;
+		if (cant >= 5){
+			Console.WriteLine("El valor a pagar CON DESCUENTO es");
+			Console.WriteLine((laptop - porc)* cant);
+		}
+		
+		else {
+			Console.WriteLine("El valor a pagar SIN DESCUENTO es");
+			Console.WriteLine(laptop * cant);
+		}
+	}
+}

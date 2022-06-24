@@ -1,0 +1,19 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int notaFinal = 1;
+		
+		if (notaFinal >= 3)
+		{
+			Console.WriteLine("El estudiante ha aprobado");
+		}
+		
+		else{
+			Console.WriteLine("El estudiante no ha aprobado");
+		}
+	}	
+		
+}

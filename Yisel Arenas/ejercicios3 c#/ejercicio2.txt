@@ -1,0 +1,25 @@
+string n1;
+string n2;
+Console.WriteLine("Ingrese el numero 1");
+n1 = Console.ReadLine();
+Console.WriteLine("Ingrese el numero 2");
+n2 = Console.ReadLine();
+operacion(n1, n2);
+static void operacion(string n1, string n2)
+{
+    int entero1 = Convert.ToInt32(n1);
+    int entero2 = Convert.ToInt32(n2);
+    // Console.WriteLine($"{saludo} {nombre} {apellido}");
+
+    if (entero1 % 2 == 1 || entero2 % 2 == 1)
+    {
+
+        Console.WriteLine(entero1 * entero2);
+    }
+
+    else
+    {
+        Console.WriteLine(entero2 + entero1);
+    }
+
+}

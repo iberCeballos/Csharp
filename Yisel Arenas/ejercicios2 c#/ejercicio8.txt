@@ -1,0 +1,44 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Ingrese un primer numero");
+		 int N1=Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Ingrese un segundo numero");
+		 int N2=Convert.ToInt32(Console.ReadLine());
+		
+		int suma = (N1+N2);
+		Console.Write("El resultado de su suma es ");
+		Console.Write(suma);
+		Console.Write("\n");
+		
+		int resta = (N1-N2);
+		Console.Write ("El resultado de su resta es ");
+		Console.Write(resta);
+		Console.Write("\n");
+		
+		int multiplicacion = (N1*N2);
+		Console.Write("El resultado de su multiplicacion es ");
+		Console.Write(multiplicacion);
+		Console.Write("\n");
+		
+		int division = (N1/N2);
+		Console.Write("El resultado de su division es ");
+		Console.Write(division);
+		Console.Write("\n");
+		
+		if (multiplicacion >=20){
+			multiplicacion=multiplicacion-resta;
+			Console.Write(multiplicacion);
+		}
+				else{
+			multiplicacion=multiplicacion+suma;
+					Console.Write(multiplicacion);
+					;
+		}
+			
+	}
+}
