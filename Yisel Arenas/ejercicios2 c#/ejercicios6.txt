@@ -1,0 +1,26 @@
+public class Program
+{
+	public static void Main()
+	{
+		 Console.Write("Ingrese el primer numero:  ");
+    int numberOne=Convert.ToInt32(Console.ReadLine());
+		
+ 		Console.Write("Ingrese el segundo numero:  ");
+    int numberTwo=Convert.ToInt32(Console.ReadLine());
+		
+	   Console.Write("Ingrese el tercer numero:  ");
+    int numberThree=Convert.ToInt32(Console.ReadLine());
+
+		if (numberOne > numberTwo && numberTwo > numberThree ){
+		Console.WriteLine("El valor mayor es el numero uno");
+		}
+		
+			else if (numberTwo > numberOne && numberOne > numberThree ){
+		Console.WriteLine("El valor mayor es el numero dos");
+		}
+		
+			else {
+		Console.WriteLine("El valor mayor es el numero tres");
+		}
+	}
+}

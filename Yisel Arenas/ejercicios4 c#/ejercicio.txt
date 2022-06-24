@@ -1,0 +1,96 @@
+
+string[] valores = { "Marenas", "12345", "Mariana", "Arenas" };
+
+
+Console.WriteLine("Inicio de Sesion");
+
+
+
+
+bool repetir = true;
+
+while (repetir == true)
+{
+    Console.WriteLine("Ingrese el usuario");
+    string usuario = Console.ReadLine();
+
+    Console.WriteLine("Ingrese su contraseña");
+    string contraseña = Console.ReadLine();
+
+    if (contraseña == valores[1] && usuario == valores[0])
+    {
+        Console.WriteLine("Bienvenido señor@ " + valores[2] + valores[3]);
+
+        Console.WriteLine("Había una vez un gato muy dormilón que se pasaba los días y las tardes enteras echado en el sofá." +
+            " Siempre se preguntaban que es lo que hacía para quedar tan cansado, pero nadie lo veía haciendo otra cosa que no fuera descansar." +
+            "\n" + "\n"+
+            "Una noche su dueño tuvo la idea de ir a buscarlo y ver si también dormía toda noche, pero mientras bajaba las escaleras pudo verlo..." +
+            "ahí estaba él, sentado frente al acuario viendo como dormía su amiga la tortuga." +
+            "\n"+"\n" +
+            "Solo se quedo allí mirando en silencio a su gato despierto"
+            + "y sereno estaba cuidando el sueño de su amiga tortuga.Al día siguiente pudo verlo como de costumbre, durmiendo en el sofá y entonces pudo" +
+            " comprender el por qué de su sueño durante el día.");
+        repetir = false;
+
+        Console.WriteLine("Ingrese el valor del numero 1");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ingrese el valor del numero 2");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        string[] datos = { "num1", "num2" };
+
+        string uno = "uno";
+        string dos = "dos";
+        string tres = "multiplicacion";
+        string cuatro = "division";
+
+        Console.WriteLine("Nuestro programa le permite realizar las 4 operaciones basicas de matematicas solo con dos operadores. Por favor eliga cual operacion desea " +
+            "realizar; siendo uno(suma), dos(resta), tres(multiplicacion) y cuatro(division)");
+        string respuesta = Console.ReadLine();
+
+        if (respuesta == uno)
+        {
+            int suma = num1 + num2;
+          
+            Console.WriteLine(suma);
+        }
+
+        else if (respuesta == dos)
+        {
+            int resta= num1 - num2;
+          
+            Console.WriteLine(resta);
+        }
+
+        else if (respuesta == tres)
+        {
+            int multiplicacion = num1 * num2;
+
+            Console.WriteLine(multiplicacion);
+        }
+
+        else if (respuesta == cuatro)
+        {
+            int division = num1 / num2;
+           
+            Console.WriteLine(division);
+        }
+        
+        else
+        {
+            Console.WriteLine("!!!Error!!!");
+        }
+
+
+    }
+
+    else
+    {
+        Console.WriteLine("!!error de login!!. Por favor ingrese su contraseña nuevamente");
+        repetir = true;
+    }
+
+} 
+
+
