@@ -1,0 +1,14 @@
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\bin\Debug\netcoreapp3.1\Velocidad.exe
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\bin\Debug\netcoreapp3.1\Velocidad.deps.json
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\bin\Debug\netcoreapp3.1\Velocidad.runtimeconfig.json
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\bin\Debug\netcoreapp3.1\Velocidad.runtimeconfig.dev.json
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\bin\Debug\netcoreapp3.1\Velocidad.dll
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\bin\Debug\netcoreapp3.1\Velocidad.pdb
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.csproj.AssemblyReference.cache
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.GeneratedMSBuildEditorConfig.editorconfig
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.AssemblyInfoInputs.cache
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.AssemblyInfo.cs
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.csproj.CoreCompileInputs.cache
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.dll
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.pdb
+D:\wilinton.molinam\Desktop\Velocidad\Velocidad\obj\Debug\netcoreapp3.1\Velocidad.genruntimeconfig.cache

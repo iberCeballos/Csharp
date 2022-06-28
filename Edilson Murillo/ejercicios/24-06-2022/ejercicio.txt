@@ -1,0 +1,209 @@
+using System;
+
+namespace Tareas_consola
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            string[] funcion = { "Movimiento rectilíneo uniforme",
+                                 "Movimiento rectilíneo uniforme acelerado",
+                                 "Movimiento circular uniforme"};
+            int opcion = 0;
+
+            while (opcion == 0)
+            {
+
+                Console.WriteLine("\nBienvenido a nuestra calculadora de movimiento" +
+                                  "\n\nElije un numero que represente una de las funciones" +
+                                  $"\n\n1 - {funcion[0]}\n2 - {funcion[1]}\n3 - {funcion[2]}");
+                opcion = Convert.ToInt32(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        funcion1();
+                        break;
+                    case 2:
+                        funcion2();
+                        break;
+                    case 3:
+                        funcion3();
+                        break;
+                    default:
+                        Console.WriteLine("Has seleccionado una opcion invalida\nintentalo nuevamente.");
+                        opcion = 0;
+                        break;
+                }
+            }
+
+            void funcion1()
+            {
+                double vel, tiem, dist;
+                Console.WriteLine("\n\nElije que magnitud deseas hallar" +
+                                  $"\n\n1 - Velocidad\n2 - Tiempo\n3 - Distancia");
+                int opc = Convert.ToInt32(Console.ReadLine());
+                switch (opc)
+                {
+                    case 1:
+                        Console.WriteLine("\n Velocidad");
+                        Console.WriteLine("\nIngrese una distancia representada en Kilometros");
+                        dist = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese un tiempo representada en horas");
+                        tiem = Convert.ToDouble(Console.ReadLine());
+                        vel = dist / tiem;
+                        Console.WriteLine($"\nUsted necesita ir a una velocidad de {vel} k/h"+
+                                          $"\npara poder recorrer {dist} k en {tiem} h");
+                        break;
+                    case 2:
+                        Console.WriteLine("\nTiempo");
+                        Console.WriteLine("\nIngrese una distancia representada en Kilometros");
+                        dist = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese una velocidad representada en k/h");
+                        vel = Convert.ToDouble(Console.ReadLine());
+                        tiem = dist / vel;
+                        Console.WriteLine($"\nUsted necesita {tiem} h para poder recorrer una distancia de {dist} k a una velocidad de {vel} k/h");
+
+
+                        break;
+                    case 3:
+                        Console.WriteLine("\nDistancia");
+                        Console.WriteLine("\nIngrese una velocidad representada en k/h");
+                        vel = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese un tiempo representada en horas");
+                        tiem = Convert.ToDouble(Console.ReadLine());
+                        dist = vel * tiem;
+                        Console.WriteLine($"\nUsted recorrera un total de {dist} k a una velocidad de {vel} k/h en {tiem} h");
+
+
+                        break;
+                    default:
+                        Console.WriteLine("Has seleccionado una opcion invalida\nintentalo nuevamente.");
+                        opcion = 0;
+                        break;
+                }
+
+            }
+            void funcion2()
+            {
+                double vel_in, vel_f, tiem, dist, acel;
+                Console.WriteLine("\n\nElije que magnitud deseas hallar" +
+                                  $"\n\n1 - Velocidad final\n2 - Aceleracion\n3 - Tiempo\n4 - Distancia");
+                int opc = Convert.ToInt32(Console.ReadLine());
+                switch (opc)
+                {
+                    case 1:
+                        Console.WriteLine("\n Velocidad Final");
+                        Console.WriteLine("\nIngrese la velocidad inial en m/s ");
+                        vel_in = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese la aceleracion en m/s^2 ");
+                        acel = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese un tiempo representada s");
+                        tiem = Convert.ToDouble(Console.ReadLine());
+                        vel_f = vel_in + (acel * tiem);
+                        Console.WriteLine($"\nSu velocidad final es: {vel_f} m/s");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("\n Aceleracion");
+                        Console.WriteLine("\nIngrese la velocidad final en m/s ");
+                        vel_f = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese la velocidad inicial en m/s ");
+                        vel_in = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese un tiempo representada s");
+                        tiem = Convert.ToDouble(Console.ReadLine());
+                        acel = (vel_f - vel_in) / tiem;
+                        Console.WriteLine($"\nSu aceleracion es de {acel} m/s^2");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("\n Tiempo");
+                        Console.WriteLine("\nIngrese la velocidad final en m/s ");
+                        vel_f = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese la velocidad inicial en m/s ");
+                        vel_in = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese la aceleracion en m/s^2 ");
+                        acel = Convert.ToDouble(Console.ReadLine());
+                        tiem = (vel_f - vel_in) / acel;
+                        Console.WriteLine($"\nUsted tardo {tiem} s");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("\n Distancia");
+                        Console.WriteLine("\nIngrese la velocidad inicial en m/s ");
+                        vel_in = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese un tiempo representada s");
+                        tiem = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese la aceleracion en m/s^2 ");
+                        acel = Convert.ToDouble(Console.ReadLine());
+                        dist = (vel_in * tiem) + (((1/2) * acel) * Math.Pow(tiem, 2));
+                        Console.WriteLine($"\nUsted recorrio {dist} m");
+                        break;
+
+                    default:
+                        Console.WriteLine("Has seleccionado una opcion invalida\nintentalo nuevamente.");
+                        opcion = 0;
+                        break;
+                }
+            }
+            void funcion3()
+            {
+                //T = period0
+                //f = frecuencia = f = 1 / T;
+                //Velocidad tangencial = Vt = 2 *((pi * r) * f);
+                //Velocidad angular = w = 2 *(pi * f)
+                //Aceleracion centripeta = ac =Math.Pow(w,2) * r;
+                double Vt, w, ac, f, t, r;
+                Console.WriteLine("\n\nElije que magnitud deseas hallar" +
+                                  $"\n\n1 - Frecuencia\n2 - Velocidad tangencial\n3 - Velocidad angular\n4 - Aceleracion centripeta");
+                int opc = Convert.ToInt32(Console.ReadLine());
+                switch (opc)
+                {
+                    case 1:
+                        Console.WriteLine("\n Frecuencia");
+                        Console.WriteLine("\nIngrese el periodo ");
+                        t = Convert.ToDouble(Console.ReadLine());
+                        f = 1 / t;
+                        Console.WriteLine($"\nLa frecuencia es: {f}");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("\n Velocidad tangencial");
+                        Console.WriteLine("\nIngrese el radio ");
+                        r = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese la frecuencia");
+                        f = Convert.ToDouble(Console.ReadLine());
+                        Vt = 2 * ((3.1416 * r) * f);
+                        Console.WriteLine($"\nLa velocidad tangencial es {Vt}");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("\n Velocidad angular");
+                        Console.WriteLine("\nIngrese la frecuencia ");
+                        f = Convert.ToDouble(Console.ReadLine());
+                        w = 2 * (3.1416 * f);
+                        Console.WriteLine($"\nLa velocidad angular es {w}");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("\n Aceleracion centripeta");
+                        Console.WriteLine("\nIngrese la velocidad angular");
+                        w = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("\nIngrese el radio");
+                        r = Convert.ToDouble(Console.ReadLine());
+                        ac = Math.Pow(w, 2) * r;
+                        Console.WriteLine($"\nSu aceleracion centripeta es {ac}");
+                        break;
+
+                    default:
+                        Console.WriteLine("Has seleccionado una opcion invalida\nintentalo nuevamente.");
+                        opcion = 0;
+                        break;
+                }
+
+            }
+            
+        }
+
+    }
+}
