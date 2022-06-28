@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace proyectoJson
+{
+    internal class WeatherForecast
+    {
+        //esta clase es la que queremos interar para trabar con json
+        public DateTimeOffset Date { get; set; }
+        public int TemperatureCelsius { get; set; }
+        public string Summary { get; set; }
+    }
+}
+
+using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+
+
+namespace proyectoJson
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //instanciamos la clase
+            var weatherForecast = new WeatherForecast
+            {
+                Date = Convert.ToDateTime(DateTime.Now.ToString()),
+                TemperatureCelsius = 25,
+                Summary = "hot"
+            };
+
+            //convertimos la instancia de la clase en formato json
+            //string jsonString = JsonSerializer.Serialize(weatherForecast);
+            //Console.WriteLine(jsonString);
+
+            //creamos un archivo tipo json de forma sincrona y almacenamos la instancia de la clase en este formato
+            /*string nombreArchivo = "practicaJson1.json";
+            string jsonString = JsonSerializer.Serialize(weatherForecast);
+            File.WriteAllText(nombreArchivo, jsonString);
+            Console.WriteLine(File.ReadAllText(nombreArchivo));*/
+
+            //creamos un archivo tipo json de forma asincrona y almacenamos la instancia de la clase en este formato
+            //para usar esta funcianlidad el metodo main debe ser async
+            /*string nombreArchivo = "practicaJson1.json";
+            string jsonString = JsonSerializer.Serialize(weatherForecast);
+            using FileStream createStream = File.Create(nombreArchivo);
+            await JsonSerializer.SerializeAsync(createStream, jsonString);
+            await createStream.DisposeAsync();
+
+            Console.WriteLine(File.ReadAllText(nombreArchivo));*/
+
+            //se puede sobrecargar el metdos serialize con una sobrecarga de Serialize() toma un parámetro de tipo genérico 
+            string jsonString = JsonSerializer.Serialize<WeatherForecast>(weatherForecast);
+
+            Console.WriteLine(jsonString);
+
+        }
+    }
+}
