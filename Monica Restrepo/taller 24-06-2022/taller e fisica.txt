@@ -1,0 +1,128 @@
+using System;
+
+namespace taller2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] Movimiento = { "movimiento  rectilíneo uniforme", "movimiento rectilíneo uniforme acelerado", "movimiento circular uniforme" };
+            int[] Opcion = {1, 2, 3 };
+            
+
+            Console.WriteLine("Que ejercicio desea realizar:\n\n1. Movimiento  rectilíneo uniforme\n2. Movimiento rectilíneo uniforme acelerado\n3. Movimiento circular uniforme\n");
+            int opcion= Convert.ToInt32(Console.ReadLine());
+
+            
+
+
+           
+
+            //Console.WriteLine("Ingrese la aceleracion");
+            //double acele= Convert.ToDouble(Console.ReadLine()); 
+
+
+
+
+
+            if (opcion == Opcion[0])
+            {
+                Console.WriteLine("Ingrese la distancia");
+                double distan= Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Ingrese la velocidad");
+                double velo = Convert.ToDouble(Console.ReadLine());
+
+                double tiempo = distan / velo;
+               
+                Console.WriteLine("La velocidad recorida es: " + Velocidad(distan, tiempo));
+                Console.WriteLine("El tiempo de recorrido es: " + Tiempo(distan, velo));
+                Console.WriteLine("La distancia recorida es: " + Distancia(velo, tiempo) + " Km" );
+            }
+
+            
+
+            else if (opcion == Opcion[1])
+            {
+
+                Console.WriteLine("Ingrese la distancia");
+                double distan = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Ingrese la velocidad inicial");
+                double velo = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el tiempo");
+                double tiempo = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Ingrese la velocidad final");
+                double veloc = Convert.ToDouble(Console.ReadLine());
+
+
+
+                Console.WriteLine("La aceleracion es: " + Aceleracion(velo, tiempo,veloc));
+                Console.WriteLine("La velocidad recorida es: " + Velocidad(distan, tiempo));
+                Console.WriteLine("El tiempo de recorrido es: " + Tiempo(distan, velo));
+                Console.WriteLine("La distancia recorida es: " + Distancia(velo, tiempo) + " Km");
+            }
+            //T = period0
+            //f = frecuencia = f = 1 / T;
+            //Velocidad tangencial = Vt = 2 *((pi * r) * f);
+            //Velocidad angular = w = 2 *(pi * f)
+            //Aceleracion centripeta = ac =Math.Pow(w,2) * r;
+            else if (opcion == Opcion[2])
+            {
+                Console.WriteLine("Ingrese el radio");
+                double distan = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Ingrese la frecuencia");
+                double velo = Convert.ToDouble(Console.ReadLine());
+
+
+                Console.WriteLine("El radio es: " + distan);
+                Console.WriteLine("La frecuencia es: " + velo );
+                Console.WriteLine("La velocidad tangencial es: " + Velocidadt(distan, velo));
+                
+
+            }
+
+            else
+            {
+
+                Console.WriteLine("Opcione no valida");
+            }
+
+        }
+
+        static double Distancia(double num1, double num2)
+        {
+            double distancia = num1 * num2;
+            return distancia;
+        }
+
+        static double Velocidad( double num1, double num2)
+        {
+            double veloc = num1/num2;
+
+            return veloc;
+        }
+
+        static double Aceleracion(double num1, double num2, double num3)
+        {
+           double aceleracion = ( num3 - num1 ) / num2;
+            return aceleracion;
+        }
+
+        static double Tiempo(double num1, double num2)
+        {
+            double tiem=num1/num2;
+            return tiem;
+        }
+
+        static double Velocidadt(double num1, double num2)
+        {
+            //Velocidad tangencial = Vt = 2 *((pi * r) * f);
+            double vt = 2*((3.1416*num1)*num2);
+            return vt;
+        }
+    }
+}

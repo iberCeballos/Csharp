@@ -1,0 +1,37 @@
+using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+
+
+namespace proyectoJson
+{
+    public class WeatherForecast
+    {
+        public DateTimeOffset Date { get; set; }
+        public int TemperatureCelsius { get; set; }
+        public string Summary { get; set; }
+    }
+    internal class Program
+    {
+        static async void Main(string[] args)
+        {
+            string fileName = "WeatherForecast.json";
+
+            //de esta forma de deserializa de forma sinconica
+            /*string jsonString = File.ReadAllText(fileName);
+            WeatherForecast weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(jsonString)!;*/
+
+            //de esta forma de deserializa de forma sinconica, se debe de tener en cuenta agragar en el metodo main la palabra async
+            using FileStream openStream = File.OpenRead(fileName);
+            WeatherForecast weatherForecast =
+                await JsonSerializer.DeserializeAsync<WeatherForecast>(openStream);
+
+
+            Console.WriteLine($"Date: {weatherForecast?.Date}");
+            Console.WriteLine($"TemperatureCelsius: {weatherForecast?.TemperatureCelsius}");
+            Console.WriteLine($"Summary: {weatherForecast?.Summary}");
+
+        }
+    }
+}

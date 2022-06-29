@@ -4,7 +4,7 @@ using System.Text;
 
 namespace curso_Csharp
 {
-    internal class solucion1
+    internal class solucion10
     {
         static void Main(string[] args)
         {

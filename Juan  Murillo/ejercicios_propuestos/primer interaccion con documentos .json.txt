@@ -1,0 +1,78 @@
+//esta es un clase
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace proyectoJson
+{
+    internal class Libro
+    {
+        public string nombre { get; set; }
+        public string autor { get; set; }
+        
+        public string genero { get; set; }
+
+        public int annioPublicacion { get; set; }
+        public string editorial { get; set; }
+
+       
+    }
+}
+
+//esta clase contioene el metodo main
+using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+
+
+namespace proyectoJson
+{
+  
+    internal class Program
+    {
+        static  void Main(string[] args)
+        {
+
+            Console.WriteLine("este programa guarda un archivo .json de un libro ingresado por el usuario");
+            
+            Console.WriteLine("ingrese el nombre del libro");
+            string nombreL = Console.ReadLine();
+            
+            Console.WriteLine("ingrese el nombre del autor");
+            string autorL = Console.ReadLine();
+            
+            Console.WriteLine("ingrese el año de la publicacion");
+            int  publiL = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("ingrese el genero al que pertenece");
+            string generoL = Console.ReadLine();
+
+            Console.WriteLine("ingrese la editorial que lo publico");
+            string editorialL = Console.ReadLine();
+
+            var libro = new Libro
+            {
+                nombre = nombreL,
+                autor = autorL,
+                genero = generoL,
+                annioPublicacion = publiL,
+                editorial = editorialL
+            };
+
+            //convertimos la instancia de nuestra clase libro a formatoc json con su estructura
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(libro, options);
+
+
+            //creamos y guardamos nuestro objeto json el el pc
+            string path = @"d:\libro.json";
+            System.IO.File.WriteAllText(path, jsonString);
+
+            Console.WriteLine("el archivo .json fue creado");
+
+            
+
+        }
+    }
+}

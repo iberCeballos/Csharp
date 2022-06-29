@@ -1,0 +1,34 @@
+using System;
+
+namespace LearnInterfaces
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Sedan s = new Sedan(60);
+      Sedan s2 = new Sedan(70);
+      Truck t = new Truck(45, 500);
+
+      Console.WriteLine(s.Speed);
+      Console.WriteLine(s.Wheels);
+      Console.WriteLine(s.LicensePlate);
+
+      Console.WriteLine(s2.Speed);
+      Console.WriteLine(s2.Wheels);
+      Console.WriteLine(s2.LicensePlate);
+
+      Console.WriteLine(t.Speed);
+      Console.WriteLine(t.Wheels);
+      Console.WriteLine(t.LicensePlate);
+
+      s.SpeedUp();
+      s2.SpeedUp();
+      t.SpeedUp();
+
+      Console.WriteLine(s.Speed);
+      Console.WriteLine(s2.Speed);
+      Console.WriteLine(t.Speed);
+    }
+  }
+}
