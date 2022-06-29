@@ -1,0 +1,20 @@
+using System;
+
+namespace LearnInheritance
+{
+  class Bicycle : Vehicle
+  {
+    public Bicycle(double Speed) : base(speed)
+    {
+      Wheels=2;
+    }
+    public override void SpeedUp()
+    {
+      Speed+=;
+      if(Speed>15)
+      {
+        Speed=15;
+      }
+    }
+  }
+}
