@@ -1,0 +1,47 @@
+Inicialización de objetos
+Nuestra primera forma de crear listas y agregar elementos tomó varias líneas:
+
+List<string> citiesList = new List<string>();
+citiesList.Add("Delhi");
+citiesList.Add("Los Angeles");
+Podemos hacerlo todo en una línea usando la inicialización de objetos :
+
+List<string> citiesList2 = new List<string> { "Delhi", "Los Angeles" };
+No cubriremos todo sobre la inicialización de objetos en esta lección, pero es necesario que lo reconozca y lo use.
+
+La construcción básica usa paréntesis ( )y ningún valor.
+La inicialización del objeto usa llaves { }y los valores reales van en el medio.
+Si necesitamos agregar elementos a esa segunda lista más tarde, aún podemos usar Add():
+
+citiesList2.Add("Kyiv");
+Instrucciones
+1 .
+El código actual crea una lista vacía y la usa Add()para agregar elementos.
+
+Elimine esas líneas y haga la misma lista con una inicialización de objeto.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      //List<double> marathons = new List<double>{144.07, 143.12, 146.73, 146.33};
+      List<double> marathons = new List<double>();
+      marathons.Add(144.07);
+      marathons.Add(143.12);
+      marathons.Add(146.73);
+      marathons.Add(146.33);
+      
+      // Do not delete the code below
+      double time = marathons[1];
+      
+      Console.WriteLine($"The 2012 marathon was ran in {time} minutes!");
+
+    }
+  }
+}

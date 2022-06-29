@@ -1,0 +1,54 @@
+Colecciones genéricas
+¡Lo has hecho muy bien con las listas hasta ahora! Es hora de echar un vistazo al panorama general.
+
+¿Recuerdas la línea que mencionamos al principio de esta lección?
+
+using System.Collections.Generic;
+La clase de lista está en un grupo de clases llamado colecciones genéricas . No existen en el conjunto predeterminado de Systemclases, por lo que debemos hacer referencia a ellas con esta línea.
+
+Las colecciones genéricas son estructuras de datos que se definen con un tipo genérico. Cada clase se define generalmente sin un tipo específico en mente. Cuando creamos una instancia real, definimos el tipo específico:
+
+List<string> citiesList = new List<string>();
+List<Object> objects = new List<Object>();
+Imagínelo como un conjunto de instrucciones generales: en una tienda de juguetes, podemos decirles a los empleados cómo agregar y quitar artículos de un estante sin especificar el tipo de juguete. De la misma manera, podemos usar Add()y Remove()sin conocer el tipo de datos de una lista.
+
+Por esta razón, el nombre de clase formal de las listas es List<T>. Ese Tes un parámetro de tipo: representa algún tipo que podemos especificar más adelante. Las instrucciones generales, sin embargo, están claramente contenidas en la List<T>clase genérica.
+
+Veamos por qué esto es útil imaginando otras formas más difíciles en las que podríamos crear colecciones "genéricas":
+
+Use clases específicas de tipo, como StringList, IntList, etc. — Tendríamos que crear una clase de lista para CADA tipo, definiendo las mismas propiedades y métodos para cada clase de lista.
+Use una lista que contenga Objecttipos List<Object>: usar Objectsignifica que no podemos usar ninguna de las funciones únicas de cada tipo y se necesita mucha potencia informática para convertir las referencias hacia y desde el Objecttipo.
+A medida que continúe codificando, verá por sí mismo cuán útiles son las colecciones genéricas.
+
+Instrucciones
+1 .
+Agregue una referencia al espacio de System.Collections.Genericnombres.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Declarar tres listas vacías:
+
+uno debe tener booltipos
+uno debe tener Randomtipos
+uno debe tener IServiceProvidertipos
+¡Así es, las interfaces también funcionan aquí!
+
+
+using System;
+using System.Collections.Generic;
+
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<bool> boo = new List<bool>(); 
+      List<Random> ran = new List<Random>(); 
+      List<IServiceProvider> iserv = new List<IServiceProvider>();    
+    }
+  }
+}

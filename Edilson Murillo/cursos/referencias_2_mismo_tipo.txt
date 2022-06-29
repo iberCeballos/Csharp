@@ -1,0 +1,99 @@
+Referencias del mismo tipo
+Las clases son tipos de referencia . Eso significa que cuando creamos una nueva instancia de una clase y la almacenamos en una variable, la variable es una referencia al objeto.
+
+Veamos qué sucede detrás de escena. Cuando se ejecuta este código:
+
+Dissertation diss1 = new Dissertation();
+Se construye una nueva Dissertationinstancia y se almacena en la memoria de la computadora. Puede imaginar que una ranura en su computadora que contiene el tipo de instancia, los valores de propiedad, etc. diss1es una referencia a esa ubicación en la memoria.
+
+diss1 se refiere a la ubicación de la memoria
+
+diss1no es el objeto real, es una referencia al objeto. Por lo tanto, un objeto puede tener múltiples referencias:
+
+Dissertation diss1 = new Dissertation();
+Dissertation diss2 = diss1;
+diss1 y diss2 se refieren a la misma ubicación de memoria
+
+Ahora hay dos referencias a la misma ubicación en la memoria: podemos decir eso diss1y diss2referirnos al mismo objeto. Si se realizan cambios en ese objeto, se reflejarán en ambas referencias a él:
+
+Dissertation diss1 = new Dissertation();
+Dissertation diss2 = diss1;
+diss1.CurrentPage = 0;
+diss2.CurrentPage = 16;
+Console.WriteLine(diss1.CurrentPage);
+Console.WriteLine(diss2.CurrentPage);
+Las dos líneas centrales de este código están configurando la CurrentPagepropiedad del mismo objeto (primero configurándolo en 0, luego 16)
+Las dos últimas líneas imprimirán el mismo valor,16
+Puedes imaginar referencias como direcciones a una casa: te dicen dónde encontrar la casa, ¡pero no son la casa en sí!
+
+Instrucciones
+1 .
+Cree un nuevo Diaryobjeto con una página actual de 5uso del constructor new Diary(5). Almacene una referencia a ese objeto y asígnele un nombre dy1. Su tipo también debe ser Diary.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cree otra referencia a ese objeto y asígnele el nombre dy2.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Flip dy2llamando a su Flip()método. Esto aumenta la CurrentPagepropiedad en 1.
+
+Checkpoint 4 Passed
+4 .
+Imprima la CurrentPagepropiedad para ambos dy1y dy2. ¡Deberían ser iguales!
+
+
+Clase Program
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Diary dy1 = new Diary(5);
+      Diary dy2 = dy1;
+      dy2.Flip();
+      Console.WriteLine(dy1.CurrentPage);
+      Console.WriteLine(dy2.CurrentPage);
+    }
+  }  
+}
+
+
+Clase Diary
+
+namespace LearnReferences
+{
+  class Diary : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+
+    public Diary(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string SpillSecret()
+    {
+      return "OMG kerry loves kris <3";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Diary object!";
+    }
+  }
+}

@@ -1,0 +1,76 @@
+Acceder a miembros heredados con protección
+Mientras trabajaba en Vehicley Sedan, es posible que haya visto este error:
+
+Sedan.cs(11,13): error CS0200: Property or indexer 'Vehicle.Wheels' cannot be assigned to -- it is read only
+¿Recuerdas publicy private? Se publicpuede acceder a un miembro mediante cualquier código fuera de la clase adjunta. privateSolo se puede acceder a un miembro mediante código dentro de la misma clase.
+
+El error anterior aparece porque:
+
+No hay setter para Vehicle.Wheels, o
+El colocador es privado.
+¿Cómo solucionamos este problema? Hacer público el setter no es seguro. Hacerlo privado es demasiado restrictivo: solo queremos que la subclase Sedanacceda a la propiedad. C# tiene otro modificador de acceso para resolver eso: protected!
+
+La clase actual y cualquier clase que herede de ella puede acceder a un miembro protegido . En este caso, si el setter for está Vehicle.Wheelsprotegido, cualquier Vehicleinstancia puede llamarlo.TruckSedan
+
+Instrucciones
+1 .
+En Vehicle, agregue un protectedsetter a cada una de estas propiedades:
+
+LicensePlate
+Speed
+Wheels
+
+
+Clase vehiculo
+
+using System;
+
+namespace LearnInheritance
+{
+  class Vehicle
+  {
+    public string LicensePlate
+    { get; protected set;}
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set;}
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+  }
+}
+
+
+Clase sedan
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : Vehicle, IAutomobile
+  {
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+    
+  }
+}

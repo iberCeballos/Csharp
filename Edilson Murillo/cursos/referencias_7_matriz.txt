@@ -1,0 +1,72 @@
+Matrices de referencias
+Sabemos que podemos usar clases heredadas e interfaces implementadas para hacer referencia a un objeto:
+
+Dissertation diss = new Dissertation(50);
+IFlippable fdiss = diss;
+Esto permite trabajar con muchos tipos similares al mismo tiempo. Imagínese si no tuviéramos esta función y tuviéramos que "voltear" un grupo de Diaryy Dissertationtipos:
+
+Diary dy1 = new Diary(1);
+Diary dy2 = new Diary(30);
+Dissertation diss1 = new Dissertation(50);
+Dissertation diss2 = new Dissertation(49);
+dy1.Flip();
+dy2.Flip();
+diss1.Flip();
+diss2.Flip();
+¡Mira todo ese código! Sería más rápido y seguro si pudiéramos almacenar las referencias en una matriz y recorrerla. Pero, ¿sería una matriz de Diary[]o una matriz de Dissertation[]o algo más? Dado que tanto las disertaciones como los diarios se pueden voltear (ambos implementan la IFlippableinterfaz), podemos crear referencias a ellos como IFlippables:
+
+IFlippable f1 = new Diary(1);
+IFlippable f2 = new Diary(30);
+IFlippable f3 = new Dissertation(50);
+IFlippable f4 = new Dissertation(49);
+En lugar de tratar con variables individuales, podemos usar una matriz de IFlippablereferencias:
+
+IFlippable[] classroom = new IFlippable[] { new Diary(1), new Diary(30), new Dissertation(50), new Dissertation(49) };
+Luego, para "voltear" cada elemento, podemos escribir un foreachbucle:
+
+foreach (IFlippable f in classroom) 
+{
+  f.Flip();
+}
+Sólo podemos acceder a la funcionalidad definida en la interfaz. Por ejemplo, no pudimos acceder f.Titleporque Titleno es una propiedad definida en IFlippable.
+
+Instrucciones
+1 .
+Cree una variable booksde tipo Book[]que contenga diss1, diss2, dy1y dy2.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cree un foreachbucle vacío que recorra cada elemento de la matriz.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En el cuerpo del bucle, imprima el Titlede cada elemento.
+
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Dissertation diss1 = new Dissertation(32, "Anna Knowles-Smith", "Refugees and Theatre");
+			Dissertation diss2 = new Dissertation(19, "Lajos Kossuth", "Shiny Happy People");
+			Diary dy1 = new Diary(48, "Anne Frank", "The Diary of a Young Girl");
+			Diary dy2 = new Diary(23, "Lili Elbe", "Man into Woman");
+			
+      Book[] books = new Book[] {diss1, diss2, dy1, dy2};
+
+      foreach (Book b in books) 
+      {        
+        Console.WriteLine(b.Title);
+      }
+      
+    }
+  }
+}

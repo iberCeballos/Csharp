@@ -1,0 +1,44 @@
+Eliminar código duplicado
+Al comienzo de esta lección teníamos código duplicado en Sedany Truck. Sabemos que el código duplicado genera errores, por lo que creamos una superclase Vehiclepara contener ese código.
+
+¡ Pero una versión del código duplicado sigue viva en Truck! Una vez que hemos Truckheredado Vehiclepodemos eliminar ese código también. En ese punto, tendremos tres clases que tienen Speed, LicensePlate, SlowDown(), etc. pero lo tendremos escrito en un solo lugar.
+
+Instrucciones
+1 .
+Hacer Truckheredar de Vehicle:
+
+Use la sintaxis de dos puntos para anunciar que Truckhereda la Vehicleclase.
+Quite las propiedades y los métodos duplicados de Truck.
+
+
+Class truck
+
+using System;
+
+namespace LearnInheritance
+{
+  class Truck : Vehicle, IAutomobile
+  {
+  	//Propiedades    
+    public double Weight
+    { get; }
+
+    //Constructor
+    public Truck(double speed, double weight)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+    
+  }
+}

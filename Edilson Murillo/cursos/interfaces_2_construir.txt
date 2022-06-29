@@ -1,0 +1,61 @@
+Construir una interfaz
+Para esta lección, diseñaremos un nuevo conjunto de máquinas de transporte que satisfagan los requisitos AMBOS de los diseñadores de automóviles y de la patrulla de carreteras. Primero, la patrulla de carreteras nos dice: "Todo automóvil en la carretera debe tener estas propiedades y métodos accesibles para nosotros:"
+
+velocidad
+numero de licencia
+número de ruedas
+capacidad de tocar la bocina
+La patrulla necesita esta información para escribir multas por exceso de velocidad y prevenir el mal comportamiento en la carretera.
+
+En otras palabras, la patrulla hace estos requisitos para poder interactuar con los automóviles de cierta manera. En C#, este grupo de interacciones se denomina interfaz . La interfaz es un conjunto de propiedades, métodos y otros miembros. Se declaran con una firma pero no se definen sus comportamientos. Una clase implementa una interfaz si define esas propiedades, métodos y otros miembros.
+
+Por ejemplo, si la patrulla requiere que los automóviles tengan matrícula, entonces la IAutomobileinterfaz contiene una LicensePlatepropiedad. Una clase implementa esta interfaz si define una LicensePlatepropiedad.
+
+El esqueleto de una interfaz se parece un poco a una clase:
+
+interface IAutomobile
+{
+}
+Cada interfaz debe tener un nombre que comience con "I". Este es un recordatorio útil para otros desarrolladores y para nosotros mismos en el futuro de que esta es una interfaz, no una clase. Podemos agregar miembros, como propiedades y métodos, a la interfaz. Aquí hay un ejemplo de una propiedad y un método falsos:
+
+interface IAutomobile
+{
+  string Id { get; }
+  void Vroom();
+}
+Observe que los cuerpos de propiedad y método no están definidos. Una interfaz es un conjunto de acciones y valores, pero no especifica cómo funcionan.
+
+En nuestro ejemplo de la carretera, a la patrulla de carreteras no le importa CÓMO funcionan las propiedades de la matrícula y el método de tocar la bocina, solo les importa si todos los automóviles la tienen.
+
+Instrucciones
+1 .
+Al igual que las clases, las interfaces se organizan mejor en sus propios archivos. En IAutomobile.cs dentro del espacio de nombres, cree una interfaz LearnInterfacesvacía .IAutomobile
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Agregue estas tres propiedades y un método a la interfaz:
+
+un stringllamadoLicensePlate
+un doublellamadoSpeed
+un intllamadoWheels
+un voidmétodo llamadoHonk()
+Las propiedades solo necesitan un captador. Use la getabreviatura demostrada en la narrativa para Id.
+
+
+using System;
+
+namespace LearnInterfaces
+{
+  interface IAutomobile
+  {
+    string LicensePlate
+    { get; }
+    double Speed
+    { get; }
+    int Wheels
+    { get; }
+    void Honk();
+  }
+}

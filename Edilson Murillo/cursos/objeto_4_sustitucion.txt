@@ -1,0 +1,83 @@
+Sustitución de miembros de objetos
+Los métodos Equals()y en son , por lo que pueden anularse.ToString()Objectvirtual
+
+Por ejemplo, podemos anular ToString()en la Diaryclase:
+
+class Diary
+{
+  /* other members omitted */
+ 
+  public override string ToString()
+  {
+    return $"This Diary is currently on page {CurrentPage}."; 
+  }
+}
+Ahora cualquier Diaryinstancia usará esta versión del método:
+
+Diary dy = new Diary(7);
+Console.WriteLine(dy.ToString());
+// Output: "This Diary is currently on page 7."
+Instrucciones
+1 .
+En Book.cs , defina un override ToString()método para la Bookclase.
+
+Debería devolver una cadena que contenga la información Authory Title.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En Program.cs , llame al bk.ToString()método e imprima el resultado.
+
+¡Debería mostrar la información del autor y el título que especificó en el método!
+
+
+Clase program
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book("Ta-Nehisi Coates", "Between the World and Me");
+
+      Console.WriteLine(bk.ToString());
+      
+    }
+  }
+}
+
+
+
+Clase book
+
+namespace TheObjectClass
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+
+    public override string ToString()
+  {
+    return $"El autor de este libro es {Author} y su titulo es {Title}."; 
+  }
+  }
+}

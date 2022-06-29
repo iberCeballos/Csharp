@@ -1,0 +1,105 @@
+Crear una superclase
+Una superclase se define como cualquier otra clase:
+
+class Vehicle
+{
+}
+Y una subclase hereda, o “extiende”, una superclase usando la sintaxis de dos puntos ( :):
+
+class Sedan : Vehicle
+{
+}
+Una clase puede extender una superclase e implementar una interfaz con la misma sintaxis. Sepárelos con comas y asegúrese de que la superclase esté antes que cualquier interfaz:
+
+class Sedan : Vehicle, IAutomobile
+{
+}
+El código anterior significa que Sedanheredará toda la funcionalidad de la Vehicleclase y "promete" implementar toda la funcionalidad en la IAutomobileinterfaz.
+
+Instrucciones
+1 .
+En Vehicle.cs , cree una clase vacía Vehicle.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En Vehicle.cs , defina:
+
+string LicensePlatepropiedad (solo getter)
+double Speedpropiedad (captador y setter privado)
+int Wheelspropiedad (solo getter)
+void Honk()método
+SpeedUp()método
+SlowDown()método
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En Sedan.cs , use la sintaxis de dos puntos para anunciar que Sedanhereda la Vehicleclase.
+
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+Sedanahora hereda los miembros que definió en Vehicle. Eliminarlos de Sedan.cs . Es posible que aún vea errores y ¡está bien! Los arreglaremos en el siguiente ejercicio.
+
+
+Clase vehicle
+
+using System;
+
+namespace LearnInheritance
+{
+   class Vehicle
+  {
+    //Propiedades
+
+    public string LicensePlate
+    { get;}
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+
+    //Metodos
+
+    public void Honk()
+    {
+
+    }
+
+    public void SpeedUp()
+    {
+
+    }
+
+    public void SlowDown()
+    {
+
+    }
+
+  }
+}
+
+
+
+
+Clase sedan
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : Vehicle, IAutomobile
+  {
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+  }
+}

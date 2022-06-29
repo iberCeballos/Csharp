@@ -1,0 +1,155 @@
+Sobrecarga de constructores
+Al igual que otros métodos, los constructores pueden sobrecargarse. Por ejemplo, podemos querer definir un constructor adicional que tome un argumento:
+
+public Forest(int area, string country)
+{ 
+  this.Area = area;
+  this.Country = country;
+ }
+ 
+public Forest(int area)
+{ 
+  this.Area = area;
+  this.Country = "Unknown";
+}
+El primer constructor proporciona valores para ambos campos y el segundo proporciona un valor predeterminado cuando no se proporciona el país. Ahora puede crear una Forestinstancia de dos maneras:
+
+Forest f = new Forest(800, "Hungary");
+Forest f2 = new Forest(400);
+Observe cómo hemos escrito código duplicado para nuestro segundo constructor: this.Area = area;. Más adelante, si necesitamos ajustar el constructor, necesitaremos encontrar cada copia del código y hacer exactamente el mismo cambio. Eso significa más trabajo y posibilidades de errores.
+
+Tenemos dos opciones para resolver esto. En cualquier caso eliminaremos el código duplicado:
+
+Utilice argumentos predeterminados. Esto es útil si usa C# 4.0 o posterior (que es bastante común) y la única diferencia entre los constructores son los valores predeterminados.
+public Forest(int area, string country = "Unknown")
+{
+  this.Area = area;
+  this.Country = country;
+}
+2. Use : this(), que se refiere a otro constructor en la misma clase. Esto es útil para programas antiguos de C# (antes de 4.0) y cuando su segundo constructor tiene funcionalidad adicional. Este ejemplo tiene una funcionalidad adicional de anunciar el valor predeterminado.
+
+public Forest(int area, string country)
+{ 
+  this.Area = area;
+  this.Country = country;
+}
+ 
+public Forest(int area) : this(area, "Unknown")
+{ 
+  Console.WriteLine("Country property not specified. Value defaulted to 'Unknown'.");
+}
+Recuerde que this.Arease refiere a la instancia actual de una clase. Cuando usamos this()como un método, se refiere a otro constructor en la clase actual. En este ejemplo, el segundo constructor llama this(), que se refiere al primer Forest()constructor, Y muestra información en la consola.
+
+Instrucciones
+1 .
+Defina un segundo constructor para la Forestclase:
+
+Debe tomar un parámetro, name.
+Debe usarse : this()con la namevariable como primer argumento y "Unknown"como segundo.
+También debería imprimir una advertencia en la consola sobre el valor predeterminado.
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En Main(), llama al segundo constructor para crear un Forestobjeto llamado "Rendlesham".
+
+Checkpoint 3 Passed
+3 .
+Debajo de la llamada al constructor, imprima la Biomepropiedad de esta nueva instancia.
+
+Cuando ejecute el código, debería ver el mensaje de advertencia y "Desconocido" impreso en la consola. ¿Por qué se imprimen estas dos cosas? 
+
+
+Clase program
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest("Congo", "Tropical");
+      Forest Rendlesham = new Forest("hola");
+      f.Trees = 0;
+      
+      Console.WriteLine(f.Name);
+      Console.WriteLine(f.Biome);
+      Console.WriteLine(Rendlesham.Biome);
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+    }
+
+    public Forest(string name): this(name, "Unknown")
+    {
+      Console.WriteLine("Por defecto la variable biome es vacia");
+    }
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}

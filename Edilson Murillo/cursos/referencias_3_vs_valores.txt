@@ -1,0 +1,30 @@
+Referencias vs Valores
+Para comprender mejor la idea de los tipos de referencia, veamos el otro tipo de tipo: los tipos de valor . Mientras que las variables de tipo de referencia se refieren a un lugar en la memoria, las variables de tipo de valor contienen los datos reales.
+
+intes un tipo de valor, por lo que la variable numcontiene el valor 6:
+
+int num = 6;
+Los tipos de referencia, por otro lado, se refieren a una ubicación en la memoria. Cada clase es un tipo de referencia, por lo que la variable dissse refiere a una ubicación en la memoria que tiene el Dissertationobjeto:
+
+Dissertation diss = new Dissertation(50);
+Cada tipo de datos "primitivo" es un tipo de valor, que incluye:
+
+int
+double
+bool
+char
+Revisando nuestra metáfora: una referencia es como las direcciones a una casa, que “apunta” a una casa. No es la casa real. ¡Un tipo de valor es la casa misma!
+
+Es posible que haya notado que stringfalta aquí. Funciona un poco diferente, por lo que se tratará en una lección posterior.
+
+Instrucciones
+El diagrama de la derecha representa la memoria de una computadora:
+
+Un objeto se almacena en el primer bloque de memoria.
+diss1mantener una referencia al primer bloque de memoria
+diss2también contiene una referencia al primer bloque de memoria
+numse refiere a un valor en el cuarto bloque de memoria
+Tenga en cuenta que el objeto ocupa más memoria que cualquiera de las referencias (el tamaño está representado por el ancho de la ranura) y que cambiar el objeto afectaría tanto a diss1como a diss2.
+
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-reference-fundamentals/exercises/references-vs-values

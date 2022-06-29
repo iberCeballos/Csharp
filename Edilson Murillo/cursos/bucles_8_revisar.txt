@@ -1,0 +1,42 @@
+Revisar
+¡Bien hecho! En C#, los bucles se usan comúnmente porque ahorran tiempo, reducen los errores y son fáciles de leer. Si te sientes cómodo con cada tipo de bucle, serás un mejor programador. En revisión:
+
+Un bucle es una estructura de programación en la que las instrucciones se escriben una vez, pero una computadora puede ejecutarlas varias veces.
+Cada ejecución de esas instrucciones se denomina iteración.
+whilelos bucles se repiten hasta que cambia una condición
+do...whilelos bucles se ejecutan una vez y luego se repiten hasta que cambia una condición
+forlos bucles se repiten un número específico de veces
+foreachlos bucles se repiten para cada elemento de una colección
+Las declaraciones de salto , como break, continuey returnse utilizan para agregar un flujo de control adicional a los bucles.
+Ahora que sabe algunas cosas sobre los bucles, intente escribir un programa que:
+
+Recorre un fragmento de texto y solo imprime palabras que comienzan con la letra "a" en la consola para crear un poema.
+Recorre una lista de números y si es par, imprime par y si es impar, imprime impar.
+Un juego Elige tu propia aventura que usa un ciclo while para asegurarse de que el usuario elija la opción correcta.
+Instrucciones
+¡Hora de practicar! Use el editor de código para jugar con lo que aprendió en esta lección. Si no está seguro de qué hacer, pruebe una de las extensiones anteriores.
+
+Revisión del concepto
+¿Quiere repasar rápidamente algunos de los conceptos que ha estado aprendiendo? ¡ Echa un vistazo a la hoja de trucos de este material !
+
+using System;
+
+namespace LoopsReview
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      /* use this space to write your own short program! 
+      Here's what you learned:
+
+      while loop: while(){..} 
+      do...while loop: do{...}while();
+      for loop: for(int i=0; i<x; i++){}
+      foreach loop: foreach(int item in list){}
+      jump statements: break, continue, return
+
+      Good luck! */
+    }
+  }
+}

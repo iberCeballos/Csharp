@@ -1,0 +1,47 @@
+Sintaxis del método básico: Where
+En la sintaxis del método , cada operador de consulta se escribe como una llamada de método normal.
+
+En el último ejercicio, seleccionamos todos los elementos con una longitud inferior a 8. Aquí está en la sintaxis del método:
+
+string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+var shortHeroes = heroes.Where(h => h.Length < 8);
+El whereoperador se escribe como el método Where(), que toma una expresión lambda como argumento. Recuerde que las expresiones lambda son una forma rápida de escribir un método. En este caso, el método devuelve truesi htiene menos de 8 caracteres.
+
+Where()llama a esta expresión lambda para cada elemento en heroes. Si devuelve true, entonces el elemento se agrega a la colección resultante.
+
+Por ejemplo, la shortHeroessecuencia de arriba sería:
+
+[ D. Va, Lucio, Mercy, Pharah ]
+Instrucciones
+1 .
+Escriba una consulta de sintaxis de método que seleccione todos los elementos heroesque contienen el carácter "i". Almacene el resultado en una variable llamada heroesWithI.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Imprime todos los elementos heroesWithIpara comprobar tu trabajo.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var heroesWithI = heroes.Where(h => h.Contains("i"));
+
+      foreach(string h in heroesWithI)
+      {
+        Console.WriteLine(h);
+      }
+      
+    }
+  }
+}

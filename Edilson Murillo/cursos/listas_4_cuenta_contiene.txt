@@ -1,0 +1,65 @@
+Cuenta y contiene
+Podemos comprobar el estado de nuestra lista de dos formas.
+
+Podemos encontrar el número de elementos en la lista usando la Countpropiedad:
+
+List<string> citiesList = new List<string> { "Delhi", "Los Angeles" };
+int numberCities = citiesList.Count;
+// numberCities is 2
+Podemos verificar si un elemento existe en una lista usando el Contains()método:
+
+bool hasDelhi = citiesList.Contains("Delhi");
+bool hasDubai = citiesList.Contains("Dubai");
+// hasDelhi is true, hasDubai is false
+Instrucciones
+1 .
+La lista marathonsse ha inicializado para usted. Imprima el Counten la consola.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En los Juegos Olímpicos de Sydney 2000, Naoko Takahashi ganó el maratón con un tiempo de 143.23minutos (récord olímpico hasta 2012 en Londres).
+
+Use Add()para agregar ese valor a la lista.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Asegúrese de que 143.23se haya agregado a la lista. Llame al Contains()método e imprima el valor devuelto en la consola.
+
+Checkpoint 4 Passed
+4 .
+Imprimir de Countnuevo. ¡Asegúrate de que aumente a 5!
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      //int con = marathons.Count()
+
+      Console.WriteLine(marathons.Count);
+      marathons.Add(143.23);
+
+      //bool val = marathons.Contains(143.23);
+      Console.WriteLine(marathons.Contains(143.23));
+      Console.WriteLine(marathons.Count);
+      
+
+    }
+  }
+}

@@ -1,0 +1,55 @@
+Para cada bucle
+Hay una forma más de dar instrucciones de bucle a una computadora. Definimos una secuencia de valores y le decimos a la computadora que repita las instrucciones para cada elemento de la secuencia.
+
+foreach (type element in sequence)
+{
+  statement;
+}
+El foreachbucle se usa para iterar sobre colecciones, como una matriz.
+
+En nuestro videojuego, queremos tocar una melodía. Podemos hacerlo iterando a través de una lista de notas individuales, tocando una tras otra. Aquí hay un ejemplo de matriz de notas:
+
+string[] melody = { "a", "b", "c", "c", "b" };
+y el bucle se vería así:
+
+foreach (string note in melody)
+{
+  PlayMusic(note);
+}
+La secuencia que usamos fue una matriz, pero podemos usar otras estructuras de datos similares. El término genérico para estos es colección, por lo que también podemos llamar a los foreachbucles bucles de colección .
+
+Utilice este bucle cuando necesite realizar una tarea para cada elemento de una lista o cuando deba mantenerse el orden de las cosas. En este caso, ambos son importantes. Se debe colocar una nota para cada elemento de la lista y el orden de los mismos es fundamental para el patrón musical.
+
+Instrucciones
+1 .
+Ahora desea crear una lista de tareas pendientes para realizar un seguimiento de sus tareas. Escriba un bucle vacío que recorrerá en iteración cada elemento de su todomatriz.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Dentro del bucle, llame al CreateTodoItem()método.
+
+using System;
+
+namespace ForEachLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] todo = { "respond to email", "make wireframe", "program feature", "fix bugs" };
+
+      foreach (string note in todo)
+      {
+        CreateTodoItem(note);
+      }
+
+    }
+    
+    static void CreateTodoItem(string item)
+    {
+      Console.WriteLine($"[] {item}");
+    }
+  }
+}

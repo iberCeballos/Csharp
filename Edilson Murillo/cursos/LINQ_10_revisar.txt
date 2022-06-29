@@ -1,0 +1,53 @@
+Revisar
+Buen trabajo: ¡acabamos de cubrir una gran cantidad de LINQ! Aquí hay un resumen:
+
+LINQ es un conjunto de características de lenguaje y marco para escribir consultas estructuradas y con seguridad de tipos sobre colecciones de objetos locales y fuentes de datos remotas.
+Use LINQ haciendo referencia al System.Linqespacio de nombres en su archivo.
+Cuando una consulta LINQ devuelve una secuencia de elementos, su tipo es IEnumerable<T>. Eso significa que funciona con foreachbucles y se puede acceder a su longitud con Count().
+Almacene el resultado de una consulta en una variable de tipo var. vares un tipo implícito, lo que significa que obtiene todos los beneficios de la verificación de tipos sin que especifiquemos el tipo real.
+Las consultas LINQ se pueden escribir en sintaxis de método o sintaxis de consulta .
+Preferimos la sintaxis de método para operaciones individuales y la sintaxis de consulta para casi todo lo demás.
+El Whereoperador se utiliza para seleccionar ciertos elementos de una secuencia.
+El Selectoperador determina qué se devuelve para cada elemento de la secuencia.
+El fromoperador declara una variable de rango que se utiliza para recorrer la secuencia.
+LINQ se puede usar en matrices y listas, entre otros tipos de datos.
+Si tienes curiosidad o quieres más práctica, aquí hay algunos recursos adicionales:
+
+Obtenga más información leyendo la guía de Microsoft para LINQ .
+Encuentre una lista de palabras clave para la sintaxis de consulta aquí .
+Encuentre una lista de métodos comunes para la sintaxis de métodos aquí .
+Encuentre una lista completa de métodos IEnumerable<T>aquí .
+Instrucciones
+1 .
+¡Hay algunos errores en este código! Arregle cada uno antes de continuar.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroesList = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+      
+      // Query syntax
+      var queryResult = from h in heroesList
+        where h.Contains("a")
+        select $"{h} contains an 'a'";
+     
+      // Printing...
+      Console.WriteLine($"queryResult has {queryResult.Count()} elements");
+      
+      foreach (string s in queryResult)
+      {
+        Console.WriteLine(s);
+      }
+
+      
+    }
+  }
+}

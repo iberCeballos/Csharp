@@ -1,0 +1,114 @@
+Propiedades
+A partir de ahora, un programa puede plantar cualquier valor en un Forestcampo. Por ejemplo, si tuviéramos un areacampo de tipo int, podríamos establecerlo en 0, 40o -1249. ¿Podemos tener un bosque de -1249 área? Necesitamos una forma de definir qué valores son válidos y rechazar los que no lo son. C# proporciona una herramienta para eso: propiedades .
+
+Las propiedades son otro tipo de miembro de clase. Cada propiedad es como un portavoz de un campo: controla el acceso (obtención y configuración) a ese campo. Podemos usar esto para validar valores antes de que se establezcan en un campo. Una propiedad se compone de dos métodos:
+
+un get()método, o getter: llamado cuando se accede a la propiedad
+un set()método, o setter: llamado cuando a la propiedad se le asigna un valor
+Esto muestra una propiedad básica Areasin validación:
+
+public int area;
+public int Area
+{
+  get { return area; }
+  set { area = value; }
+}
+La Areapropiedad está asociada con el areacampo. Es común nombrar una propiedad con la versión en mayúsculas y minúsculas del nombre de su campo, por ejemplo , ageand Age, nameand Name.
+
+El set()método anterior utiliza la palabra clave value, que representa el valor que le asignamos a la propiedad. De vuelta en Program.cs , cuando accedemos a la Areapropiedad, los métodos get()y set()se llaman:
+
+Forest f = new Forest();
+f.Area = -1; // set() is called
+Console.WriteLine(f.Area); // get() is called; prints -1
+En el ejemplo anterior, cuando set()se llama, la valuevariable es -1, por lo que arease establece en -1.
+
+Aquí está la misma propiedad con validación en el set()método. Si tratamos de establecer Areaun valor negativo, se cambiará a 0.
+
+public int Area
+{
+  get { return area; }
+  set 
+  { 
+    if (value < 0) { area = 0; }
+    else { area = value; }
+  }
+}
+En Programa.cs :
+
+Forest f = new Forest();
+// set() is called
+f.Area = -1; 
+// get() is called; prints 0
+Console.WriteLine(f.Area);
+Instrucciones
+1 .
+Defina una propiedad básica Namepara el namecampo. El getter y el setter no tendrán validación.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Defina una propiedad básica Treespara el treescampo. El getter y el setter no tendrán validación.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En Programa.cs ,
+
+Reemplace cualquier uso del campo f.namecon la propiedad f.Name.
+Reemplace cualquier uso del campo f.treescon la propiedad f.Trees.
+Checkpoint 4 Passed
+4 .
+Defina una Biomepropiedad para el biomecampo. Tendrá un getter y un setter. El colocador solo debe permitir tres valores: "Tropical", "Temperate"y "Boreal". Si se utiliza cualquier otro valor, configúrelo biomeen "Unknown".
+
+Por ejemplo, así es como funcionaría en Program.cs :
+
+f.Biome = "Tropical";
+// Prints Tropical
+Console.WriteLine(f.Biome); 
+ 
+f.Biome = "Desert";
+// Prints Unknown
+Console.WriteLine(f.Biome); 
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public string name;
+    public int trees;
+    public int age;
+    public string biome;
+
+    public string Name
+    {
+      get { return name; }
+      set { name = value; }
+    }
+
+    public int Trees
+    {
+      get { return trees; }
+      set { trees = value; }
+    }
+
+    public string Biome
+    {
+      get { return biome; }
+      set
+       {          
+         if (value == "Tropical" || 
+         value == "Temperate" || 
+         value == "Boreal"){biome = value; }
+         else{biome = "Unknown";} 
+       }
+    }
+
+    
+  }
+
+}

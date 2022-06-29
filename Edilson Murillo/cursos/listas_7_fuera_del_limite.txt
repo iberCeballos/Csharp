@@ -1,0 +1,63 @@
+Acceso fuera de los límites
+Efectivamente, podemos agregar un número infinito de elementos a una lista:
+
+List<int> numbers = new List<int>();
+ 
+for (int i = 0 ; i < 1000; i++)
+{
+  numbers.Add(i);
+}
+Podemos acceder a ellos y editarlos usando la notación de paréntesis:
+
+int numberFive = numbers[4];
+numbers[4] = 523;
+Sin embargo, esto no significa que podamos acceder a cualquier índice aleatorio. Si intentamos acceder al elemento 1001 de esta lista, obtendremos un error:
+
+Console.WriteLine(numbers[1001]);
+El código anterior provoca el error:
+
+Unhandled Exception:
+System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Solo podemos acceder a los índices que se han añadido a la lista. El último índice disponible en la numberslista sería 999.
+
+Aquí hay dos consejos para evitar este problema:
+
+Imagine que la lista crece cada vez que agregamos un número y se reduce cada vez que eliminamos un número. A diferencia de las matrices, no hay una longitud establecida.
+Verifique el Countde sus listas antes de acceder a un índice, como se muestra a continuación.
+int index = 1001;
+if (index < numbers.Count)
+{
+  Console.WriteLine(numbers[index])
+}
+Instrucciones
+1 .
+Este código tiene dos problemas. Corrija cada declaración errónea cambiando el índice que usa.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      
+      //double futureWinner = marathons[-1];
+      //marathons[4] = 143.23;
+
+      double futureWinner = marathons[1];
+      marathons[3] = 143.23;
+      
+      Console.WriteLine("If you reached this point, there are no errors!");
+    }
+  }
+}
