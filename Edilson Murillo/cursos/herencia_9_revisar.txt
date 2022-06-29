@@ -1,0 +1,152 @@
+Revisar
+¡Bien hecho! Aprendiste mucho muy rápido, así que hagamos un repaso:
+
+La herencia es una forma de evitar la duplicación entre varias clases.
+En herencia, una clase hereda los miembros de otra clase.
+La clase que hereda se llama subclase o clase derivada . La otra clase se llama superclase o clase base .
+Podemos acceder a los miembros de una superclase usando base. Esto es muy útil cuando se llama al constructor de la superclase.
+Podemos restringir el acceso a una superclase y sus subclases usando protected.
+Podemos anular un miembro de la superclase usando virtualy override.
+Podemos hacer un miembro en una superclase sin definir su implementación usando abstract. Esto es útil si la implementación de cada subclase será diferente.
+Instrucciones
+El código completo se le proporciona aquí.
+
+Asegúrese de sentirse cómodo con la herencia antes de continuar con esta lección. Aquí hay algunas preguntas para ponerse a prueba:
+
+En Program.cs , Bicycle.Describe()se llama. Encuentre la definición de ese método en la Bicycleclase, luego busque la definición abstracta de ese método en Vehicle.
+En Program.cs , Sedanse crea una instancia de a. Encuentre la definición del constructor en la Sedanclase. ¿Qué sucede cuando llama ese constructor base()?
+En Bicycle.cs , SpeedUp()se define. ¿En qué se diferencia de SpeedUp()la Vehicleclase?
+
+
+Clase vehicle
+
+using System;
+
+namespace LearnInheritance
+{
+  abstract class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+
+    public virtual void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public virtual void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public abstract string Describe();
+
+  }
+}
+
+Clase bicycle
+
+using System;
+
+namespace LearnInheritance
+{
+  class Bicycle : Vehicle
+  {
+
+    public Bicycle(double speed) : base(speed)
+    {
+      Wheels = 2;
+    }
+
+    public override void SpeedUp()
+    {
+      Speed += 5;
+      
+      if (Speed > 15)
+      {
+        Speed = 15;
+      }
+    }
+
+    public override void SlowDown()
+    {
+      Speed -= 5;
+
+      if (Speed < 0)
+      {
+        Speed = 0;
+      }
+    }
+
+    public override string Describe()
+    {
+      return $"This Bicycle is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
+    }
+
+  }
+}
+
+
+Clase sedan
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : Vehicle, IAutomobile
+  {
+    public Sedan(double speed) : base(speed)
+    {
+      Wheels = 4;
+    }
+    
+    public override string Describe()
+    {
+      return $"This Sedan is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
+    }
+
+  }
+}
+
+
+Clase program
+
+using System;
+
+namespace LearnInheritance
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Sedan s = new Sedan(60);
+      // Call SpeedUp() here
+      Console.WriteLine(s.Describe());
+      
+      Truck t = new Truck(45, 500);
+      // Call SpeedUp() here
+      Console.WriteLine(t.Describe());
+      
+      Bicycle b = new Bicycle(10);
+      // Call SpeedUp() here
+      Console.WriteLine(b.Describe());
+    }
+  }
+}

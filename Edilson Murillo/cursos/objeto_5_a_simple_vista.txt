@@ -1,0 +1,87 @@
+Objeto a simple vista
+Al principio de su recorrido por C#, aprendió sobre Console.WriteLine(). Usó esta herramienta con casi todos los tipos, desde inty boolhacia Dissertationy Diary:
+
+bool b = true;
+Diary d = new Diary();
+Console.WriteLine(b);
+Console.WriteLine(d);
+Podemos usar esta misma herramienta con cada tipo porque cada tipo hereda de Object!
+
+Debajo del capó, Console.WriteLine()uses ToString(), que se define en Object. Cada objeto necesita algún tipo de stringrepresentación para ser impreso en texto. Estas dos líneas son equivalentes:
+
+Console.WriteLine(b);
+Console.WriteLine(b.ToString());
+Instrucciones
+1 .
+Probémonos a nosotros mismos que ToString()se usa al imprimir en la consola.
+
+Primero, invalide el ToString()método en la Diaryclase. Haga que el método devuelva la cadena "Surprise!".
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+De vuelta en Program.cs , construya un Diaryobjeto y páselo directamente a Console.WriteLine().
+
+¡Deberías ver tu sorpresa impresa!
+
+
+
+Clase program
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Diary d = new Diary();
+      Console.WriteLine(d);
+    }
+  }
+}
+
+
+
+Clase Diary
+
+namespace TheObjectClass
+{
+  class Diary : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+
+    public Diary(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+    
+    public Diary(int page, string author, string title) : base(author, title)
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string SpillSecret()
+    {
+      return "OMG kerry loves kris <3";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Diary object!";
+    }
+
+    public override string ToString()
+    {
+      return "Surprise!";
+    }
+  }
+}

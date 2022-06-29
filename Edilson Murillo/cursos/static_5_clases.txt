@@ -1,0 +1,42 @@
+Clases estáticas
+Cubrimos algunos miembros estáticos: campo, propiedad, método y constructor. ¿Qué pasa si hacemos que toda la clase sea estática?
+
+static class Forest {}
+No se puede crear una instancia de una clase estática, por lo que solo desea hacer esto si está creando una utilidad o biblioteca, como Matho Console.
+
+Estas dos clases comunes son estáticas porque son solo herramientas: no necesitan instancias específicas y no almacenan información nueva.
+
+Ahora, cuando veas algo como:
+
+Math.Min(34, 54);
+Console.WriteLine("yeehaw!");
+Sabes que estas son dos clases estáticas que llaman a dos métodos estáticos.
+
+Instrucciones
+1 .
+Rara vez creamos nuestras propias clases estáticas, así que practiquemos con otras clases estáticas. Primero imprima el valor de pi, un valor de uso común en geometría, que se almacena en Math.PI.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Encuentre el valor absoluto de -32usar el método Math.Abs(). Este método devuelve el valor absoluto, o "versión positiva", del argumento.
+
+Imprime el resultado en la consola.
+
+
+Clase program
+
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.PI);
+      Console.WriteLine(Math.Abs(-32));
+    }
+  }
+}

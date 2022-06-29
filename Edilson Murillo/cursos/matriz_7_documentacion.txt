@@ -1,0 +1,50 @@
+Búsqueda de documentación
+Además de Sort(), IndexOf()y Find(), existen otros métodos integrados para arreglos. Puede encontrarlos (y probablemente lo haya adivinado) en la documentación de Microsoft .
+
+¡Pongamos en práctica la investigación de la documentación y busquemos algunos métodos integrados para escribir código!
+
+Instrucciones
+1 .
+En la documentación de Microsoft , encuentre el método que le permite copiar su lista de reproducción a una nueva lista de reproducción llamada summerStrutCopy. Imprima el primer valor de summerStrutCopyen la lista de reproducción para ver si es el mismo que summerStrut.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En la documentación de Microsoft , encuentre el método que invierte el orden de los elementos de la matriz. Úselo para invertir el orden de la lista de summerStrutreproducción. Verifique si funcionó imprimiendo la primera y la última canción en la consola.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En la documentación de Microsoft , busque el método que convierte todas las calificaciones de la ratingsmatriz en cero. Verifique si funcionó imprimiendo el primer valor en la consola (debería ser 0).
+
+using System;
+
+namespace DocumentationHunt
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+      string[] summerStrutCopy = new string[8];
+      
+      Array.Copy(summerStrut, summerStrutCopy, 8);
+      Console.WriteLine(summerStrutCopy[0]);
+      // Mio Array.Reverse(summerStrut,0,7);
+      Array.Reverse(summerStrut);
+      Console.WriteLine(summerStrut[0]);
+      Console.WriteLine(summerStrut[7]);
+      
+      // Mio Array.Clear(ratings, 0, 7);
+      Array.Clear(ratings, 0, ratings.Length);
+      Console.WriteLine(ratings[0]);   
+    }
+  }
+}

@@ -1,0 +1,137 @@
+Polimorfismo
+Acabamos de ver lo útil que es tener la misma interfaz para varios tipos de datos. Este es un concepto común en muchos lenguajes de programación y se llama polimorfismo .
+
+El concepto realmente incluye dos ideas relacionadas. Un lenguaje de programación admite polimorfismo si:
+
+Los objetos de diferentes tipos tienen una interfaz común (interfaz en el sentido general, no solo un C# interface), y
+Los objetos pueden mantener una funcionalidad única para su tipo de datos.
+Demostrémonos a nosotros mismos que esto es cierto en C#. Usaremos el ejemplo de Stringify: Dissertationy Booktenemos diferentes Stringify()métodos pero ambos pueden ser referenciados como Books.
+
+Aquí hay fragmentos de cada clase:
+
+class Dissertation : Book
+{
+  public override string Stringify()
+  {
+    return "This is a Dissertation object!";
+  }
+}
+ 
+ 
+class Book
+{
+  public virtual string Stringify()
+  {
+    return "This is a Book object!";
+  }
+}
+Dada esa información, ¿qué imprimirá el siguiente programa?
+
+Book bk = new Book();
+Book bdiss = new Dissertation();
+Console.WriteLine(bk.Stringify());
+Console.WriteLine(bdiss.Stringify());
+La respuesta es:
+
+This is a Book object!
+This is a Dissertation object!
+Aunque bky bdissson Bookreferencias de tipo, su comportamiento es diferente. Dissertationanula el Stringify()método, por lo que todos los Dissertationobjetos (sin importar el tipo de referencia) usarán ese método.
+
+Por lo tanto, C# admite polimorfismo.
+
+Nunca tendrá que escribir polymorphismsu código, ¡pero este vocabulario es esencial para comunicarse con otros desarrolladores!
+
+Así que recuerda: el polimorfismo es la capacidad de la programación para presentar la misma interfaz para diferentes tipos de datos.
+
+Instrucciones
+1 .
+En Program.cs , hay Bookreferencias de tipo a uno Booky un Diaryobjeto. Primero, llame b1.Stringify()e imprímalo en la consola.
+
+Checkpoint 2 Passed
+2 .
+Debajo de esa llamada b2.Stringify()e imprímala en la consola.
+
+Para verificar su comprensión, busque ambos métodos Stringify()en Diary.cs y Book.cs.
+
+
+Clase diary
+
+namespace LearnReferences
+{
+  class Diary : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+
+    public Diary(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+    
+    public Diary(int page, string author, string title) : base(author, title)
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string SpillSecret()
+    {
+      return "OMG kerry loves kris <3";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Diary object!";
+    }
+  }
+}
+
+
+clase book
+
+namespace LearnReferences
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+  }
+}
+
+
+Clase program
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b1 = new Book();
+      Book b2 = new Diary();
+      Console.WriteLine(b1.Stringify());
+      Console.WriteLine(b2.Stringify());
+      
+    }
+  }
+}

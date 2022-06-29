@@ -1,0 +1,152 @@
+Propiedades y campos estáticos
+Ya sabe cómo crear un campo y una propiedad, como:
+
+class Forest
+{
+  private string definition;
+  public string Definition
+  {
+     get { return definition; }
+     set { definition = value; }
+   }
+}
+La definición de lo que es un bosque se aplica a todos los Forestobjetos, no solo a uno: solo debe haber un valor para toda la clase. Este es un buen caso de uso para un campo/propiedad estática.
+
+Para crear un campo y una propiedad estáticos, simplemente agregue staticdespués del modificador de acceso ( publico private).
+
+class Forest
+{
+  private static string definition;
+  public static string Definition
+  { 
+    get { return definition; }
+    set { definition = value; }
+  }
+}
+Recuerda que estático significa “asociado a la clase, no a una instancia”. Por lo tanto, se accede a cualquier miembro estático desde la clase, no desde una instancia:
+
+static void Main(string[] args)
+{
+  Console.WriteLine(Forest.Definition);
+}
+Si intentara acceder a un miembro estático desde una instancia (como f.Definition), obtendría un error como:
+
+error CS0176: Static member 'Forest.Definition' cannot be accessed with an instance reference, qualify it with a type name instead
+Instrucciones
+1 .
+En el ejercicio anterior mencionamos almacenar el conteo de todos los Forestobjetos. Usaremos un campo estático y una propiedad para almacenar eso. Defina un campo estático privado llamado forestsCreated.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Defina una propiedad estática pública denominada ForestsCreated. Dale un getter público y un setter privado.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En el primer constructor, incrementa ForestsCreated. Esto agregará 1 a la propiedad cada vez que se construya un objeto.
+
+
+Clase program
+
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}

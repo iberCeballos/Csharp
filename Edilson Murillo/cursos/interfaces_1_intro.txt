@@ -1,0 +1,40 @@
+Introducción a las interfaces
+Dado que la programación es compleja, es fácil cometer errores. Por ejemplo, tal vez intentemos usar un intcomo un string. Esto provocaría un error de tipo. C# tiene reglas integradas que verifican esos errores antes de que usemos ese código en el mundo real.
+
+El siguiente diagrama estima la cantidad de errores en nuestro código en cada etapa de desarrollo. Descubrimos y solucionamos algunos de esos errores en cada etapa, por lo que el número disminuye de izquierda a derecha. Lamentablemente, no podemos corregir todos los errores. Pero si podemos detectar errores antes, entonces nos ahorramos trabajo y evitamos la frustración de los usuarios.
+
+Decimos que C# es "tipo seguro" porque nos ayuda a detectar errores en una de las primeras etapas: la etapa de verificación de tipos.
+
+Las etapas del ciclo de vida del producto son la planificación, la verificación de tipos, la ejecución del código, la revisión por pares y los comentarios de los usuarios.
+
+La diferencia entre an inty a stringes clara, pero ¿qué pasa con las clases definidas a medida? Digamos que hicimos Fruity Vegetabletipos. ¿Podemos usar PlantSeed()en ambos? ¿Ambos tienen una Seedpropiedad? La computadora que ejecuta el programa necesita más información.
+
+En esta lección, nos sumergiremos en las interfaces , que son conjuntos de acciones y valores que describen cómo se puede usar una clase. Esto le permite a la computadora verificar que estamos usando cada tipo legalmente, ¡evitando así un grupo completo de errores de tipo!
+
+En esta lección aprenderá cómo:
+
+construye tu propia interfaz
+escribir clases que implementen una interfaz
+Instrucciones
+Según el código de Program.cs , podemos esperar que la Sedanclase tenga:
+
+una Speedpropiedad
+una LicensePlatepropiedad
+una Wheelspropiedad
+un Honk()método
+Al final de esta lección, creará una interfaz que garantice que todos los sedán tengan estos comportamientos y atributos.
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Sedan s = new Sedan(60);
+      Console.WriteLine($"Sedan with license plate {s.LicensePlate} and {s.Wheels} wheels, driving at {s.Speed} km/h.");
+      s.Honk();
+    }
+  }
+}

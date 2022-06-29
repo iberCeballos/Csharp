@@ -1,0 +1,106 @@
+Público vs Privado
+En este punto, hemos creado campos para asociar datos con una clase y propiedades para controlar la obtención y configuración de cada campo. Tal como está ahora, cualquier código fuera de la Forestclase puede "escabullirse" de nuestras propiedades accediendo directamente al campo:
+
+f.Age = 32; // using property
+f.age = -1; // using field
+La segunda línea evita la validación de la propiedad accediendo directamente al campo. Podemos arreglar esto usando los modificadores de acceso public y private:
+
+public— cualquier clase puede acceder a un miembro público
+private— solo se puede acceder a un miembro privado por código en la misma clase
+Para simplificar, hemos estado agregando publica cada miembro hasta ahora. Eso permite que el código acceda a los miembros del Main()método, que no pertenece a la Forestclase. Cuando cambiamos un campo de publica private, ya no será accesible desde Main(), aunque el código dentro de la Forestclase, como las propiedades, aún puede acceder a él.
+
+Los modificadores de acceso se pueden aplicar a todos los miembros de una clase, incluidos los campos, las propiedades y el resto de los miembros que se tratan en esta lección.
+
+¿Recuerdas la encapsulación ? publicy privateson necesarios para encapsular nuestras clases. Piense en ello como "codificación defensiva": está protegiendo los mecanismos internos de una clase privatepara que otro código no pueda romper su clase. Solo expones lo que quieres ser public.
+
+Por ejemplo, dado que las propiedades de una clase definen cómo otros programas obtienen y configuran sus campos, es una buena práctica hacer que los campos sean privados y las propiedades públicas.
+
+C# fomenta la encapsulación al asignar por defecto a los miembros de la clase privatey a las clases public.
+
+Instrucciones
+1 .
+Actualmente el biomecampo y la Biomepropiedad son públicos. En Program.cs , se accede directamente al campo y se establece en "Desert", un valor no válido.
+
+Ejecute el código para ver que "Desierto" es el valor del campo.
+
+Checkpoint 2 Passed
+2 .
+Al acceder directamente al biomecampo público, el código saltó la validación. Evitemos eso configurando el biomecampo como privado en Forest.cs .
+
+Cuando ejecute el código, debería ver el error:
+
+error CS0122: 'Forest.biome' is inaccessible due to its protection level
+Eso significa que C# nos ha impedido acceder a un campo privado (lo cual es bueno).
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Resuelva el error cambiando el código en Program.cs : use la propiedad ( Biome) en lugar del campo ( biome). Deberá cambiar el código en dos lugares del archivo.
+
+¿Qué se imprime ahora en la consola?
+
+
+Clase program
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+      f.Name = "Congo";
+      f.Trees = 0;
+      f.age = 0;
+      f.Biome = "Desert";
+      
+      Console.WriteLine(f.Name);
+      Console.WriteLine(f.Biome);
+    }
+  }
+}
+
+
+
+Clase forest
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+  }
+
+}

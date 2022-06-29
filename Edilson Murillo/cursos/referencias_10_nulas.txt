@@ -1,0 +1,59 @@
+Referencias nulas y no asignadas
+Hasta ahora hemos visto:
+
+Una referencia a un objeto.
+Múltiples referencias a un objeto
+¿Qué pasa con una referencia que no se refiere a ningún objeto? En C#, una referencia a ningún objeto se denomina referencia nula o no asignada . Tendremos que aplicar estos conceptos en C# cada vez que queramos mostrar que "falta" una referencia, crear una variable de referencia sin definirla o inicializar una matriz vacía.
+
+En el primer caso de uso, nos gustaría crear una referencia que "falte" o esté vacía. Lo establecemos igual a la palabra clave null:
+
+Diary dy = null;
+En el segundo caso, si creamos una variable de referencia sin valor, se desasigna:
+
+Diary dy;
+// dy is unassigned
+En el tercer caso, si creamos una matriz vacía de tipos de referencia, cada elemento es una referencia no asignada:
+
+Diary[] diaries = new Diary[5];
+// diaries[1] is unassigned, diaries[2] is unassigned, etc.
+Tenga cuidado al buscar nully referencias no asignadas. Solo podemos comparar una nullreferencia si está explícitamente etiquetada null:
+
+Diary dy = null;
+Console.WriteLine(dy == null);
+// Output: true
+Para los otros dos casos, comparando una variable no asignada obtendremos un error:
+
+Object o;
+Console.WriteLine (o == null);
+// error CS0165: Use of unassigned local variable 'o'
+Esto puede parecer molesto al principio, pero en realidad es algo bueno: el compilador de C# evita futuros problemas al generar un error la primera vez que se usa una variable no asignada.
+
+Instrucciones
+1 .
+Cree una variable de tipo Booky configúrela en null.
+
+Checkpoint 2 Passed
+2 .
+Imprime la variable en la consola.
+
+Recuerda que nullpresenta una referencia nula, por lo que no deberías ver nada impreso.
+
+Checkpoint 3 Passed
+3 .
+Compare la variable con nullel uso del ==operador e imprima el resultado en la consola.
+
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b = null;
+      Console.WriteLine(b);
+      Console.WriteLine(b == null);
+    }
+  }
+}

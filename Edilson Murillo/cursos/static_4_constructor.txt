@@ -1,0 +1,167 @@
+Constructores estáticos
+Un constructor de instancias se ejecuta antes de usar una instancia y un constructor estático se ejecuta una vez antes de usar una clase:
+
+class Forest 
+{
+  static Forest()
+  { /* ... */ }
+}
+Este constructor se ejecuta cuando ocurre cualquiera de estos eventos:
+
+Antes de que se haga un objeto del tipo.
+Antes de acceder a un miembro estático.
+En otras palabras, si esta fuera la primera línea en Main(), se ejecutaría un constructor estático para Forest:
+
+Forest f  = new Forest();
+También se ejecutaría si esta fuera la primera línea en Main():
+
+Forest.Define();
+Por lo general, usamos constructores estáticos para establecer valores en campos y propiedades estáticos.
+
+Un constructor estático no acepta un modificador de acceso.
+
+Instrucciones
+1 .
+¡ En los ejercicios anteriores, nuestros campos treeFactsy forestsCreatednunca recibieron valores! Arreglaremos eso.
+
+Primero, cree un constructor estático para Forest.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En el cuerpo del constructor estático, establezca el treeFactscampo en esta cadena:
+
+"Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n"
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En el cuerpo del constructor estático, establezca la ForestsCreatedpropiedad en 0.
+
+Checkpoint 4 Passed
+4 .
+En Program.cs , llame Forest.PrintTreeFacts()para comprobar que TreeFactsse ha establecido la propiedad.
+
+
+Clase program
+
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest.PrintTreeFacts();
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    private static string treeFacts;
+    
+    // CONSTRUCTORS
+
+    public static Forest()
+    {
+      treeFacts = "Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n"
+
+      ForestsCreated = 0;
+
+    }
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+    
+    public static string TreeFacts
+    {
+      get { return treeFacts; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+    public static void PrintTreeFacts()
+    {
+      Console.WriteLine(TreeFacts);
+    }
+    
+  }
+
+}

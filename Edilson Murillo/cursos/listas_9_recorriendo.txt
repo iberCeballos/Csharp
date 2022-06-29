@@ -1,0 +1,64 @@
+Recorriendo Listas
+Al igual que los arreglos, podemos realizar una operación para cada elemento de la lista usando fory foreachbucles.
+
+Con forbucles, asegúrese de utilizar Countpara permanecer dentro de los límites de la lista.
+
+for (int i = 0; i < numbers.Count; i++)
+{
+   Console.WriteLine(numbers[i]);
+}
+Con un foreachciclo, el conteo se maneja por usted:
+
+foreach (int number in numbers)
+{
+   Console.WriteLine(number);
+}
+En general, preferimos los foreachbucles porque requieren menos escritura y, por lo tanto, menos posibilidades de errores tipográficos.
+
+Si el índice se usa en la operación, como imprimir cada índice y elemento juntos, entonces usaremos forbucles.
+
+Instrucciones
+1 .
+El segundo forbucle del código se utiliza para imprimir un dorsal para cada corredor. Reemplácelo con un foreachbucle que logre el mismo objetivo.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    { 
+      List<string> runners = new List<string> { "Jemima Sumgong", "Tiki Gelana", "Constantina Tomescu", "Mizuki Noguchi" };
+      Random rand = new Random();
+      
+      Console.WriteLine("In reverse chronological order, the gold medalists are...");
+      
+      // First loop
+      for (int i = 0; i < runners.Count; i++)
+      {
+        Console.WriteLine($"{i+1}: {runners[i]}");
+      }
+      
+      Console.WriteLine("\nPrinting runner bibs...");
+      
+      // Second loop
+      /*for (int i = 0; i < runners.Count; i++)
+      {
+        string name = runners[i].ToUpper();
+        int id = rand.Next(100, 1000);
+        Console.WriteLine($"{id} - {name}");
+      }*/
+
+      foreach (string run in runners)
+      {
+        string name = run.ToUpper();
+        int id = rand.Next(100, 1000);
+        Console.WriteLine($"{id} - {name}");
+      }
+
+    }
+  }
+}

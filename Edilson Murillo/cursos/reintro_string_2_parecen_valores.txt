@@ -1,0 +1,79 @@
+Las cadenas pueden parecer valores
+String, o string, es una clase que representa texto. Técnicamente, su valor se almacena como una colección de charobjetos.
+
+Como es una clase, es un tipo de referencia. En algunos casos, su comportamiento parece un tipo de valor:
+
+Una stringreferencia siempre apuntará al objeto original, por lo que "modificar" una referencia a una stringno afectará a otras referencias
+La comparación de cadenas con el operador de igualdad ( ==) realiza una comparación de valor, no referencial.
+Aquí hay dos ejemplos del primer comportamiento (la modificación de una referencia no afecta a las demás):
+
+// Example 1
+string dog = "chihuahua";
+string tinyDog = dog;
+dog = "dalmation";
+Console.WriteLine(dog);
+// Output: "dalmation"
+Console.WriteLine(tinyDog);
+// Output: "chihuahua"
+ 
+// Example 2
+string s1 = "Hello ";
+string s2 = s1;
+s1 += "World";
+System.Console.WriteLine(s1);
+// Output: "Hello World"
+System.Console.WriteLine(s2);
+// Output: "Hello"
+Pueden explicarse por el hecho de que las cadenas son inmutables : no se pueden cambiar después de crearlas. Cualquier cosa que parezca modificar una cadena en realidad devuelve un nuevo stringobjeto.
+
+Aquí hay un ejemplo del segundo comportamiento (comparaciones similares a valores):
+
+string s = "hello";
+string t = "hello";
+// b is true
+bool b = (s == t);
+Por lo general, queremos comparar cadenas por valor, por lo que esto facilita la escritura en el código y también le da al compilador de C# flexibilidad en la forma en que implementa el programa (no tiene que preocuparse por dónde se almacena el valor real de la cadena).
+
+Instrucciones
+1 .
+Crea dos stringvariables con el mismo valor: "immutable".
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Compara las dos variables usando ==e imprime el resultado.
+
+¿Por qué vuelve esto true?
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Ahora repite el proceso con dos Objectvariables:
+
+Construya dos nuevas Objectinstancias y guárdelas en dos nuevas variables
+compararlos con==
+Asegúrate de llamar new Object()dos veces. ¿Por qué los resultados son diferentes?
+
+
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string a = "immutable";
+      string b = "immutable";
+      Console.WriteLine(a==b);
+
+      Object x = new Object();
+      Object y = new Object();
+
+      Console.WriteLine(x==y);
+
+    }
+  }
+}

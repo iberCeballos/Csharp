@@ -1,0 +1,70 @@
+Sintaxis del método básico: Seleccionar
+Para transformar cada elemento en una secuencia, como escribirlos en mayúsculas, podemos usar el selectoperador. En la sintaxis del método, está escrito como el método Select(), que toma una expresión lambda:
+
+string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+var loudHeroes = heroes.Select(h => h.ToUpper());
+Podemos combinar Select()con Where()de dos maneras:
+
+Use declaraciones separadas:
+var longHeroes = heroes.Where(h => h.Length > 6);
+var longLoudHeroes = longHeroes.Select(h => h.ToUpper());
+Encadena las expresiones:
+var longLoudHeroes = heroes
+.Where(h => h.Length > 6)
+.Select(h => h.ToUpper());
+Al igual que con la mayoría de LINQ, ¡la elección depende de usted!
+
+En la primera opción, usamos dos nombres de variables y dos declaraciones. Puede saber que hay dos declaraciones separadas contando los puntos y comas.
+
+En la segunda opción, usamos un nombre de variable y una declaración.
+
+Si debemos usar sintaxis de método, preferimos la segunda opción (encadenamiento) porque es más fácil de leer y escribir. Puedes imaginar cada línea como un paso en una cinta transportadora, filtrando y transformando la secuencia a medida que avanza.
+
+Instrucciones
+1 .
+Escriba una consulta de sintaxis de método que:
+
+Selecciona todos los elementos heroesque contienen el carácter "c"y
+Los transforma a minúsculas
+Use sentencias separadas y almacene el resultado final en una variable lowerHeroesWithC.
+
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+Escriba una segunda consulta que haga lo mismo, pero use expresiones encadenadas.
+
+Almacene el resultado en una variable llamada sameResult.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprime todos los elementos de sameResultpara comprobar tu trabajo.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var heroesWithC = heroes.Where(h => h.Contains("c"));
+      
+      var lowerHeroesWithC = heroesWithC.Select(h => h.ToLower());
+
+      var sameResult = heroes.Where(h => h.Contains("c")) .Select(h => h.ToLower());
+
+      foreach(string h in sameResult)
+      {
+        Console.WriteLine(h);
+      }
+    }
+  }
+}

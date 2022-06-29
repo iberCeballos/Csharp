@@ -1,0 +1,24 @@
+Superclase y Subclase
+En herencia, una clase hereda los miembros de otra clase. La clase que hereda se llama subclase o clase derivada . La otra clase se llama superclase o clase base .
+
+En nuestro ejemplo de automóvil, Sedany Truckson subclases (o clases derivadas). Heredarán miembros de una nueva clase llamada Vehicle, que es la superclase (o clase base).
+
+Antes de usar la herencia, ambas clases tenían:
+
+Wheels, LicensePlatey Speedpropiedades
+Honk(), SpeedUp()y SlowDown()métodos
+Constructores similares
+Podemos sacarlos de ambas clases y ponerlos en una Vehicleclase. Sedany Truckseguirá teniendo acceso a esos miembros, pero solo necesitamos escribirlos en un solo lugar.
+
+Por cierto, esta jerarquía de herencia puede extenderse de cualquier manera: una nueva PickupTruckclase podría heredar de Truck, que hereda de Vehicle, que hereda de una nueva Machineclase. La única regla es que una clase solo puede heredar de una clase base, por ejemplo, Vehicleno puede heredar de Machiney Contraption.
+
+Instrucciones
+Eche un vistazo a este diagrama que representa la herencia.
+
+Sedany Truckheredar deVehicle
+Los miembros en fuente negra están definidos en esa clase
+Los miembros en fuente gris se han heredado de una superclase
+Por ejemplo, Wheelsse define en la Vehicleclase y se hereda por Sedany Truck. Truck()se define sólo en la Truckclase.
+
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-inheritance/exercises/super-and-sub

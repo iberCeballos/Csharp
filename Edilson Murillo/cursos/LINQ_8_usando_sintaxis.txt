@@ -1,0 +1,72 @@
+Cuándo usar cada sintaxis
+Hasta ahora, ha visto la sintaxis de consultas y dos tipos de sintaxis de métodos.
+
+// Query syntax
+var longLoudheroes = from h in heroes
+  where h.Length > 6
+  select h.ToUpper();
+ 
+// Method syntax - separate statements
+var longHeroes = heroes.Where(h => h.Length > 6);
+var longLoudHeroes = longHeroes.Select(h => h.ToUpper());
+ 
+// Method syntax - chained expressions
+var longLoudHeroes2 = heroes
+  .Where(h => h.Length > 6)
+  .Select(h => h.ToUpper());
+A medida que ingrese a consultas LINQ más avanzadas y aprenda nuevos operadores, obtendrá una idea de lo que funciona mejor en cada situación. Por ahora, generalmente seguimos estas reglas:
+
+Para consultas de un solo operador, utilice la sintaxis del método.
+Para todo lo demás, utilice la sintaxis de consulta.
+Instrucciones
+1 .
+Escriba una consulta de sintaxis de método que transforme cada elemento en heroeseste formato:
+
+Introducing...[HERO NAME]!
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+Escriba una consulta de sintaxis de consulta que seleccione elementos que contengan un espacio y devuelva el índice del espacio en cada elemento. Por ejemplo, en lugar de "D. Va", el resultado debe contener 2.
+
+Punto de control 3 superado
+
+¿Atascado? Obtén un consejo
+3 .
+Imprima todos los elementos de los resultados de ambas consultas para verificar su trabajo.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var intro = heroes.Select(h => $"Introducing...{h}!");
+
+      var espacio = from h in heroes
+  where h.Contains(" ")
+  select h.IndexOf(" ");
+  
+  Console.WriteLine("Resultado 1");
+  foreach(var h in intro)
+  {
+    Console.WriteLine(h);
+  }
+
+  Console.WriteLine("\nResultado 2");
+   foreach(var h in espacio)
+  {
+    Console.WriteLine(h);
+  }
+
+      
+    }
+  }
+}

@@ -1,0 +1,114 @@
+Introducción a la Estática
+En este punto, usted puede recordar:
+
+Un tipo de datos personalizado está definido por una clase .
+Una instancia de una clase se llama objeto . Se pueden crear instancias de múltiples objetos únicos a partir de una clase.
+Este proceso de agrupar datos y métodos relacionados en un tipo se denomina encapsulación y hace que el código sea más fácil de organizar y reutilizar.
+¿Qué pasaría si tuviéramos que hacer algo relacionado con el tipo en sí, no con las instancias de ese tipo? Por ejemplo, ¿dónde almacenamos el recuento de todos los Forestobjetos o una explicación de los bosques en general?
+
+Para cumplir con las reglas de encapsulación, estos no deben asociarse con una instancia (porque esta información está relacionada con la Forestclase, no con una sola Forestinstancia).
+
+¡Estos hechos y comportamientos deben estar asociados con la clase misma! Llamamos a este tipo de miembros estáticos .
+
+Esta lección cubrirá el significado de static , cómo aplicarlo a diferentes tipos de miembros de clase y sus casos de uso típicos.
+
+Instrucciones
+La Forestclase se define en Forest.cs . ¡Asegúrate de estar familiarizado con él antes de continuar! Estaremos agregando a esta clase a lo largo de la lección.
+
+Probar este tipo de código lleva más tiempo, por lo que algunos puntos de control de esta lección necesitarán más tiempo para ejecutarse. ¡Vale la pena la espera!
+
+
+Clase program
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    // METHODS
+    
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}
+

@@ -1,0 +1,51 @@
+Hacer... Mientras Bucle
+Similar al whileciclo, un do...whileciclo continuará ejecutándose hasta que se cumpla una condición de parada. Una diferencia clave es que pase lo que pase, un do...whilebucle siempre se ejecutará una vez .
+
+do
+{
+  statement;
+} while (condition);
+En lugar de verificar la condición antes de que se ejecute el bloque de código, el programa en el bloque se ejecuta una vez y luego verifica la declaración condicional. Se detendrá o continuará ejecutándose hasta que la condición ya no sea cierta. do...whilelos bucles son buenos para cuando un programa debe ejecutarse al menos una vez y luego, según las circunstancias, continuar ejecutándose o detenerse.
+
+En su videojuego, desea mostrar la pantalla de inicio durante al menos un cuadro. Si el usuario no presiona siguiente, desea que la pantalla de inicio continúe apareciendo hasta que lo haga.
+
+bool startGame = false;
+ 
+do
+{
+  ShowStartScreen();
+} while (!startGame);
+En este ejemplo, inicializamos un valor booleano startGameen el estado false. El programa se ejecuta una vez, muestra la pantalla de inicio durante un cuadro, luego verifica si el jugador ha iniciado el juego. Si el jugador aún no ha iniciado el juego, volverá a llamar ShowStartScreen()y luego continuará mostrando la pantalla de inicio hasta que el jugador presione iniciar.
+
+Instrucciones
+1 .
+Ha decidido intentar crear otra herramienta de productividad. Esta vez construyes un temporizador pomodoro . Cuando finalice el temporizador, sonará una alarma una vez. Si no hace clic en el botón para apagarlo, la alarma se repetirá hasta que se apague.
+
+Escriba un programa que reproduzca la alarma una vez y luego, si no se hace clic en el botón ( !buttonClick), repetirá la alarma. Para simular una alarma, puede imprimir algo como "BLARRRRRRRRR" en la consola.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Una vez que finaliza el ciclo, el programa debe imprimir un mensaje que le indica que tome un descanso, como: "Tiempo para un descanso de cinco minutos".
+
+using System;
+
+namespace DoWhileLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool buttonClick = true;
+      
+      do
+      {
+        Console.WriteLine("BLARRRRRRRRR");
+      }while (!buttonClick);
+
+      Console.WriteLine("Si no precionas aceptar la alarma sonara en 5 minutos");
+
+    }
+  }
+}

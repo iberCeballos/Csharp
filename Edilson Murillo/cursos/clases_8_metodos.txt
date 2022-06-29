@@ -1,0 +1,123 @@
+Métodos
+El tercer tipo de miembro en las clases son los métodos . Esta lección asume que ya está familiarizado con los métodos, por lo que la sintaxis debería parecerle familiar.
+
+En el pasado, aprendió que los métodos son una forma útil de organizar fragmentos de código para realizar una tarea. Pero la mayoría de los métodos pertenecen a una clase (¡incluso los que has escrito!), por lo que los métodos también se usan para definir cómo se comporta una instancia de una clase. Puede pensar en ellos como las "acciones" que un objeto puede realizar.
+
+Este código define un método IncreaseArea()que cambia el valor de la Areapropiedad:
+
+class Forest {
+  public int Area
+  { /* property body omitted */  }
+  public int IncreaseArea(int growth)
+  {
+    Area = Area + growth;
+    return Area;
+  }
+}
+Llamarías al método así:
+
+Forest f = new Forest();
+int result = f.IncreaseArea(2);
+Console.WriteLine(result); // Prints 2
+Instrucciones
+1 .
+En la Forestclase, defina un método público Grow(). Debería:
+
+tomar cero argumentos
+aumentar la Treespropiedad en 30 y la Agepropiedad en 1
+devolver el número actualizado de árboles
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Defina un método público Burn(). Debería:
+
+tomar cero argumentos
+disminuir la Treespropiedad en 20 y aumentar la Agepropiedad en 1
+devolver el número actualizado de árboles
+
+
+Clase program
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+      f.Name = "Congo";
+      f.Trees = 0;
+      f.Biome = "Desert";
+      
+      Console.WriteLine(f.Name);
+      Console.WriteLine(f.Biome);
+    }
+  }
+}
+
+
+
+Clase forest
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+
+
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}

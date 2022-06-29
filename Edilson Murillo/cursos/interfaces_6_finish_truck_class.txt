@@ -1,0 +1,97 @@
+Termina la clase de camiones
+Los diseñadores de automóviles han pedido que las camionetas actúen de manera un poco diferente a los sedanes. Los camiones necesitan una nueva propiedad llamada Weight. Siempre que se construya un camión, su número de ruedas dependerá de su peso. Por ejemplo, un camión más pesado podría necesitar 12 ruedas en lugar de 8 para sostenerse.
+
+Al igual que los sedanes, las camionetas también SpeedUp()y SlowDown().
+
+Instrucciones
+1 .
+Agregue una public double Weightpropiedad con solo un captador.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Agrega un constructor a la Truckclase con dos parámetros: double speedy double weight. Debería:
+
+Establezca la Speedpropiedad usandospeed
+Establezca la Weightpropiedad usandoweight
+Establece un LicensePlatevalor aleatorio usandoTools.GenerateLicensePlate()
+Establézcalo Wheelsen 8si Weightes menor que 400 y Wheelsen 12otro caso
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Agregue un void SpeedUp()método que aumente la Speedpropiedad en 5.
+
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+¿Recibiste un error? No hay setter para la Speedpropiedad. Agregue un setter privado a esa propiedad.
+
+Checkpoint 5 Passed
+
+¿Atascado? Obtén un consejo
+5 .
+Agregue un void SlowDown()método que disminuya el Speedby 5.
+
+
+Clase Sedan
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Truck : IAutomobile
+  {
+    //Constructor
+
+    public Truck(double speed, double weight)
+    {
+      Speed = speed;
+      Weight = weight;
+      LicensePlate = Tools.GenerateLicensePlate();
+      if(weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;        
+      }
+
+    }
+
+    //propiedades
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+
+    
+    public double Weight
+    { get; }
+     
+    //methodos
+
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+
+  }
+}

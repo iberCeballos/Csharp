@@ -1,0 +1,64 @@
+Var
+Cada consulta LINQ devuelve un valor único o un objeto de tipo IEnumerable<T>. Por ahora, todo lo que necesita saber sobre ese segundo tipo es que:
+
+Funciona con foreachbucles, al igual que matrices y listas.
+Puedes comprobar su longitud conCount()
+Dado que no siempre se conoce el tipo de valor único y/o el tipo de parámetro T, es común almacenar el valor devuelto de una consulta en una variable de tipo var.
+
+vares solo una variable tipificada implícitamente: dejamos que el compilador de C# determine el tipo real por nosotros. Aquí hay un ejemplo:
+
+string[] names = { "Tiana", "Dwayne", "Helena" };
+var shortNames = names.Where(n => n.Length < 4);
+En este caso shortNames, en realidad es de tipo IEnumerable<string>, ¡pero no tenemos que preocuparnos por eso mientras lo tengamos var!
+
+Instrucciones
+1 .
+Practiquemos el uso varcon LINQ.
+
+Cree una variable de tipo varnamed shortHeroesy establézcala igual a esta consulta LINQ:
+
+from h in heroes
+where h.Length < 8
+select h;
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+Use un foreachbucle para imprimir cada elemento en shortHeroes.
+
+Punto de control 3 superado
+3 .
+Cree otra variable de tipo varnamed longHeroesy establézcala igual a esta consulta LINQ:
+
+heroes.Where(n => n.Length > 8);
+Punto de control 4 superado
+
+¿Atascado? Obtén un consejo
+4 .
+Úselo Count()para imprimir el número de elementos en longHeroes.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroes = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+      
+      var shortHeroes = from h in heroes
+where h.Length < 8 select h;
+      foreach(string hero in shortHeroes) 
+      {
+        Console.WriteLine(hero);
+      }
+
+      var longHeroes = heroes.Where(n => n.Length > 8);
+      Console.WriteLine(longHeroes.Count());
+    }
+  }
+}

@@ -1,0 +1,154 @@
+Anular miembros heredados
+Digamos que queríamos hacer un vehículo más que funcione de forma un poco diferente a un sedán o una camioneta. Queremos usar la mayoría de los miembros de Vehicle, pero necesitamos escribir nuevas versiones de SpeedUp()y SlowDown().
+
+Lo que queremos es anular un método heredado. Para hacer eso, usamos los modificadores overridey .virtual
+
+En la superclase, marcamos el método en cuestión como virtual, lo que le dice a la computadora "este miembro podría ser anulado en las subclases":
+
+public virtual void SpeedUp()
+En la subclase, marcamos el método como override, lo que le dice a la computadora "Sé que este miembro está definido en la superclase, pero me gustaría anularlo con este método":
+
+public override void SpeedUp()
+Como comentario aparte: hay otra forma de resolver este problema. En lugar de usar virtualy overridepara anular un miembro, podemos definir un newmiembro con el mismo nombre . Esencialmente, el miembro heredado aún existe, pero está "oculto" por el miembro en la subclase. Si esto suena confuso, ¡está bien! También creemos que conduce a una confusión innecesaria, y eso conduce a errores. Vamos a seguir con el enfoque virtual- overrideen esta lección.
+
+Instrucciones
+1 .
+Nuestra nueva Bicycleclase accederá a las propiedades Wheelsy Speeden Vehicle, así que haga ambos configuradores protectednuevamente en Vehicle.cs .
+
+Wheelsya debería estar protegido, lo establecimos hace algunos ejercicios.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En Bicycle.cs , cree una clase vacía Bicycleque herede Vehicle.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Defina un constructor que:
+
+tiene un doubleparámetro para establecer la Speedpropiedad
+llamadas base()con ese parámetro
+en su cuerpo, se pone Wheelsa2
+Checkpoint 4 Passed
+
+Stuck? Get a hint
+4 .
+Defina un public void SpeedUp()método que limite el Speeda 15. En otras palabras, en el cuerpo del método:
+
+Agregar 5aSpeed
+Si Speedes mayor que 15, configúrelo en15
+Puede ocurrir un error aquí, lo cual está bien.
+
+Checkpoint 5 Passed
+5 .
+Probablemente viste la advertencia:
+
+warning CS0108: 'Bicycle.SpeedUp()' hides inherited member 'Vehicle.SpeedUp()'. Use the new keyword if hiding was intended.
+La computadora sugiere usar el newenfoque, pero lo preferimos overridepor su claridad.
+
+En Bicycle.cs , etiquete SpeedUp()con override.
+
+Checkpoint 6 Passed
+
+¿Atascado? Obtén un consejo
+6 _
+Ahora probablemente hayas visto el error:
+
+error CS0506: 'Bicycle.SpeedUp()': cannot override inherited member 'Vehicle.SpeedUp()' because it is not marked virtual, abstract, or override 
+En Vehicle.cs , etiquete SpeedUp()con virtual.
+
+Checkpoint 7 Passed
+
+¿Atascado? Obtén un consejo
+7 .
+Repita el proceso SlowDown()en Bicycle.cs (supongamos que solo los sedán y los camiones pueden ir en reversa). Debería anular la versión heredada y limitar Speeda 0. En otras palabras, el método:
+
+Resta 5deSpeed
+Se establece en 0si Speedes menor que0
+está etiquetadooverride
+Checkpoint 8 Passed
+8 _
+En Vehicle.cs , etiquete SlowDown()con virtual.
+
+
+Clase bicycle
+
+using System;
+
+namespace LearnInheritance
+{
+  class Bicycle : Vehicle
+  {
+
+    public Bicycle(double speed) : base(speed)
+    {
+      Wheels = 2;
+    }
+
+    public override void SpeedUp()
+    {
+      Speed += 5;
+      
+      if (Speed > 15)
+      {
+        Speed = 15;
+      }
+    }
+
+    public override void SlowDown()
+    {
+      Speed -= 5;
+
+      if (Speed < 0)
+      {
+        Speed = 0;
+      }
+    }
+
+  }
+}
+
+
+Clase vehicle
+
+using System;
+
+namespace LearnInheritance
+{
+  class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+
+    public virtual void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public virtual void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+  }
+}
