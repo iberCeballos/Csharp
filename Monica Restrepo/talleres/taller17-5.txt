@@ -1,0 +1,22 @@
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string n1="immutable";
+
+      string n2="immutable";
+
+      bool e = (n1==n2);
+      Console.WriteLine(e);
+
+      Object o1 = new Object();
+      Object o2 = new Object();
+      
+      Console.WriteLine(o1==o2);
+    }
+  }
+}

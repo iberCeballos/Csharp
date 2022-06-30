@@ -1,0 +1,41 @@
+Claro
+Si necesitamos eliminar todos los elementos de una lista, podríamos iterar a través de toda la lista y llamar a Remove(). La forma más fácil es utilizar el Clear()método.
+
+List<string> citiesList = new List<string> { "Delhi", "Los Angeles", "Kyiv" };
+citiesList.Clear();
+ 
+Console.WriteLine(citiesList.Count);
+// Output: 0
+Instrucciones
+1 .
+La marathonslista tiene un montón de valores antiguos que debemos eliminar.
+
+Úselo Clear()para eliminarlos todos.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        148.22,
+        156.10,
+        153.88,
+        155.34,
+        160.89
+      };
+      
+      // Clear the list here
+      marathons.Clear();
+      
+      
+      Console.WriteLine($"Count: {marathons.Count}");
+    }
+  }
+}

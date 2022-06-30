@@ -1,0 +1,149 @@
+Introducción a las referencias
+¿Qué crees que imprimirá este código?
+
+Dissertation diss1 = new Dissertation();
+Dissertation diss2 = diss1;
+diss1.CurrentPage = 0;
+diss2.CurrentPage = 16;
+Console.WriteLine(diss1.CurrentPage);
+Console.WriteLine(diss2.CurrentPage);
+¿Adivinaste 0y 16? La respuesta es 16y 16!
+
+Para entender lo que está pasando aquí, necesitamos entender las referencias . Puede que no sean obvios en este código, pero aprender a usarlos desbloquea un nuevo conjunto de superpoderes en C#. Esta lección explica:
+
+Cómo funcionan las referencias en C#
+Por qué son útiles las referencias
+Cómo convertir una referencia
+Cómo crear una referencia nula
+Instrucciones
+Esta lección utiliza las clases Book, Dissertationy Diaryy la IFlippableinterfaz. Mire a través de cada archivo para familiarizarse.
+
+IFlippablees la interfaz
+Bookes la clase base
+Dissertationy Diaryson clases que extienden la clase base e implementan la interfaz
+Diary y Dissertation heredan de Book e implementan IFlippable
+
+Si necesita actualizarse con las interfaces y la herencia, tome las lecciones de Herencia e interfaces de C#.
+
+
+Clase IFlippable
+
+namespace LearnReferences
+{
+  interface IFlippable
+  {
+    int CurrentPage { get; set; }
+    void Flip();
+  }
+}
+
+
+clase Book
+
+namespace LearnReferences
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+  }
+}
+
+
+Clase Dissertation 
+
+namespace LearnReferences
+{
+  class Dissertation : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+    
+    public Dissertation(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string Define()
+    {
+      return "dissertation - a long essay on a particular subject";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Dissertation object!";
+    }
+  }
+}
+
+
+Clase Diary 
+
+namespace LearnReferences
+{
+  class Diary : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+
+    public Diary(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string SpillSecret()
+    {
+      return "OMG kerry loves kris <3";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Diary object!";
+    }
+  }
+}
+
+
+Clase Program
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Dissertation diss1 = new Dissertation();
+			Dissertation diss2 = diss1;
+			diss1.CurrentPage = 0;
+			diss2.CurrentPage = 16;
+			Console.WriteLine(diss1.CurrentPage);
+			Console.WriteLine(diss2.CurrentPage);
+    }
+  }
+}

@@ -1,0 +1,83 @@
+using System;
+
+namespace LearnInheritance
+{
+  abstract class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+
+    public virtual void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public virtual void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public abstract string Describe();
+
+  }
+}
+
+
+
+
+using System;
+
+namespace LearnInheritance
+{
+  class Bicycle : Vehicle
+  {
+
+    public Bicycle(double speed) : base(speed)
+    {
+      Wheels = 2;
+    }
+
+    public override void SpeedUp()
+    {
+      Speed += 5;
+      
+      if (Speed > 15)
+      {
+        Speed = 15;
+      }
+    }
+
+    public override void SlowDown()
+    {
+      Speed -= 5;
+
+      if (Speed < 0)
+      {
+        Speed = 0;
+      }
+    }
+
+    public override string Describe()
+    {
+      return $"This Bicycle is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
+    }
+
+  }
+}

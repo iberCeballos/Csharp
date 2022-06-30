@@ -1,0 +1,65 @@
+Fundición
+Hasta ahora nos hemos referido a objetos con una referencia de su propio tipo, un tipo heredado o una interfaz implementada:
+
+Dissertation diss = new Dissertation();
+Book bdiss = diss;
+IFlippable fdiss = diss;
+El proceso se llama upcasting . Como vimos en el último ejercicio, el upcasting nos permite trabajar con múltiples tipos a la vez. También nos permite almacenar de forma segura un objeto sin saber su tipo específico. Puede pensar en upcasting como el uso de una referencia "arriba" en la jerarquía de herencia:
+
+La disertación hereda de Book e implementa IFlippable
+
+¿Qué sucede si intenta reducir o hacer referencia a un objeto por una subclase? Deberá hacer esto cuando desee acceder a la funcionalidad específica de una subclase.
+
+Por ejemplo, ¿qué sucede cuando nos referimos a un Bookobjeto como un Dissertationtipo?
+
+Book bk = new Book();
+Dissertation dbk = bk;
+// Error!
+El código produce este error:
+
+error CS0266: Cannot implicitly convert type `Book` to `Dissertation`. An explicit conversion exists (are you missing a cast?)
+No todos los downcast son posibles en C#. En este caso, Dissertationtiene un Define()método que es incompatible con Book. Esta es la forma en que la computadora te dice: ¡existe la posibilidad de que este yeso no funcione!
+
+Para evitar este error, debemos rebajar explícitamente, como se muestra a continuación. El tipo deseado se escribe entre paréntesis:
+
+Book bk = new Book();
+Dissertation bdk = (Dissertation)bk;
+Básicamente, esto le dice a la computadora: "Sé el riesgo que estoy tomando, y esto podría fallar si no tengo cuidado".
+
+En muchos casos, el abatido seguirá fallando. Aquí, la Dissertationreferencia de tipo bdkno puede hacer referencia a un Bookobjeto, por lo que cuando hacemos downcast explícitamente, vemos que falla con un nuevo mensaje de error:
+
+System.InvalidCastException: Specified cast is not valid.
+Hay varias formas de lidiar con la conversión a la baja, incluidos los operadores asy . isNo entraremos en eso ahora, pero puede obtener más información sobre ellos en la Guía de programación de Microsoft C#: conversión y conversión de tipos si lo desea. Por ahora, concéntrate en estas cosas:
+
+Upcasting es crear una superclase o referencia de interfaz a partir de una referencia de subclase
+Downcasting es crear una referencia de subclase a partir de una superclase o referencia de interfaz.
+El upcasting se puede hacer implícitamente, mientras que el downcasting no puede
+Instrucciones
+1 .
+En Program.cs , Dissertationy Diarylas referencias de tipo se actualizan EXPLÍCITAMENTE al Booktipo. Sabemos que esos lanzamientos explícitos no son necesarios.
+
+Elimine los moldes explícitos de ambas líneas.
+
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+			Dissertation diss = new Dissertation();
+      Diary dy = new Diary();
+      
+      //Book bdiss = (Book)diss;
+      //Book bdy = (Book)dy;
+      Book bdiss = diss;
+      Book bdy = dy;
+    }
+  }
+}
+
+
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-reference-fundamentals/exercises/casting

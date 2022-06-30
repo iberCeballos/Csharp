@@ -1,0 +1,96 @@
+Referencias de diferentes tipos
+Antes de continuar, recordemos que Dissertationimplements IFlippable, que tiene la CurrentPagepropiedad y el Flip()método. Necesitarás esta información en un minuto.
+
+En nuestro ejemplo anterior, ambas referencias al Dissertationobjeto eran del tipo Dissertation:
+
+Dissertation diss1 = new Dissertation();
+Dissertation diss2 = diss1;
+Siempre que usamos diss1y diss2podemos manejar el Dissertationobjeto como si fuera un Dissertationtipo. Dado que Dissertationtambién implementa la IFlippableinterfaz, también podemos hacer referencia a ella de esa manera:
+
+Dissertation diss = new Dissertation(50);
+IFlippable fdiss = diss;
+Ahora dissy fdissse refiere al mismo objeto, pero fdisses una IFlippablereferencia, por lo que SOLO puede usar IFlippablela funcionalidad:
+
+diss.Flip();
+fdiss.Flip();
+Console.WriteLine(diss.Define());
+// This causes an error!
+Console.WriteLine(fdiss.Define());
+Esta última línea genera un error porque Define()no es un método en la IFlippableinterfaz. Las otras líneas NO causan errores porque usan miembros que tienen IFlippabley Dissertation.
+
+Esta regla también se aplica a las clases base, por lo que podemos referirnos a un Dissertationobjeto como Book.
+
+Dissertation diss = new Dissertation(50);
+Book bdiss = diss;
+Console.WriteLine(diss.Title);
+Console.WriteLine(bdiss.Title);
+diss.Define();
+// This causes an error!
+bdiss.Define();
+Titleestá definido para Book, por lo que no se arroja ningún error allí. Define(), sin embargo, no está definido para la Bookclase, por lo que no podemos usarlo con Bookreferencias.
+
+Instrucciones
+1 .
+¡Este código contiene dos errores! Elimine o comente las líneas que causan los errores.
+
+
+Clase program
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Dissertation diss = new Dissertation();
+			IFlippable fdiss = diss;
+      Book bdiss = diss;
+			fdiss.CurrentPage = 42;
+      //bdiss.CurrentPage = 43;
+      //fdiss.Stringify();
+      bdiss.Stringify();
+      Console.WriteLine(fdiss == bdiss);
+    }
+  }
+}
+
+
+
+Clase book
+
+namespace LearnReferences
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+  }
+}
+
+
+Clase IFlippable
+
+namespace LearnReferences
+{
+  interface IFlippable
+  {
+    int CurrentPage { get; set; }
+    void Flip();
+  }
+}

@@ -1,0 +1,113 @@
+Propiedades de solo obtener
+Anteriormente usamos propiedades para la validación de campos. Al aplicar publicy private, también podemos usar propiedades para controlar el acceso a los campos.
+
+Recuerda nuestra propiedad imaginaria Area. Digamos que queremos que los programas obtengan el valor de la propiedad, pero no queremos que los programas establezcan el valor de la propiedad. Entonces nosotros:
+
+no incluyen un set()método, o
+hacer que el set()método sea privado.
+Esto muestra el enfoque 1: no incluya set():
+
+public string Area
+{
+  get { return area; }
+}
+Todavía podemos obtener Area, pero si tratamos de configurar Areaobtenemos un error:
+
+error CS0200: Property or indexer 'Forest.Area' cannot be assigned to (it is read-only)
+Esto muestra el enfoque 2: hacer set()privado:
+
+public int Area
+{
+  get { return area; }
+  private set { area = value; }  
+}
+Todavía podemos obtener Area, pero si intentamos configurarlo Area, Main()obtenemos un error:
+
+error CS0272: The property or indexer 'Forest.Area' cannot be used in this context because the set accessor is inaccessible
+Tenga en cuenta que en el enfoque 1 obtenemos un error para establecer en Areacualquier lugar. En el enfoque 2, solo obtenemos un error por establecer Areafuera de la Forestclase. En general, preferimos el enfoque 2 porque permite Forestestablecer otros métodos Area.
+
+Instrucciones
+1 .
+En Forest.cs , defina una Agepropiedad para el agecampo. Debe tener un getter público y un setter privado.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En Program.cs en Main(), intente establecer el valor de f.Age. Debería ver un error.
+
+error CS0272: The property or indexer 'Forest.Age' cannot be used in this context because the set accessor is inaccessible
+Este error significa que el setter privado nos impidió configurar Agefuera de la clase (¡lo cual es bueno!).
+
+
+Clase program
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+      f.Name = "Congo";
+      f.Trees = 0;
+      f.Age = 10;
+      f.Biome = "Desert";
+      
+      Console.WriteLine(f.Name);
+      Console.WriteLine(f.Biome);
+    }
+  }
+}
+
+
+
+Clase forest
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+
+    public int Age
+    {
+      get {return age;}
+      private set { age = value; }
+    }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    
+  }
+
+}

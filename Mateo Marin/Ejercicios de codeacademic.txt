@@ -348,4 +348,2134 @@ namespace BooleanDataTypes
     }
 }
 
-17. 
+17. using System;
+
+namespace ComparisonOperators
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      double timeToDinner = 4;
+      
+      double distance = 95;
+      
+      double rate = 30;
+      
+      double tripDuration = distance/rate;
+      
+      bool answer = (tripDuration <= timeToDinner);
+      
+      Console.WriteLine(answer);
+      
+    }
+  }
+}
+
+18. using System;
+
+namespace LogicalOperators
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool beach = true;
+      bool hiking = false;
+      bool city = true;
+
+
+    }
+  }
+}
+
+
+19. using System;
+
+namespace IfStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int socks = 6;
+
+      if (socks <= 3)
+      {        
+        Console.WriteLine("Time to do laundry!");
+      }
+
+    }
+  }
+}
+
+20. using System;
+
+namespace IfElseStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int people = 12;
+      string weather = "bad";
+
+      if (people <= 10 && weather == "nice")
+      {
+        Console.WriteLine("SaladMart");
+      } 
+      else 
+      {
+        Console.WriteLine("Soup N Sandwich");
+      }
+
+
+    }
+  }
+}
+
+21. using System;
+
+namespace ElseIfStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int guests = 0;
+      
+      if(guests >= 4)
+      {
+        Console.WriteLine("Catan");
+      }
+      else if (guests >= 1)
+      {
+        Console.WriteLine("Innovation");
+      }
+      else 
+      {
+        Console.WriteLine("Solitaire");
+      }
+    }
+  }
+}
+
+22. 
+using System;
+
+namespace SwitchStatement
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Choose a movie genre: ");
+      string genre = Console.ReadLine();
+
+      switch (genre)
+      {
+        case "Drama":
+          Console.WriteLine("Citizen Kane");
+        break;
+
+        case "Comedy":
+          Console.WriteLine("Duck Soup");
+        break;
+
+        case "Adventure":
+          Console.WriteLine("King Kong");
+        break;
+
+        case "Horror":
+          Console.WriteLine("Psycho");
+        break;
+
+        case "Science Fiction":
+          Console.WriteLine("2001: A Space Odyssey");
+        break;
+
+        default:
+          Console.WriteLine("No movie found");
+        break;
+      }
+
+    }
+  }
+}
+
+23. using System;
+
+namespace TernaryOperator
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      double pepperLength = 4;
+
+      string message = (pepperLength >= 3.5)  ? "ready!" : "wait a little longer";
+
+      Console.WriteLine(message);
+    }
+  }
+}
+
+24. using System;
+
+namespace CallAMethod
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string msg = "Yabba dabba doo!";
+      
+      Math.Min(3, 5);
+      
+      Console.WriteLine(msg);
+      
+      msg.Substring(0, 1);
+    }
+  }
+}
+
+25. using System;
+
+namespace CaptureOutput
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string designer = "Anders Hejlsberg";
+      
+      int indexOfSpace = designer.IndexOf(" ");
+      
+      string secondName = designer.Substring(indexOfSpace);
+      
+      Console.WriteLine(secondName);
+    }
+  }
+}
+
+26. using System;
+
+namespace DefineAMethod
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets();
+    }
+  static void VisitPlanets()
+  {
+    Console.WriteLine("Visitastes muchos planetas nuevos");
+  }
+  }
+
+}
+
+27. using System;
+
+namespace DefineParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets(3);
+      VisitPlanets(4);
+      VisitPlanets(5);
+    }
+    
+    static void VisitPlanets(int numberOfPlanets)
+    {
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+    }
+  }
+}
+
+28. using System;
+
+namespace ANoteOnParameters
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      VisitPlanets(3);
+      VisitPlanets(4);
+      VisitPlanets(5);
+      Console.WriteLine(numberOfPlanets);
+    }
+    
+    static void VisitPlanets(int numberOfPlanets)
+    {
+      Console.WriteLine($"You visited {numberOfPlanets} new planets...");
+    }
+  }
+}
+
+29. using System;
+
+namespace ReviewMethodOutput
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Define variables
+      string destination = "Neptune";
+      string galaxyString = "8";
+      int galaxyInt;
+      string welcomeMessage;
+      bool outcome;
+      
+      // Call DecoratePlanet() and TryParse() here
+      welcomeMessage = DecoratePlanet(destination);
+      outcome = Int32.TryParse(galaxyString, out galaxyInt);
+      
+      // Print results
+      Console.WriteLine(welcomeMessage);
+      Console.WriteLine($"Parsed to int? {outcome}: {galaxyInt}");
+      
+    }
+    
+    // Define a method that returns a string
+  	static string DecoratePlanet(string planet)
+    {
+       return $"*..*..* Welcome to {planet} *..*..*";
+    }
+    
+    // Define a method with out
+    static string Whisper(string phrase, out bool wasWhisperCalled)
+    {
+      wasWhisperCalled = true;
+      return phrase.ToLower();
+    }
+	}
+}
+
+30. using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Welcome("Earth");
+      double days = 500;
+      double rotations = DaysToRotations(days);
+      Console.WriteLine($"In {days} days, the Earth has rotated {rotations} time(s).");
+    } 
+    
+    static double DaysToRotations(double days) => days / 365;
+    
+    static void Welcome(string planet) => Console.WriteLine($"Welcome to {planet}!");
+    
+  }
+}
+
+31. using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+  	// Method to be used as second argument
+   	public static bool IsLong(string word)
+    {
+      return word.Length > 8;
+    }
+      
+    static void Main(string[] args)
+    {
+      // Array to be used as first argument
+      string[] adjectives = {"rocky", "mountainous", "cosmic", "extraterrestrial"};
+     
+      // Call Array.Find() and 
+      // Pass in the array and method as arguments
+      string firstLongAdjective = Array.Find(adjectives, IsLong);
+      
+      Console.WriteLine($"The first long word is: {firstLongAdjective}.");
+    }
+  }
+}
+
+32. using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
+      
+      bool makesContact = Array.Exists(spaceRocks, HitGround);
+      
+      if (makesContact)
+      {
+        Console.WriteLine("At least one space rock has reached the Earth's surface!");
+      } 
+    } 
+    
+    static bool HitGround(string s)
+    {
+      return s == "meteorite";
+    }
+  }
+}
+
+33. using System;
+
+namespace AlternateExpressions
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
+      
+      bool makesContact = Array.Exists(spaceRocks, s => s == "meteorite");
+      
+      if (makesContact)
+      {
+        Console.WriteLine("At least one space rock has reached the Earth's surface!");
+      } 
+    } 
+  }
+}
+
+34. using System;
+
+namespace BuildingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      
+      string[] summerStrut;
+      
+      summerStrut = new string[] {"Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles"};
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+    }
+  }
+}
+
+
+35. using System;
+
+namespace ArrayLength
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] summerStrut;
+
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito" };
+      
+      if (summerStrut.Length == 8)
+      {
+        Console.WriteLine("SummerStrut playlist is ready to go!");
+      }
+      else if (summerStrut.Length > 8)
+      {
+        Console.WriteLine("Too many songs!");
+      }
+      else
+      {
+        Console.WriteLine("Add some songs!");
+      }
+
+    
+    }
+  }
+}
+
+36. using System;
+
+namespace AccessingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+      Console.WriteLine($"You rated the song {summerStrut[1]} {ratings[1]} stars.");
+      
+    }
+  }
+}
+
+37. using System;
+
+namespace EditingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+      summerStrut[7] = "I Like It";
+      
+      ratings[7] = 3;
+
+    }
+  }
+}
+
+38. using System;
+
+namespace BuiltInMethods
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+      int threeRating = Array.IndexOf(ratings, 3);
+      Console.WriteLine($"Song number {threeRating + 1} is rated three stars.");
+      
+      string findName = Array.Find(summerStrut, song => song.Length > 10);
+      
+      Console.WriteLine($"The first song that has more than 10 characters in the title is {findName}.");
+      
+      Array.Sort(summerStrut);
+      string firstSong = summerStrut[0];
+      string lastSong = summerStrut[7];
+      Console.WriteLine($"The first song in the playlist is now {firstSong}.");
+      Console.WriteLine($"The last song in the playlist is now {lastSong}.");
+
+    }
+  }
+}
+
+
+39. using System;
+
+namespace DocumentationHunt
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+      
+      string[] summerStrutCopy = new string[8];
+      
+      Array.Copy(summerStrut, summerStrutCopy, 8);
+      Console.WriteLine(summerStrutCopy[0]);
+      
+      Array.Reverse(summerStrut);
+      Console.WriteLine(summerStrut[0]);
+      Console.WriteLine(summerStrut[7]);
+      
+      Array.Clear(ratings, 0, ratings.Length);
+      Console.WriteLine(ratings[0]);
+
+
+    }
+  }
+}
+
+40. using System;
+
+namespace WhileLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int emails = 20;  
+      
+      while (emails > 0)
+      {
+        emails--;
+        Console.WriteLine($"one email deleted, {emails} left");
+      }
+      
+      Console.WriteLine("INBOX ZERO ACHIEVED!");
+
+    }
+  }
+}
+
+
+41. using System;
+
+namespace DoWhileLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool buttonClick = true;
+      
+      do
+      {
+        Console.WriteLine("BLARRRRRRRRR");
+      } while (!buttonClick);
+      
+      Console.WriteLine("Time for a five minute break");
+    }
+  }
+}
+
+
+42. using System;
+
+namespace ForLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    { 
+      
+
+    }
+    
+    static void CreateTemplate(int week)
+    {
+      Console.WriteLine($"Week {week}");
+      Console.WriteLine("Announcements: \n \n \n ");
+      Console.WriteLine("Report Backs: \n \n \n");
+      Console.WriteLine("Discussion Items: \n \n \n");
+    }
+    
+    
+  }
+}
+
+43. using System;
+
+namespace ForEachLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] todo = { "respond to email", "make wireframe", "program feature", "fix bugs" };
+      
+      foreach (string item in todo)
+      {
+        CreateTodoItem(item);
+      }
+    }
+    
+    static void CreateTodoItem(string item)
+    {
+      Console.WriteLine($"[] {item}");
+    }
+  }
+}
+
+
+44. using System;
+
+namespace ComparingLoops
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] websites = { "twitter", "facebook", "gmail" };
+      
+      foreach (string website in websites)
+      { 
+        Console.WriteLine(website); 
+      }
+    }
+  }
+}
+
+
+45. using System;
+
+namespace JumpStatements
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool buttonClick = true;
+      
+      do
+      {
+        Console.WriteLine("BLARRRRR");
+
+        
+      } while(!buttonClick);
+    }
+  }
+}
+
+
+46. using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+    }
+  }
+}
+
+
+47. using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public string name;
+    public int trees;
+    public int age;
+    public string biome;
+    
+    public string Name
+    {
+      get { return name; }
+      set { name = value; }
+    }
+    
+    public int Trees
+    {
+      get { return trees; }
+      set { trees = value; }
+    }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+  }
+
+}
+
+
+48. using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+      f.Name = "Congo";
+      f.Trees = 0;
+      f.age = 0;
+      f.Biome = "Desert";
+      
+      Console.WriteLine(f.Name);
+      Console.WriteLine(f.Biome);
+    }
+  }
+}
+
+
+49. using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}
+
+
+50. using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public Forest(string name, string biome)
+    {
+      Name = name;
+      Biome = biome;
+      Age = 0;
+    }
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}
+
+51. using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest a = new Forest("Amazon");
+      Console.WriteLine(a.Trees);
+      a.Grow();
+      Console.WriteLine(a.Trees);
+
+    }
+  }
+}
+
+
+52. using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}
+
+
+53. using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    private static string treeFacts;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    static Forest()
+    {
+      treeFacts = "Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n";
+      ForestsCreated = 0;
+      
+    }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+    
+    public static string TreeFacts
+    {
+      get { return treeFacts; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+    public static void PrintTreeFacts()
+    {
+      Console.WriteLine(TreeFacts);
+    }
+    
+  }
+
+}
+
+
+54. using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.PI);
+      Console.WriteLine(Math.Abs(-32));
+    }
+  }
+}
+
+
+55. using System;
+
+namespace LearnInterfaces
+{
+  class Sedan : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; }
+
+    public int Wheels
+    { get; }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+    
+  }
+}
+
+56. using System;
+
+namespace LearnInterfaces
+{
+  class Sedan : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+    
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+  }
+}
+
+57. using System;
+
+namespace LearnInterfaces
+{
+  class Truck : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; }
+
+    public int Wheels
+    { get; }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+  }
+}
+
+58. using System;
+
+namespace LearnInterfaces
+{
+  class Truck : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+
+  }
+}
+
+59. using System;
+
+namespace LearnInterfaces
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Sedan s = new Sedan(60);
+      Console.WriteLine($"Sedan with license plate {s.LicensePlate} and {s.Wheels} wheels, driving at {s.Speed} km/h.");
+      s.SpeedUp();
+      Console.WriteLine($"Sedan's faster speed: {s.Speed}");
+
+      Sedan s2 = new Sedan(70);
+      Console.WriteLine($"Sedan with license plate {s2.LicensePlate} and {s2.Wheels} wheels, driving at {s2.Speed} km/h.");
+      s2.SpeedUp();
+      Console.WriteLine($"Sedan's faster speed: {s2.Speed}");
+      
+      Truck t = new Truck(45, 500);
+      Console.WriteLine($"Truck with license plate {t.LicensePlate} and {t.Wheels} wheels, driving at {t.Speed} km/h.");
+      t.SpeedUp();
+      Console.WriteLine($"Truck's faster speed: {t.Speed}");
+
+    }
+  }
+}
+
+60. using System;
+
+namespace LearnInheritance
+{
+  class Vehicle
+  {
+    public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+  }
+}
+
+61. using System;
+
+namespace LearnInheritance
+{
+  class Vehicle
+  {
+    public string LicensePlate
+    { get; protected set; }
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+  }
+}
+
+62. using System;
+
+namespace LearnInheritance
+{
+  class Truck : Vehicle, IAutomobile
+  { 
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+
+  }
+}
+
+63. using System;
+
+namespace LearnInheritance
+{
+  abstract class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+
+    public virtual void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public virtual void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public abstract string Describe();
+
+  }
+}
+
+64. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Diary dy1 = new Diary(5);
+      Diary dy2 = dy1;
+      dy2.Flip();
+      Console.WriteLine(dy1.CurrentPage);
+      Console.WriteLine(dy2.CurrentPage);
+      
+    }
+  }
+}
+
+65. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bookLocation = new Book();
+      Book sameBookLocation = bookLocation;
+      
+      bool falseValue = false;
+      bool anotherFalseValue = falseValue;
+    }
+  }
+}
+
+66. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b1 = new Book();
+      Book b2 = b1;
+      Console.WriteLine(b1 == b2);
+    }
+  }
+}
+
+67. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Dissertation diss = new Dissertation();
+			IFlippable fdiss = diss;
+      Book bdiss = diss;
+			fdiss.CurrentPage = 42;
+      // bdiss.CurrentPage = 43;
+      // fdiss.Stringify();
+      bdiss.Stringify();
+      Console.WriteLine(fdiss == bdiss);
+    }
+  }
+}
+
+68. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Dissertation diss1 = new Dissertation(32, "Anna Knowles-Smith", "Refugees and Theatre");
+			Dissertation diss2 = new Dissertation(19, "Lajos Kossuth", "Shiny Happy People");
+			Diary dy1 = new Diary(48, "Anne Frank", "The Diary of a Young Girl");
+			Diary dy2 = new Diary(23, "Lili Elbe", "Man into Woman");
+			
+      Book[] books = new Book[] 
+      {
+        diss1,
+        diss2,
+        dy1,
+        dy2
+      };
+      
+      foreach(Book b in books)
+      {
+        Console.WriteLine(b.Title);
+      }
+    }
+  }
+}
+
+69. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b1 = new Book();
+      Book b2 = new Diary();
+      
+      Console.WriteLine(b1.Stringify());
+      Console.WriteLine(b2.Stringify());
+			
+    }
+  }
+}
+
+70. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+			Dissertation diss = new Dissertation();
+      Diary dy = new Diary();
+      
+      Book bdiss = diss;
+      Book bdy = dy;
+    }
+  }
+}
+
+71. using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = null;
+      Console.WriteLine(bk);
+      bool result = (bk == null);
+      Console.WriteLine(result);
+    }
+  }
+}
+
+72. using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book();
+      Object obk = bk;
+      
+      Diary dy = new Diary(38);
+      Object ody = dy;
+      
+      int i = 9;
+      Object oi = i;
+      
+    }
+  }
+}
+
+73. using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b = new Book();      
+      Diary d = new Diary(38);
+      Random r = new Random();
+      int i = 9;
+      
+      Object[] objects = { b, d, r, i };
+      
+      foreach (Object obj in objects)
+      {
+        Console.WriteLine(obj.GetType());
+      }
+    }
+  }
+}
+
+74. namespace TheObjectClass
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+    
+    public override string ToString()
+    {
+      return $"This Book is {Title}, by {Author}.";
+    }
+  }
+}
+
+75. namespace TheObjectClass
+{
+  class Diary : Book, IFlippable
+  {
+    public int CurrentPage
+    { get; set; }
+
+    public Diary(int page = 0) : base()
+    {
+      CurrentPage = page;
+    }
+    
+    public Diary(int page, string author, string title) : base(author, title)
+    {
+      CurrentPage = page;
+    }
+
+    public void Flip()
+    {
+      CurrentPage++;
+    }
+
+    public string SpillSecret()
+    {
+      return "OMG kerry loves kris <3";
+    }
+
+    public override string Stringify() 
+    {
+      return "This is a Diary object!";
+    }
+    
+    public override string ToString()
+    {
+    	return "Surprise!";
+    }
+  }
+}
+
+76. using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string s1 = "immutable";
+      string s2 = "immutable";
+      
+      Console.WriteLine(s1 == s2);
+      
+      Object o1 = new Object();
+      Object o2 = new Object();
+      
+      Console.WriteLine(o1 == o2);
+    }
+  }
+}
+
+
+77. using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.Write("Enter some input please: ");
+      string input = Console.ReadLine();
+      
+      if (String.IsNullOrEmpty(input))
+      {
+        Console.WriteLine("You didn't enter anything!");
+      }
+      else
+      {
+        Console.WriteLine("Thank you for your submission!");
+      }
+     
+    }
+  }
+}
+
+
+78. using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string lyrics = 
+        "Dollie, Dollie, bo-bollie,\n" +
+        "Banana-fana fo-follie\n" +
+        "Fee-fi-mo-mollie\n" +
+        "Dollie!";
+      
+      // Call `Replace()` here
+      lyrics = lyrics.Replace("ollie", "ana");
+      
+      Console.WriteLine(lyrics);
+    }
+  }
+}
+
+
+79. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>();
+      marathons.Add(144.07);
+      marathons.Add(143.12);
+      
+      Console.WriteLine(marathons[1]);
+    }
+  }
+}
+
+
+80. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07, 
+        143.12, 
+        146.73, 
+        146.33
+      };
+      
+      double time = marathons[1];
+      
+      Console.WriteLine($"The 2012 marathon was ran in {time} minutes!");
+
+    }
+  }
+}
+
+
+81. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      
+      Console.WriteLine(marathons.Count);
+      
+      marathons.Add(143.23);
+      
+      Console.WriteLine(marathons.Contains(143.23));
+      
+      Console.WriteLine(marathons.Count);
+
+    }
+  }
+}
+
+
+82. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      
+      Console.WriteLine(marathons[1]);
+      
+      bool removed = marathons.Remove(143.12);
+      
+      Console.WriteLine(marathons[1]);
+
+      Console.WriteLine(removed);
+
+    }
+  }
+}
+
+
+83. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      
+      double futureWinner = marathons[0];
+      marathons[3] = 143.23;
+      
+      Console.WriteLine("If you reached this point, there are no errors!");
+    }
+  }
+}
+
+
+84. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      
+      List<double> topMarathons = marathons.GetRange(0,3);
+      
+      foreach (double d in topMarathons)
+      {
+        Console.WriteLine(d);
+      }
+    }
+  }
+}
+
+
+85. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<bool> b = new List<bool>();
+      List<Random> r = new List<Random>();
+      List<IServiceProvider> i = new List<IServiceProvider>();
+    }
+  }
+}
+
+
+86. using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> citiesList = new List<string> { "Delhi", "Los Angeles", "Saint Petersburg" };
+      
+      citiesList.Add("New York City");
+      
+      foreach (string city in citiesList)
+      {
+        Console.WriteLine($"Welcome to...{city}!");
+      }
+    }
+  }
+}
+
+
+87. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroes = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+  
+      var shortHeroes = from h in heroes
+                        where h.Length < 8
+                        select h;
+
+      // Printing...
+      Console.WriteLine("Your short heroes are...");
+      
+      foreach (string hero in shortHeroes)
+      {
+        Console.WriteLine(hero);
+      }
+    }
+  }
+}
+
+
+88. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroes = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+      
+      var shortHeroes = from h in heroes
+        where h.Length < 8
+        select h;
+ 
+      foreach (string h in shortHeroes)
+      {
+        Console.WriteLine(h);
+      }
+      
+      var longHeroes = heroes.Where(n => n.Length > 8);
+      
+      Console.WriteLine(longHeroes.Count());   
+    }
+  }
+}
+
+
+89. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var heroesWithI = from hero in heroes
+        where hero.Contains("i")
+        select hero;
+      
+      var underscored = from hero in heroes
+        select hero.Replace(' ', '_');
+    }
+  }
+}
+
+
+90. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var heroesWithI = heroes.Where(h => h.Contains("i")); 
+            
+      foreach (var hero in heroesWithI)
+      {
+        Console.WriteLine(hero);
+      }
+    }
+  }
+}
+
+
+91. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      // Separate statements
+      var heroesWithC = heroes.Where(h => h.Contains("c"));
+      var lowerHeroesWithC = heroesWithC.Select(h => h.ToLower());
+    
+      // Chained expressions
+      var sameResult = heroes   
+        .Select(h => h.ToLower())
+        .Where(h => h.Contains("c"));
+      
+      foreach (var hero in sameResult)
+      {
+        Console.WriteLine(hero);
+      }
+    }
+  }
+}
+
+
+92. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      // Method syntax
+      var result = heroes.Select(h => $"Introducing...{h}!");
+      
+      // Query syntax
+      var result2 = from h in heroes
+        where h.Contains(" ")
+        select h.IndexOf(" ");
+      
+      // Printing...
+      Console.WriteLine("'result': ");
+      foreach (var v in result)
+      {
+        Console.WriteLine(v);
+      }
+      
+      Console.WriteLine("\n'result2': ");
+      foreach (var v in result2)
+      {
+        Console.WriteLine(v);
+      }
+    }
+  }
+}
+
+93. using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroesList = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+            
+      var heroesWithSpecialChars = heroesList.Where(h => h.Contains('.') || h.Contains('7'));
+      
+      foreach (var v in heroesWithSpecialChars)
+      {
+        Console.WriteLine(v);
+      }   
+    }
+  }
+}
+
+
+

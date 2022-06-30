@@ -1,0 +1,168 @@
+Pruebas de interfaces
+Ahora tenemos una Sedanclase y una Truckclase que implementan la IAutomobileinterfaz. Aunque tienen algunos comportamientos diferentes, ambos tienen las propiedades y el método definidos en la interfaz:
+
+double Speed
+string LicensePlate
+int Wheels
+void Honk()
+En este punto, podemos estar seguros de que no causaremos ningún error si intentamos acceder a estos miembros en la clase Sedano Truck.
+
+Instrucciones
+1 .
+Crea dos sedanes y un camión:
+
+un sedán con velocidad 60
+un sedán con velocidad 70
+un camion con velocidad 45 y peso 500
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Escriba tres Console.WriteLine()enunciados que impriman los automóviles' Speed, Wheelsy LicensePlate.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Llame SpeedUp()a los tres automóviles.
+
+Checkpoint 4 Passed
+4 .
+Con Console.WriteLine(), imprima las nuevas velocidades de los tres automóviles.
+
+
+Clase program
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Sedan s1 = new Sedan(60);
+      Sedan s2 = new Sedan(70);
+      Truck t = new Truck(45, 500); 
+      Console.WriteLine($"Sedan 1 {s1.Speed}\nSedan 2 {s2.Speed}\nTruck \nVelocidad = {t.Speed} \nRuedas = {t.Wheels} \nMatricula = {t.LicensePlate}");
+      s1.SpeedUp();
+      s2.SpeedUp();
+      t.SpeedUp();
+      Console.WriteLine($"Sedan 1 {s1.Speed}\nSedan 2 {s2.Speed}\nTruck = {t.Speed} ");
+    }
+  }
+}
+
+
+Clase IAutomobile
+
+using System;
+
+namespace LearnInterfaces
+{
+  interface IAutomobile
+  {
+    string LicensePlate { get; }
+    double Speed { get; }
+    int Wheels { get; }
+    void Honk();
+  }
+}
+
+
+Clase Sedan
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Sedan : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+    
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+  }
+}
+
+
+Clase IAutomobile
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Truck : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+
+  }
+}

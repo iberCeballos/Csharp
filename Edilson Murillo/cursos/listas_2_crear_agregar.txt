@@ -1,0 +1,53 @@
+Crear y agregar
+Una lista es una estructura de datos secuenciales que puede contener cualquier tipo. Al igual que los arreglos, puede usarlos para almacenar cualquier información secuencial, como las letras del alfabeto, los comentarios en una publicación de blog, los tiempos de finalización de una carrera de caballos o los elementos del menú de un restaurante.
+
+Crea una lista usando la newpalabra clave, como crearía cualquier otra clase. Especifique el tipo de elemento dentro de los corchetes angulares: < >. En este ejemplo, la lista tiene un nombre citiesListy contiene instancias del tipo string.
+
+List<string> citiesList = new List<string>();
+Puede agregar elementos a la lista usando el Add()método:
+
+citiesList.Add("Delhi");
+Puede acceder a los elementos usando índices y corchetes:
+
+string city = citiesList[0];
+También puede reasignar elementos utilizando la notación de corchetes:
+
+citiesList[0] = "New Delhi";
+Para usar listas, deberá agregar esto en la parte superior de su archivo. Explicaremos esto en detalle más adelante:
+
+using System.Collections.Generic;
+Instrucciones
+1 .
+Cree una lista para mantener los mejores tiempos de maratón de mujeres en minutos. Cree una lista vacía de tipo doubley guárdela en una variable marathons.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Jemima Sumgong ganó la maratón de Río de Janeiro de 2016 con un tiempo de 144.07minutos y Tiki Gelana ganó la maratón de Londres de 2012 con un tiempo de 143.12minutos. (¡Eso es solo 2 horas, 23 minutos y 7,2 segundos!)
+
+Use dos Add()declaraciones para agregar esos valores a la lista.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprime el segundo valor de la lista en la consola.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>();
+      marathons.Add(144.07);
+      marathons.Add(143.12);
+      Console.WriteLine(marathons[1]);
+    }
+  }
+}

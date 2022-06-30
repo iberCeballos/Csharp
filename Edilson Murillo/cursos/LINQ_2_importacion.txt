@@ -1,0 +1,50 @@
+Importación de LINQ
+Antes de pasar a la sintaxis y los métodos, importemos las características a nuestro código. Para usar LINQ en un archivo, agregue esta línea en la parte superior:
+
+using System.Linq;
+Muchas veces usamos LINQ con colecciones genéricas (como listas), por lo que puede ver ambos espacios de nombres importados en un archivo:
+
+using System.Collections.Generic;
+using System.Linq;
+Instrucciones
+1 .
+¡Este código arroja errores! Ejecute el código para ver los detalles del error.
+
+Debería haber visto un mensaje de error como este:
+
+error CS0246: The type or namespace name 'List<>' could not be found (are you missing a using directive or an assembly reference?) 
+o
+
+error CS1935: Could not find an implementation of the query pattern for source type 'List<string>'.  'Where' not found.  Are you missing a reference to 'System.Core.dll' or a using directive for 'System.Linq'? 
+Checkpoint 2 Passed
+2 .
+Solucione los errores agregando referencias a los espacios de nombres System.Collections.Genericy System.Linq.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroes = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+  
+      var shortHeroes = from h in heroes
+                        where h.Length < 8
+                        select h;
+
+      // Printing...
+      Console.WriteLine("Your short heroes are...");
+      
+      foreach (string hero in shortHeroes)
+      {
+        Console.WriteLine(hero);
+      }
+    }
+  }
+}

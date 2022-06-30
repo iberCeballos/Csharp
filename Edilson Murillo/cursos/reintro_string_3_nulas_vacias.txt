@@ -1,0 +1,68 @@
+Las cadenas pueden ser nulas, vacías o sin asignar
+Al igual que otros tipos de referencias, stringlas referencias pueden ser nulas o no asignadas . También pueden tener un tercer valor: vacío .
+
+// Unassigned
+string s;
+// Null
+string s2 = null;
+// Empty string
+string s3 = "";
+// Also empty string
+string s4 = String.Empty;
+// This prints true
+Console.WriteLine(s3 == s4);
+Todos estos significan una falta de texto, pero cada uno significa algo ligeramente diferente:
+
+no asignado significa que el programador no le dio ningún valor a la variable
+nulo significa que el programador intencionalmente hizo que la variable no se refiriera a ningún objeto
+una cadena vacía significa un fragmento de texto con cero caracteres. Esto se usa a menudo para representar un campo de texto en blanco. Puede ser representado por ""oString.Empty
+La Guía de programación de Microsoft sugiere usar String.Emptyo ""en lugar de nullpara evitar NullReferenceExceptionerrores.
+
+Podemos buscar cadenas nulas O vacías usando el Stringmétodo estático IsNullOrEmpty(). Se explica con más detalle en la documentación .
+
+Instrucciones
+1 .
+Usando Console.Write()y Console.ReadLine(), solicite al usuario una entrada y captúrela en una variable.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Escriba una instrucción if- elseque compruebe si hay una cadena vacía o nula. Si es nulo, imprima el mensaje:
+
+"You didn't enter anything!"
+De lo contrario, imprima el mensaje:
+
+"Thank you for your submission!"
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Ejecute el programa usando dotnet run.
+
+¿Qué sucede cuando no ingresas texto y presionas Enter?
+
+
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.Write("Enter some input please: ");
+      string input = Console.ReadLine();
+      
+      if (String.IsNullOrEmpty(input))
+      {
+        Console.WriteLine("You didn't enter anything!");
+      }
+      else
+      {
+        Console.WriteLine("Thank you for your submission!");
+      }
+     
+    }
+  }
+}

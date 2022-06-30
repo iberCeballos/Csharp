@@ -1,0 +1,63 @@
+Haciendo Clases
+C# proporciona tipos de datos integrados, como string: cada instancia del stringtipo tiene sus propios valores y funcionalidad.
+
+string phrase = "zoinks!";
+Console.WriteLine(phrase.Length);
+Console.WriteLine(phrase.IndexOf("k"));
+En este caso phrasees una instancia del stringtipo. Cada stringuno tiene una Lengthpropiedad y un IndexOf()método, pero los valores resultantes son diferentes para cada instancia.
+
+Una clase representa un tipo de datos personalizado. En C#, la clase define los tipos de información y métodos incluidos en un tipo personalizado.
+
+Luego puede crear instancias de esa clase (arriba, phrasefue una instancia de string). Puede haber muchas instancias de la misma clase, todas con valores únicos.
+
+Para comenzar a definir una clase, C# usa esta estructura:
+
+class Forest {
+}
+El código de una clase generalmente se coloca en un archivo propio, nombrado con el nombre de la clase. En este caso es Forest.cs . Esto mantiene nuestro código organizado y fácil de depurar.
+
+En otras partes del código, como Main()en Program.cs , podemos usar la clase. Hacemos instancias, u objetos , de la Forestclase con la newpalabra clave:
+
+Forest f = new Forest();
+Podríamos decir fes una instancia de la Forestclase, o fes de tipo Forest.
+
+El proceso de creación de una instancia se denomina creación de instancias . Hoy instanciamos una clase; ayer instanciaron una clase, y así sucesivamente.
+
+Instrucciones
+1 .
+Definiremos nuestra clase en Forest.cs y trabajaremos con esa clase en el Main()método en Program.cs .
+
+Dentro del espacio de nombres BasicClasses, cree una clase vacía Foresten Forest.cs .
+
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+En Main()Program.cs crea una nueva instancia de la Forestclase y almacena el resultado en una variable f.
+
+clase programm
+
+using System;
+  
+namespace BasicClasses
+{  
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+    }
+  }
+}
+
+clase forest
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    
+  }
+
+}

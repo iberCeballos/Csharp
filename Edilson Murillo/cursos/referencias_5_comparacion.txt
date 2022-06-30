@@ -1,0 +1,49 @@
+Comparación de referencia frente a valor
+Cuando comparamos tipos de valores con ==, el compilador de C# realiza una comparación de valores . Por ejemplo, esto se imprime trueporque el valor 6es igual al valor 6:
+
+int int1 = 6;
+int int2 = 6;
+Console.WriteLine(int1 == int2);
+// Output: true
+int1y int2son el valor real 6. Cuando comparamos el valor 6con 6, ¡son iguales!
+
+Cuando comparamos tipos de referencia con ==, el compilador de C# realiza una comparación referencial , lo que significa que verifica si dos variables se refieren a la misma ubicación de memoria. Por ejemplo, esto se imprime falseporque d1y d2se refiere a dos ubicaciones diferentes en la memoria (aunque contienen objetos con los mismos valores):
+
+Dissertation d1 = new Dissertation(50);
+Dissertation d2 = new Dissertation(50);
+Console.WriteLine(d1 == d2);
+// Output: false
+Construimos dos Dissertationobjetos diferentes que resultaron tener los mismos valores. Cada referencia ( d1y d2) apunta a objetos diferentes, por lo que no son iguales.
+
+Instrucciones
+1 .
+Cree una variable b1que haga referencia a un nuevo Bookobjeto.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cree una variable b2que tenga la misma referencia que b1.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprime el resultado de b1 == b2a la consola. ¿Por qué es ese el valor?
+
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b1 = new Book();
+      Book b2 = b1;
+      Console.WriteLine(b1 == b2);
+      
+    }
+  }
+}
