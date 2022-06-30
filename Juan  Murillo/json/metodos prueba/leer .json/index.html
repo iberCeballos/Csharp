@@ -10,22 +10,46 @@
     
      <div class="container my-5 text-center">
          <button class="btn btn-danger w-100" onclick="traer()">Obtener</button>
-         <div class="mt-5" id="contenido"></div>
-         <div class="container-sm mt-5" id="contenido2"></div>
-
+         <div class="mt-5">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="contenido">
+              
+            </tbody>
+          </table>
+         </div>
+         
          <script>
              var contenido=document.querySelector('#contenido');
              function traer()
              {
-                fetch('https://randomuser.me/api/')
-                .then(respuesta => respuesta.json())
-                .then(respuesta=>{
-                  console.log(respuesta.results[0])
-                  contenido.innerHTML=`<img src="${respuesta.results[0].picture.large}" width="100px" class="img-fluid rounded-circle">`
-                  contenido2.innerHTML=`<p>${respuesta.results[0].name.title} ${respuesta.results[0].name.first} ${respuesta.results[0].name.last} </p>
-                  <p>${respuesta.results[0].location.state}, ${respuesta.results[0].location.country}</p>
-                  <p>${respuesta.results[0].email}</p>`
+                fetch('tabla.json')
+                .then(res => res.json())
+                .then(res=>{
+                  tabla(res)
                 })
+             }
+
+             function tabla(res)
+             {
+               contenido.innerHTML=''
+                for(let i of res){
+                  contenido.innerHTML +=`
+                  <tr>
+                      <th scope="row">${i.id}</th>
+                      <td>${i.nombre}</td>
+                      <td>${i.email}</td>
+                      <td>${i.estado ? "Activo" : "Eliminado"}</td>
+                  </tr>
+                  `
+                }
              }
          </script>
 
