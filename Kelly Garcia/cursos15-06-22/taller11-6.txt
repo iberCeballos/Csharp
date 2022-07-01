@@ -1,0 +1,23 @@
+using System;
+
+namespace JumpStatements
+{
+  class Program
+  {
+    static void Main(string[] args)
+    { 
+      bool buttonClick = true;
+      
+      do
+      {
+        Console.WriteLine("BLARRRRR");
+            buttonClick++;
+            if (buttonClick ==3 ){
+            break; }
+       
+      } while(!buttonClick);
+  
+
+    }
+  }
+}

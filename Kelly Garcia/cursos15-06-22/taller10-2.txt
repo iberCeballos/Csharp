@@ -1,0 +1,28 @@
+using System;
+
+namespace ArrayLength
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] summerStrut;
+
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel"};
+
+    int arrayLength = summerStrut.Length;
+
+      if (arrayLength == 8){
+        Console.WriteLine( "¡La lista de reproducción summerStrut está lista para comenzar!");
+      }
+
+      else if (arrayLength > 8){
+        Console.WriteLine("Demasiadas canciones");
+      }
+      else if (arrayLength < 8 ){
+        Console.WriteLine("agrega algunas canciones"); 
+      }
+    
+    }
+  }
+}

@@ -1,0 +1,31 @@
+
+using System;
+public class Program
+{
+public static void Main()
+{
+Console.WriteLine("Ingrese el primer numero");
+int num1=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese el segundo numero");
+int num2=Convert.ToInt32(Console.ReadLine());
+int suma, resta;
+double multiplicacion, divicion;
+suma= num1+num2;
+resta=num1-num2;
+multiplicacion=num1*num2;
+divicion=num1/num2;
+Console.WriteLine("El resultado de la suma es: " +suma + "\nEl resultado de la resta es: " + resta + "\nEl resultado de la multiplicacion es: "+ multiplicacion
++ "\nEl resultado de la divicion es: " + divicion);
+if (multiplicacion>=20)
+{
+multiplicacion= multiplicacion - resta;
+Console.WriteLine("El resultado de la multiplicacion menos la resta es: " +multiplicacion);
+}
+else if (multiplicacion<20)
+{
+multiplicacion= multiplicacion + suma;
+Console.WriteLine("El resultado de la multiplicacion mas la suma es: " +multiplicacion);
+}
+}
+}
+

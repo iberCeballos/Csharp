@@ -1,0 +1,43 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            Console.WriteLine("ingrese el primer numero");
+            double numero1 = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("ingrese el primer numero");
+            double numero2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese el primer numero");
+            double numero3 = Convert.ToInt32(Console.ReadLine());
+
+            if (numero1 >= numero2 && numero1 >= numero3)
+            {
+                Console.WriteLine("el numero mayor es" + numero1);
+            }
+
+           else if (numero2 >= numero1 && numero2 >= numero3)
+            {
+                Console.WriteLine("el numero mayor es" + numero2);
+            }
+
+            else if (numero3 >= numero1 && numero3 >= numero2)
+            {
+                Console.WriteLine("el numero mayor es" + numero3);
+            }
+
+
+
+
+
+        }
+    } 
+}
+

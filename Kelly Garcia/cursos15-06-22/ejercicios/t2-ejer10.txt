@@ -1,0 +1,15 @@
+
+using System;
+
+public class Program
+{
+     static void Main()
+    {
+        double distancia = 3200;
+        double velocidad = 80;
+        double tiempo = (distancia / velocidad);
+        Console.WriteLine("el tiempo que se gasto es de " + " " +tiempo+ " "+  "horas");
+
+
+    }
+}
