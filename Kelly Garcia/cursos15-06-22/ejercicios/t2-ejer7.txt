@@ -1,0 +1,31 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         
+            
+
+            Console.WriteLine("ingrese el lado de un cuadrado");
+            double ladocc = Convert.ToInt32(Console.ReadLine());
+            double altura = ladocc;
+            double areacuadrado = (ladocc * altura);
+            double perimetro = (ladocc + ladocc + ladocc + ladocc);
+             
+            Console.WriteLine("ingrese 1 0 2");
+            double opcion = Convert.ToInt32(Console.ReadLine());
+
+
+            if (opcion == 1)
+            {
+                Console.WriteLine("el perimetro del cuadrado es" + " " + perimetro);
+            }
+
+            else if (opcion == 2)
+                    {
+                Console.WriteLine("el area del cuadrado es" + " " + areacuadrado);
+
+            }

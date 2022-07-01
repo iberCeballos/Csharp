@@ -1,0 +1,29 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello World!");
+            Console.WriteLine("ingrese su nota final");
+            int notaf = Convert.ToInt32(Console.ReadLine());
+
+
+
+            if (notaf > 3)
+            {
+                Console.WriteLine("usted aprobo el curso");
+            }
+
+            else if (notaf < 3)
+            {
+                Console.WriteLine("usted ha desaprobado el curso");
+            }
+        }
+
+
+    }
+}
+

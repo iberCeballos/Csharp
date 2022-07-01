@@ -1,0 +1,28 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello World!");
+            Console.WriteLine("ingrese un numero");
+            int numero = Convert.ToInt32(Console.ReadLine());
+           
+           
+
+            if (numero % 2 == 0)
+            {
+                Console.WriteLine("el numero" + numero + "es par");
+            }
+
+            else if (numero % 2 == 1)
+            {
+                Console.WriteLine("el numero" + numero + " ingreso es impar");
+            }
+        }
+
+
+        }
+    }

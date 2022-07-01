@@ -1,0 +1,40 @@
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public string Name;
+    public int Trees;
+    public int age;
+    public string biome;
+    
+    public string Name
+    { get; set; }
+   //    get { return name; }
+     // set { name = value; }
+   
+    
+    public int Trees
+    { get; set;}
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,74 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("ingrese la primera nota");
+            double nota1 = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("ingrese la segunda nota");
+            double nota2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese la tercera nota");
+            double nota3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese la cuarta nota");
+            double nota4 = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("ingrese la quinta nota");
+            double nota5 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese la sexta nota");
+            double nota6 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese la septima nota");
+            double nota7 = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("ingrese la octava nota");
+            double nota8 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese la novena nota");
+            double nota9 = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("ingrese la decima nota");
+            double nota10 = Convert.ToInt32(Console.ReadLine());
+
+            double promedio = ((nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8 + nota9 + nota10) / 10);
+
+
+            if (promedio >=3 )
+            {
+                Console.WriteLine("usted aprobo el curso con un promedio de" + promedio);
+
+            }
+            if (promedio <3)
+            {
+                Console.WriteLine("usted desaprobo el curso con un  promedio de " + promedio);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    } 
+}
+
