@@ -1,0 +1,41 @@
+using System;
+
+namespace Concesionario
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+             
+         
+            
+            
+            Console.WriteLine("ingrese el valor diario que deposita el cliente 1");
+            int vdcli1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese el valor diario que deposita el cliente 2");
+            int vdcli2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese el valor diario que deposita el cliente 3");
+            int vdcli3 = Convert.ToInt32(Console.ReadLine());
+
+            int cliente1 = Convert.ToInt32((vdcli1 * 30));
+            Console.WriteLine($"el valor mensual que paga el primer cliente es {cliente1} mil $$ ");
+            int cliente2 = Convert.ToInt32((vdcli2 * 30));
+
+            Console.WriteLine($"el valor mensual que paga el segundo cliente es {cliente2} mil $$ ");
+            int cliente3 = Convert.ToInt32((vdcli3 * 30));
+
+            Console.WriteLine($"el valor mensual que paga el tercer cliente es {cliente3} mil $$ ");
+            int  sumatotal = Convert.ToInt32((cliente1 + cliente2 + cliente3));
+            Console.WriteLine($"el deposito de los tres clientes mensual es de {sumatotal} mil $$ ");
+
+
+
+
+
+
+        }
+    }
+}
