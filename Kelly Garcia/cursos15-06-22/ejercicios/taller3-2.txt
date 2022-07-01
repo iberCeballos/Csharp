@@ -1,0 +1,51 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int num1;
+            int num2;
+            
+
+            Console.WriteLine("ingrese un numero");
+            num1 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("ingrese el segundo numero");
+            num2 = Int32.Parse(Console.ReadLine());
+
+
+           
+            numeros(num1, num2);
+
+        }
+        static void numeros(int numero1,int  numero2)
+        {
+            if (numero1 % 2 ==1 || numero2 % 2 ==1)
+            {
+                int multiplicacion = (numero1 * numero2);
+
+                Console.WriteLine($"los numeros que usted ingreso con impares y el resultado de la multiplicaciòn es:{multiplicacion}");
+                
+            }
+
+             
+            else if(numero1 % 2 == 0 && numero2 % 2 == 0)
+            {
+                int suma = (numero1 + numero2);
+
+                Console.WriteLine($"los numeros que usted ingreso son pares y el resultado de la suma es:{suma}");
+
+            }
+
+
+
+
+
+
+        }
+    }
+}

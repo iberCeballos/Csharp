@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string apellido;
+            string nombre;
+
+            Console.WriteLine("ingrese su nombre");
+            nombre = Console.ReadLine();
+
+            Console.WriteLine("ingrese su apellido");
+            apellido = Console.ReadLine();
+            
+            saludo(nombre, apellido);
+
+        }
+        static void saludo(string nombre,string  apellido)
+        {
+
+
+             Console.WriteLine($"cordial saludo, espero que tenga un buen dia {nombre} {apellido}" );
+
+        }
+    }
+}
+

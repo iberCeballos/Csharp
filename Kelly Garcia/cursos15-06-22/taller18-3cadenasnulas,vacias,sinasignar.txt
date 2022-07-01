@@ -1,0 +1,20 @@
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+     Console.WriteLine("ingrese su nombre");
+     string name= Console.ReadLine();
+     if(String.IsNullOrEmpty(Input)){
+       Console.WriteLine("You didn't enter anything!");
+     }
+     else {
+        Console.WriteLine("Thank you for your submission!")
+     }
+  
+    }
+  }
+}

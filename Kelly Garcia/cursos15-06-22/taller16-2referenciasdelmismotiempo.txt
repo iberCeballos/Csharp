@@ -1,0 +1,20 @@
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    { Diary dy1 = new Diary(5);
+      Diary dy2 = dy1;
+      dy2.Flip();
+      dy1.CurrentPage = 6;
+      dy2.CurrentPage = 6;
+      Console.WriteLine(dy1.CurrentPage);
+      Console.WriteLine(dy2.CurrentPage);
+    
+
+      
+    }
+  }
+}
