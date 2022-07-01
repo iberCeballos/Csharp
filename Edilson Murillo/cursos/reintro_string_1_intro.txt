@@ -1,0 +1,42 @@
+Reintroducción a las cadenas
+Las lecciones anteriores han establecido que todas las clases son tipos de referencia y todos los valores "primitivos" son tipos de valor.
+
+// Reference type
+Object o = new Object();
+// Value type
+bool b = true;
+¿Consideramos stringun tipo de referencia o un tipo de valor?
+
+¡Revelación! Las cadenas son técnicamente tipos de referencia. Pero en acción, es un poco más complicado. Casi todos los programas de C# utilizan algunas cadenas, por lo que deberá saber cómo funciona. Esta lección explicará el comportamiento único de las stringreferencias.
+
+Por cierto: en C#, Stringy stringson equivalentes. Esto solo nos da más opciones cuando estamos codificando. Es conveniente para los principiantes porque generalmente se les stringpresenta con otros tipos de valores primitivos como inty bool.
+
+
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Example 1
+      string dog = "chihuahua";
+      string tinyDog = dog;
+      dog = "dalmation";
+      Console.WriteLine(dog);
+      // Output: "dalmation"
+      Console.WriteLine(tinyDog);
+      // Output: "chihuahua"
+
+      // Example 2
+      string s1 = "Hello ";
+      string s2 = s1;
+      s1 += "World";
+      System.Console.WriteLine(s1);
+      // Output: "Hello World"
+      System.Console.WriteLine(s2);
+      // Output: "Hello"
+    }
+  }
+}

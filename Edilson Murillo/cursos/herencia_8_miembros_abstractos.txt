@@ -1,0 +1,220 @@
+Hacer que los miembros heredados sean abstractos
+Ahora queremos agregar un método más al Vehiclellamado Describe(). Será diferente para cada subclase, por lo que no tiene sentido definir uno predeterminado en Vehicle. Independientemente, queremos asegurarnos de que se implemente en cada subclase.
+
+Esto puede sonar similar a una interfaz. ¿Por qué no agregar este método a la IAutomobileinterfaz? Queremos Describe()estar disponibles para todos los vehículos, no solo para los automóviles.
+
+Para ello necesitamos un modificador más: abstract. Esta línea entraría en la Vehicleclase:
+
+public abstract string Describe();
+Esto es como si la Vehicleclase le dijera a sus subclases: "Si heredas de mí, debes definir un Describe()método porque no te daré ninguna funcionalidad predeterminada para heredar". En otras palabras, los miembros abstractos no tienen implementación en la superclase, pero deben implementarse en todas las subclases.
+
+Si un miembro de una clase es abstracto, entonces la clase en sí no puede existir realmente como una instancia. Imagina llamar Vehicle.Describe(). ¡No tiene sentido porque no existe! Esto significa que toda la clase de Vehículo debe ser abstracta. Etiquétalo con abstracttambién:
+
+abstract class Vehicle
+Si no lo hace, obtendrá un mensaje de error como este:
+
+error CS0513: 'Vehicle.Describe()' is abstract but it is contained in non-abstract class 'Vehicle'
+Una vez que escribimos el método abstracto y marcamos la clase como abstracta, necesitaremos implementarlo en cada subclase. Por ejemplo en Sedan:
+
+public override string Describe()
+{
+  return $"This Sedan is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
+}
+Para dejar en claro que este Describe()método Sedananula el Describe()método de Vehicle, necesitaremos etiquetarlo override.
+
+Instrucciones
+1 .
+Agregue el método abstracto Describe()a la Vehicleclase.
+
+Describe()debe ser publicy devolver unstring
+Vehicletambién tendrá que ser etiquetadoabstract
+Es posible que vea un error después de esto.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Probablemente viste este error:
+
+error CS0534:  'Bicycle' does not implement inherited abstract member 'Vehicle.Describe()'
+Solucione esto implementando Describe()métodos en Bicycle, Sedany Truck. Cada método debe:
+
+mencionar el tipo, por ejemplo, la versión de bicicleta del método devuelve una cadena que contiene"bicycle"
+mencione la matrícula, la velocidad y las ruedas
+ser etiquetado conoverride
+Para bicicletas, la cadena devuelta podría verse así:
+
+This bicycle is moving on 2 wheels at 10 km/h, with license plate ABCD1234.
+Checkpoint 3 Passed
+
+Stuck? Get a hint
+3 .
+En Program.cs , llame Describea cada instancia e imprima el resultado en la consola.
+
+
+Clase vehicle
+
+using System;
+
+namespace LearnInheritance
+{
+  abstract class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; protected set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+
+    public virtual void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public virtual void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public abstract string Describe();
+
+  }
+}
+
+
+Clase bicycle
+
+using System;
+
+namespace LearnInheritance
+{
+  class Bicycle : Vehicle
+  {
+
+    public Bicycle(double speed) : base(speed)
+    {
+      Wheels = 2;
+    }
+
+    public override void SpeedUp()
+    {
+      Speed += 5;
+      
+      if (Speed > 15)
+      {
+        Speed = 15;
+      }
+    }
+
+    public override void SlowDown()
+    {
+      Speed -= 5;
+
+      if (Speed < 0)
+      {
+        Speed = 0;
+      }
+    }
+
+    public override string Describe()
+    {
+      return $"This bicycle is moving on {Wheels} wheels at{Speed} km/h, with license plate {LicensePlate}.";
+    } 
+
+  }
+}
+
+
+Clase sedan
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : Vehicle, IAutomobile
+  {
+    public Sedan(double speed) : base(speed)
+    {
+      Wheels = 4;
+    }
+
+    public override string Describe()
+    {
+      return $"This Sedan is moving on {Wheels} wheels at{Speed} km/h, with license plate {LicensePlate}.";
+    } 
+    
+  }
+}
+
+
+Clase truck
+
+using System;
+
+namespace LearnInheritance
+{
+  class Truck : Vehicle, IAutomobile
+  { 
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight) : base(speed)
+    {
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+
+    public override string Describe()
+    {
+      return $"This Truck is moving on {Wheels} wheels at{Speed} km/h, with license plate {LicensePlate}.";
+    } 
+
+  }
+}
+
+
+Clase program
+
+using System;
+
+namespace LearnInheritance
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Sedan s = new Sedan(60);
+      
+      Truck t = new Truck(45, 500);
+      
+      Bicycle b = new Bicycle(10);
+
+      Console.WriteLine(s.Describe());
+      Console.WriteLine(t.Describe());
+      Console.WriteLine(b.Describe());
+      
+    }
+  }
+}

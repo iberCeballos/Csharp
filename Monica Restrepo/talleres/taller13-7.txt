@@ -1,0 +1,15 @@
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.writeLine(Forest.ForestsCreated);
+      Forest f = new Forest(Hola, ;));
+      Forest f = new Forest(Monica, Restrepo);
+      Console.writeLine(Forest.ForestsCreated);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+
+
+namespace proyectoJson
+{
+    public class WeatherForecast
+    {
+        public DateTimeOffset Date { get; set; }
+        public int TemperatureCelsius { get; set; }
+        public string Summary { get; set; }
+    }
+    internal class Program
+    {
+        static  void Main(string[] args)
+        {
+            var weatherForecast = new WeatherForecast
+            {
+                Date = DateTime.Parse("2019-08-01"),
+                TemperatureCelsius = 25,
+                Summary = "Hot"
+            };
+
+
+            //Para imprimir correctamente la salida JSON, establezca JsonSerializerOptions.WriteIndented en true, y asi establecer su estructura
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(weatherForecast, options);
+
+            Console.WriteLine(jsonString);
+
+        }
+    }
+}

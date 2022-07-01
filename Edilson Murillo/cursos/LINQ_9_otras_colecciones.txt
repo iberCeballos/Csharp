@@ -1,0 +1,45 @@
+LINQ con otras colecciones
+En su mayoría, ha visto que LINQ se usa con matrices, ¡pero también se puede usar para listas! La sintaxis es la misma:
+
+List<string> heroesList = new List<string> { "D. Va", "Lucio", "Soldier 76" };
+ 
+var longLoudheroes = from h in heroesList
+  where h.Length > 6
+  select h.ToUpper();
+ 
+// longLoudHeroes is [ "SOLDIER 76" ]
+Técnicamente, LINQ se puede usar con cualquier tipo que admita foreachbucles, pero no los cubriremos todos aquí.
+
+Instrucciones
+1 .
+Consulta heroesListpara encontrar todos los nombres de héroes que contengan una .o 7(un punto o el número 7).
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Almacene los resultados de la consulta en una variable de tipo vary use un foreachbucle para imprimir cada elemento.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> heroesList = new List<string> { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      var encon = heroesList.Where(h => h.Contains(".") || h.Contains("7"));
+
+      foreach(var h in encon)
+      {
+        Console.WriteLine(h);
+      }
+      
+    }
+  }
+}

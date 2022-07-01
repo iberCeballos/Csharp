@@ -226,7 +226,7 @@ namespace curso_Csharp
 
 
 
-            Console.WriteLine("--------------------------------------------------------");
+            Console.WriteLine("ldhashfas");
             Console.ReadLine();
 
         }

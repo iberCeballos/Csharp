@@ -1,0 +1,42 @@
+Revisar
+¡Bien hecho, ahora eres un maestro de referencia!
+
+El concepto de referencias, especialmente los matices del stringtipo, puede ser difícil de entender cuando no son claramente visibles en el código. Deje que la información penetre y juegue con algún código para verificar su comprensión. Una vez que lo obtenga, este concepto le ahorrará docenas de horas de depuración.
+
+Esto es lo que se cubrió en esta lección:
+
+El tipo Stringo stringes un tipo de referencia
+Las cadenas son inmutables , lo que significa que no se pueden cambiar después de crearlas.
+Ser inmutable también significa que una stringreferencia siempre apuntará al objeto original, por lo que "modificar" una referencia a un stringno afectará otras referencias a él.
+Con el operador de igualdad ( ==), las cadenas se verifican por valor, no referencial, igualdad
+Una stringvariable puede estar sin asignar null, o vacía. Las cadenas vacías se pueden representar con String.Emptyo "": son equivalentes
+
+
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Example 1
+      string dog = "chihuahua";
+      string tinyDog = dog;
+      dog = "dalmation";
+      Console.WriteLine(dog);
+      // Output: "dalmation"
+      Console.WriteLine(tinyDog);
+      // Output: "chihuahua"
+
+      // Example 2
+      string s1 = "Hello ";
+      string s2 = s1;
+      s1 += "World";
+      System.Console.WriteLine(s1);
+      // Output: "Hello World"
+      System.Console.WriteLine(s2);
+      // Output: "Hello"
+    }
+  }
+}

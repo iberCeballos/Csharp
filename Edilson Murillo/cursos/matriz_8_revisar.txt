@@ -1,0 +1,33 @@
+Revisar
+¡Felicitaciones, cubrimos mucho en esta lección! Aprendimos sobre:
+
+Estructuras de datos y cómo podemos usarlas para organizar mejor nuestros datos
+Cómo crear, acceder y editar valores en matrices
+Cómo utilizar los métodos integrados de la clase Array, incluidos Sort(), IndexOf()yFind()
+Si se queda atascado o desea obtener más información, consulte el sitio oficial de Microsoft:
+
+Para obtener información conceptual general, lea la guía de programación sobre Matrices
+Para obtener información específica sobre métodos como Find(), lea la documentación de la clase Array
+Instrucciones
+¡Hora de practicar! Use el editor de código para jugar con lo que aprendió en esta lección.
+
+using System;
+
+namespace ArraysReview
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      /* use this space to write your own short program! 
+      Here's what you learned:
+
+      Building Arrays
+      .Length Property
+      Accessing and Editing Arrays using bracketNotation[]
+      Built-in-Methods: Sort(), IndexOf(), Find()
+
+      Good luck! */
+    }
+  }
+}

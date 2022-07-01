@@ -1,0 +1,165 @@
+Métodos estáticos
+Ya sabes cómo crear un método de instancia, como:
+
+class Forest
+{
+  private string definition;
+  public void Define()    
+  {
+    Console.WriteLine(definition);
+  }
+}
+Este comportamiento (imprimir una definición general) no es específico de ninguna instancia; se aplica a la clase en sí, por lo que debe hacerse estático.
+
+Para hacer un método estático, simplemente agregue staticdespués del modificador de acceso ( publico private).
+
+class Forest
+{
+  private static string definition;
+  public static void Define()
+  { 
+    Console.WriteLine(definition); 
+  }
+}
+Observe que agregamos statictanto al campo definitioncomo al método Define().
+
+Esto se debe a que un método estático solo puede acceder a otros miembros estáticos. No puede acceder a los miembros de la instancia:
+
+class Forest
+{
+  private string definition;
+  public static void Define()
+  { 
+    // Throws error because definition is not static
+    Console.WriteLine(definition); 
+  }
+}
+De lo contrario, los métodos estáticos funcionan como cualquier otro método.
+
+Instrucciones
+1 .
+Anteriormente mencionamos almacenar una explicación de los bosques en general. Usaremos un campo y una propiedad para definir la explicación. Defina un campo de cadena estático privado llamado treeFacts.
+
+Checkpoint 2 Passed
+2 .
+Defina una propiedad estática pública nombrada TreeFactscon solo un getter (sin setter).
+
+Checkpoint 3 Passed
+3 .
+Defina un nombre de método estático público PrintTreeFacts()que escriba el valor de TreeFactsen la consola.
+
+Tenga en cuenta que TreeFactsnunca se le asigna un valor: lo resolveremos en el próximo ejercicio.
+
+
+Clase program
+
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    private static string treeFacts;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+
+    public static string TreeFacts
+    {
+      get { return treeFacts; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+
+    public static void PrintTreeFacts()
+    {
+      Console.WriteLine(TreeFacts);
+    }
+    
+  }
+
+}

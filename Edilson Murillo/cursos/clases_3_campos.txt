@@ -1,0 +1,61 @@
+Campos
+Necesitamos asociar diferentes datos, como un tamaño y un nombre, a cada Forestobjeto. En C#, estos datos se denominan campos . Los campos son un tipo de miembro de clase , que es el término general para los componentes básicos de una clase.
+
+Crea campos como este:
+
+class Forest {
+  public string name;
+  public int trees;
+}
+Esto podría parecerse a definir una variable. ¡Está! Cada campo es una variable y tendrá un valor diferente para cada objeto.
+
+Con el código anterior, no hemos establecido el valor de ninguno de los campos, por lo que cada uno tiene un valor predeterminado. En este caso , strings predeterminado es null, ints to 0y bools to false. Puede encontrar los valores predeterminados para más tipos en la tabla de valores predeterminados de Microsoft .
+
+Es una práctica común poner campos de nombres con minúsculas ( nameen lugar de Name). Esto hace que los campos sean fáciles de reconocer más adelante.
+
+No se preocupe publictodavía: se explica más adelante en esta lección.
+
+Una vez que creamos una Forestinstancia, podemos acceder y editar cada campo con notación de puntos:
+
+Forest f = new Forest();
+f.name = "Amazon";
+Console.WriteLine(f.name); // Prints "Amazon"
+ 
+Forest f2 = new Forest();
+f2.name = "Congo";
+Console.WriteLine(f2.name); // Prints "Congo"
+Cada instancia tiene un namecampo, pero el valor puede diferir entre instancias.
+
+Instrucciones
+1 .
+En Forest.cs , agregue los campos name, trees, agey biomea la Forestclase.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+En Program.cs en Main(), Forestya se ha creado una instancia de un objeto. Establezca valores en esos cuatro campos.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En Main(), imprima el namecampo en la consola.
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+      f.name = "Edilson";
+      f.trees = 1000;
+      f.age = 500;
+      f.biome = "Humedo";
+      Console.WriteLine($"El bosque se llama {f.name}");
+    }
+  }
+}

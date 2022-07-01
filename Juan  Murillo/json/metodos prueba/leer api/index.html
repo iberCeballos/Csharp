@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    
+     <div class="container my-5 text-center">
+         <button class="btn btn-danger w-100" onclick="traer()">Obtener</button>
+         <div class="mt-5" id="contenido"></div>
+         <div class="container-sm mt-5" id="contenido2"></div>
+
+         <script>
+             var contenido=document.querySelector('#contenido');
+             function traer()
+             {
+                fetch('https://randomuser.me/api/')
+                .then(respuesta => respuesta.json())
+                .then(respuesta=>{
+                  console.log(respuesta.results[0])
+                  contenido.innerHTML=`<img src="${respuesta.results[0].picture.large}" width="100px" class="img-fluid rounded-circle">`
+                  contenido2.innerHTML=`<p>${respuesta.results[0].name.title} ${respuesta.results[0].name.first} ${respuesta.results[0].name.last} </p>
+                  <p>${respuesta.results[0].location.state}, ${respuesta.results[0].location.country}</p>
+                  <p>${respuesta.results[0].email}</p>`
+                })
+             }
+         </script>
+
+     </div>
+  </body>
+</html>

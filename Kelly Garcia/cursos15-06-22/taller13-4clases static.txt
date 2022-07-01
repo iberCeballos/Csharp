@@ -1,0 +1,15 @@
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.PI);
+      valor =ConverToInt32(  Math.Abs(-32));
+      Console.WriteLine(valor);
+
+    }
+  }
+}

@@ -1,0 +1,35 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+
+            Console.WriteLine("ingrese por favor su nombre");
+            string nombre = Console.ReadLine();
+            Console.WriteLine(int("ingrese por favor su numero de articulos"));
+            bool articulo = Console.ReadLine();
+
+            if (articulo <= 15)
+            {
+                Console.WriteLine("usted pagara en efectivo");
+            }
+            else if (articulo 15 >= 60)
+            {
+                Console.WriteLine("usted pagara con targeta");
+            }
+            else
+            {
+                Console.WriteLine("usted pagara con cheque");
+            }
+
+
+        }
+    }
+}
+
+
+           

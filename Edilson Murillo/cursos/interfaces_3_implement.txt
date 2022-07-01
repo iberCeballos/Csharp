@@ -1,0 +1,76 @@
+Implementación de una interfaz
+¡Nuestra interfaz está completa! Bastante fácil, ¿verdad?
+
+A medida que diseñemos nuestras clases similares a las de un automóvil, necesitaremos implementar esta IAutomobileinterfaz. En C#, primero debemos anunciar claramente que una clase implementa una interfaz usando la sintaxis de dos puntos:
+
+class Sedan : IAutomobile
+{
+}
+Esta clase vacía Sedan"promete" implementar la IAutomobileinterfaz. En otras palabras, debe tener las propiedades y métodos que solicitó la patrulla de caminos ( Speed, LicensePlate, Wheelsy Honk()).
+
+Si no lo hacemos, obtenemos un tipo de error como este:
+
+error CS0535: Sedan does not implement interface member 'IAutomobile.LicensePlate'
+Para arreglar esto, necesitaremos definir los miembros en la interfaz:
+
+class Sedan : IAutomobile
+{
+  public string LicensePlate
+  { get; }
+ 
+  // and so on...
+}
+Recuerde que estos miembros deben ser public. ¿De qué otra manera podrá acceder a ellos la patrulla de caminos?
+
+Instrucciones
+1 .
+En Sedan.cs , cree una clase vacía Sedanque implemente la IAutomobileinterfaz. :Utilice la notación de dos puntos ( ).
+
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+¡Debería ver el error CS0535mensaje que le dice que el Sedan necesita implementar la interfaz! Implemente la interfaz agregando las tres propiedades y un método definido en IAutomobile, que puede consultar en IAutomobile.cs .
+
+
+Clase Sedan
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Sedan : IAutomobile
+  {
+    public string LicensePlate 
+    { get; }
+
+    public double Speed 
+    { get; }
+
+    public int Wheels 
+    { get; }
+    
+    public void Honk()
+    {
+      Console.WriteLine("Funciona");
+    }
+  }
+
+}
+
+
+Clase IAutomobile
+
+
+using System;
+
+namespace LearnInterfaces
+{
+  interface IAutomobile
+  {
+    string LicensePlate { get; }
+    double Speed { get; }
+    int Wheels { get; }
+    void Honk();
+  }
+}

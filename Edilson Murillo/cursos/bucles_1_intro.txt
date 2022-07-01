@@ -1,0 +1,32 @@
+Introducción a los bucles
+Imagina que estás construyendo un videojuego y en este juego quieres agregar 15 alienígenas a la pantalla.
+
+¿Cómo usamos el código para decirle a una computadora esto: "Crea una variable y llama al método 15 veces"?
+
+Podríamos escribirlo 15 veces:
+
+AddAlien();
+AddAlien();
+AddAlien();
+AddAlien();
+...
+…Te ahorraremos el resto. Este enfoque lleva mucho tiempo y puede conducir fácilmente a errores. En cambio, demos las instrucciones una vez y dígale a la computadora cuántas veces las repita:
+
+for (int i = 0; i < 15; i++)
+{
+  AddAlien();
+}
+Los bucles son estructuras que podemos usar para repetir instrucciones hasta que se cumpla una determinada condición. Esa condición podría ser un cambio de estado ("seguir tocando música hasta las 10 p. m."), el final de una lista ("decir cada nombre en voz alta") o un número ("tocar tres veces").
+
+Cuando vemos repetición en nuestro código, es una buena señal de que probablemente deberíamos usar un bucle. Al no escribir las instrucciones varias veces, reducimos la posibilidad de cometer errores y nos ahorramos algo de tiempo.
+
+Hay varios tipos de bucles que podemos usar dependiendo de la situación. Esta lección cubrirá:
+
+whilebucles
+do...whilebucles
+forbucles
+foreachbucles
+Instrucciones
+Haga clic en las formas en el diagrama para moverse a través de cada paso de la estructura de bucle. ¿Cuál es la condición o el conteo que se debe cumplir para detener el bucle?
+
+codecademy.com/courses/learn-c-sharp/lessons/csharp-loops/exercises/introduction-to-loops

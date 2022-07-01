@@ -1,0 +1,162 @@
+Acceder a miembros heredados con base
+Para construir un Sedan, primero debemos construir una instancia de su superclase Vehicle.
+
+Podemos referirnos a una superclase dentro de una subclase con la basepalabra clave.
+
+Por ejemplo, en Sedan:
+
+base.SpeedUp();
+se refiere al SpeedUp()método en Vehicle.
+
+Hay una sintaxis especial para llamar al constructor de la superclase:
+
+class Sedan : Vehicle
+{
+  public Sedan (double speed) : base(speed)
+  {
+  }
+}
+El código anterior muestra un Sedanque hereda de Vehicle. El Sedanconstructor llama al Vehicleconstructor con un argumento, speed. Esto funciona siempre que Vehicletenga un constructor con un argumento de tipo double.
+
+Incluso si no usamos base()in Sedan, llamará a un Vehicleconstructor. Sin una llamada explícita a base(), cualquier constructor de subclase llamará implícitamente al constructor sin parámetros predeterminado para su superclase. Por ejemplo, este código llama implícitamente Vehicle():
+
+class Sedan : Vehicle
+{
+  // Implicitly calls base(), aka Vehicle()
+  public Sedan (double speed)
+  {
+  }
+}
+El código anterior es equivalente a esto:
+
+{
+  public Sedan (double speed) : base()
+  {
+  }
+}
+Este código SÓLO funcionará si Vehicle()existe el constructor. Si no es así, se lanzará un error.
+
+Instrucciones
+1 .
+Actualmente, el Sedanconstructor llama implícitamente al Vehicleconstructor sin parámetros predeterminado, también conocido como Vehicle().
+
+Definamos explícitamente un constructor en Vehicle. Debería verse similar al Sedanconstructor, con algunas diferencias:
+
+Tiene un parámetro,double speed
+Dentro del constructor, establece SpeedyLicensePlate
+Después de hacer esto, es posible que vea el siguiente error, ¡lo cual es bueno! Nos prueba que el Sedanconstructor está llamando al constructor sin parámetros Vehicle(). Ahora que hemos definido explícitamente un constructor Vehicle(double speed), no hay más Vehicle(), de ahí el error.
+
+error CS7036: There is no argument given that corresponds to the required formal parameter 'speed' of 'Vehicle.Vehicle(double)'
+Punto de control 2 superado
+
+¿Atascado? Obtén un consejo
+2 .
+De vuelta en Sedan.cs :
+
+Elimine las líneas en el constructor que establece SpeedyLicensePlate
+Llame al constructor de la superclase usando : base(speed).
+Punto de control 3 superado
+
+¿Atascado? Obtén un consejo
+3 .
+Repita el proceso en Truck.cs :
+
+Elimine las líneas en el constructor que establece SpeedyLicensePlate
+Llame al constructor de la superclase usando: base(speed)
+Punto de control 4 superado
+
+¿Atascado? Obtén un consejo
+4 .
+Dado que ya no se accede a las propiedades LicensePlatey Speeddefinidas en o , ya no es necesario hacerlo . Cambie esos dos setters a .VehicleSedanTruckprotectedprivate
+
+
+Clase vehicle
+
+using System;
+
+namespace LearnInheritance
+{
+  class Vehicle
+  {
+    //Constructor
+    public Vehicle(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+    }
+    
+    //Propiedades
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+  }
+}
+
+
+Clase sedan
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : Vehicle, IAutomobile
+  {
+    public Sedan(double speed) : base(speed)
+    {      
+      Wheels = 4;
+    }
+    
+  }
+}
+
+
+
+Clase truck
+
+using System;
+
+namespace LearnInheritance
+{
+  class Truck : Vehicle, IAutomobile
+  { 
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight) : base(speed)
+    {
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+
+  }
+}
+

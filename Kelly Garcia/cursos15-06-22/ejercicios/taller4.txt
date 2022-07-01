@@ -1,0 +1,125 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            bool use = false;
+      
+
+
+
+
+
+            while (use == false){ 
+            
+                string[] informacion = { "kellym", "123", "kelly", "garcia" };
+            Console.WriteLine("inicio de seccion");
+            Console.WriteLine("ingrese su usuario");
+            string usuario =Console.ReadLine();
+            Console.WriteLine("ingrese su contraseña");
+            string contrasenna = Console.ReadLine();
+           
+
+            if (usuario == informacion[0] && contrasenna == informacion[1])
+            {
+                Console.WriteLine($"bienvenido señor {usuario}, {informacion[2]} {informacion[3]} \n");
+                    Console.WriteLine(" bienvenido, su inicio de secion ha sido exitoso\n"); 
+                    Console.WriteLine(" Las personas que son sinceras siempre son bienvenidas, vayan donde vayan.\n");
+                    Console.WriteLine(" Un viejo amigo siempre será bienvenido de nuevo.\n");
+                    Console.WriteLine(" Da la bienvenida a tus sueños, pues gracias a ellos pasarán grandes cosas.\n");
+                    use = true;
+                    Console.WriteLine("elija una opcion:\n" +
+                        " a = suma ,b = resta,c = multiplicacion,d = division");
+                    string opcion = Console.ReadLine();
+                    string[] opciones = { "a", "b", "c", "d" };
+                    
+                    
+                 
+                    if (opcion == opciones[0])
+                    {
+                        Console.WriteLine($"usted eligio una suma");
+                        suma();
+                    }
+
+                    else if (opcion == opciones[1])
+                    {
+                        Console.WriteLine($"usted eligio una resta");
+                        resta();
+                    }
+
+                    else if (opcion == opciones[2])
+                    {
+                        Console.WriteLine($"usted eligio una multiplicacion");
+                        multiplicacion();
+                    }
+
+                    else if (opcion == opciones[3])
+                    {
+                        Console.WriteLine($"usted eligio una division");
+                        division();
+                    }
+                    else
+                    {
+                        Console.WriteLine("usted no ha ingresado una opcion valida");
+                        
+                    }
+
+
+                }
+            else
+            {
+                Console.WriteLine("sus credenciales estan incorrectas");
+            }
+            }
+
+
+
+            // Console.WriteLine("Hello World!");
+        }
+
+        static void suma()
+        {
+            Console.WriteLine("ingrese un numero");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese el segundo numero");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            int suma = n1 + n2;
+            Console.WriteLine($"el resultado de su suma es {suma}");
+        }
+
+
+        static void resta()
+        {
+            Console.WriteLine("ingrese un numero");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese el segundo numero");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            int resta = n1 - n2;
+            Console.WriteLine($"el resultado de su resta es {resta}");
+        }
+
+        static void multiplicacion()
+        {
+            Console.WriteLine("ingrese un numero");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese el segundo numero");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            int multiplicacion = n1 * n2;
+            Console.WriteLine($"el resultado de su multiplicacion {multiplicacion}");
+        }
+
+        static void division()
+        {
+            Console.WriteLine("ingrese un numero");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese el segundo numero");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            double division = n1 / n2;
+            Console.WriteLine($"el resultado de su division es {division}");
+        }
+    }
+}

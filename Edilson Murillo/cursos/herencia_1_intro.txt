@@ -1,0 +1,109 @@
+Introducción a la herencia
+El código duplicado conduce a errores. Digamos que tiene dos clases Sedany Truck. Son de diferentes tipos, pero comparten algunas propiedades y métodos, como SpeedUp()y SlowDown(). Si uno de esos miembros (digamos que es SpeedUp()) tiene que cambiar, entonces tendríamos que cambiar el código en cada ubicación donde SpeedUp()está definido.
+
+En este caso son dos clases, ¡pero en otros programas pueden ser muchas más! Hay dos razones por las que no queremos hacer el mismo cambio en el código en varios archivos:
+
+Es una pérdida de tiempo
+Más importante aún, es un gran riesgo de cometer errores.
+En esta lección aprenderá sobre una solución a este problema: la herencia . Con la herencia, puede definir una superclase que contenga los miembros compartidos (como SpeedUp()y SlowDown()). Todas las clases que necesitan esos miembros pueden heredarlos de la superclase.
+
+Instrucciones
+Consulte Sedan.cs y Truck.cs . ¿Qué código se duplica en estos tipos?
+
+
+Clase truck
+
+using System;
+
+namespace LearnInheritance
+{
+  class Truck : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Weight = weight;
+
+      if (weight < 400)
+      {
+        Wheels = 8;
+      }
+      else
+      {
+        Wheels = 12;
+      }
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+
+  }
+}
+
+
+Clase sedan
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; }
+    
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+    
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+  }
+}

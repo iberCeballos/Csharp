@@ -1,0 +1,45 @@
+using System;
+
+public class Program
+{
+     static void Main()
+    {
+        Console.WriteLine("Ingrese su dia de nacimiento");
+        int dia = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ingrese el mes de su nacimiento");
+        int mes = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ingrese el año de su nacimiento");
+        int anno = Convert.ToInt32(Console.ReadLine());
+
+        int diaa = Convert.ToInt32(DateTime.Now.Day.ToString());
+        int mess = Convert.ToInt32(DateTime.Now.Month.ToString());
+        int annos = Convert.ToInt32(DateTime.Now.Year.ToString());
+        int edad = annos - anno;
+
+
+
+
+
+
+        if (dia == diaa && mes == mess)
+        {
+
+            Console.WriteLine("Feliz cumple años");
+
+        }
+        if (mes < mess)
+        {
+            edad--;
+
+        }
+        if (dia < diaa)
+        {
+            edad--;
+
+        }
+        Console.WriteLine("Su edad actual es: " + edad);
+
+    }
+}

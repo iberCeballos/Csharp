@@ -1,0 +1,28 @@
+Introducción al objeto
+En C# hay un tipo de referencia que se puede usar para todos los objetos. Se llama acertadamente Object.
+
+Cada clase se deriva de Object. Ya sea la superclase de la clase o la superclase de la superclase de la superclase, Objectse encuentra en la parte superior de la jerarquía de herencia de la clase.
+
+Dado que las referencias se pueden convertir a cualquier tipo en su jerarquía de herencia, todos los tipos se pueden referenciar como Objects:
+
+Object o1 = new Dissertation();
+Object o2 = new Diary();
+Object o3 = new Random();
+Object o4 = new Forest("Amazon");
+Si es así, ¿por qué no usar Objectreferencias para todo? Porque la funcionalidad de un objeto está limitada por su tipo de referencia. Perdemos toda la funcionalidad específica de un tipo específico cuando lo referenciamos como un Objecttipo. También perderíamos la comprobación automática de tipos que nos salva de los errores de tipo.
+
+Cuando los usamos, ¡las Objectreferencias pueden ser muy útiles! Por ejemplo, si no estamos seguros de qué tipo es una variable, podemos almacenarla de manera segura como un archivo Object. También podemos suponer que cualquier objeto tiene acceso a los Objectmiembros estándar para la manipulación básica.
+
+En esta lección, aprenderá:
+
+Cómo cada tipo hereda deObject
+Los miembros útiles enObject
+Instrucciones
+En este diagrama de herencia, vemos que cada tipo finalmente hereda de Object:
+
+Randomy Forestheredar directamente deObject
+Diaryy Dissertationheredar de Book, que hereda deObject
+
+
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-object-class/exercises/introduction-to-object

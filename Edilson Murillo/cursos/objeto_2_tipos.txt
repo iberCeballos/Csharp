@@ -1,0 +1,57 @@
+El tipo de objeto
+Cada clase se deriva de Object, ¡incluso las clases que nosotros mismos definimos!
+
+Cuando crea una clase, C# hace que herede implícitamente Object. Así que cuando escribimos este código:
+
+class Book
+{}
+C# asume que queremos decir:
+
+class Book : Object
+{}
+Incluso si ya declaramos una superclase, como...
+
+class Book : Media
+{}
+… Objectestará en la parte superior del árbol genealógico. Tal vez Mediahereda directamente de Object, o su clase base hereda de Object, etc.
+
+Podemos probar esto por nosotros mismos al intentar convertir cualquier referencia a un archivo Object. Nada de este código arrojará un error porque cada tipo, en algún momento, hereda de Object:
+
+Object o1 = new Dissertation();
+Object o2 = new Diary();
+Object o3 = new Random();
+Object o4 = new Forest("Amazon");
+Los tipos de valor y las cadenas también se heredan de Object:
+
+Object o5 = 21;
+Object o6 = false;
+Object o7 = "Hello you!";
+Instrucciones
+1 .
+Hay tres referencias creadas en Program.cs , una de tipo Book, una de tipo Diaryy otra de tipo int.
+
+Cree una nueva Objectreferencia para cada uno.
+
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book();
+      
+      Diary dy = new Diary(38);
+      
+      int i = 9;
+
+      Object o1 = bk;
+      Object o2 = dy;
+      Object o3 = i;
+      
+
+    }
+  }
+}

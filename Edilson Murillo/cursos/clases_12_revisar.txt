@@ -1,0 +1,111 @@
+Revisar
+¡Felicitaciones! Ha terminado una gran cantidad de contenido y algunos de los conceptos más importantes de C#. Cuando alguien le pregunta: "¿Cómo puedo crear un tipo de datos personalizado en C#?" puedes hablar de todo! En esta lección, aprendiste a:
+
+Definir una clase
+Instanciar un objeto usandonew
+Definir campos , las piezas de datos para cada clase.
+Definir propiedades , los portavoces de cada campo
+Definir propiedades automáticas , la abreviatura para crear propiedades
+Definir métodos , las acciones que una clase puede tomar
+Definir constructores , los métodos especiales llamados cuando se instancia una clase
+Sobrecargue los constructores y reutilice el código conthis
+Controle el acceso a los miembros de la clase usando publicyprivate
+Instrucciones
+1 .
+¡ Prueba tu Forestclase completa en Main()!
+
+Crea una instancia de un nuevo objeto con el nombre "Amazon". Almacene el resultado en una variable.
+Imprime la Treespropiedad en la consola.
+Llame al Grow()método.
+Imprima la Treespropiedad nuevamente en la consola para confirmar que el Grow()método funciona.
+
+
+Clase program
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest a = new Forest("Amazon");
+      Console.WriteLine(a.Trees);
+      a.Grow();
+      Console.WriteLine(a.Trees);      
+
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}

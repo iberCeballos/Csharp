@@ -1,0 +1,62 @@
+En bucle
+¿Qué pasa si queremos que nuestro código se ejecute un número específico de veces? Podemos usar un forbucle para hacer eso.
+
+for (initialization; stopping condition; iteration statement)
+{
+  statement;
+}
+El forbucle le dice a la computadora cuántas veces debe repetir las instrucciones usando la forpalabra clave y tres expresiones entre paréntesis. Cada una de estas expresiones usa lo que se conoce como una iteratorvariable, que es una variable que realiza un seguimiento de cuántas veces el programa pasa por el bucle.
+
+Estas expresiones son:
+
+Inicialización : donde comienza el ciclo
+Condición de parada : la condición con la que se evalúa la variable del iterador
+Declaración de iteración : se utiliza para actualizar la variable del iterador en cada bucle
+El forciclo es bueno para usar cuando sabe la cantidad de veces que le gustaría realizar una tarea antes de comenzar, como imprimir tres copias de un documento o insertar ocho filas en una tabla.
+
+En nuestro videojuego queremos que aparezcan diez banderas al inicio de cada nivel:
+
+for (int i = 0; i < 10; i++)
+{
+  DisplayFlag();
+}
+Cuando una computadora recibe este programa, establece un contador 0y ejecuta las instrucciones en el cuerpo del bucle, que en este caso le indica a la computadora que muestre una bandera. Después de cada iteración, o una vuelta por el ciclo, el programa avanza el contador en uno ( i++). El proceso se repite hasta que el contador llega a 10, lo que significa que se completan diez iteraciones y hay diez banderas en la pantalla.
+
+Instrucciones
+1 .
+Para su próxima herramienta, desea crear una plantilla para su reunión semanal de equipo. En lugar de clonar uno nuevo cada semana, decides hacerlos todos a la vez.
+
+Escriba un bucle vacío forque se ejecute una vez por cada semana en su proyecto de 16 semanas.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Dentro del bucle, llame al CreateTemplate()método. Toma como parámetro un número que representa en que semana se encuentra dentro del proyecto para que cuando se genere la plantilla diga Week Xen la parte superior, con Xrepresentando en que semana se encuentra.
+
+using System;
+
+namespace ForLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    { 
+      for(int i = 1; i < 17; i++)
+      {
+        CreateTemplate(i);
+      }
+
+    }
+    
+    static void CreateTemplate(int week)
+    {
+      Console.WriteLine($"Week {week}");
+      Console.WriteLine("Announcements: \n \n \n ");
+      Console.WriteLine("Report Backs: \n \n \n");
+      Console.WriteLine("Discussion Items: \n \n \n");   
+    }
+    
+    
+  }
+}

@@ -1,0 +1,56 @@
+eliminando
+Para eliminar un elemento específico de una lista, usamos el Remove()método. Espera el elemento específico como argumento y lo devuelve truesi se eliminó con éxito. Este código elimina "Delhi"de la lista y devuelve true:
+
+List<string> citiesList = new List<string> { "Delhi", "Los Angeles", "Kyiv" };
+bool success = citiesList.Remove("Delhi");
+// success is true
+Si el elemento específico NO existe en la lista, la llamada al método devuelve false. Como "Dubai"no está en la lista, successserá false:
+
+success = citiesList.Remove("Dubai");
+// success is false
+Si elimina un elemento en el medio de la lista, todos los elementos se "desplazarán" un índice hacia abajo. En el primer ejemplo, la lista originalmente era:
+
+[ "Delhi", "Los Angeles", "Kyiv" ]
+Después de la llamada a Remove("Delhi"), la lista se convierte en
+
+[ "Los Angeles", "Kyiv" ]
+Instrucciones
+1 .
+La lista marathonsse ha inicializado para usted. Imprime el segundo elemento de la lista.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Elimine el elemento 143.12(que actualmente es el segundo elemento de la lista) y almacene el resultado en una boolvariable denominada removed.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprime de nuevo el segundo elemento y el valor de removed. El segundo elemento debe ser diferente y removeddebe ser true.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+      Console.WriteLine(marathons[1]);
+      bool removed = marathons.Remove(143.12);
+      Console.WriteLine(marathons[1]);
+      Console.WriteLine(removed);
+    }
+  }
+}

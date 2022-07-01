@@ -1,0 +1,25 @@
+Introducción a las clases
+Con tipos de datos como int, stringy boolpodemos representar datos básicos y realizar operaciones básicas:
+
+int count = 32;
+count++;
+¿Qué pasa si queremos representar algo más complejo, algo en el mundo real?
+
+Digamos que estamos escribiendo un programa para gestionar reservas naturales y necesitamos hacer un seguimiento de los bosques. Un bosque tiene cierto número de árboles, tiene un nombre, puede crecer, puede quemarse. Representar muchos bosques con tipos de datos básicos significaría rastrear toneladas de variables y métodos separados.
+
+En cambio, podemos definir nuestro propio Foresttipo de datos personalizado y usarlo como cualquier otro tipo de datos en nuestro programa. Este proceso de agrupar datos y métodos relacionados en un tipo se denomina encapsulación y hace que el código sea más fácil de organizar y reutilizar.
+
+En C#, un tipo de datos personalizado se define con una clase y cada instancia de este tipo es un objeto . Esta lección le enseñará cómo:
+
+Definir una clase
+Agregar miembros, como propiedades y métodos, a una clase
+Personalice el acceso a esos miembros usando publicyprivate
+Crear objetos a partir de una clase.
+En sus aventuras de codificación, es posible que se encuentre con el término struct . Si bien es similar a una clase, tiene algunas diferencias, pero no las cubriremos en esta lección.
+
+Si necesita una estructura, puede consultar la explicación de Microsoft . Las estructuras son fáciles de aprender después de comprender las clases en esta lección.
+
+¡Empecemos!
+
+
+https://www.codecademy.com/courses/learn-c-sharp/lessons/csharp-basic-classes/exercises/basic-intro

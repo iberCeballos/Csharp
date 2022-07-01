@@ -1,0 +1,115 @@
+Salto de declaraciones
+Hay algunas palabras clave que podemos usar para agregar más flujo de control a nuestros bucles. Por lo general, funcionan con una serie de bucles anidados , donde un bucle se escribe completamente dentro del cuerpo de otro bucle. Estas palabras clave a menudo se usan para limitar los whilebucles y evitar que creen bucles infinitos.
+
+DESCANSO
+En cualquier punto dentro de un bloque de bucle, puede finalizarlo usando la breakpalabra clave.
+
+while (playerIsAlive) 
+{ 
+// this code will keep running
+ 
+  if (playerIsAlive == false) 
+  { 
+    // eventually if this stopping condition is true, 
+    // it will break out of the while loop
+    break; 
+   } 
+ } 
+ 
+// rest of the program will continue
+Ya ha visto la breakpalabra clave: es la misma palabra clave que se usa en declaraciones de cambio.
+
+SEGUIR
+La continuepalabra clave se utiliza para omitir partes del código. Ignorará lo que venga después en el ciclo y luego volverá a la parte superior y comenzará el ciclo nuevamente.
+
+int bats = 10;
+ 
+for (int i = 0; i <= 10; i++)
+{
+  if (i < 9)
+  {  
+    continue;
+  }
+  // this will be skipped until i is no longer less than 9
+  Console.WriteLine(i);
+}
+Aquí, el programa comienza en el forbucle y luego llega a la ifinstrucción. Dado que hay un continueen la ifdeclaración, omitirá la Console.WriteLine()declaración hasta que la condición en la ifdeclaración ya no sea verdadera. Entonces, mientras el ciclo comienza en 0, nada se imprimirá en la consola hasta ique sea igual a 9.
+
+DEVOLVER
+La returnpalabra clave es otra forma de salir de un ciclo, específicamente los ciclos que se usan dentro de un método. Cuando returnse usa a dentro de un bucle de este tipo, sale del bucle y devuelve el control al punto del programa donde se llamó al método.
+
+class MainClass {
+ public static void Main (string[] args) {
+   UnlockDoor();
+ 
+  // after it hits the return statement, it will move on to this method
+   PickUpSword();
+ }
+ 
+ static bool UnlockDoor()
+ {
+   bool doorIsLocked = true;
+ 
+   // this code will keep running
+   while (doorIsLocked)
+   {
+     bool keyFound = TryKey();
+ 
+      // eventually if this stopping condition is true,
+      // it will break out of the while loop
+     if (keyFound)
+     {
+      // this return statement will break out of the entire method
+      return true;
+     }
+   }
+   return false;
+ }
+}
+Solo debe usarlo returnsi necesita salir de un método porque se romperá con todos los bucles. Si solo desea salir de un ciclo y no salir de un método, use break.
+
+Instrucciones
+1 .
+Has decidido volver a la aplicación pomodoro. Esta vez, no querrás que la alarma suene sin parar. Si suena más de 3 veces, debería apagarse.
+
+Cree una variable que registre cuántas veces ha sonado la alarma.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Dentro del do...whileciclo, aumente el conteo cada vez que suene la alarma.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+El programa debería salir del ciclo si la variable de conteo llega a tres.
+
+Escriba una declaración que verifique si la variable de conteo ha llegado a tres y, cuando lo haga, haga que salga del do...whileciclo.
+
+using System;
+
+namespace JumpStatements
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool buttonClick = false;
+      int num = 0;
+      
+      do
+      {
+        Console.WriteLine("BLARRRRR");
+          num ++;
+           if(num == 3)
+        {
+          break;
+        }      
+       
+        
+      } while(!buttonClick);
+    }
+  }
+}

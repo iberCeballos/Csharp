@@ -1,0 +1,47 @@
+Revisar
+¡Bien hecho! Has aprendido mucha información útil en esta lección:
+
+Una lista, o List<T>, es una estructura de datos secuencial genérica. El tipo específico que contiene se especifica en la instanciación.
+Las listas son efectivamente ilimitadas. Ellos “crecen” y se “encogen” a medida que el número de elementos sube y baja.
+Se puede acceder a los valores de la lista por índice usando corchetes: [ ].
+Para crear una lista vacía, use un constructor básico. Para crear una lista con valores, utilice la inicialización de objetos .
+Add()se utiliza para agregar un elemento a una lista.
+Remove()se utiliza para eliminar un elemento de la lista. Regresa truesi tiene éxito, de falselo contrario.
+Countes el número de elementos en la matriz.
+Contains()devuelve truesi el argumento existe en la lista, de falselo contrario.
+Una secuencia dentro de una lista se llama rango . Existen métodos específicos para trabajar con rangos, incluidos GetRange(), AddRange(), InsertRange()y RemoveRange().
+Las listas son un tipo de colección genérica , que se definen con parámetros de tipo genérico. Los parámetros de tipo se especifican al instanciar cualquier clase genérica.
+Use listas y diccionarios en su código incluyendo esta línea en la parte superior de su archivo:
+using System.Collections.Generic;
+Si alguna vez olvida los constructores, las propiedades y los métodos que se enseñan aquí, puede encontrarlos en la documentación de Microsoft paraList<T> .
+
+Finalmente, es posible que se pregunte: si las listas tienen tantas funciones excelentes, ¿por qué nos molestamos en absoluto con las matrices?
+
+La respuesta es (esta es una parte opcional de la lección): bajo el capó, ¡las listas en realidad usan arreglos! Cuando construimos una lista, el compilador de C# construye una matriz y almacena los elementos allí. Si la lista es más larga que la longitud de la matriz, el compilador copia los elementos de la lista en una nueva matriz más larga. Para el desarrollador, parece que la lista es infinitamente larga.
+
+Por lo tanto, las matrices son más rápidas de usar cuando tiene un número predeterminado de elementos, y las listas son mejores para usar cuando el número es desconocido o si desea características adicionales. Si desea profundizar en este concepto, comience con la Capacitypropiedad .
+
+Instrucciones
+1 .
+Agregue su ciudad a la lista, luego use un foreachbucle para imprimir la lista completa en la consola.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<string> citiesList = new List<string> { "Delhi", "Los Angeles", "Saint Petersburg" };
+      citiesList.Add("Caicedo");
+      foreach (string city in citiesList)
+      {
+        Console.WriteLine(city);
+      }
+      
+    }
+  }
+}

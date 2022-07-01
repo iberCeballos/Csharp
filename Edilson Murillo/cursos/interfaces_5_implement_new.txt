@@ -1,0 +1,60 @@
+Implementando una interfaz nuevamente
+Hemos completado una Sedanclase que satisface tanto a los diseñadores de automóviles como a la patrulla de carreteras: se puede construir y cambiar de velocidad, e implementa la IAutomobileinterfaz.
+
+Pero los sedanes no son los únicos automóviles en la carretera. Puede haber múltiples clases que implementen una interfaz.
+
+Por ejemplo, podemos crear una Truckclase que también implemente la interfaz.
+
+Aquí es donde empezamos a ver el poder de las interfaces. Aunque Sedany Truckson tipos diferentes, podemos suponer que se comportan de manera similar porque comparten una interfaz. Los diseñadores de automóviles pueden construir diferentes clases de vehículos, pero la patrulla de caminos puede tratarlos a todos por igual.
+
+Instrucciones
+1 .
+En Truck.cs , cree una clase vacía Truckque implemente la IAutomobileinterfaz.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+¡Debería ver el error CS0535mensaje que le dice que el Camión necesita implementar la interfaz! Implemente la interfaz agregando las tres propiedades y un método definido en IAutomobile, que puede consultar en IAutomobile.cs .
+
+
+Clase Trucs
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Truck : IAutomobile
+  {
+    public string LicensePlate 
+    { get; }
+
+    public double Speed 
+    { get; }
+
+    public int Wheels 
+    { get; }
+
+    public void Honk()
+    {
+      Console.WriteLine("Fuerte");
+    }
+  }
+
+}
+
+
+Clase IAutomobile
+
+using System;
+
+namespace LearnInterfaces
+{
+  interface IAutomobile
+  {
+    string LicensePlate { get; }
+    double Speed { get; }
+    int Wheels { get; }
+    void Honk();
+  }
+}
