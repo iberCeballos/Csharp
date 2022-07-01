@@ -1,0 +1,36 @@
+using System;
+
+namespace taller
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         
+            
+
+            Console.WriteLine("ingrese el total de su compra");
+            double totalc = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ingrese la cantidad de laptos que compro");
+            double cantidadl = Convert.ToInt32(Console.ReadLine());
+
+            double descuento = (totalc * 0.1);
+
+
+            if (cantidadl >=5)
+            {
+                Console.WriteLine("el total de su descueto por compra es de" +" " + descuento+ "$$");
+            }
+            else
+            {
+                Console.WriteLine("su producto no cuenta con descuento");
+            }
+
+           
+
+         
+
+
+
+

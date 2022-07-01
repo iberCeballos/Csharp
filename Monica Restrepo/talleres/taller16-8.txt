@@ -1,0 +1,14 @@
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book nom = null;
+      Console.WriteLine(nom);
+      Console.WriteLine(nom==null);
+    }
+  }
+}

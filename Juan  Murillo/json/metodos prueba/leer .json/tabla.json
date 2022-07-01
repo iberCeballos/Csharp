@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "nombre":"monica",
+        "email":"moni@jaja.co",
+        "estado":true
+    },
+    {
+        "id":2,
+        "nombre":"manuela",
+        "email":"manu@jaja.co",
+        "estado":false
+    },
+    {
+        "id":3,
+        "nombre":"mariana",
+        "email":"mmari@jaja.co",
+        "estado":true
+    },
+    {
+        "id":4,
+        "nombre":"edilson",
+        "email":"edil@jaja.co",
+        "estado":false
+    }
+
+]

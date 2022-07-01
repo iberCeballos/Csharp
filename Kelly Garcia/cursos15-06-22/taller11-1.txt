@@ -1,0 +1,19 @@
+using System;
+
+namespace WhileLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int emails = 20; 
+    while (emails > 0){
+     emails--;
+     
+     Console.WriteLine(" esta eliminando emails y la cantidad de correos restantes es" + emails);
+      } 
+      Console.WriteLine(iNBOX CERO LOGRADO!);
+      
+    }
+  }
+}
