@@ -1,0 +1,129 @@
+ASES Y OBJETOS BÁSICOS
+este
+En el último ejercicio asignamos el areacampo en el constructor:
+
+class Forest
+{
+  public int Area
+  { /* property omitted */ }
+ 
+  public Forest(int area)
+  {
+    Area = area;
+  }
+}
+El parámetro para el constructor arease parece mucho al campo antiguo areay la propiedad nueva Area. Es bueno ser explícito al escribir código para que no haya lugar a malas interpretaciones. Podemos referirnos a la instancia actual de una clase con la thispalabra clave.
+
+class Forest
+{
+  public int Area
+  { /* property omitted */ }
+ 
+  public Forest(int area)
+  {
+    this.Area = area;
+  }
+}
+this.Area = areasignifica "cuando este constructor se usa para crear una nueva instancia, use el argumento areapara establecer el valor del Areacampo de esta nueva instancia".
+
+Lo llamaríamos de la misma manera:
+
+Forest f = new Forest(400);
+f.Areaahora es igual a 400
+
+La palabra thispuede parecer frustrantemente vaga. Piense en la analogía de "la clase es a la instancia como el plano es a la casa". La clase/modelo tiene que usar el genérico thisporque la clase/modelo se reutilizará para cada instancia/casa.
+
+Instrucciones
+1 .
+Especifique las propiedades de la instancia utilizando this.Namey this.Biome.
+
+
+
+Clase program
+
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+                
+    }
+    
+    static string DecoratePlanet(string planet)
+    {
+       return $"*..*..* Welcome to {planet} *..*..*";
+    }
+    
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+    }
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+  }
+
+}

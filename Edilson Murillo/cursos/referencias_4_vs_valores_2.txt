@@ -1,0 +1,51 @@
+Referencias vs Valores II
+Mientras que las variables de tipo de referencia se refieren a un lugar en la memoria, las variables de tipo de valor contienen los datos reales.
+
+Pongámoslo en práctica con un poco de código.
+
+Instrucciones
+1 .
+Cree una Bookvariable bookLocationque haga referencia a un nuevo Bookobjeto.
+
+La variable es una referencia a la ubicación del objeto en la memoria.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cree otra Bookvariable nombrada sameBookLocationy establézcala igual a bookLocation.
+
+Ambas variables se refieren a la misma ubicación en la memoria.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Cree una boolvariable falseValueque haga referencia al valor booleano false.
+
+La variable contiene el valor real.
+
+Checkpoint 4 Passed
+4 .
+Cree otra boolvariable anotherFalseValuey establézcala igual a falseValue.
+
+El falsevalor se copió a una nueva ubicación en la memoria para anotherFalseValuesu uso.
+
+
+Clase Program
+
+using System;
+
+namespace LearnReferences
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bookLocation = new Book();
+      Book sameBookLocation = bookLocation;
+      bool falseValue = false;
+      bool anotherFalseValue = falseValue;
+    }
+  }
+}

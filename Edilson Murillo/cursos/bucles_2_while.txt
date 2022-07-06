@@ -1,0 +1,58 @@
+Mientras bucle
+Los bucles se utilizan para repetir un conjunto de instrucciones en función de un conjunto de condiciones. Si esto te hace pensar en sentencias condicionales, ¡no te equivocas!
+
+El whilebucle se parece mucho a una ifinstrucción. Al igual que una ifdeclaración, ejecuta el código que contiene si la condición, una declaración que se evalúa como un valor booleano, es verdadera.
+
+while (condition) 
+{
+  statement;
+}
+Sin embargo, a diferencia de una ifdeclaración que se ejecuta una vez, un whileciclo continuará ejecutando el código dentro de él, una y otra vez, mientras la condición sea verdadera. La computadora verifica constantemente para ver si se cumple la condición. Por esta razón, whilelos bucles son útiles cuando se sabe en qué punto debe detenerse un programa, en lugar de saber el número de veces que debe repetirse.
+
+En tu videojuego, quieres que el jugador se eleve en el aire mientras el usuario presiona la barra espaciadora:
+
+while (spacebar == "down") 
+{
+ RiseUp();
+}
+En este ejemplo, mientras spacebarsea igual a down, el carácter seguirá subiendo en la pantalla. Saldrá del whileciclo una vez que el usuario suelte la barra espaciadora y luego continuará el resto del programa.
+
+whilelos bucles pueden volverse peligrosos, porque dependen de esa condición para, en algún momento, devolver falso. ¿Y si nunca quitamos el dedo de la barra espaciadora? Suena ridículo, pero en teoría, ¡el programa funcionaría para siempre! Esto se conoce como bucle infinito . Si te quedas atascado en un bucle infinito mientras estás en Codecademy, puedes volver a cargar la página para detenerlo.
+
+Instrucciones
+1 .
+Realmente está tratando de intensificar su juego de "bandeja de entrada cero" y desea crear una herramienta que pueda ayudarlo a lograrlo. Para su primer prototipo, simplemente eliminará todos los correos electrónicos.
+
+Escriba un whileciclo que verifique si hay correos electrónicos en su bandeja de entrada. Si todavía hay correos electrónicos, disminuya la cantidad de correos electrónicos en uno hasta que no queden correos electrónicos.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Es un poco difícil saber qué está pasando en nuestro programa, así que dentro del ciclo haz que imprima un mensaje de que está eliminando un correo electrónico y cuántos correos electrónicos quedan.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Cuando su bandeja de entrada llegue a cero, haga que su programa imprima "¡INBOX CERO LOGRADO!" o algún otro mensaje de felicitación.
+
+using System;
+
+namespace WhileLoop
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int emails = 20;  
+
+      while (emails > 0)
+      {        
+        emails -= 1;
+        Console.WriteLine($"Ha eliminado 1 correo, quedan {emails} correos por eliminar");
+      }
+      Console.WriteLine("¡Felicitacines!, ha eliminado todos los correos");
+    }
+  }
+}

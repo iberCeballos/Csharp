@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    
+     <div class="container my-5 text-center">
+         <button class="btn btn-danger w-100" onclick="traer()">Obtener</button>
+         <div class="mt-5">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody id="contenido">
+              
+            </tbody>
+          </table>
+         </div>
+         
+         <script>
+             var contenido=document.querySelector('#contenido');
+             function traer()
+             {
+                fetch('tabla.json')
+                .then(res => res.json())
+                .then(res=>{
+                  tabla(res)
+                })
+             }
+
+             function tabla(res)
+             {
+               contenido.innerHTML=''
+                for(let i of res){
+                  contenido.innerHTML +=`
+                  <tr>
+                      <th scope="row">${i.id}</th>
+                      <td>${i.nombre}</td>
+                      <td>${i.email}</td>
+                      <td>${i.estado ? "Activo" : "Eliminado"}</td>
+                  </tr>
+                  `
+                }
+             }
+         </script>
+
+     </div>
+  </body>
+</html>

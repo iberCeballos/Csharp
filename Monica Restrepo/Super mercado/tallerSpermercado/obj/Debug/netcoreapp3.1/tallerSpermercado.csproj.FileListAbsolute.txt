@@ -1,0 +1,14 @@
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\bin\Debug\netcoreapp3.1\tallerSpermercado.exe
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\bin\Debug\netcoreapp3.1\tallerSpermercado.deps.json
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\bin\Debug\netcoreapp3.1\tallerSpermercado.runtimeconfig.json
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\bin\Debug\netcoreapp3.1\tallerSpermercado.runtimeconfig.dev.json
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\bin\Debug\netcoreapp3.1\tallerSpermercado.dll
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\bin\Debug\netcoreapp3.1\tallerSpermercado.pdb
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.csproj.AssemblyReference.cache
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.GeneratedMSBuildEditorConfig.editorconfig
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.AssemblyInfoInputs.cache
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.AssemblyInfo.cs
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.csproj.CoreCompileInputs.cache
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.dll
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.pdb
+D:\monica.restrepom\Desktop\Super mercado\tallerSpermercado\obj\Debug\netcoreapp3.1\tallerSpermercado.genruntimeconfig.cache

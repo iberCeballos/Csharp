@@ -1,0 +1,17 @@
+//Un concesionario de vehículos tiene 3 clientes preferenciales que ya han comprado varios vehículos en este concesionario,
+            //estos tres clientes tienen un banco en común para hacer realizar las consignaciones de los vehículos que cada cliente esta
+            //pagando actualmente. El concesionario le esta solicitando al banco el valor total del deposito diario de los tres clientes
+            //y también le esta solicitando el deposito total de cada cliente mensual y de el deposito total de los tres clientes mensual.
+
+            double cli_1, cli_2, cli_3, t_d, t_m;
+            Console.WriteLine("Ingrese el valor diario que paga el primer cliente");
+            cli_1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor diario que paga el segundo cliente");
+            cli_2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor diario que paga el tercer cliente");
+            cli_3 = Convert.ToInt32(Console.ReadLine());
+            t_d = cli_1 + cli_2 + cli_3;
+            t_m = t_d * 30;
+
+            Console.WriteLine($"\nEl total que rebibe diariamente el banco * los 3 clientes es: {t_d} $"+
+                              $"\nEl total que rebibe mensualmente el banco * los 3 clientes es: {t_m} $");

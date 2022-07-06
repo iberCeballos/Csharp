@@ -1,0 +1,194 @@
+Constructores
+En cada uno de los ejemplos hasta ahora, creamos un nuevo Forestobjeto y establecimos los valores de propiedad uno por uno. Sería bueno si pudiéramos escribir un método que se ejecute cada vez que se crea un objeto para establecer esos valores a la vez.
+
+C# tiene un tipo especial de método, llamado constructor , que hace precisamente eso. Parece un método, pero no hay ningún tipo de retorno en la lista y el nombre del método es el nombre de la clase que lo contiene:
+
+class Forest 
+{
+  public Forest()
+  {
+  }
+}
+Podemos agregar código en el constructor para establecer valores en los campos:
+
+class Forest
+{
+  public int Area;
+ 
+  public Forest(int area)
+  {
+    Area = area;
+  }
+}
+Este método constructor se usa cada vez que creamos una instancia de un objeto con la newpalabra clave:
+
+ // Constructor is called here
+Forest f = new Forest(400);
+¡Pero hemos estado instanciando nuevos objetos todo el día! ¿Por qué funcionó antes de que definiéramos un constructor?
+
+Si no se define ningún constructor en una clase, se crea uno automáticamente para nosotros. No toma parámetros, por lo que se llama un constructor sin parámetros . Es por eso que hemos podido instanciar nuevos objetos sin errores:
+
+Forest f = new Forest();
+Instrucciones
+1 .
+Defina un constructor para la Forestclase. Debe tener dos parámetros:
+
+name, que establece la Namepropiedad
+biome, que establece la Biomepropiedad
+También debe establecer el valor de Ageen 0.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+El código en Program.cs se ha comentado. Descoméntalo y ejecútalo.
+
+Deberías ver un error:
+
+error CS7036: There is no argument given that corresponds to the required formal parameter 'name' of 'Forest.Forest(string, string)' 
+Este error se produce porque está utilizando el constructor sin parámetros Forest()en Program.cs . Esto ya no funciona porque Forest(string, string)se ha definido un constructor.
+
+Checkpoint 3 Passed
+3 .
+Llame al nuevo constructor Main()para crear un Forestobjeto con el nombre "Congo" y el bioma "Tropical".
+
+Eliminar las líneas:
+
+f.Name = "Congo";
+y
+
+f.Biome = "Desert";
+¡Ya no son útiles porque esas propiedades ahora están configuradas en el constructor!
+
+
+
+Clase program
+
+ Constructores
+En cada uno de los ejemplos hasta ahora, creamos un nuevo Forestobjeto y establecimos los valores de propiedad uno por uno. Sería bueno si pudiéramos escribir un método que se ejecute cada vez que se crea un objeto para establecer esos valores a la vez.
+
+C# tiene un tipo especial de método, llamado constructor , que hace precisamente eso. Parece un método, pero no hay ningún tipo de retorno en la lista y el nombre del método es el nombre de la clase que lo contiene:
+
+class Forest 
+{
+  public Forest()
+  {
+  }
+}
+Podemos agregar código en el constructor para establecer valores en los campos:
+
+class Forest
+{
+  public int Area;
+ 
+  public Forest(int area)
+  {
+    Area = area;
+  }
+}
+Este método constructor se usa cada vez que creamos una instancia de un objeto con la newpalabra clave:
+
+ // Constructor is called here
+Forest f = new Forest(400);
+¡Pero hemos estado instanciando nuevos objetos todo el día! ¿Por qué funcionó antes de que definiéramos un constructor?
+
+Si no se define ningún constructor en una clase, se crea uno automáticamente para nosotros. No toma parámetros, por lo que se llama un constructor sin parámetros . Es por eso que hemos podido instanciar nuevos objetos sin errores:
+
+Forest f = new Forest();
+Instrucciones
+1 .
+Defina un constructor para la Forestclase. Debe tener dos parámetros:
+
+name, que establece la Namepropiedad
+biome, que establece la Biomepropiedad
+También debe establecer el valor de Ageen 0.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+El código en Program.cs se ha comentado. Descoméntalo y ejecútalo.
+
+Deberías ver un error:
+
+error CS7036: There is no argument given that corresponds to the required formal parameter 'name' of 'Forest.Forest(string, string)' 
+Este error se produce porque está utilizando el constructor sin parámetros Forest()en Program.cs . Esto ya no funciona porque Forest(string, string)se ha definido un constructor.
+
+Checkpoint 3 Passed
+3 .
+Llame al nuevo constructor Main()para crear un Forestobjeto con el nombre "Congo" y el bioma "Tropical".
+
+Eliminar las líneas:
+
+f.Name = "Congo";
+y
+
+f.Biome = "Desert";
+¡Ya no son útiles porque esas propiedades ahora están configuradas en el constructor!
+
+
+Clase forest
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+
+    public Forest(string name, string biome)
+    {
+      Name = name;
+      Biome = biome;
+      Age = 0;
+    }
+    
+  }
+
+}

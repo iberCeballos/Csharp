@@ -1,0 +1,76 @@
+Lo que las interfaces no pueden hacer
+Las Sedannecesidades de satisfacer más que las reglas de la patrulla de caminos (la IAutomobileinterfaz). Los diseñadores de automóviles han pedido que los sedanes se construyan y se muevan de cierta manera: debe tener constructores y métodos que no son requeridos por la IAutomobileinterfaz. ¡Esto está bien en C#! La interfaz dice lo que DEBE tener una clase. No dice lo que una clase NO DEBE tener.
+
+De hecho, las interfaces no pueden especificar dos tipos de miembros que se encuentran comúnmente en las clases:
+
+Constructores
+Campos
+Instrucciones
+1 .
+Agregue un constructor a la Sedanclase con un parámetro, speed, de tipo double. Debería
+
+establecer la Speedpropiedad enspeed
+LicensePlateestablecer un valor aleatorio
+establecer Wheelsen 4
+Para hacer una matrícula aleatoria, se le proporciona una clase de utilidad. Úselo en el constructor así: Tools.GenerateLicensePlate().
+
+Checkpoint 2 Passed
+
+Stuck? Get a hint
+2 .
+Agregue un void SpeedUp()método que aumente la Speedpropiedad en 5.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+¿Recibiste un error? No hay setter para la Speedpropiedad. Agregue un setter privado a esa propiedad.
+
+Checkpoint 4 Passed
+
+¿Atascado? Obtén un consejo
+4 .
+Agregue un void SlowDown()método que disminuya el Speedby 5.
+
+
+Clase Sedan
+
+using System;
+
+namespace LearnInterfaces
+{
+  class Sedan : IAutomobile
+  {
+  	public string LicensePlate
+    { get; }
+
+    public double Speed
+    { get; private set ;}
+
+    public int Wheels
+    { get; }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+
+    public Sedan(double speed)
+    {
+      Speed = speed;
+      LicensePlate = Tools.GenerateLicensePlate();
+      Wheels = 4;
+    }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+  }
+}

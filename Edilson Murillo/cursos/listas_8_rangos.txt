@@ -1,0 +1,69 @@
+Trabajar con rangos
+Hasta ahora hemos agregado, accedido y eliminado elementos individuales en una lista. ¿Qué pasaría si quisiéramos agregar, acceder o eliminar varios elementos a la vez?
+
+En el mundo de las listas llamamos rango a una subsecuencia de elementos . Por ejemplo, esta lista tiene 5 elementos:
+
+[ "first", "second", "third", "fourth", "fifth" ]
+Podemos decir que el rango de elementos desde el índice 1hasta 3es:
+
+[ "second", "third", "fourth" ]
+Aquí hay cuatro métodos comunes relacionados con el rango:
+
+AddRange()— toma una matriz o lista como argumento. Agrega los valores al final de la lista. No devuelve nada.
+InsertRange()— toma una intmatriz o una lista como argumento. Agrega los valores en el intíndice. No devuelve nada.
+RemoveRange()— toma dos intvalores. El primero intes el índice en el que comenzar a eliminar y el segundo intes la cantidad de elementos que se eliminarán. No devuelve nada.
+GetRange()— toma dos intvalores. El primero intes el índice del primer elemento deseado y el segundo intes el número de elementos en el rango deseado. Devuelve una lista del mismo tipo.
+Aquí está cada uno en acción:
+
+List<string> places = new List<string> { "first", "second" };
+ 
+places.AddRange(new string[] { "fifth", "sixth" });
+// List is  "first", "second", "fifth", "sixth" ]
+places.InsertRange(2, new string[] { "third", "fourth"});
+// List is [ "first", "second", "third", "fourth", "fifth", "sixth" ]
+places.RemoveRange(4, 2);
+// List is [ "first", "second", "third", "fourth" ]
+List<string> newPlaces = places.GetRange(0, 3);
+// New list is [ "first", "second", "third" ]
+No necesita memorizar estos métodos, ¡pero debe estar familiarizado con el concepto de rangos! Siempre puede buscar los métodos nuevamente en la documentación de Microsoft .
+
+Instrucciones
+1 .
+Úselo GetRange()para obtener los tres primeros elementos de la marathonslista.
+
+Almacene el resultado en una nueva variable de lista llamada topMarathons.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Recorra la topMarathonslista e imprima cada valor en la consola.
+
+
+using System;
+using System.Collections.Generic;
+
+namespace LearnLists
+{
+  class Program
+  {
+    static void Main()
+    {
+      List<double> marathons = new List<double>
+      {
+        144.07,
+        143.12,
+        146.73,
+        146.33
+      };
+
+      List<double> topMarathons = marathons.GetRange(0, 3);
+
+      foreach (double d in topMarathons)
+      {
+        Console.WriteLine(d);
+      }
+
+    }
+  }
+}

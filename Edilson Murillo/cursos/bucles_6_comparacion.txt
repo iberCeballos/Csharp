@@ -1,0 +1,66 @@
+Comparación de bucles
+Es posible que haya notado que hay muchas similitudes entre los diferentes tipos de bucles, ¡y tiene razón!
+
+Acabamos de mostrar cómo podemos usar un foreachciclo para iterar a través de una matriz. Pero también podemos usar un forbucle para iterar a través de una matriz:
+
+string[] items = { "potion", "dagger", "shield", "plant" };
+ 
+for (int i = 0; i < items.Length; i++)
+{
+  Console.WriteLine(items[i]);
+}
+Incluso podríamos escribir un whileciclo complicado que comience un contador en 0, luego compare ese contador con la longitud de la itemsmatriz. Si el contador es menor que la matriz, el ciclo continuará. De lo contrario, dejará de recorrer las declaraciones y el programa pasará a la siguiente línea de código.
+
+int i = 0;
+while (i < items.Length)
+{ 
+  Console.WriteLine(items[i]); 
+  i++; 
+}
+Dado que un foreachciclo hace lo mismo que los otros dos pero es más conciso, es menos propenso a errores y es la mejor opción en esta circunstancia.
+
+string[] items = { "potion", "dagger", "shield", "plant" };
+ 
+foreach (string item in items)
+{
+  Console.WriteLine(item);
+}
+En general,
+
+whileLos bucles son buenos cuando conoce su condición de parada, pero no cuando sabe cuántas veces desea que un programa se repita o si tiene una colección específica para recorrer.
+do...whilelos bucles solo son necesarios si definitivamente desea que algo se ejecute una vez, pero luego se detiene si se cumple una condición.
+forlos bucles son mejores si desea que algo se ejecute una cantidad específica de veces, en lugar de una determinada condición.
+foreachlos bucles son la mejor manera de recorrer una matriz o cualquier otra colección.
+Instrucciones
+1 .
+Desea crear una aplicación que bloquee sitios web, por lo que encuentra un código en línea y lo copia y lo pega en su editor de texto. Te das cuenta de que usa un whilebucle para iterar a través de una websitesmatriz, ¡pero conoces una mejor manera de hacerlo!
+
+Vuelva a escribir el ciclo para que use un ciclo que se adapte mejor al objetivo.
+
+using System;
+
+namespace ComparingLoops
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] websites = { "twitter", "facebook", "gmail" };      
+      
+      foreach(string website in websites)
+      {
+        Console.WriteLine(website); 
+      }
+
+      
+      /*int counter = 0;
+
+      while (counter < websites.Length)
+      { 
+        Console.WriteLine(websites[counter]); 
+        counter++; 
+      }*/
+
+    }
+  }
+}

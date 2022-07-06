@@ -1,0 +1,160 @@
+Revisar
+¡Felicitaciones! Ahora está listo para usar a staticlo largo de sus clases:
+
+En general, estático significa "asociado a la clase, no a una instancia".
+Siempre se accede a un miembro estático por el nombre de la clase, en lugar del nombre de la instancia, como Forest.Area.
+Un método estático no puede acceder a miembros no estáticos.
+Un constructor estático se ejecuta una vez por tipo, no por instancia. Se invoca antes de que se cree una instancia del tipo o se acceda a un miembro estático.
+Cualquiera de estos activaría el constructor estático de Forest:
+public static void Main() {
+  Forest f  = new Forest(); 
+}
+o
+
+public static void Main() {
+  Forest.Define(); 
+}
+Una clase estática no puede ser instanciada. Se accede a sus miembros por el nombre de la clase, como Math.PI.
+Instrucciones
+1 .
+Desde Program.cs , imprima la cantidad de bosques creados.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Crea una instancia de dos Forestobjetos.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+Imprime el número de bosques creados nuevamente. Antes de continuar, asegúrese de que puede explicar cómo se cambió este valor.
+
+
+Clase program
+
+using System;
+
+namespace StaticMembers
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Forest.ForestsCreated);
+      Forest f = new Forest("Congo", "Tropical");
+      Forest r = new Forest("Rendlesham");
+      Console.WriteLine(Forest.ForestsCreated);
+      /*Console.WriteLine(Forest.ForestsCreated);
+      Forest f = new Forest("Hola", " mundo");
+      Forest f = new Forest("Edilson");
+      Console.WriteLine(Forest.ForestsCreated);*/
+    }
+  }
+}
+
+
+
+Clase forest
+
+using System;
+
+namespace StaticMembers
+{
+  class Forest
+  {
+    // FIELDS
+    
+    public int age;
+    private string biome;
+    private static int forestsCreated;
+    private static string treeFacts;
+    
+    // CONSTRUCTORS
+    
+    public Forest(string name, string biome)
+    {
+      this.Name = name;
+      this.Biome = biome;
+      Age = 0;
+      ForestsCreated++;
+    }
+    
+    public Forest(string name) : this(name, "Unknown")
+    { }
+    
+    static Forest()
+    {
+      treeFacts = "Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n";
+      ForestsCreated = 0;
+      
+    }
+    
+    // PROPERTIES
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    public static int ForestsCreated
+    {
+      get { return forestsCreated; }
+      private set { forestsCreated = value; }
+    }
+    
+    public static string TreeFacts
+    {
+      get { return treeFacts; }
+    }
+    
+    // METHODS
+     
+    public int Grow()
+    {
+      Trees += 30;
+      Age += 1;
+      return Trees;
+    }
+    
+    public int Burn()
+    {
+      Trees -= 20;
+      Age += 1;
+      return Trees;
+    }
+    
+    public static void PrintTreeFacts()
+    {
+      Console.WriteLine(TreeFacts);
+    }
+    
+  }
+
+}

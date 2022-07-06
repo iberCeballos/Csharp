@@ -1,0 +1,114 @@
+Revisar
+¡Buen trabajo! En esta lección aprendiste que:
+
+Cada tipo, eventualmente, hereda deObject
+Objectlos miembros incluyen Equals(), ToString()yGetType()
+El ToString()método permite Console.WriteLine()trabajar para todo tipo
+Instrucciones
+Intente leer la sección "Observaciones" de la Objectdocumentación de la clase . Es una buena manera de comprobar su comprensión.
+
+La última sección, "Consideraciones de rendimiento", habla sobre estrategias para evitar "unboxing" y "boxing" innecesarios, lo que probablemente conozca como casting.
+
+Puedes ver la primera estrategia en acción con Console.WriteLine(). En la documentación , puede ver que hay múltiples versiones del método con diferentes tipos de parámetros: algunos de los tipos más comunes como intand stringy por supuesto Object.
+
+Si tiene algún problema para encontrar esas tres versiones, aquí hay enlaces directos:
+
+para intargumentos
+para stringargumentos
+para Objectargumentos
+No se preocupe demasiado por la otra estrategia que usa genéricos : ¡no se espera que la entienda porque aún no hemos cubierto el concepto!
+
+
+Clase program
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book("Ta-Nehisi Coates", "Between the World and Me");
+      Diary dy = new Diary(38);
+      Random rand = new Random();
+      int i = 9;
+
+      Object[] objects = {bk, dy, rand, i};
+
+      foreach (Object obj in objects)
+      {
+        Console.WriteLine(obj.GetType());
+        Console.WriteLine(obj);
+      }
+
+      bool b = true;
+      Console.WriteLine(b);
+      Console.WriteLine(b.ToString());
+    }
+  }
+}
+
+
+
+Clase diary
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book bk = new Book("Ta-Nehisi Coates", "Between the World and Me");
+      Diary dy = new Diary(38);
+      Random rand = new Random();
+      int i = 9;
+
+      Object[] objects = {bk, dy, rand, i};
+
+      foreach (Object obj in objects)
+      {
+        Console.WriteLine(obj.GetType());
+        Console.WriteLine(obj);
+      }
+
+      bool b = true;
+      Console.WriteLine(b);
+      Console.WriteLine(b.ToString());
+    }
+  }
+}
+
+
+
+Clase book
+
+namespace TheObjectClass
+{
+  class Book
+  {
+    public string Author
+    { get; private set; }
+    
+    public string Title
+    { get; private set; }
+
+    public Book(string author = "Unknown", string title = "Untitled")
+    {
+      Author = author;
+      Title = title;
+    }
+
+    public virtual string Stringify()
+    {
+      return "This is a Book object!";
+    }
+  	
+    public override string ToString()
+    {
+      return $"This Book is {Title}, by {Author}.";
+    }
+  }
+}

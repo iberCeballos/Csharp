@@ -1,0 +1,297 @@
+using System;
+
+namespace curso_Csharp
+{
+    internal class solucion1
+    {
+        static void Main(string[] args)
+
+        {
+
+            //-crear un array con los siguientes datos:
+            //-movimiento rectilíneo uniforme-distancia=tiempo*velocidad
+            //-movimiento rectilíneo uniforme acelerado-velocidad=velocidadinicial*(aceleracion*tiempo)
+            //- movimiento circular uniforme
+            string[] mov = { "movimiento rectilineo uniforme", "movimiento rectilineo uniforme acelerado", "movimiento circular uniforme" };
+
+            // el programa debe pedir al usuario que tipo de ejercicio va a realizar
+            Console.WriteLine("este programa calcula\nmovimiento rectilíneo uniforme,\nmovimiento rectilíneo uniforme acelerado \ny movimiento circular uniforme (este ultimo, utilizando las formulas angulares)\n ");
+
+            int val = 0;
+
+            do
+            {
+                Console.WriteLine("ingrese, sin tildes, el nombre del movimiento que quiere calcular");
+                string movi = Console.ReadLine();
+                if (movi == mov[0] || movi == mov[1] || movi == mov[2])
+                {
+                    //al elegir un procedimiento, se debe pedir al usuario que magnitud se va encontrar
+
+                    if(movi == mov[0])
+                    {
+                        Console.WriteLine("usted desea operar el movimiento rectilineo uniforme\n");
+                        int val2 = 0;
+                        string[] mru = { "distancia", "velicidad", "tiempo" };
+                        do
+                        {
+                            Console.WriteLine("ingrese que dimension quiere encontar\ndistancia\nvelocidad\ndistancia\n");
+                            string mrui = Console.ReadLine();
+                            if (mrui == mru[0] || mrui == mru[1] || mrui == mru[2])
+                            {
+                                //pedir que el usuario ingrese los valores a remplazar en las formulas de la magnitud elegida.
+                                if(mrui == mru[0])
+                                {
+                                    Console.WriteLine("usted desea encontar distancia en el movimiento rectilineo uniforme");
+                                    Console.WriteLine("ingrese el valor de velocidad");
+                                    double v = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    mru_distancia(t,v);
+
+                                }
+                                if(mrui == mru[1])
+                                {
+                                    Console.WriteLine("usted desea encontar velocidad en el movimiento rectilineo uniforme");
+                                    Console.WriteLine("ingrese el valor de distancia");
+                                    double d = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    mru_velocidad(d, t);
+
+                                }
+                                if(mrui == mru[2])
+                                {
+                                    Console.WriteLine("usted desea encontar tiempo en el movimiento rectilineo uniforme");
+                                    Console.WriteLine("ingrese el valor de velocidad");
+                                    double v = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de distancia");
+                                    double d = Convert.ToDouble(Console.ReadLine());
+                                    mru_tiempo(d,v);
+                                }
+                                
+                                val2 = 1;                            
+                            }
+                            else
+                            {
+                                Console.WriteLine("error, ingrese una dimension correcta");
+                                val2 = 0;
+                            }
+
+
+
+                        } while (val2==0);
+                        
+
+                    }
+                   if (movi == mov[1])
+                    {
+                        Console.WriteLine("usted desea operar el movimiento rectilineo uniforme acelerado\n");
+                        
+                        int val3 = 0;
+                        string[] mrua = { "velocidad inicial", "velicidad en un instante", "aceleracion","tiempo" };
+                        do
+                        {
+                            Console.WriteLine("ingrese que dimension quiere encontar\nvelocidad inicial\nvelocidad final\naceleracion\ntiempo\n");
+                            string mruai = Console.ReadLine();
+                            if (mruai == mrua[0] || mruai == mrua[1] || mruai == mrua[2] || mruai == mrua[3])
+                            {
+                                //pedir que el usuario ingrese los valores a remplazar en las formulas de la magnitud elegida.
+
+                                if (mruai == mrua[0])
+                                {
+                                    Console.WriteLine("usted desea encontar velocidad inicial en el movimiento rectilineo uniforme acelerado");
+                                    Console.WriteLine("ingrese el valor de velocidad final");
+                                    double vf = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de acleracion");
+                                    double a = Convert.ToDouble(Console.ReadLine());
+                                    mrua_v0(vf, t, a);
+
+                                }
+                                if (mruai == mrua[1])
+                                {
+                                    Console.WriteLine("usted desea encontar velocidad final en el movimiento rectilineo uniforme acelerado");
+                                    Console.WriteLine("ingrese el valor de velocidad inicial");
+                                    double v0 = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de aceleracion");
+                                    double a = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    mrua_vf(v0, a, t);
+
+                                }
+                                if (mruai == mrua[2])
+                                {
+                                    Console.WriteLine("usted desea encontar aceleracion en el movimiento rectilineo uniforme acelerado");
+                                    Console.WriteLine("ingrese el valor de velocidad inicial");
+                                    double v0 = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de velocidad final");
+                                    double vf = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    mrua_a(v0,vf,t);
+                                }
+                                if(mruai == mrua[3])
+                                {
+                                    Console.WriteLine("usted desea encontar tiempo en el movimiento rectilineo uniforme acelerado");
+                                    Console.WriteLine("ingrese el valor de velocidad inicial");
+                                    double v0 = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de aceleracion");
+                                    double a = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de distancia");
+                                    double d = Convert.ToDouble(Console.ReadLine());
+                                    mrua_t(v0,a,d);
+                                }
+
+                                val3 = 1;
+                            }
+                            else
+                            {
+                                Console.WriteLine("error, ingrese una dimension correcta");
+                                val3 = 0;
+                            }
+
+
+
+                        } while (val3 == 0);
+
+                    }
+                    if (movi == mov[2])
+                    {
+                        Console.WriteLine("usted desea operar el movimiento circular uniforme\n");
+                        int val4 = 0;
+                        string[] mcu = { "desplazamiento angular", "rapidez angular", "tiempo" };
+                        do
+                        {
+                            Console.WriteLine("ingrese que dimension quiere encontar\ndesplazamiento angular\nrapidez angular\ntiempo\n");
+                            string mcui = Console.ReadLine();
+
+                            if (mcui == mcu[0] || mcui == mcu[1] || mcui == mcu[2])
+                            {
+                                //pedir que el usuario ingrese los valores a remplazar en las formulas de la magnitud elegida.
+                                if (mcui == mcu[0])
+                                {
+                                    Console.WriteLine("usted desea encontar desplazamiento angular en el movimiento circular uniforme");
+                                    Console.WriteLine("ingrese el valor de rapidez angular");
+                                    double w = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    mcu_O(w,t);
+
+                                }
+                                if (mcui == mcu[1])
+                                {
+                                    Console.WriteLine("usted desea encontar rapidez angular en el movimiento circular uniforme");
+                                    Console.WriteLine("ingrese el valor de desplazamiento angular");
+                                    double O = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de tiempo");
+                                    double t = Convert.ToDouble(Console.ReadLine());
+                                    mcu_w(O,t);
+
+                                }
+                                if (mcui == mcu[2])
+                                {
+                                    Console.WriteLine("usted desea encontar tiempo en el movimiento circular uniforme");
+                                    Console.WriteLine("ingrese el valor de desplazamiento angular");
+                                    double O = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("ingrese el valor de rapidez angular");
+                                    double w = Convert.ToDouble(Console.ReadLine());
+                                    mcu_t(O,w);
+                                }
+
+                                val4 = 1;
+                            }
+                            else
+                            {
+                                Console.WriteLine("error, ingrese una dimension correcta");
+                                val4 = 0;
+                            }
+
+
+
+                        } while (val4 == 0);
+
+                    }
+
+                    val = 1;
+                }
+                else
+                {
+                    Console.WriteLine("error, ingrese nombre movimiento que quiere calcular");
+                    val = 0;
+                }
+
+            } while (val == 0);
+
+
+
+            Console.WriteLine("ldhashfas");
+            Console.ReadLine();
+
+        }
+
+        //-cada magnitud debe tener un método, para cada procedimiento
+        //-imprimir el resultado
+
+        public static void mru_distancia(double t, double v)
+        {
+            Console.WriteLine(" el valor de distancia es " + (t + v));
+        }
+
+        public static void mru_velocidad(double d, double t)
+        {
+            Console.WriteLine(" el valor de velocidad es " + (d/t));
+        }
+
+        public static void mru_tiempo(double d, double v)
+        {
+            Console.WriteLine(" el valor de tiempo es " + (d/v));
+        }
+
+        public static void mrua_v0(double vf, double t, double a)
+        {
+            double v0 = (vf * t) + ((1 / 2) * a * (Math.Pow(a, 2)));
+            Console.WriteLine(" el valor de velocidad inicial es " + v0);
+        }
+
+        public static void mrua_vf(double v0, double a, double t)
+        {
+            double vf= v0+(a*t);
+            Console.WriteLine(" el valor de velocidad final es " + vf);
+        }
+
+        public static void mrua_a(double v0, double vf, double t)
+        {
+            double a = ((v0 + vf) / 2) * t;
+            Console.WriteLine(" el valor de aceleracion es " + a);
+        }
+
+        public static void mrua_t(double v0, double a, double d)
+        {
+            double t = Math.Pow(v0, 2) + (2 * a * d);
+            Console.WriteLine(" el valor de tiempo es " + t);
+        }
+
+        public static void mcu_O(double w, double t)
+        {
+            Console.WriteLine(" el valor de desplazamiento angular es " +(w*t) );
+        }
+
+        public static void mcu_w(double O, double t)
+        {
+            Console.WriteLine(" el valor de rapidez angular es " + (O/t));
+        }
+
+        public static void mcu_t(double O, double w)
+        {
+            Console.WriteLine(" el valor de tiempo es " +(O/w));
+        }
+
+
+    }
+
+
+
+
+}

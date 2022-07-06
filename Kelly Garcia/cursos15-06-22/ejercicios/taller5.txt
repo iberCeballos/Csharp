@@ -1,0 +1,198 @@
+using System;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          
+
+
+            string[] formulas = { "movirectilineouniforme", "movirectilineounifomeacelerado", "movimientocircularuniforme" };
+            //Console.WriteLine("ingrese la distancia recorrida");
+            //int distancia = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("ingrese  el tiempo");
+            //int tiempo = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("ingrese la velocidad ");
+            //int velocidad = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("escoja una opcion \n" + " a = movirectilineouniforme, \n b = movirectilineounifomeacelerado,\n c = movimientocircularuniforme\n ");
+            string opc = Console.ReadLine();
+            if (opc == "a")
+            {
+                movirectilineouniforme();
+
+               }
+             else if (opc == "b")
+            {
+                movirectilineounifomeacelerado();
+            }
+            else if (opc == "c")
+            {
+                movimientocircularuniforme();
+            }
+
+           
+        }//metodo 1
+        static void movirectilineouniforme()
+        {
+            Console.WriteLine("escoja una opcion \n" + " d = distancia, \n t = tiempo,\n v = velocidad\n ");
+            string opc = Console.ReadLine();
+
+            double d, t, v;
+
+            if (opc == "d")
+            {
+                Console.WriteLine("ingrese  el tiempo");
+                t = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("ingrese la velocidad ");
+                v = Convert.ToInt32(Console.ReadLine());
+
+                d = v * t;
+                Console.WriteLine($"la distancia es de {d} km");
+            }
+
+            else if (opc == "t")
+            {
+                Console.WriteLine("ingrese la distancia");
+                d = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("ingrese la velocidad ");
+                v = Convert.ToInt32(Console.ReadLine());
+                t = d / v;
+                Console.WriteLine($" el tiempo es de {t} horas");
+            }
+
+            else if (opc == "v")
+            {
+                Console.WriteLine("ingrese la distancia");
+                d = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("ingrese el tiempo ");
+                t = Convert.ToInt32(Console.ReadLine());
+
+                v = d / t;
+                Console.WriteLine($"el promedio de la velocidad del recorrido es de {v} km*h");
+
+
+            }
+        }
+            
+          
+            //2 metodo 
+            static void movirectilineounifomeacelerado()
+              { 
+                  double vi, vf, a, t, d;
+            Console.WriteLine("escoja una opcion \n" + " a = aceleracion, \n d = distancia,\n vf = velocidadf\n t = tiempo ");
+            string opc1 = Console.ReadLine();
+                //{
+                if (opc1 == "a")
+                {
+                    Console.WriteLine("ingrese la velocidad final del recorido");
+                    vf = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese la velocidad inicial ");
+                    vi = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese el tiempo de recorrido ");
+                    t = Convert.ToInt32(Console.ReadLine());
+                    a = (vf - vi) / t;
+                    Console.WriteLine($"su aceleracion es {a} ");
+                }
+
+                else if (opc1 == "vf")
+                {
+                    Console.WriteLine("ingrese la aceleracion  del recorido");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese la velocidad inicial ");
+                    vi = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese el tiempo de recorrido ");
+                    t = Convert.ToInt32(Console.ReadLine());
+                    vf = vi + (a * t);
+                    Console.WriteLine($"su velocidad final  es: {vf} km/h ");
+                }
+
+                else if (opc1 == "t")
+                {
+                    Console.WriteLine("ingrese la aceleracion  del recorido");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese la velocidad inicial ");
+                    vi = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese la velocidad final de recorrido ");
+                    vf = Convert.ToInt32(Console.ReadLine());
+                    t = (vf - vi) / a;
+                    Console.WriteLine($"su tiempo es de: {t} horas ");
+
+                }
+
+                else if (opc1 == "d")
+                {
+                    Console.WriteLine("ingrese la aceleracion  del recorrido");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese la velocidad inicial ");
+                    vi = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("ingrese el tiempo de recorrido ");
+                    t = Convert.ToInt32(Console.ReadLine());
+                    d = (vi * t) + (((1 / 2) * a) * Math.Pow(t,2));
+                    Console.WriteLine($"su distancia final es: {d} km/s ");
+
+                }
+                       
+
+            }
+
+        //metodo3
+        static void movimientocircularuniforme()
+        {
+            Console.WriteLine("escoja una opcion \n"
+                + " f = frecuencia,\n Vt = velocidad tangencial\nw = velocidad angular\nac = aceleracion centipetra ");
+            string opc2 = Console.ReadLine();
+
+            //f=1/T
+            //
+            //
+            //
+            double f,T , Vt, w, ac, r;
+              if (opc2 == "f")
+            {
+                Console.WriteLine("ingrese por favor el periodo");
+                 T =Convert.ToDouble(Console.ReadLine());
+                 f = 1 / T;
+                Console.WriteLine($"su frecuencia es {f}");
+            }
+
+           else if (opc2 == "Vt")
+            {
+                Console.WriteLine("ingrese por favor el radio");
+                r = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("ingrese por favor la frecuencia");
+                f = Convert.ToDouble(Console.ReadLine());
+                Vt = 2 * ((3.1416 * r) * f);
+                Console.WriteLine($"su velocidad tangencial es de: {Vt} m*s");
+            }
+
+            else if (opc2 == "w")
+            {
+                Console.WriteLine("ingrese por favor la frecuencia");
+                f = Convert.ToDouble(Console.ReadLine());
+                w = 2 * (3.1416 * f);
+                Console.WriteLine($"su velocidad angular es de: {w}");
+
+            }
+
+            else if (opc2 == "ac")
+            {
+                Console.WriteLine("ingrese por favor el radio");
+                r = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("ingrese por favor la velocidad angular");
+                w = Convert.ToDouble(Console.ReadLine());
+
+                ac = Math.Pow(w, 2) * r;
+                Console.WriteLine($"su aceleracion centripeda es de:{ac}");
+            }
+
+  
+        }
+
+        }
+    }
+
+
+

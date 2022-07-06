@@ -1,0 +1,73 @@
+//vehiculo.cs
+using System;
+
+namespace LearnInheritance
+{
+  class Vehicle
+  {
+    public string LicensePlate
+    { get; private set; }
+
+    public double Speed
+    { get; private set; }
+
+    public int Wheels
+    { get; protected set; }
+
+    public void SpeedUp()
+    {
+      Speed += 5;
+    }
+
+    public void SlowDown()
+    {
+      Speed -= 5;
+    }
+    
+    public void Honk()
+    {
+      Console.WriteLine("HONK!");
+    }
+    public Vehicle(double speed){
+      double Speed{get; set;}
+      double LicensePlate{get; set;}
+    }
+
+  }
+}
+//Sedan.cs
+
+using System;
+
+namespace LearnInheritance
+{
+  class Sedan : Vehicle, IAutomobile
+  {
+    public Sedan(double speed)
+    {
+     Vehicle : base(speed);
+    }
+    
+  }
+}
+//Trunks
+using System;
+
+namespace LearnInheritance
+{
+  class Truck : Vehicle, IAutomobile
+  { 
+    public double Weight
+    { get; }
+
+    public Truck(double speed, double weight)
+    {
+     Vehicle : base(speed);
+ 
+
+     
+      }
+    }
+
+  }
+}

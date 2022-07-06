@@ -1,0 +1,64 @@
+using System;
+
+namespace supermercado
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("ingrese su nombre");
+            string nombre = Console.ReadLine();         
+            Console.WriteLine("ingrese cuantos hijos que tiene");
+            int hijos = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese el monto total de la compra");
+            int montotc = Convert.ToInt32( Console.ReadLine());
+            Console.WriteLine("ingrese 1 si es mujer o 2 si es hombre");
+            int sexo =Convert.ToInt32(Console.ReadLine());
+            double descuento;
+            double desch1 = 2.5;
+            double desch2 = 5;
+            double descm1 = 10;
+            double descm2 = 15;
+            double descm3 = 20;
+
+            if (sexo == 2 && hijos ==0)
+            {
+                descuento = montotc -(( montotc * desch1 )/ 100);
+                Console.WriteLine($"señorito { nombre} el subtotal de su compra es {montotc} \n " +
+                   $" el porcentaje de descuento de { desch1} y el monto final de su compra es de { descuento} ");
+            }
+           else if (sexo == 2 && hijos >= 1)
+            {
+                descuento = montotc - ((montotc * desch2) / 100);
+                Console.WriteLine($"señor { nombre} el subtotal de su compra es { montotc} \n " +
+                    $" el porcentaje de descuento de { desch2} y el monto final de su compra es de { descuento} ");
+            }
+
+           else if (sexo == 1 && hijos == 0)
+            {
+                descuento = montotc - ((montotc * descm1) / 100);
+                Console.WriteLine($"señorita { nombre} el subtotal de su compra es { montotc} \n " +
+                    $" el porcentaje de descuento de { descm1} y el monto final de su compra es de { descuento} ");
+            }
+
+            else if (sexo == 1 && hijos  < 3)
+            {
+                descuento = montotc - ((montotc * descm2) / 100);
+                Console.WriteLine($"señora { nombre} el subtotal de su compra es { montotc} \n " +
+                   $" el porcentaje de descuento de { descm2} y el monto final de su compra es de { descuento} ");
+            }
+
+          
+
+            else if (sexo == 1 && hijos >= 3)
+            {
+                descuento = montotc - ((montotc * descm3) / 100);
+                Console.WriteLine($"señora { nombre} el subtotal de su compra es { montotc} \n " +
+                 $" el porcentaje de descuento de { descm3} y el monto final de su compra es de { descuento} ");
+            }
+
+
+
+        }
+    }  
+}

@@ -1,0 +1,60 @@
+Método y sintaxis de consulta
+En LINQ, puede escribir consultas de dos maneras: en la sintaxis de consulta y en la sintaxis de método .
+
+La sintaxis de consulta parece una oración de varias líneas. Si ha usado SQL, es posible que vea algunas similitudes:
+
+var longLoudHeroes = from h in heroes
+  where h.Length > 6
+  select h.ToUpper();
+La sintaxis del método se parece al antiguo C#. Hacemos llamadas a métodos en la colección que estamos consultando:
+
+var longHeroes = heroes.Where(h => h.Length > 6);
+var longLoudHeroes = longHeroes.Select(h => h.ToUpper());
+En LINQ, vemos que where/ Where()y select/ Select()aparecen como palabras clave y llamadas a métodos. Para cubrir ambos casos, generalmente se les llama operadores .
+
+Cada desarrollador tiene una preferencia personal entre las sintaxis, pero debería poder leer ambas. En esta lección, comenzaremos con la sintaxis de consulta y luego pasaremos al método.
+
+Instrucciones
+1 .
+Lea las dos consultas en Program.cs . Cada uno devuelve una secuencia de frases, una para cada nombre de héroe que contiene una 'a'. Ejecute el código para ver el resultado.
+
+Las consultas devuelven el mismo resultado, pero están escritas con una sintaxis diferente. ¿Cuál te parece más fácil de leer?
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LearnLinq
+{
+  class Program
+  {
+    static void Main()
+    {
+      string[] heroes = { "D. Va", "Lucio", "Mercy", "Soldier 76", "Pharah", "Reinhardt" };
+
+      // Query syntax
+      var queryResult = from x in heroes
+                        where x.Contains("a")
+                        select $"{x} contains an 'a'";
+      
+      // Method syntax
+      var methodResult = heroes
+        .Where(x => x.Contains("a"))
+        .Select(x => $"{x} contains an 'a'");
+     
+      // Printing...
+      Console.WriteLine("queryResult:");
+      foreach (string s in queryResult)
+      {
+        Console.WriteLine(s);
+      }
+      
+      Console.WriteLine("\nmethodResult:");
+      foreach (string s in methodResult)
+      {
+        Console.WriteLine(s);
+      }
+    }
+  }
+}

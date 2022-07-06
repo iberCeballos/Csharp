@@ -1,0 +1,62 @@
+Miembros de objetos
+Objecttiene algunos miembros útiles y todos los tipos pueden acceder a ellos. Aquí hay algunos importantes:
+
+Equals(Object)— devuelve truesi la instancia actual y el argumento son iguales (usando igualdad de valor para tipos de valor e igualdad referencial para tipos de referencia)
+GetType()— devuelve el tipo del objeto
+ToString()— devuelve una cadena que describe el objeto
+Puedes ver cada método en acción aquí:
+
+Object o1 = new Object();
+// t is System.Object
+Type t = o1.GetType();
+ 
+string s = o1.ToString();
+// Prints "System.Object"
+Console.WriteLine(s);
+ 
+Object o2 = o1;
+// Equals true
+bool b = o1.Equals(o2);
+Recuerda que podemos acceder a miembros heredados de una clase derivada. En este caso, cada tipo hereda de Object, por lo que cada tipo puede acceder a estos miembros.
+
+Para obtener la lista completa de Objectmiembros, lea la documentación de Microsoft .
+
+Instrucciones
+1 .
+Cree una matriz de tipo Object[]que contenga b, d, ry i.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Cree un foreachbucle vacío que recorra cada elemento de la matriz.
+
+Checkpoint 3 Passed
+
+¿Atascado? Obtén un consejo
+3 .
+En el cuerpo del bucle, llame al GetType()método de cada elemento e imprima el resultado.
+
+
+using System;
+
+namespace TheObjectClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Book b = new Book();      
+      Diary d = new Diary(38);
+      Random r = new Random();
+      int i = 9;
+
+      Object[] o = {b, d, r, i};
+      foreach(Object ob in o)
+      {
+        Console.WriteLine(ob.GetType());        
+      }
+      
+    }
+  }
+}

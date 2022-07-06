@@ -1,0 +1,44 @@
+Principal()
+Ahora que está familiarizado con las clases, está listo para abordar el Main()método, el punto de entrada para cualquier programa. Lo has visto muchas veces, ¡pero ahora puedes explicar cada parte!
+
+class Program
+{
+  public static void Main (string[] args) 
+  {
+  }
+}
+Main()es un método de la Programclase.
+public- El método se puede llamar fuera de la Programclase.
+static— El método se llama desde el nombre de la clase: Program.Main().
+void— El método significa que no devuelve nada.
+string[] args— El método tiene un parámetro llamado args, que es una matriz de cadenas.
+Main()es como cualquier otro método que haya encontrado. Tiene un uso especial para C#, ¡pero eso no significa que no puedas tratarlo como un simple método antiguo!
+
+Instrucciones
+1 .
+Cada vez que ejecutamos dotnet run, Main()se llama al método. Podemos incluir argumentos en la línea de comando, como dotnet run arg1 arg2 arg3si se convirtieran en una matriz como argsparámetro. En la consola, ingrese:
+
+dotnet run mango pineapple lychee
+Según esta nueva información, ¿cómo se imprime su texto en la consola?
+
+
+Clase program
+
+using System;
+
+namespace ApplyingClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      if (args.Length > 0)
+      {
+        string mainPhrase = String.Join(" and ", args);
+        Console.WriteLine($"My favorite fruits are {mainPhrase}!");
+      }
+
+      
+    }
+  }
+}

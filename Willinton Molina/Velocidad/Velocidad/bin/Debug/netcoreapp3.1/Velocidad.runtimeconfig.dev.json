@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\wilinton.molinam\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\wilinton.molinam\\.nuget\\packages"
+    ]
+  }
+}

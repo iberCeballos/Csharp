@@ -1,0 +1,43 @@
+Cadena como clase
+Podemos probar que Stringes una clase consultando la documentación de la Stringclase y probando algunos de los métodos y propiedades enumerados allí.
+
+Este ejemplo usa Lengthy Contains().
+
+string s = "Hello World";
+Console.WriteLine(s.Length);
+Console.WriteLine(s.Contains("o"));
+Ya hemos visto una staticpropiedad Emptyy un staticmétodo IsNullOrEmpty():
+
+string s = String.Empty;
+bool isEmpty = String.IsNullOrEmpty(s);
+Instrucciones
+1 .
+Practiquemos el uso de Replace(String, String), que devuelve una nueva cadena con cada instancia del primer argumento reemplazada por el segundo.
+
+Reemplace todas las instancias de "ollie"con "ana".
+
+Si no está familiarizado con Replace(), la documentación es su mejor amiga.
+
+
+using System;
+
+namespace StringTheException
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string lyrics = 
+        "Dollie, Dollie, bo-bollie,\n" +
+        "Banana-fana fo-follie\n" +
+        "Fee-fi-mo-mollie\n" +
+        "Dollie!";
+      
+      // Call `Replace()` here
+     lyrics = lyrics.Replace( "ollie", "ana");
+      
+      
+      Console.WriteLine(lyrics);
+    }
+  }
+}

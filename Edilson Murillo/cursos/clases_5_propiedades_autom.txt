@@ -1,0 +1,61 @@
+Propiedades automáticas
+Podría haber sido tedioso escribir el mismo getter y setter para las propiedades Namey Trees. ¡C# tiene una solución para eso! El patrón básico de getter y setter es tan común que existe una abreviatura llamada propiedad automática . Como recordatorio, aquí está el patrón básico para una propiedad de tamaño imaginario:
+
+public string size;
+public string Size
+{
+  get { return size; }
+  set { size = value; }
+}
+Este patrón se puede escribir como una propiedad automática :
+
+public string Size
+{ get; set; }
+En este formulario, no tiene que escribir los métodos get()y set(), ¡y no tiene que definir un sizecampo en absoluto! Un campo oculto se define en segundo plano para nosotros. Todo lo que tenemos que preocuparnos es la Sizepropiedad.
+
+Instrucciones
+1 .
+Reemplace el namecampo y la Namepropiedad actuales con una propiedad automática Name.
+
+Checkpoint 2 Passed
+
+¿Atascado? Obtén un consejo
+2 .
+Reemplace el treescampo y la Treespropiedad actuales con una propiedad automática Trees.
+
+
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    public string biome;
+    
+    public string Name
+    { get; set;}
+    
+    public int Trees
+    { get; set;}
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+  }
+
+}
