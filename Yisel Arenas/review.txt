@@ -1,0 +1,15 @@
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+     Forest b = new Forest("Amazon");
+      Console.WriteLine(b.Trees);
+      b.Grow();
+      Console.WriteLine(b.Trees);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+using System;
+
+namespace BuiltInMethods
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {     
+      string[] summerStrut;
+      
+      summerStrut = new string[] { "Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make Me Feel", "Rebel Rebel", "Despacito", "Los Angeles" };
+      
+      int[] ratings = { 5, 4, 4, 3, 3, 5, 5, 4 };
+       
+      int song3 = Array.IndexOf(ratings, 3);
+  Console.WriteLine($"Song number {song3 + 1} is rated three stars");
+
+  string findSong = Array.Find(summerStrut,  song => song.Length > 10);
+Console.WriteLine($"The first song that has more than 10 characters in the title is {findSong}");
+
+Array.Sort(summerStrut);
+int firstSong = summerStrut[0];
+int lastSong = summerStrut[7];
+Console.WriteLine(sumerStrut[1], summerStrut[2]);
+    }
+  }
+}

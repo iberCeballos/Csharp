@@ -1,0 +1,54 @@
+ string nom;
+            int sexo, hijos;
+            double compra, descuento;
+
+            Console.WriteLine("Ingrese su nombre: ");
+            nom = Console.ReadLine();
+            Console.WriteLine("\nElija la opcion que corresponda a su sexo: "+
+                              "\n 1 - Hombre \n 2 - Mujer");
+            sexo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el numero de hijos");
+            hijos = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nIngrese el valor de la compra");
+            compra = Convert.ToDouble(Console.ReadLine());
+
+            if (sexo == 1 && hijos == 0)
+            {
+                descuento = compra - ((compra * 2.5) / 100);
+                Console.WriteLine($"\nSeñor {nom}"+
+                                  $"\nEl subtotal de su compra es = {compra} $" +
+                                  $"\nusted recibio un descuento del 2.5 %" +
+                                  $"\ny el valor neto a pagar es = {descuento} $");
+            }
+            else if (sexo == 1 && hijos >= 1)
+            {
+                descuento = compra - ((compra * 5) / 100);
+                Console.WriteLine($"\nSeñor {nom}" +
+                                  $"\nEl subtotal de su compra es = {compra} $" +
+                                  $"\nusted recibio un descuento del 5 %" +
+                                  $"\ny el valor neto a pagar es = {descuento} $");
+            }
+            else if (sexo == 2 && hijos == 0)
+            {
+                descuento = compra - ((compra * 10) / 100);
+                Console.WriteLine($"\nSeñorita {nom}" +
+                                  $"\nEl subtotal de su compra es = {compra} $" +
+                                  $"\nusted recibio un descuento del 10 %" +
+                                  $"\ny el valor neto a pagar es = {descuento} $");
+            }
+            else if (sexo == 2 && hijos == 1 || hijos == 2)
+            {
+                descuento = compra - ((compra * 15) / 100);
+                Console.WriteLine($"\nSeñora {nom}" +
+                                  $"\nEl subtotal de su compra es = {compra} $" +
+                                  $"\nusted recibio un descuento del 15 %" +
+                                  $"\ny el valor neto a pagar es = {descuento} $");
+            }
+            else if (sexo == 2 && hijos >= 3)
+            {
+                descuento = compra - ((compra * 20) / 100);
+                Console.WriteLine($"\nSeñora {nom}" +
+                                  $"\nEl subtotal de su compra es = {compra} $" +
+                                  $"\nusted recibio un descuento del 20 %" +
+                                  $"\ny el valor neto a pagar es = {descuento} $");
+            }
