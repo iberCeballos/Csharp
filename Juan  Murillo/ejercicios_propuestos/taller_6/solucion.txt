@@ -1,0 +1,93 @@
+using System;
+
+namespace descuentosSuper
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+             
+            
+
+            //Un supermercado muy conocido en el municipio Quiere realizar
+            //unos descuentos a  los clientes. Pero para realizar esos
+            //descuentos hay unas condiciones.
+            Console.WriteLine("Este programa calcula los descuentos a los clientes de supermercado las tres palmas.");
+            //Después de registrar los productos
+            //el programa debe solicitar: Nombre, sexo, cantidad de hijos y monto
+            //total de compra.
+            Console.WriteLine("Ingrese su nombre");
+            string nombre=Console.ReadLine();
+            Console.WriteLine("Ingrese su genero\nm para masculino.\nf para femenino.\no para otro");
+            string sexo = Console.ReadLine();
+            Console.WriteLine("Ingrese la cantidad de hijos que tiene");
+            int hijos =Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el monto total de su compra");
+            double monto = Convert.ToDouble( Console.ReadLine());
+            // En base a los datos solicitados se debe realizar los siguiente.
+            string descuentoT;
+            double total;
+            //Si el cliente es hombre y no tiene hijos, se le debe
+            //aplicar un descuento de 2.5 % al monto total de compra.
+            if (sexo=="m" && hijos==0)
+            {
+                descuentoT = "2.5%";
+                total = monto - (monto * 0.025);
+            }
+            //Si tiene 1 a más hijos, debes aplicarle un descuento de 5 % al monto de compra.
+            else if (sexo == "m" && hijos >=1)
+            {
+                descuentoT = "5%";
+                total = monto - (monto * 0.05);
+            }
+            //Si es mujer y no tiene hijo, debe aplicarle 10 % de descuento
+            else if (sexo == "f" && hijos == 0)
+            {
+                descuentoT = "10%";
+                total = monto - (monto * 0.1);
+            }
+            //si tiene 1 o 2, debes aplicar 15 % de descuento 
+            else if (sexo == "f" && (hijos ==1 || hijos==2))
+            {
+                descuentoT = "15%";
+                total = monto - (monto * 0.15);
+            }
+            //y si tiene 3 a más hijos, debes aplicar el 20 % de descuento a la compra.
+            else if (sexo == "f" && hijos > 2 )
+            {
+                descuentoT = "20%";
+                total = monto - (monto * 0.2);
+            }
+            else
+            {
+                descuentoT = "0%";
+                total = monto;
+            }
+
+            // El programa debe imprimir
+            //al final «Señor», «Señorita» o «Señora» respectivamente y su nombre.
+            //La mujer es señorita si no tiene hijos. Además debe imprimir el subtotal
+            //de la compra, el porcentaje de descuento que se le ha aplicado
+            //y el monto final de compra con descuento.
+            if (sexo == "f" && hijos == 0)
+            {
+                Console.WriteLine("Señorita,\nsu subtotal fue de " + monto + ",\nsu porcentaje de descuento fue de " + descuentoT + "\ny su monto final de compra con descuento es de " + total);
+            }
+            else if (sexo == "f" && hijos >= 1)
+            {
+                Console.WriteLine("Señora,\nsu subtotal fue de " + monto + ",\nsu porcentaje de descuento fue de " + descuentoT + "\ny su monto final de compra con descuento es de " + total);
+            }
+            else if (sexo == "m")
+            {
+                Console.WriteLine("Señor,\nsu subtotal fue de " + monto + ",\nsu porcentaje de descuento fue de " + descuentoT + "\ny su monto final de compra con descuento es de " + total);
+            }
+            else
+            {
+                Console.WriteLine("Su subtotal fue de " + monto + ",\nsu porcentaje de descuento fue de " + descuentoT + "\ny su monto final de compra con descuento es de " + total);
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,15 @@
+using System;
+
+namespace BuildingArrays
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+        string [] summerStrut;
+    summerStrut = new string[] {"jugo", "extrañandote", "boina de frambuesa", "surco de new york", "hazme sentir", "rebelde", "despacito", "los angeles"}; 
+    }
+    int[] ratings;
+    ratings = new string [] {1,2,3,4,5};
+  }
+}
