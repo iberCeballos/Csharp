@@ -1,0 +1,98 @@
+using System;
+
+namespace tienda
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int genero;
+            int num_hijos;
+            string nombre;
+            int total_compra;
+            int producto1;
+            int producto2;
+            int producto3;
+            int producto4;
+            int total_descuento;
+            double descuentos_h1 = 2.5;
+            int descuentos_h2 = 5;
+            int descuentos_m1 = 10 ;
+            int descuentos_m2 = 15 ;
+            int descuentos_m3 = 20 ;    
+
+            Console.WriteLine("ingrese sus los datos personales para poder cotejar su nivel de descuento: ");
+            Console.WriteLine("escriba su nombre por fabor: ");
+            nombre = Console.ReadLine();
+            Console.WriteLine("si su genero es masculino ingrese 1 y si es femenino ingrese 2: ");
+            genero = Convert.ToInt32(Console.ReadLine());
+            
+            //num_hijos = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese precio producto 1: ");
+            producto1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese presio producto 2: ");
+            producto2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese precio producto 3: ");
+            producto3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("ingrese precio producto 4: ");
+            producto4 = Convert.ToInt32(Console.ReadLine());
+
+            total_compra = producto1 + producto2 + producto3 + producto4;
+
+            switch (genero)
+            {
+                case 1:
+                    Console.WriteLine("ingrese el nume de hijos que tiene, deacuerdo a ese numero de hijos se la ara un descuento");
+                    num_hijos = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(" ");
+                    if (num_hijos >= 1 && num_hijos <= 3)
+                    {
+                        total_descuento = total_compra - (total_compra * descuentos_h2 / (100));
+                        Console.WriteLine($"senor {nombre} su monto es {total_compra} por tener {num_hijos} a ganado un descuento del {descuentos_h2} %" +
+                            $" y el total final es {total_descuento} gracias por su compra");
+                    }
+                    else
+                    {
+
+                        total_descuento = total_compra - (total_compra * (int)descuentos_h1 / (100));
+                        Console.WriteLine($"senor {nombre} su monto es {total_compra} por tener {num_hijos} hijos a ganado un descuento del {descuentos_h1} %" +
+                            $" y el total final {total_descuento} gracias por su compra");
+                    }
+                    break;
+                case 2:
+                    
+                        Console.WriteLine("ingrese el nume de hijos que tiene, deacuerdo a ese numero de hijos se la ara un descuento");
+                        num_hijos = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(" ");
+                        if (num_hijos == 1 && num_hijos <= 2)
+                    {
+                        total_descuento = total_compra - (total_compra * descuentos_m2 / (100));
+                        Console.WriteLine($"senora {nombre} su monto es {total_compra} por tener {num_hijos} hijos a ganado un descuento del {descuentos_m2} %" +
+                            $" y el total final {total_descuento} gracias por su compra");
+
+                    }
+                        else if (num_hijos == 3)
+                    {
+                        total_descuento = total_compra - (total_compra * descuentos_m3 / (100));
+                        Console.WriteLine($"senora {nombre} su monto es {total_compra} por tener {num_hijos} a ganado un descuento del {descuentos_m3} %" +
+                            $" y el total final  {total_descuento} gracias por su compra");
+                    }
+                        else
+                    {
+                        total_descuento = total_compra - (total_compra * (int)descuentos_m1 / (100));
+                        Console.WriteLine($"senor {nombre} su monto es {total_compra} por tener {num_hijos} a ganado un descuento del {descuentos_m1} %" +
+                            $" y el total final {total_descuento} gracias por su compra");
+                    }
+                    
+
+
+                            break;
+
+                    
+            }
+
+        }
+       
+}
+    
+}
