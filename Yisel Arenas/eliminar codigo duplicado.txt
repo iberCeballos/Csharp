@@ -1,0 +1,16 @@
+using System;
+
+namespace LearnInheritance
+{
+  class Truck : Vehicle
+  {
+    
+    public double Weight
+    { get;}
+
+    public Truck: Vehicle 
+    {
+     
+
+  }
+}
